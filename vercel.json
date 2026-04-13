@@ -1,0 +1,28 @@
+{
+	"buildCommand": "npm run build",
+	"devCommand": "npm run dev",
+	"installCommand": "npm ci",
+	"framework": "sveltekit",
+	"env": {
+		"DATABASE_URL": {
+			"description": "Turso database URL (libsql://...)",
+			"required": true
+		},
+		"DATABASE_AUTH_TOKEN": {
+			"description": "Turso authentication token",
+			"required": false
+		}
+	},
+	"git": {
+		"deploymentEnabled": {
+			"master": true,
+			"main": true
+		}
+	},
+	"crons": [
+		{
+			"path": "/api/cron/refresh-models",
+			"schedule": "0 0 * * *"
+		}
+	]
+}

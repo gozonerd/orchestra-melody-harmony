@@ -1,3 +1,11 @@
+## Project Configuration
+
+- **Language**: TypeScript
+- **Package Manager**: npm
+- **Add-ons**: prettier, eslint, vitest, playwright, tailwindcss, drizzle, sveltekit-adapter
+
+---
+
 # Orchestra Melody & Harmony
 
 **Owner:** Krystal Martinez / Stahl Systems
@@ -7,6 +15,7 @@
 ## Product Definition
 
 Users describe what they're trying to do with AI, and the app recommends:
+
 - **Melody** — Primary model best suited to the overall task
 - **Harmony** — Supporting models by subtask with reasoning
 - **Cost estimates** at 4 scales: per 10, per 100, per 1,000, per 10,000 runs
