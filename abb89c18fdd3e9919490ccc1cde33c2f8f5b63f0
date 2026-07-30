@@ -1,0 +1,23 @@
+ATTRIBUTION CORRECTION — recorded 2026-07-30
+
+This commit is recorded as authored by Krystal Martinez herself. Under the
+standing Martinez Methods rule, her name must NEVER appear as author on
+AI-generated work; commits are authored by the working Claude persona, email
+noreply@anthropic.com.
+
+This work was AI-authored. Krystal Martinez did not write it.
+
+THE SPECIFIC PERSONA IS NOT ESTABLISHED. The April-May 2026 sessions that
+produced these commits were not found in any available transcript store.
+Searched: ~/.claude/projects (Linux — begins 2026-07-09, after these commits),
+_LAPTOP_BACKUP_STAGING/.claude/projects (4423 transcripts),
+_DRIVE_STAGING (454 transcripts), and Downloads/_transcript_work (97).
+A June 2026 session referencing this commit was located, but it is a later
+remediation pass, not the authoring session.
+
+No persona is asserted here. Naming one without evidence would replace a wrong
+attribution with an invented one, which is worse.
+
+History was NOT rewritten: rewriting published commits changes every SHA and
+breaks existing clones. This note is the correction of record. If the authoring
+session is recovered later, a superseding note can name the persona.
