@@ -4,10 +4,9 @@ description: Core principle from Krystal's Pattern Interrupt Methodology Operati
 type: feedback
 originSessionId: 8cf4718e-22aa-4970-ba9c-72088212d35a
 ---
-
 **"Translate to understand. Understand to translate."**
 
-This is a core principle of Krystal's **Pattern Interrupt Methodology Operating System (PIM OS)** — the principles she tries to live her life by, which have produced pattern-interrupt-class successes. She surfaced it explicitly 2026-05-13 in response to my Open Journal entry observation that PromiseAnchor has a _translator_ aspect (translating methodology work into ADHD-congruent presentation).
+This is a core principle of Krystal's **Pattern Interrupt Methodology Operating System (PIM OS)** — the principles she tries to live her life by, which have produced pattern-interrupt-class successes. She surfaced it explicitly 2026-05-13 in response to my Open Journal entry observation that PromiseAnchor has a *translator* aspect (translating methodology work into ADHD-congruent presentation).
 
 **Critical clarification she made:**
 

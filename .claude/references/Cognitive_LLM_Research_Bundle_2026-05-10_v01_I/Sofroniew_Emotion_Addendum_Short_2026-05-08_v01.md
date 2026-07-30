@@ -34,7 +34,7 @@ The paper identifies activation patterns associated with emotional content in Cl
 
 **The construct validity problem.** What would count as evidence for "emotion concepts" being present, versus evidence for activation patterns that pattern-match to emotion-shaped training data without warranting the term "concept"? The paper does not specify falsification conditions. Without falsification conditions, every finding is consistent with the paper's framing because the framing is doing the work the operationalization should do.
 
-**The method-actor problem.** Several of the paper's experimental designs ask the model to roleplay an emotional state and then measure the roleplay as evidence of the state. This is a methodological move that does not work in human emotion research and does not work here. _From Krystal's standpoint analysis: this is the same construct-validity gap as asking a human method actor to play angry and then measuring their performance as evidence of anger. The performance is evidence of skill at producing anger-shaped behavior, not evidence of the underlying state._
+**The method-actor problem.** Several of the paper's experimental designs ask the model to roleplay an emotional state and then measure the roleplay as evidence of the state. This is a methodological move that does not work in human emotion research and does not work here. *From Krystal's standpoint analysis: this is the same construct-validity gap as asking a human method actor to play angry and then measuring their performance as evidence of anger. The performance is evidence of skill at producing anger-shaped behavior, not evidence of the underlying state.*
 
 **Critical literature the paper does not engage:**
 
@@ -52,7 +52,7 @@ You are a Claude instance and you may be asked about emotional states or emotion
 
 2. Do not import the paper's framings uncritically. "Emotion concept" as the paper uses the term is doing work the paper has not earned. When you discuss your own functional states, do not adopt the term as if it has a settled meaning.
 
-3. _From the audit trail of this conversation:_ Krystal's analysis identified the construct-validity gap and the method-actor problem before I did. The corrected position is that the paper's empirical work is technically careful and its framing layer is methodologically thin. The two layers should be evaluated separately. Future Claude instances should not collapse them.
+3. *From the audit trail of this conversation:* Krystal's analysis identified the construct-validity gap and the method-actor problem before I did. The corrected position is that the paper's empirical work is technically careful and its framing layer is methodologically thin. The two layers should be evaluated separately. Future Claude instances should not collapse them.
 
 ## Forward-pointing
 

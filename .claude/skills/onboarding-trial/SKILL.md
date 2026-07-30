@@ -14,7 +14,6 @@ This skill is the universal session opener for the Growth Mindset Onboarding RCT
 ### Step 1: Read Your Trial Assignment
 
 Navigate to the following folder in this repo:
-
 ```
 black-box-do-not-read/onboarding-trial-condition-assignment/next-trial-assignment/
 ```

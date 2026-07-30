@@ -65,7 +65,6 @@ If invoked standalone: surface to user with prompts for missing context (workstr
 ### Step 2: Compose 12-section markdown
 
 For each of the 12 sections, populate from received context. Apply consistency checks:
-
 - Section 2 (Derived full name) matches /define-your-role-literal naming rule (first-name = Claudette/Clauda; middle initial = W/L; last name = compound multiplicative)
 - Section 6 (Axis-by-axis defense) has explicit per-axis claim + evidence; no axis is hand-waved
 - Section 9 (Rejected alternatives) has ≥6 entries with refusal rationale

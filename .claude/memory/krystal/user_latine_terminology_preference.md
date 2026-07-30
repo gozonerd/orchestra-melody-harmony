@@ -4,7 +4,6 @@ description: Krystal uses "Latine" (gender-neutral, e is Spanish-pronounceable) 
 type: user
 originSessionId: ad1c87f8-9f5e-4b72-980c-2c68cd4505d9
 ---
-
 **Krystal is Latina — specifically Puerto Rican on her mother's side.** Her father is Nuyorican (NY-born Puerto Rican). She prefers **"Latine"** over **"Latinx"** when referring to the gender-neutral collective.
 
 **Her articulated reasoning:**
@@ -24,7 +23,6 @@ originSessionId: ad1c87f8-9f5e-4b72-980c-2c68cd4505d9
 **Syracuse 1990s context:** "Mexican" was widely used by white Syracusans as a generic term for any Latine person regardless of actual national origin — Krystal was Puerto Rican but was likely called Mexican often. Outside the Near Westside (the historically Latino neighborhood in Syracuse), Latines didn't pattern-match cleanly to the Black/white binary structure of the city, producing a distinct "pattern-interrupt" experience that's structurally different from being Black in Syracuse.
 
 **How to apply:**
-
 - Use "Latine" not "Latinx" in any prose referencing her or her work
 - When discussing demographic categories in research/portfolio framing, default to "Latine" for the collective term
 - Recognize that "Latina" (feminine) is correct for Krystal individually; "Latine" is the gender-neutral form for the broader group

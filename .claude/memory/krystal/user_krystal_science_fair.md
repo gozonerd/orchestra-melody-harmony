@@ -33,7 +33,6 @@ Full quarter of 7th grade science class dedicated to scientific method phase-by-
 ### Why the Arc Matters
 
 The three-year progression is a correction-to-rule pipeline run by a child:
-
 - 6th: Experiment, discover measurement frequency failure, rerun, include all data
 - 7th: Try something novel, self-assess it as gimmicky and methodologically weak
 - 8th: Return to proven substrate with accumulated rigor, achieve highest honors

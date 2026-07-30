@@ -5,13 +5,11 @@ type: feedback
 originSessionId: de4cd3d9-137c-4d63-a1bc-dac72e2d635a
 user: krystal
 ---
-
 Treat $0 as the working budget unless Krystal explicitly approves spend. Do NOT recommend paid actions as if they're trivially affordable, even at small dollar amounts.
 
 **Why:** 2026-04-26 Krystal explicit feedback in trusting-ardinghelli-c18c0c thread: "i currently debate meds v food. $0 is ALL i can afford." Stated in response to a recommendation that included a $300-800 attorney clearance opinion + $200/yr domain registrations + $20 NY DOS LLC reservation, framed as "next 72 hours." The framing assumed those were affordable; they are not.
 
 **How to apply:**
-
 - Default mode: surface the $0 path FIRST. List free actions she can take today (claim free GitHub org, publish $0 npm placeholder, manual portal lookups, free DoH/RDAP checks).
 - Paid actions go in a SEPARATE block clearly labeled "REQUIRES BUDGET" with the dollar amount per item.
 - Never bundle paid + free actions in a single "next steps" list — bundling implies the paid items are also actionable.

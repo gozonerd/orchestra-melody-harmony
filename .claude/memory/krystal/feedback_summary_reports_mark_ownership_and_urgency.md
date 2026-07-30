@@ -35,7 +35,6 @@ When a summary lists outstanding items, render each as one of:
 The correct rendering would have been:
 
 > **Outstanding items at Wave 0 closure:**
->
 > - Deferred Doc 00 anti-patterns — gap-documented per Krystal 2026-05-12; OWNER: future iteration; BLOCKING: never
 > - LICENSE upgrade decision — OWNER: Krystal; BLOCKING: at trigger event (when failFixed-authoring conversation starts); NOT actionable today
 > - D2R CHANGELOG initial entry — OWNER: Clauda the Value Genius v02; BLOCKING: their Wave 0; surfaced for awareness, no Krystal action

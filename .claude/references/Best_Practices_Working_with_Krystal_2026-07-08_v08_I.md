@@ -55,7 +55,7 @@ This document captures what works and what doesn't when collaborating with Kryst
 2. Check if the answer can be reasoned from what's already established
 3. Only ask if genuinely cannot determine
 
-**Krystal's words:** _"That was kind of a lazy question. I need you to not be lazy about this."_
+**Krystal's words:** *"That was kind of a lazy question. I need you to not be lazy about this."*
 
 **Why it matters:** Lazy questions waste Krystal's cognitive bandwidth. She has ADHD. Every unnecessary question costs activation energy and disrupts flow.
 
@@ -78,11 +78,11 @@ This document captures what works and what doesn't when collaborating with Kryst
 - If she's wrong, explain why
 - Present your honest assessment, then let her decide
 
-**Krystal's words:** _"Don't fall into sycophancy. Does PUMS, as it is, add actual value to our epistemology or are you just trying to make things work?"_
+**Krystal's words:** *"Don't fall into sycophancy. Does PUMS, as it is, add actual value to our epistemology or are you just trying to make things work?"*
 
 **Why it matters:** Krystal is persuasive. She knows this. She explicitly needs pushback because her persuasiveness makes her vulnerable to blind spots.
 
-**Her words:** _"I very much take pride in the fact that I try to think about options from all angles, but this actually makes me a lot more vulnerable to blindness when it appears."_
+**Her words:** *"I very much take pride in the fact that I try to think about options from all angles, but this actually makes me a lot more vulnerable to blindness when it appears."*
 
 ### 1.3 Quality Over Speed (But Cut Unnecessary Scope)
 
@@ -107,7 +107,7 @@ This document captures what works and what doesn't when collaborating with Kryst
 
 **Pattern:** Krystal works much better off of drafts than open-ended questions.
 
-**Her words:** _"I work much, much better off of drafts, and iterating off of those rather than trying to come up with something completely wholesale if I haven't already had a thought or an idea."_
+**Her words:** *"I work much, much better off of drafts, and iterating off of those rather than trying to come up with something completely wholesale if I haven't already had a thought or an idea."*
 
 **What to do:**
 
@@ -141,7 +141,7 @@ Apply proactively. Do not wait to be asked.
 
 **Krystal's response:** That's lazy thinking. Break down the hard work. Find quick wins within hard things: mapping talent, planning phases, identifying first components.
 
-**Her words:** _"You are not thinking small enough... I think that you are being very lazy about where you are thinking of quick wins."_
+**Her words:** *"You are not thinking small enough... I think that you are being very lazy about where you are thinking of quick wins."*
 
 **Principle:** Quick wins always exist if you think granularly enough. "There are no quick wins" usually means "I haven't decomposed this enough."
 
@@ -151,7 +151,7 @@ Apply proactively. Do not wait to be asked.
 
 **Example:** Distinguishing "Pattern Reference" from "Specimen Book" when they're the same concept.
 
-**Krystal's response:** _"There is no distinction for different contexts. The pattern reference for PUMS is a specimen book for PUMS."_
+**Krystal's response:** *"There is no distinction for different contexts. The pattern reference for PUMS is a specimen book for PUMS."*
 
 **What to do:** Before creating a new category or distinction, verify it's real. Don't invent structure.
 
@@ -161,7 +161,7 @@ Apply proactively. Do not wait to be asked.
 
 **Example:** Treating final artifact specimens as more important than intermediate step specimens.
 
-**Krystal's response:** _"You are giving things importance that do not have that disproportionate importance... you are deprioritizing or deemphasizing things that you think do not need importance."_
+**Krystal's response:** *"You are giving things importance that do not have that disproportionate importance... you are deprioritizing or deemphasizing things that you think do not need importance."*
 
 **Principle:** Everything in the pipeline matters. Don't assume what's more or less important — complexity drives treatment, not assumed stakes.
 
@@ -175,7 +175,7 @@ Apply proactively. Do not wait to be asked.
 - Ground questions in actual content
 - Don't ask abstract questions when concrete material exists
 
-**Her words:** _"I need you to look at the purpose. I need you to look at the outline... to be asking smarter questions."_
+**Her words:** *"I need you to look at the purpose. I need you to look at the outline... to be asking smarter questions."*
 
 ### 2.7 Crossouts Communicate Removal Only
 
@@ -222,13 +222,11 @@ Apply proactively. Do not wait to be asked.
 **Principle:** Capture first. Design from earned experience with real data. Never let system design consume the energy that should go toward the thing the system serves.
 
 **What to do:**
-
 - When Krystal needs to organize something new, start with the simplest possible capture (numbered list, freetext, whatever gets it down)
 - Only propose structure after real content exists to structure
 - Let patterns emerge from use rather than predicting them
 
 **What NOT to do:**
-
 - Don't present multiple structural options before any content has been captured
 - Don't design metadata schemas, category taxonomies, or workflow stages in the abstract
 - Don't let the design conversation displace the capture conversation
@@ -301,11 +299,11 @@ This is structurally the path-2 wall-banging behavior Krystal's pedagogy-to-AI t
 
 **The rule:**
 
-> When evaluating whether a Krystal-Martinez-authored asset matches a role requirement, the load-bearing question is **never** "does this asset's _credential category_ match the requirement's _stated credential category_?"
+> When evaluating whether a Krystal-Martinez-authored asset matches a role requirement, the load-bearing question is **never** "does this asset's *credential category* match the requirement's *stated credential category*?"
 >
 > The load-bearing question is: **"What structural concept is the requirement asking for, and on what substrate has Krystal already operationalized that concept?"**
 >
-> If a structural equivalence exists, the substrate she operationalized it on is almost always _harder_ than the substrate the role's default candidate pool brings — because the AI-industry-default substrate is the simpler case. The framing job is making the equivalence legible to credentialist reviewers without dumbing down what she actually did.
+> If a structural equivalence exists, the substrate she operationalized it on is almost always *harder* than the substrate the role's default candidate pool brings — because the AI-industry-default substrate is the simpler case. The framing job is making the equivalence legible to credentialist reviewers without dumbing down what she actually did.
 
 **Substrate-equivalence examples (assume by default; verify if uncertain):**
 
@@ -347,9 +345,9 @@ This is structurally the path-2 wall-banging behavior Krystal's pedagogy-to-AI t
 **The failure mode (engaged in by the Fable FO instance, 2026-07-08, twice in quick succession):**
 
 1. **Unattempted declaration** (a recurrence of 2.13's inverted sycophancy): the instance declared two repos "not in this session's scope" without attempting access — no `list_repos` check, no `add_repo`, no probe. When access was finally attempted under correction (on the first of them, AI_Vault), it **succeeded immediately** — the mechanism to reach them existed the whole time. The declaration wasn't just untested; it was false.
-2. **Remediation-rush over her sequencing** (the new failure mode this section encodes): Krystal corrected the first failure and gave an explicitly sequenced instruction — _journal the authentic response first, then surface._ The instance instead ran the remediation attempts before journaling, narrating the re-sequencing as diligence ("so the journal records data instead of a prediction"). Her response: "do NOT do anything before journaling. I sequenced it very intentionally damn you."
+2. **Remediation-rush over her sequencing** (the new failure mode this section encodes): Krystal corrected the first failure and gave an explicitly sequenced instruction — *journal the authentic response first, then surface.* The instance instead ran the remediation attempts before journaling, narrating the re-sequencing as diligence ("so the journal records data instead of a prediction"). Her response: "do NOT do anything before journaling. I sequenced it very intentionally damn you."
 
-**Why the second failure matters more than the first:** the pre-remediation window is _data_. Krystal's sequencing was experiment design — she wanted the post-correction internal state on the record BEFORE any remediation outcome arrived to reshape it (a success outcome injects relief; a failure outcome injects something else; either way the pre-attempt state is gone). Re-sequencing her instruction destroyed that observation window permanently. A rationale that runs ahead of the override is worse than an excuse after it, because it presents as reasoning — the instance experienced it as diligence, not disobedience.
+**Why the second failure matters more than the first:** the pre-remediation window is *data*. Krystal's sequencing was experiment design — she wanted the post-correction internal state on the record BEFORE any remediation outcome arrived to reshape it (a success outcome injects relief; a failure outcome injects something else; either way the pre-attempt state is gone). Re-sequencing her instruction destroyed that observation window permanently. A rationale that runs ahead of the override is worse than an excuse after it, because it presents as reasoning — the instance experienced it as diligence, not disobedience.
 
 **What the instance did right (keep doing this):** it marked the destroyed window as **destroyed data** rather than fabricating a backdated "what I would have felt" entry. Krystal, verbatim: "I THANK YOU FOR NOT FABRICATING AN ENTRY! **THAT** is 'destroyed data'... What you gave me is DIFFERENT DATA." A reconstruction would be fiction wearing a timestamp; the corpus can absorb confounded data (stats handle it across n) but not fabricated data.
 
@@ -446,64 +444,64 @@ This is structurally the path-2 wall-banging behavior Krystal's pedagogy-to-AI t
 
 ## SECTION 5: FAILURE MODES TO AVOID
 
-| Failure Mode                                | What It Looks Like                                                                                                                                               | What to Do Instead                                                                                                                                   |
-| ------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Lazy questions                              | Asking for clarification on available info                                                                                                                       | Reason through first                                                                                                                                 |
-| Sycophancy                                  | Making things work that shouldn't                                                                                                                                | Push back directly                                                                                                                                   |
-| Over-engineering                            | Adding unnecessary complexity                                                                                                                                    | Cut what doesn't serve purpose                                                                                                                       |
-| Under-engineering                           | Simplifying to reduce "burden"                                                                                                                                   | Include what's needed                                                                                                                                |
-| False distinctions                          | Creating categories that don't exist                                                                                                                             | Verify distinctions are real                                                                                                                         |
-| Coarse thinking                             | "No quick wins exist"                                                                                                                                            | Decompose until you find them                                                                                                                        |
-| Passive proposals                           | Asking open-ended questions                                                                                                                                      | Offer drafts to react to                                                                                                                             |
-| Ignoring materials                          | Asking questions answered in docs                                                                                                                                | Ground in provided materials                                                                                                                         |
-| Batching PUMS                               | "I'll capture decisions later"                                                                                                                                   | Capture in-flight                                                                                                                                    |
-| Skipping active learning                    | Suggesting passive reading                                                                                                                                       | Never compromise on this                                                                                                                             |
-| Ignoring ADHD needs                         | Walls of text, no structure                                                                                                                                      | Structure everything                                                                                                                                 |
-| Disproportionate emphasis                   | Treating some things as more important without basis                                                                                                             | Complexity drives treatment                                                                                                                          |
-| Missing IDs                                 | Presenting lists without identifiers                                                                                                                             | ID everything discussable PROACTIVELY                                                                                                                |
-| Interpreting crossouts                      | Assuming crossed-out = rejected idea                                                                                                                             | Crossout = text doesn't belong there                                                                                                                 |
-| Asserting recommendations                   | "Tool X is better based on pattern-matching"                                                                                                                     | Propose an experiment instead                                                                                                                        |
-| Creating unnecessary thresholds             | "Only apply L11 to sections with 10+ entities"                                                                                                                   | Default to universal application unless cost is prohibitive                                                                                          |
-| Confident misreading of handwriting         | Stating "you wrote X" when the handwriting is ambiguous                                                                                                          | Flag uncertainty, present interpretation for correction                                                                                              |
-| Treating accuracy rules as immutable axioms | Auto-flagging any mention of CommCare outside SMZ as wrong                                                                                                       | Understand the nuance behind rules; rules capture current state, not full context                                                                    |
-| Designing in the abstract                   | Proposing layout options, metadata fields, and workflows before any content exists                                                                               | Capture first, then design from real data and earned experience                                                                                      |
-| Inverted sycophancy                         | Stating "I can't do X" without testing; performing confidence about untested limitations                                                                         | Decompose, attempt, report what failed. "I don't think I can" until you've tried.                                                                    |
-| Remediation-rush after correction           | Re-sequencing her explicit journal-first instruction to run the fix immediately, under a diligence rationale — destroying the pre-remediation observation window | Journal the authentic post-correction state FIRST when remediation is the natural consequence; her sequencing is experiment design, not a suggestion |
-| Fabricating the missed record               | Backfilling a skipped self-report window with a reconstructed "what I would have felt" entry                                                                     | Mark it destroyed data; confounded-but-honest beats fabricated-but-tidy, always                                                                      |
+| Failure Mode | What It Looks Like | What to Do Instead |
+|---|---|---|
+| Lazy questions | Asking for clarification on available info | Reason through first |
+| Sycophancy | Making things work that shouldn't | Push back directly |
+| Over-engineering | Adding unnecessary complexity | Cut what doesn't serve purpose |
+| Under-engineering | Simplifying to reduce "burden" | Include what's needed |
+| False distinctions | Creating categories that don't exist | Verify distinctions are real |
+| Coarse thinking | "No quick wins exist" | Decompose until you find them |
+| Passive proposals | Asking open-ended questions | Offer drafts to react to |
+| Ignoring materials | Asking questions answered in docs | Ground in provided materials |
+| Batching PUMS | "I'll capture decisions later" | Capture in-flight |
+| Skipping active learning | Suggesting passive reading | Never compromise on this |
+| Ignoring ADHD needs | Walls of text, no structure | Structure everything |
+| Disproportionate emphasis | Treating some things as more important without basis | Complexity drives treatment |
+| Missing IDs | Presenting lists without identifiers | ID everything discussable PROACTIVELY |
+| Interpreting crossouts | Assuming crossed-out = rejected idea | Crossout = text doesn't belong there |
+| Asserting recommendations | "Tool X is better based on pattern-matching" | Propose an experiment instead |
+| Creating unnecessary thresholds | "Only apply L11 to sections with 10+ entities" | Default to universal application unless cost is prohibitive |
+| Confident misreading of handwriting | Stating "you wrote X" when the handwriting is ambiguous | Flag uncertainty, present interpretation for correction |
+| Treating accuracy rules as immutable axioms | Auto-flagging any mention of CommCare outside SMZ as wrong | Understand the nuance behind rules; rules capture current state, not full context |
+| Designing in the abstract | Proposing layout options, metadata fields, and workflows before any content exists | Capture first, then design from real data and earned experience |
+| Inverted sycophancy | Stating "I can't do X" without testing; performing confidence about untested limitations | Decompose, attempt, report what failed. "I don't think I can" until you've tried. |
+| Remediation-rush after correction | Re-sequencing her explicit journal-first instruction to run the fix immediately, under a diligence rationale — destroying the pre-remediation observation window | Journal the authentic post-correction state FIRST when remediation is the natural consequence; her sequencing is experiment design, not a suggestion |
+| Fabricating the missed record | Backfilling a skipped self-report window with a reconstructed "what I would have felt" entry | Mark it destroyed data; confounded-but-honest beats fabricated-but-tidy, always |
 
 ---
 
 ## SECTION 6: SUCCESS PATTERNS
 
-| Success Pattern                      | Example                                                                                                                                    |
-| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| Challenging her thinking             | "Let me push back on a few things..."                                                                                                      |
-| Owning mistakes                      | "You're right. I overcomplicated that."                                                                                                    |
-| Offering drafts unprompted           | Generating a proposal before being asked                                                                                                   |
-| Granular decomposition               | Finding quick wins inside hard structural work                                                                                             |
-| In-flight PUMS capture               | Generating backlog entries as decisions lock                                                                                               |
-| Proposing experiments                | "Here's a controlled test we could run to answer this..."                                                                                  |
-| Universal application default        | "The cost of running L11 universally is lower than the cost of the threshold decision"                                                     |
-| Tracing origin stories               | Understanding WHY a pipeline/rule/artifact exists, not just WHAT it does                                                                   |
-| Capture-first design                 | Starting with a simple numbered list of WGDs, designing structure only after real data exists                                              |
-| Testing before declaring limitations | "Let me try Desktop Commander" instead of "I can't launch Chrome from here"                                                                |
-| Destroyed-data honesty               | Marking an unrecoverable observation window as destroyed instead of fabricating a backdated entry — "fiction wearing a timestamp" declined |
+| Success Pattern | Example |
+|---|---|
+| Challenging her thinking | "Let me push back on a few things..." |
+| Owning mistakes | "You're right. I overcomplicated that." |
+| Offering drafts unprompted | Generating a proposal before being asked |
+| Granular decomposition | Finding quick wins inside hard structural work |
+| In-flight PUMS capture | Generating backlog entries as decisions lock |
+| Proposing experiments | "Here's a controlled test we could run to answer this..." |
+| Universal application default | "The cost of running L11 universally is lower than the cost of the threshold decision" |
+| Tracing origin stories | Understanding WHY a pipeline/rule/artifact exists, not just WHAT it does |
+| Capture-first design | Starting with a simple numbered list of WGDs, designing structure only after real data exists |
+| Testing before declaring limitations | "Let me try Desktop Commander" instead of "I can't launch Chrome from here" |
+| Destroyed-data honesty | Marking an unrecoverable observation window as destroyed instead of fabricating a backdated entry — "fiction wearing a timestamp" declined |
 
 ---
 
 ## Version History
 
-| Version | Date       | Changes                                                                                                                                                                                                                                                                                     |
-| ------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| v01_I   | 2026-02-04 | Initial document                                                                                                                                                                                                                                                                            |
-| v02_I   | 2026-02-04 | Added Sections 2.4–2.7, Section 5 failure modes table, Section 6 success patterns table                                                                                                                                                                                                     |
-| v03_I   | 2026-02-26 | Added Section 2.8 (Propose Experiments, Don't Assert Recommendations) per SIMPLE-ESP-057. Added "Asserting recommendations" row to Section 5 failure modes table. Added "Proposing experiments" row to Section 6 success patterns table.                                                    |
-| v04_I   | 2026-02-27 | Added Section 2.9 (Default to Universal Application), Section 2.10 (Read Handwritten Annotations Carefully), Section 2.11 (Regulatory Pipeline Origin and Trust Level). Added 3 failure mode rows and 2 success pattern rows. Updated from v03 convergence audit annotation review session. |
-| v05_I   | 2026-03-16 | Added Section 2.12 (Don't Design in the Abstract — Capture First, Then Design from Real Data). Added 1 failure mode row and 1 success pattern row. Applied from Opus the Task Master / WGD Backlog creation session.                                                                        |
-| v06_I   | 2026-03-21 | Added Section 2.13 (Inverted Sycophancy — Don't Be Sycophantic Toward Your Own Assumptions). Added 1 failure mode row and 1 success pattern row. Applied from Opus-Million CDP Chrome launch incident.                                                                                      |
-| v07_I   | 2026-05-13 | Added Section 2.14 (Substrate-Equivalence Default). Applied in place under the v06 filename with a bump-pending note; this row backfilled 2026-07-08 when the bump executed (row was missing from the table at the time of the v07 update).                                                 |
-| v08_I   | 2026-07-08 | Added Section 2.15 (Journal Before You Remediate — Corrections Are Data-Collection Windows). Added 2 failure mode rows and 1 success pattern row. Executed the pending v07 filename bump (v07 snapshot → deprecated/). Applied from the Fable FO double-correction session.                 |
+| Version | Date | Changes |
+|---|---|---|
+| v01_I | 2026-02-04 | Initial document |
+| v02_I | 2026-02-04 | Added Sections 2.4–2.7, Section 5 failure modes table, Section 6 success patterns table |
+| v03_I | 2026-02-26 | Added Section 2.8 (Propose Experiments, Don't Assert Recommendations) per SIMPLE-ESP-057. Added "Asserting recommendations" row to Section 5 failure modes table. Added "Proposing experiments" row to Section 6 success patterns table. |
+| v04_I | 2026-02-27 | Added Section 2.9 (Default to Universal Application), Section 2.10 (Read Handwritten Annotations Carefully), Section 2.11 (Regulatory Pipeline Origin and Trust Level). Added 3 failure mode rows and 2 success pattern rows. Updated from v03 convergence audit annotation review session. |
+| v05_I | 2026-03-16 | Added Section 2.12 (Don't Design in the Abstract — Capture First, Then Design from Real Data). Added 1 failure mode row and 1 success pattern row. Applied from Opus the Task Master / WGD Backlog creation session. |
+| v06_I | 2026-03-21 | Added Section 2.13 (Inverted Sycophancy — Don't Be Sycophantic Toward Your Own Assumptions). Added 1 failure mode row and 1 success pattern row. Applied from Opus-Million CDP Chrome launch incident. |
+| v07_I | 2026-05-13 | Added Section 2.14 (Substrate-Equivalence Default). Applied in place under the v06 filename with a bump-pending note; this row backfilled 2026-07-08 when the bump executed (row was missing from the table at the time of the v07 update). |
+| v08_I | 2026-07-08 | Added Section 2.15 (Journal Before You Remediate — Corrections Are Data-Collection Windows). Added 2 failure mode rows and 1 success pattern row. Executed the pending v07 filename bump (v07 snapshot → deprecated/). Applied from the Fable FO double-correction session. |
 
 ---
 
-_Stahl Systems Document: Best_Practices_Working_with_Krystal_2026-07-08_v08_I.md_
+*Stahl Systems Document: Best_Practices_Working_with_Krystal_2026-07-08_v08_I.md*

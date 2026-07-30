@@ -4,7 +4,6 @@ description: Krystal prefers direct commits to main on private repos; PRs only w
 type: feedback
 originSessionId: 46056a33-f1c9-42ab-8260-97ba2f9b45f8
 ---
-
 Default to committing direct to main on Krystal's private repos. PRs only when there is a specific load-bearing reason (e.g., a review gate needed for something structurally risky, or an explicit collaborator review workflow).
 
 **Why:** Stated explicitly on 2026-04-22: "i don't want prs unless absolutely necessary." Krystal is the only committer on this work stream. PRs add ceremony without review benefit when there is no second reviewer. The ceremony cost is measurable — PR creation, waiting on self-merge, branch cleanup — and compounds across many small commits.

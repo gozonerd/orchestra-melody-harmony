@@ -136,7 +136,6 @@ If a class shows median calibrated_ratio consistently far from 1.0 (>1.3 or <0.7
 The proper fix is exponentially-weighted moving average — weight recent entries more heavily than old entries. The weight half-life would need to be tuned (proposed starting point: 30 days). This adds complexity that is not justified at n=47 with a 4-day data span. **Deferred to v03 when the corpus is larger and the time span is longer.**
 
 When v03 is authored, the algorithm section above will need:
-
 - A configurable half-life parameter
 - Weighted median computation (median of weighted values, not just median of values)
 - A diagnostic that compares EWMA-median to flat median to surface non-stationarity when it operates

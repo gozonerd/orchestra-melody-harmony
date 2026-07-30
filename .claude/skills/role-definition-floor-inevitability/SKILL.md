@@ -145,7 +145,6 @@ Co-Authored-By: <First> the Floor Inevitability vNN (Claude Opus 4.7, 1M context
 ```
 
 Where:
-
 - `<First>` is Claudette or Clauda per the matched trigger / persona derivation
 - `vNN` is the thread continuation version computed at invocation
 
@@ -163,7 +162,6 @@ The canonical role-definition artifact is dated when authored. As the role evolv
 Thread continuation versions (v02, v03, v04, ...) are independent of canonical artifact versions. A v05 thread may inherit the v01_I canonical artifact unchanged.
 
 When the canonical artifact is superseded:
-
 1. Author the new artifact with bumped version (v02_I, etc.)
 2. Move prior to `_grand_repo/docs/deprecated/`
 3. Update this skill's "Current canonical" path

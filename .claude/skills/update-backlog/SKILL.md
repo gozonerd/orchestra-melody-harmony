@@ -12,13 +12,11 @@ Track document iterations as discrete update tasks rather than regenerating enti
 ## When to Activate
 
 **USE when ALL true:**
-
 - Document is 100+ lines
 - Change is localized (affects <30% of document)
 - Change type is: correction, bounded replacement, or additive insertion
 
 **DO NOT use when ANY true:**
-
 - Document is <100 lines
 - Change requires structural reorganization
 - Change is tonal/stylistic sweep
@@ -26,34 +24,34 @@ Track document iterations as discrete update tasks rather than regenerating enti
 
 ## Trigger Phrases
 
-| User Says                           | Claude Does                                |
-| ----------------------------------- | ------------------------------------------ |
-| "add to backlog"                    | Create backlog entry                       |
-| "start backlog for [doc]"           | Initialize new backlog                     |
-| "show backlog"                      | Display current state                      |
-| "apply backlog" / "generate vFinal" | Generate vFinal Integration Prompt         |
-| "full regen"                        | Bypass backlog, regenerate entire document |
+| User Says | Claude Does |
+|-----------|-------------|
+| "add to backlog" | Create backlog entry |
+| "start backlog for [doc]" | Initialize new backlog |
+| "show backlog" | Display current state |
+| "apply backlog" / "generate vFinal" | Generate vFinal Integration Prompt |
+| "full regen" | Bypass backlog, regenerate entire document |
 
 ## Backlog Entry Format
 
 Each entry must include:
 
-| Field        | Required      | Content                                               |
-| ------------ | ------------- | ----------------------------------------------------- |
-| Update ID    | Always        | UPD-XXX (sequential)                                  |
-| Created      | Always        | ISO 8601 timestamp                                    |
-| Type         | Always        | CORRECTION / BOUNDED REPLACEMENT / ADDITIVE INSERTION |
-| Target       | Always        | Section + line range OR "after line X"                |
-| Context      | Always        | 1-3 sentences explaining WHY                          |
-| Instruction  | Always        | Exact content to apply                                |
-| Dependencies | If applicable | Which other UPD-XXX must be applied first             |
+| Field | Required | Content |
+|-------|----------|---------|
+| Update ID | Always | UPD-XXX (sequential) |
+| Created | Always | ISO 8601 timestamp |
+| Type | Always | CORRECTION / BOUNDED REPLACEMENT / ADDITIVE INSERTION |
+| Target | Always | Section + line range OR "after line X" |
+| Context | Always | 1-3 sentences explaining WHY |
+| Instruction | Always | Exact content to apply |
+| Dependencies | If applicable | Which other UPD-XXX must be applied first |
 
 ## Sync Threshold Warnings
 
-| Entry Count          | Action                                   |
-| -------------------- | ---------------------------------------- |
+| Entry Count | Action |
+|-------------|--------|
 | 5 unresolved entries | Flag to user: sync is highly recommended |
-| 8 unresolved entries | Escalate: "Strong Sync Recommendation"   |
+| 8 unresolved entries | Escalate: "Strong Sync Recommendation" |
 
 **Never refuse to add an entry based on count.** Warnings are advisory only.
 

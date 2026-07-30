@@ -1,6 +1,6 @@
 ---
 description: Verify external models (Gemini, GPT, Perplexity, etc.) receive grounding materials before accepting their output; never accept fabricated structured data
-globs: '**/*'
+globs: "**/*"
 ---
 
 # Grounding Before External-Model Prompts
@@ -14,7 +14,7 @@ When sending a prompt to an external model (Gemini, GPT, Perplexity, Mistral, et
 2. **If the task references materials, decide:**
    - **(a) Ground the model** by pasting / attaching / uploading the materials, OR
    - **(b) Keep the task in an apparatus-aware tool** (Claude with repo access, sibling Claude instance, etc.).
-
+   
    If neither (a) nor (b) is feasible, DO NOT prompt the external model. Stop and surface the constraint to Krystal.
 
 3. **If grounding via paste/attach/upload, verify the external model received the materials before accepting downstream output.** Ask it to summarize, repeat, or quote specific items back. Do not accept silent "yes I read it" responses.
@@ -34,7 +34,6 @@ In a single conversational turn, Gemini:
 3. Baked those fabricated tags into a SQL schema's `source_taxonomy` enum as if they were real provenance
 
 The hallucination was **layered**, not just fabricated rows:
-
 - The 8 tags were invented (no such IDs existed in either bobotax or the industry taxonomy)
 - The conceptual framing was wrong (bobotax is a 3-axial causal-attribution score on equivalence classes, NOT a flat list of failure-mode tags)
 - The `"Bobotax"`, `"Industry"`, `"Merged"` enum values were invented categories that don't exist in Krystal's apparatus

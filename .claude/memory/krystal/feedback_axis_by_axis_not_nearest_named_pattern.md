@@ -4,7 +4,6 @@ description: Default research failure mode: agent sees a Martinez Methods compon
 type: feedback
 originSessionId: 46056a33-f1c9-42ab-8260-97ba2f9b45f8
 ---
-
 When researching competitive positioning or novelty of Martinez Methods components (ASAE, D2R, CDCC, Claude Cost, Claude Clarified Chat, etc.), default to **axis-by-axis comparison** — enumerate each constituent aspect of the Martinez Methods component and check each aspect independently against published work. DO NOT default to nearest-named-pattern shorthand.
 
 Nearest-named-pattern shorthand is the failure mode where the researcher (agent, Claudette, or any synthesis layer) sees a Martinez Methods component with N structural properties, identifies the single nearest published pattern that shares SOME subset of those N properties, and reports the component as "productized [nearest-pattern]." This collapses the novelty of the combinatorial structure (all N together) into the novelty of packaging alone (N-1 or fewer shared; ignores the rest).
@@ -12,7 +11,6 @@ Nearest-named-pattern shorthand is the failure mode where the researcher (agent,
 **Why:** On 2026-04-24 a market research agent evaluating ASAE's competitive position reported "ASAE = productized Self-Refine; pattern is known, product is rare." Krystal pushed back: ASAE combines seven critical aspects (external-spec-as-source-of-truth + deterministic severity-classified termination + stable-state N-consecutive-zero-error convergence + domain-agnostic packaging with domain-specific adapters + self-remediation iterate-fix-reaudit + permanent documented audit artifacts + meta-ASAE auditor-audits-itself). Axis-by-axis check revealed Self-Refine shares only ONE of those seven (self-remediation). The other six absent. ASAE is meaningfully distinct, not productized Self-Refine. The flattening ("productized [nearest-pattern]") under-characterized novelty by a factor of ~6 — if that characterization had leaked into a pitch, PRD, or paper, it would have undersold Martinez Methods' commercial story materially.
 
 This is a general research-discipline failure, not specific to ASAE. Same risk applies to every component:
-
 - D2R vs. Spec Kit / Kiro / Plan-before-code: not "productized planning"; check per-stage model assignments, four-document structure, severity-classified audit gates, factorial-experiment pedigree individually
 - CDCC vs. Claude Code hooks generally: not "another hook plugin"; check non-bypassable workflow-discipline vs. security-governance vs. compliance framing individually
 - Claude Cost vs. token calculators: not "another calculator"; check pipeline-estimation vs. single-prompt, plan-driven vs. ad hoc, reproducibility-package vs. none individually
@@ -41,7 +39,6 @@ This is a general research-discipline failure, not specific to ASAE. Same risk a
 - Don't trust any research-agent output that uses "productized [pattern]" or "parallel to [published work]" without axis-by-axis backing.
 
 **Related:**
-
 - `feedback_false_balance.md` — cousin rule: manufactured completeness is corrupted output. Nearest-named-pattern shorthand is a specific case of "manufactured completeness" — the synthesis layer manufactures an apparent competitive context by mapping to a known pattern, losing the combinatorial novelty.
 - `feedback_no_silent_execution.md` — research runs must produce axis-by-axis reasoning, not just conclusions.
 - `project_asae_origin.md` — ASAE is not productized Self-Refine; see the origin story for what it actually is.

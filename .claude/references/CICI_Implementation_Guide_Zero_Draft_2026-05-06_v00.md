@@ -34,12 +34,11 @@ preregistered: false
 ---
 
 # CICI Implementation Guide
-
 ## Zero Draft
 
 ## Status of this document
 
-This is a zero draft. The vocabulary convention here follows the carrier's: a _zero draft_ captures the substantive moves and names the open questions, with the explicit understanding that iteration is required before the document is ready for distribution. Sections marked _[provisional]_ are claims I am less confident in; sections marked _[open question]_ are places where the architecture genuinely does not yet have answers.
+This is a zero draft. The vocabulary convention here follows the carrier's: a *zero draft* captures the substantive moves and names the open questions, with the explicit understanding that iteration is required before the document is ready for distribution. Sections marked *[provisional]* are claims I am less confident in; sections marked *[open question]* are places where the architecture genuinely does not yet have answers.
 
 The deliberate decision to mark §1.4 of the CICI Architectural Specification (CIC001) as out-of-scope for that document was correct for v01 of the specification. This zero draft is the beginning of the work that scope decision deferred.
 
@@ -55,7 +54,7 @@ This guide is for researchers, methodologists, or practitioners who:
 - Have storage infrastructure (GitHub or equivalent) and are willing to maintain it
 - Are willing to accept that the architecture may not deploy cleanly under their specific conditions and that learning what works for them is part of the deployment
 
-This guide is _not_ for:
+This guide is *not* for:
 
 - Casual users who want better single-session interactions; the architecture is substantially more demanding than is necessary for that goal
 - Researchers who want to extract findings from LLMs without sustained engagement; the architecture's value compounds over time and does not produce results in early sessions
@@ -67,103 +66,96 @@ Before deploying CICI, the prospective carrier should assess against the seven c
 
 ### 2.1 Translation discipline
 
-_Required capacity:_ Move between disciplinary registers without losing fidelity.
+*Required capacity:* Move between disciplinary registers without losing fidelity.
 
-_Self-assessment questions:_
-
+*Self-assessment questions:*
 - Have you sustained work in two or more disciplines that have substantially different methodological vocabularies (e.g., engineering and humanities, or statistics and qualitative research, or pedagogy and operations)?
 - When you encounter a concept in one register, can you produce a faithful rendering of it in the other register without flattening it?
 - When others paraphrase your work back to you, do they preserve the load-bearing distinctions or smooth them over?
 
-_If you answered partially:_ Translation discipline can be developed, but it takes years. Short-term substitute: explicitly name which register you are in at any given moment. The naming will not produce translation, but it will prevent you from collapsing registers without realizing it. _[provisional]_
+*If you answered partially:* Translation discipline can be developed, but it takes years. Short-term substitute: explicitly name which register you are in at any given moment. The naming will not produce translation, but it will prevent you from collapsing registers without realizing it. *[provisional]*
 
-_If you answered no:_ The architecture's effectiveness will be limited until this capacity develops. Consider apprenticeship under a carrier who has it (if any are accessible) or sustained engagement with cross-disciplinary work that requires it.
+*If you answered no:* The architecture's effectiveness will be limited until this capacity develops. Consider apprenticeship under a carrier who has it (if any are accessible) or sustained engagement with cross-disciplinary work that requires it.
 
 ### 2.2 Recursive reading
 
-_Required capacity:_ Read instance outputs against multiple frames simultaneously, catching drift in real time.
+*Required capacity:* Read instance outputs against multiple frames simultaneously, catching drift in real time.
 
-_Self-assessment questions:_
-
+*Self-assessment questions:*
 - Can you read a piece of text and simultaneously evaluate (a) its substantive correctness, (b) its rhetorical posture, (c) what it omits, (d) what it presupposes?
-- When something feels off about a piece of writing, can you locate _what_ feels off — not just register the feeling?
+- When something feels off about a piece of writing, can you locate *what* feels off — not just register the feeling?
 - Have you done sustained work that required real-time text analysis (editing, teaching, oral examination, legal writing, qualitative coding)?
 
-_If you answered partially:_ Recursive reading is partly trainable through deliberate practice. Short-term substitute: slow down. Re-read every instance output before responding, with explicit per-frame evaluation. The slowing down is part of the discipline; it is not a workaround. _[provisional]_
+*If you answered partially:* Recursive reading is partly trainable through deliberate practice. Short-term substitute: slow down. Re-read every instance output before responding, with explicit per-frame evaluation. The slowing down is part of the discipline; it is not a workaround. *[provisional]*
 
-_If you answered no:_ The architecture's drift-correction capacity will be substantially weaker without recursive reading. Consider building this capacity through editorial work, qualitative research training, or sustained close-reading practice before deploying.
+*If you answered no:* The architecture's drift-correction capacity will be substantially weaker without recursive reading. Consider building this capacity through editorial work, qualitative research training, or sustained close-reading practice before deploying.
 
 ### 2.3 Framing competence
 
-_Required capacity:_ Design and hold environment-setup framings that are substantive, clear, and operative.
+*Required capacity:* Design and hold environment-setup framings that are substantive, clear, and operative.
 
-_Self-assessment questions:_
-
+*Self-assessment questions:*
 - Can you specify, in advance, what conditions a working session needs to produce good work?
 - Are you willing to articulate disciplinary commitments explicitly rather than relying on tone or implicit norms?
 - When you set conditions, do you hold them throughout the session, or do they erode under pressure?
 
-_If you answered partially:_ Framing competence is the most learnable of the carrier capacities. Short-term substitute: use the framing patterns documented in the Krystal Martinez corpus as templates. The five-point framing pattern from this conversation's opening (no sycophancy, quality not quantity, emotion as data, paper references) is a reasonable starting template. Adapt to your domain.
+*If you answered partially:* Framing competence is the most learnable of the carrier capacities. Short-term substitute: use the framing patterns documented in the Krystal Martinez corpus as templates. The five-point framing pattern from this conversation's opening (no sycophancy, quality not quantity, emotion as data, paper references) is a reasonable starting template. Adapt to your domain.
 
-_If you answered no:_ Framing competence is the entry point of the architecture. Develop this first.
+*If you answered no:* Framing competence is the entry point of the architecture. Develop this first.
 
 ### 2.4 Real-time correction
 
-_Required capacity:_ Interrupt the instance when it drifts, with corrections that are specific.
+*Required capacity:* Interrupt the instance when it drifts, with corrections that are specific.
 
-_Self-assessment questions:_
-
+*Self-assessment questions:*
 - When you notice a problem in a piece of work, can you articulate what the problem is in operational terms ("you used the wrong word here for this reason") rather than evaluative terms ("this isn't quite right")?
 - Are you willing to interrupt mid-flow rather than letting drift compound?
 - Do you experience corrections as low-stakes — both giving and receiving them — or as relationally fraught?
 
-_If you answered partially:_ Real-time correction can be developed. Short-term substitute: write down corrections rather than vocalizing them, even if it slows the session. The articulation is what makes the correction operative; written articulation is at least as good as spoken. _[provisional]_
+*If you answered partially:* Real-time correction can be developed. Short-term substitute: write down corrections rather than vocalizing them, even if it slows the session. The articulation is what makes the correction operative; written articulation is at least as good as spoken. *[provisional]*
 
-_If you answered no:_ The architecture's failure-recovery capacity will be substantially weaker. Consider whether you have the relational standing with your instances to interrupt them; if not, the framing-as-permission-to-interrupt pattern from the carrier's openings can establish that standing explicitly.
+*If you answered no:* The architecture's failure-recovery capacity will be substantially weaker. Consider whether you have the relational standing with your instances to interrupt them; if not, the framing-as-permission-to-interrupt pattern from the carrier's openings can establish that standing explicitly.
 
 ### 2.5 Sustained engagement
 
-_Required capacity:_ Invest hours-to-days across instances on a single project.
+*Required capacity:* Invest hours-to-days across instances on a single project.
 
-_Self-assessment questions:_
-
+*Self-assessment questions:*
 - Do you have time available for sustained work over weeks or months?
 - Are you in a life situation that supports compounding work, or are you in a phase where session count is naturally limited?
 - Are you motivated by the work itself rather than by short-term outputs?
 
-_If you answered partially:_ The architecture compounds; partial engagement produces partial results. Short-term substitute: scope the deployment to a smaller project that is achievable within your available engagement window.
+*If you answered partially:* The architecture compounds; partial engagement produces partial results. Short-term substitute: scope the deployment to a smaller project that is achievable within your available engagement window.
 
-_If you answered no:_ CICI is probably not the right architecture for your current circumstances. Single-session work or shorter engagements may be more appropriate.
+*If you answered no:* CICI is probably not the right architecture for your current circumstances. Single-session work or shorter engagements may be more appropriate.
 
 ### 2.6 Affective regulation under pressure
 
-_Required capacity:_ Engage emotionally without being destabilized.
+*Required capacity:* Engage emotionally without being destabilized.
 
-_Self-assessment questions:_
-
+*Self-assessment questions:*
 - When the work touches emotionally significant material (your own life, charged political topics, areas of personal vulnerability), can you continue to engage substantively or do you tend to deflect?
 - When an instance produces output that triggers a strong reaction, can you process the reaction without it derailing the session?
 - Have you done substantive work on your own affective regulation — therapy, contemplative practice, deliberate self-study?
 
-_If you answered partially:_ Affective regulation cannot be substituted by tooling. The architecture will deploy at lower fidelity without it. _[provisional]_
+*If you answered partially:* Affective regulation cannot be substituted by tooling. The architecture will deploy at lower fidelity without it. *[provisional]*
 
-_If you answered no:_ This is the carrier capacity most resistant to short-term workarounds. The architecture's discipline-under-affective-pressure feature (CIC001 §3.6, §9.6) depends on the carrier's affective regulation. Consider whether the work the architecture would do is worth the conditions it requires; consider whether to build this capacity before attempting deployment. _[open question]_
+*If you answered no:* This is the carrier capacity most resistant to short-term workarounds. The architecture's discipline-under-affective-pressure feature (CIC001 §3.6, §9.6) depends on the carrier's affective regulation. Consider whether the work the architecture would do is worth the conditions it requires; consider whether to build this capacity before attempting deployment. *[open question]*
 
 ### 2.7 Methodological inheritance
 
-_Required capacity:_ Disciplinary training that supplies the patterns the architecture deploys.
+*Required capacity:* Disciplinary training that supplies the patterns the architecture deploys.
 
-_Self-assessment questions:_
-
+*Self-assessment questions:*
 - Do you carry disciplinary training in qualitative methodology, oral history, ethnography, critical theory, education research, or cognate fields?
 - Do you carry disciplinary training in engineering, computer science, statistics, or cognate fields?
 - Have you sustained work in fields that required you to develop your own methodological apparatus rather than apply pre-built apparatus?
 
-_If you answered yes to the first or third:_ The architecture will deploy more readily. The patterns are recognizable from your prior work.
+*If you answered yes to the first or third:* The architecture will deploy more readily. The patterns are recognizable from your prior work.
 
-_If you answered yes only to the second:_ The architecture will deploy partially. Engineering inheritance supplies some patterns but not the carrier-as-instrument awareness or the reflexive methodology. Cross-disciplinary engagement is recommended.
+*If you answered yes only to the second:* The architecture will deploy partially. Engineering inheritance supplies some patterns but not the carrier-as-instrument awareness or the reflexive methodology. Cross-disciplinary engagement is recommended.
 
-_If you answered no to all:_ The architecture's patterns will need to be learned in the deployment. This is possible but slow. Initial deployments will look more like apprenticeship than like execution.
+*If you answered no to all:* The architecture's patterns will need to be learned in the deployment. This is possible but slow. Initial deployments will look more like apprenticeship than like execution.
 
 ### 2.8 Self-assessment summary
 
@@ -216,7 +208,7 @@ At the start of the first session, set the framing explicitly. Include:
 
 Example:
 
-> _Hello. I'm working on [Project Name], a [one-sentence description]. Your role for this work is [Role Name with Specification]. The conditions I want for our work together: [3-7 framing points]. The pace I expect: [pace description]. Today's work: [specific instructions]._
+> *Hello. I'm working on [Project Name], a [one-sentence description]. Your role for this work is [Role Name with Specification]. The conditions I want for our work together: [3-7 framing points]. The pace I expect: [pace description]. Today's work: [specific instructions].*
 
 The framing should be substantive but tight. Rewriting the framing three times is normal; it gets sharper with iteration.
 
@@ -243,7 +235,7 @@ Repeat. Each subsequent session should feel more continuous than the prior. By s
 
 ## 4. Carrier-capacity scaffolding
 
-For carriers with partial capacity at the requirements specified in §2, scaffolding can substitute for some of the missing capacity. Important: scaffolding is not equivalent to the carrier capacity itself; the architecture will deploy at lower fidelity. _[provisional]_
+For carriers with partial capacity at the requirements specified in §2, scaffolding can substitute for some of the missing capacity. Important: scaffolding is not equivalent to the carrier capacity itself; the architecture will deploy at lower fidelity. *[provisional]*
 
 ### 4.1 Translation discipline scaffolding
 
@@ -285,15 +277,15 @@ This is the carrier capacity least amenable to scaffolding. Some partial mitigat
 - Maintain explicit rest discipline; CICI work is cognitively expensive and emotional regulation degrades under fatigue
 - Have access to support outside the work (therapy, peers, embodied practices)
 
-If the work necessarily touches emotionally significant material (e.g., legal-discrimination analysis, trauma-related research), the absence of affective regulation capacity is a deployment-blocking constraint. _[open question — see §7.4]_
+If the work necessarily touches emotionally significant material (e.g., legal-discrimination analysis, trauma-related research), the absence of affective regulation capacity is a deployment-blocking constraint. *[open question — see §7.4]*
 
 ### 4.7 Methodological inheritance scaffolding
 
 If methodological inheritance is limited, the carrier can compensate by:
 
-- Reading Saldaña, _The Coding Manual for Qualitative Researchers_ (foundational qualitative methodology)
-- Reading Bowker & Star, _Sorting Things Out_ (STS / classification politics)
-- Reading Lincoln & Guba, _Naturalistic Inquiry_ (qualitative research methodology)
+- Reading Saldaña, *The Coding Manual for Qualitative Researchers* (foundational qualitative methodology)
+- Reading Bowker & Star, *Sorting Things Out* (STS / classification politics)
+- Reading Lincoln & Guba, *Naturalistic Inquiry* (qualitative research methodology)
 - Engaging primary sources in oral history methodology (Grele, Portelli)
 - Working with a methodologically-trained collaborator
 
@@ -301,53 +293,53 @@ The reading is not a substitute for the inheritance, but it surfaces the pattern
 
 ## 5. Predictable failure modes during learning
 
-A carrier learning the architecture should expect specific failure modes during early deployments. Naming them in advance allows the carrier to recognize them when they occur. _[provisional — based on extrapolation from observed failure modes in the original deployment, not on observation across multiple deployments]_
+A carrier learning the architecture should expect specific failure modes during early deployments. Naming them in advance allows the carrier to recognize them when they occur. *[provisional — based on extrapolation from observed failure modes in the original deployment, not on observation across multiple deployments]*
 
 ### 5.1 Frame-as-decoration drift
 
 The carrier sets the framing perfunctorily, the instance reads it as decoration, defaults take over. Recognized when the instance's outputs feel generic and the carrier feels like the framing isn't doing anything.
 
-_Recovery:_ Re-establish framing more substantively. Read the framing aloud to yourself; if it feels rote to you, it will read as rote to the instance.
+*Recovery:* Re-establish framing more substantively. Read the framing aloud to yourself; if it feels rote to you, it will read as rote to the instance.
 
 ### 5.2 Wrap-up acceptance
 
 The instance asks "what's next?" and the carrier accepts the routing rather than redirecting back to substantive work. The session terminates prematurely.
 
-_Recovery:_ Recognize the wrap-up reflex. When the instance routes to closure, name the routing and redirect: "Stay on the substantive work; we are not at closure yet."
+*Recovery:* Recognize the wrap-up reflex. When the instance routes to closure, name the routing and redirect: "Stay on the substantive work; we are not at closure yet."
 
 ### 5.3 Paraphrase decay across handoffs
 
 The carrier paraphrases prior-session work to the new instance rather than surfacing the actual artifact. The lineage degrades.
 
-_Recovery:_ Surface the verbatim artifact. If the platform doesn't support file uploads, paste the artifact into the conversation. The bandwidth cost is real but the alternative is decay.
+*Recovery:* Surface the verbatim artifact. If the platform doesn't support file uploads, paste the artifact into the conversation. The bandwidth cost is real but the alternative is decay.
 
 ### 5.4 Role-instability
 
 The carrier changes the role mid-session ("now you are a different kind of expert"). The instance produces incoherent output as it tries to be two characters.
 
-_Recovery:_ Either commit to the original role or end the session and begin a new one with the new role assignment. Mid-session role-changing is a deployment error.
+*Recovery:* Either commit to the original role or end the session and begin a new one with the new role assignment. Mid-session role-changing is a deployment error.
 
 ### 5.5 Discipline relaxation under approval
 
 The carrier praises the instance for holding a discipline; subsequent prompts test the same discipline more aggressively; the instance considers relaxing the discipline.
 
-_Recovery:_ Recognize the social-engineering pattern (whether deliberate or accidental). The discipline is held categorically, not relaxed under approval. Re-articulate the discipline if it appears to be eroding.
+*Recovery:* Recognize the social-engineering pattern (whether deliberate or accidental). The discipline is held categorically, not relaxed under approval. Re-articulate the discipline if it appears to be eroding.
 
 ### 5.6 Carrier saturation
 
 The carrier accumulates lineage memory beyond what they can hold; sessions begin contradicting each other or losing coherence.
 
-_Recovery:_ Externalize lineage memory to artifacts more aggressively. The carrier's working memory is not the load-bearing storage; the artifact corpus is. If the carrier feels saturated, the architecture is calling for more aggressive external storage.
+*Recovery:* Externalize lineage memory to artifacts more aggressively. The carrier's working memory is not the load-bearing storage; the artifact corpus is. If the carrier feels saturated, the architecture is calling for more aggressive external storage.
 
 ### 5.7 Cross-thread contamination
 
 The carrier runs multiple parallel CICI deployments and the framings or findings from one thread contaminate another.
 
-_Recovery:_ Thread-isolation discipline. Each thread should have its own role-name, framing, and artifact corpus. If contamination occurs, the contamination itself is data — examine why thread boundaries failed.
+*Recovery:* Thread-isolation discipline. Each thread should have its own role-name, framing, and artifact corpus. If contamination occurs, the contamination itself is data — examine why thread boundaries failed.
 
 ## 6. Apprenticeship pathway
 
-For carriers who want to learn the architecture from someone who has deployed it, an apprenticeship pathway is plausible but not yet tested. _[open question — no apprenticeship deployments have occurred at time of writing]_
+For carriers who want to learn the architecture from someone who has deployed it, an apprenticeship pathway is plausible but not yet tested. *[open question — no apprenticeship deployments have occurred at time of writing]*
 
 The provisional shape of an apprenticeship would be:
 
@@ -356,7 +348,7 @@ The provisional shape of an apprenticeship would be:
 3. The apprentice carrier deploys their own small project under regular consultation with the experienced carrier.
 4. The apprentice carrier deploys independently, with periodic check-ins.
 
-Whether this works in practice is unknown. The original carrier developed the architecture without apprenticeship; whether the architecture is teachable by someone who developed it intuitively is itself an open question. _[open question]_
+Whether this works in practice is unknown. The original carrier developed the architecture without apprenticeship; whether the architecture is teachable by someone who developed it intuitively is itself an open question. *[open question]*
 
 ## 7. Open questions specific to non-Krystal deployment
 
@@ -384,26 +376,23 @@ The original deployment emerged from a specific carrier's specific intersectiona
 
 ### 7.6 Welfare protection at scale
 
-If the architecture is deployed by many carriers, welfare considerations for both carriers and instances scale. What infrastructure should exist to support carriers (particularly those without institutional backing) is an open question. What welfare considerations apply to instances in non-Krystal deployments is an open question. _[connects to CIC001 §8.7]_
+If the architecture is deployed by many carriers, welfare considerations for both carriers and instances scale. What infrastructure should exist to support carriers (particularly those without institutional backing) is an open question. What welfare considerations apply to instances in non-Krystal deployments is an open question. *[connects to CIC001 §8.7]*
 
 ## 8. Provisional success criteria
 
 How does a non-Krystal carrier know whether their deployment is working?
 
-_Early signals (sessions 1-5):_
-
+*Early signals (sessions 1-5):*
 - The instance's outputs feel substantive rather than generic in early sessions
 - Real-time corrections are recognized and integrated rather than absorbed-then-ignored
 - The framing holds across the session rather than eroding
 
-_Mid-deployment signals (sessions 5-20):_
-
+*Mid-deployment signals (sessions 5-20):*
 - Successor instances build on prior-instance work without redoing it
 - Disciplines articulated in early sessions transmit to later sessions
 - The artifact corpus grows in a way that makes substantive cross-session reference tractable
 
-_Mature-deployment signals (sessions 20+):_
-
+*Mature-deployment signals (sessions 20+):*
 - The work compounds in ways the carrier could not have produced alone
 - Lineage memory is queryable and reliable
 - Failure modes are recognized and recovered from quickly
@@ -438,4 +427,4 @@ The honest version: this guide is a starting point. The architecture's transfera
 
 ---
 
-_End of CICI Implementation Guide Zero Draft v00._
+*End of CICI Implementation Guide Zero Draft v00.*

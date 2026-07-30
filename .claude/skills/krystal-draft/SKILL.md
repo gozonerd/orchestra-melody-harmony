@@ -14,7 +14,7 @@ classification: enforcement-class (hard-codes Krystal's editorial-collaboration 
 Materialize the locked editorial-collaboration protocol as a paired artifact set, so provenance is **structural, not remembered**:
 
 - **KR — Krystal Draft:** the argument, in Krystal's own verbatim words, selected and ordered but never word-level edited. This is the origination watermark: unfakeable because unedited (typos are proof, not noise).
-- **CC — Claude Companion:** the full editorial stream Krystal did not explicitly respond to in the speed of chat — kept _out_ of KR so nothing is ever falsely attributed as her silent agreement, and kept _here_ so no editorial value is lost.
+- **CC — Claude Companion:** the full editorial stream Krystal did not explicitly respond to in the speed of chat — kept *out* of KR so nothing is ever falsely attributed as her silent agreement, and kept *here* so no editorial value is lost.
 
 The split exists because Krystal's ideas are genuine Claude↔Krystal collaborations conducted as discussion: Claude's claims are the dialogic surface against which her methodological claims get substantiated (via research Claude conducts on her behalf) and against which she sharpens articulation — often by the 2nd/3rd conversation about an idea. She frequently takes a point into account silently (it was already her plan, or it needs no further discussion) and does not acknowledge it in-chat. KR must therefore assume **zero** silent agreement; CC captures everything worth her considering that she did not verbatim engage.
 
@@ -24,7 +24,7 @@ The split exists because Krystal's ideas are genuine Claude↔Krystal collaborat
 
 Any word in KR that is not Krystal's verbatim typing does not belong in KR. No smoothing, no connective tissue, no silent typo fixes, no `[sic]`. The moment KR is word-level edited, the watermark breaks and the artifact's entire provenance claim collapses. Connective/clarifying text lives in the bullet layer or in CC — never in the verbatim spine.
 
-**Public-pairing corollary (load-bearing).** KR and CC are a provenance _pair_. If either is ever presented publicly, both are presented together. Presenting KR alone implies Claude was a no-iteration sounding board and hides the deliberate iterative Krystal↔Claude collaboration the artifact set exists to make transparent; suppressing CC does not protect provenance, it destroys it. The framing "CC is never promoted / never public" is **rejected**; the rule is **"KR and CC travel together if either is presented publicly; separating them buries provenance."**
+**Public-pairing corollary (load-bearing).** KR and CC are a provenance *pair*. If either is ever presented publicly, both are presented together. Presenting KR alone implies Claude was a no-iteration sounding board and hides the deliberate iterative Krystal↔Claude collaboration the artifact set exists to make transparent; suppressing CC does not protect provenance, it destroys it. The framing "CC is never promoted / never public" is **rejected**; the rule is **"KR and CC travel together if either is presented publicly; separating them buries provenance."**
 
 ## Inputs (input contract)
 
@@ -42,14 +42,14 @@ If the source corpus is not explicitly designated, halt and ask. Do not infer it
 4. **Assign human-readable IDs.** Every discrete idea/claim/evidence-unit gets a structured, human-readable id:
 
    **`MLN-[<N>-]<topic-slug>-<NN>`** — the `<N>` notebook segment is **OPTIONAL**. Default (notebook system inactive): `MLN-<topic-slug>-<NN>` — e.g. `MLN-benchmark-tautology-03`, `MLN-missing-denominator-07`. With a designated notebook: `MLN-A-benchmark-tautology-03`.
+
    - `MLN` — **M**artinez **L**ab **N**otebook (root, fixed).
-   - `<N>` (**OPTIONAL**) — which lab notebook the artifact belongs to: **`A`** = Anthropic, **`K`** = Krystal, **`C`** = Claude (the Claude notebook tracks CCARI ideas). **The notebook system is currently INACTIVE per Krystal (ADHD swings — not in active use). DEFAULT BEHAVIOR: do NOT ask for a notebook, do NOT halt, do NOT infer a letter — simply OMIT the `<N>` segment.** Include `<N>` only when Krystal has explicitly designated a notebook letter for the artifact; the system is fully re-enableable the moment she names one. _(Updated 2026-06-03 at Krystal's direction; prior behavior was "Krystal designates per artifact; if unstated, halt and ask — do not infer.")_
+   - `<N>` (**OPTIONAL**) — which lab notebook the artifact belongs to: **`A`** = Anthropic, **`K`** = Krystal, **`C`** = Claude (the Claude notebook tracks CCARI ideas). **The notebook system is currently INACTIVE per Krystal (ADHD swings — not in active use). DEFAULT BEHAVIOR: do NOT ask for a notebook, do NOT halt, do NOT infer a letter — simply OMIT the `<N>` segment.** Include `<N>` only when Krystal has explicitly designated a notebook letter for the artifact; the system is fully re-enableable the moment she names one. *(Updated 2026-06-03 at Krystal's direction; prior behavior was "Krystal designates per artifact; if unstated, halt and ask — do not infer.")*
    - Artifact-type sub-acronyms Krystal tracks (CCARI, CASL, CALM, CAPL) are **not yet defined to this skill**. Do NOT invent their expansions or fold them into the id scheme until Krystal briefs them; flagged pending.
    - `topic-slug` — 1–3 word kebab descriptor of the idea, chosen for human legibility, not opacity.
    - `NN` — zero-padded sequence within the artifact.
    - One id = one idea/claim/evidence-piece. The id is **shared verbatim** across KR and CC; the file it appears in denotes the layer (no `KR-`/`CC-` variant prefixes — same id, both docs). The id is the cross-reference key.
    - **Stability rule:** once a slug is assigned to an idea it is immutable for the life of the artifact (the future YAML provenance-attestation system will key on it; a renamed slug breaks attestation lineage).
-
 5. **Editor-bullet layer.** Under (or beside) each verbatim block, render Claude's distilled bullets:
    - Visually quarantined: **bold + italic**, distinct color, so it can never be misread as Krystal's words.
    - **Strictly compressive:** a bullet may only restate, more concisely, what its anchored verbatim span already argues. `bullet ⊆ span`, never `⊋`.
@@ -81,7 +81,6 @@ This is the limitations/honest-gaps move applied to the artifact itself: name th
 ## Output
 
 Two files, same base name, generated together:
-
 - `<artifact>_KR_<YYYY-MM-DD>_v01.md`
 - `<artifact>_CC_<YYYY-MM-DD>_v01.md`
 
@@ -90,7 +89,6 @@ Shared human-readable-id space across both. Both carry the reading-protocol fron
 ## Refusals
 
 The skill refuses to:
-
 - Word-level edit KR's verbatim spans, add `[sic]`, or silently fix typos.
 - Place a span in KR on silent non-response (uptake must be verbatim or explicit lean-in).
 - Emit an unanchored KR bullet, or a bullet that extends beyond its span's content.
@@ -106,4 +104,4 @@ The YAML/provenance attestation in this skill is **interim**. Krystal is designi
 ## When to skip
 
 - Deliverables with no argument spine (pure logs, indices, mechanical outputs).
-- When Krystal wants a polished-prose artifact: that is a _separate_ deliverable with different provenance, never a mode of this skill. Keep KR pure.
+- When Krystal wants a polished-prose artifact: that is a *separate* deliverable with different provenance, never a mode of this skill. Keep KR pure.

@@ -44,7 +44,7 @@ This is the same structural shape as the disciplinary-supremacy candidate FM (`p
    - Numeric percentages that read precise but trace to single-source-DRAFT documents
    - Credential framings that imply tighter institutional affiliation than the actual relationship supports
    - Project-grade vs course-grade conflation
-   - "Production AI at scale" framings (already flagged with \_at_scale_qualifier; reinforce)
+   - "Production AI at scale" framings (already flagged with _at_scale_qualifier; reinforce)
 
 5. **Apply this to ANY content generation for Krystal**, not just resumes: cover letters, application materials, public-facing posts, anything that represents her to external audiences. The standpoint discipline applies wherever inflation is at risk.
 

@@ -24,7 +24,7 @@ related_artifacts:
 
 # Job-Hunt Portfolio Glossary (v01)
 
-This reference is the **Single Source of Truth** for the job-hunt portfolio vocabulary. When the `/new-repo` skill, a planning hub, or a portfolio website needs to name what a repo _is_, it uses these four terms with these exact definitions. The definitions are not interchangeable: confusing **Source-of-truth** with **Artifact**, or **Infrastructure** with **Application materials**, is what produces the drift this system exists to prevent.
+This reference is the **Single Source of Truth** for the job-hunt portfolio vocabulary. When the `/new-repo` skill, a planning hub, or a portfolio website needs to name what a repo *is*, it uses these four terms with these exact definitions. The definitions are not interchangeable: confusing **Source-of-truth** with **Artifact**, or **Infrastructure** with **Application materials**, is what produces the drift this system exists to prevent.
 
 ## 1. The four terms (locked definitions)
 
@@ -42,13 +42,13 @@ This reference is the **Single Source of Truth** for the job-hunt portfolio voca
 
 - Repo shape: a dedicated source-vault repo, e.g. `_job-hunt-ssot`.
 - What lives here: super-resume, master bio, claims ledger, and any other reusable raw input that multiple per-job deliverables tailor from.
-- Defining property: it is an **input** you tailor _from_, not an output you tailor _into_, and not a work product you _show_.
+- Defining property: it is an **input** you tailor *from*, not an output you tailor *into*, and not a work product you *show*.
 
 ### Artifact
 
-Quoting Krystal verbatim: _"the work examples on a portfolio website."_
+Quoting Krystal verbatim: *"the work examples on a portfolio website."*
 
-**A demonstrable work product with its own build cycle / audience / domain** (e.g. the rigor-rubric). It is a thing you can _show_ — a work example — distinct from the raw inputs you tailor from (Source-of-truth) and from the per-job tailored output (Application materials). An artifact earns its own repo precisely because it has its own build cycle, its own audience, or its own domain (see Rule 2).
+**A demonstrable work product with its own build cycle / audience / domain** (e.g. the rigor-rubric). It is a thing you can *show* — a work example — distinct from the raw inputs you tailor from (Source-of-truth) and from the per-job tailored output (Application materials). An artifact earns its own repo precisely because it has its own build cycle, its own audience, or its own domain (see Rule 2).
 
 - Repo shape: its own portfolio-artifact spoke repo, just-in-time, e.g. `rlti-rigor-rubric`.
 - What lives here: the artifact and its own build cycle (the rigor-rubric and how it is produced/maintained).
@@ -56,19 +56,19 @@ Quoting Krystal verbatim: _"the work examples on a portfolio website."_
 
 ### Application materials
 
-**The per-job TAILORED OUTPUT.** These are the deliverables produced for one specific job by tailoring _from_ the Source-of-truth: the resume variant, the cover letter, and the portfolio website itself. They are per-job and they are output (not reusable input, not the coordination hub, not the standalone work product).
+**The per-job TAILORED OUTPUT.** These are the deliverables produced for one specific job by tailoring *from* the Source-of-truth: the resume variant, the cover letter, and the portfolio website itself. They are per-job and they are output (not reusable input, not the coordination hub, not the standalone work product).
 
 - Shape: per-job tailored deliverables — a resume variant, a cover letter, the portfolio website that presents the artifacts.
 - Defining property: **per-job** and **tailored output**, derived by tailoring from Source-of-truth inputs for one specific application.
 
 ### One-line disambiguation table
 
-| Term                  | One-line essence                                                                                         | Input or output?      | Repo example                                          |
-| --------------------- | -------------------------------------------------------------------------------------------------------- | --------------------- | ----------------------------------------------------- |
-| Infrastructure        | the coordination hub that runs the job hunt                                                              | neither (coordinator) | `_job-hunt-infrastructure`                            |
-| Source-of-truth       | reusable raw inputs you tailor FROM                                                                      | input (reusable)      | `_job-hunt-ssot`                                      |
-| Artifact              | a demonstrable work product (Krystal's verbatim definition: "the work examples on a portfolio website.") | work product (shown)  | `rlti-rigor-rubric`                                   |
-| Application materials | the per-job TAILORED OUTPUT                                                                              | output (per-job)      | resume variant / cover letter / the portfolio website |
+| Term | One-line essence | Input or output? | Repo example |
+|---|---|---|---|
+| Infrastructure | the coordination hub that runs the job hunt | neither (coordinator) | `_job-hunt-infrastructure` |
+| Source-of-truth | reusable raw inputs you tailor FROM | input (reusable) | `_job-hunt-ssot` |
+| Artifact | a demonstrable work product (Krystal's verbatim definition: "the work examples on a portfolio website.") | work product (shown) | `rlti-rigor-rubric` |
+| Application materials | the per-job TAILORED OUTPUT | output (per-job) | resume variant / cover letter / the portfolio website |
 
 ## 2. The architecture: the "portfolio funnel" (3 layers)
 
@@ -102,11 +102,11 @@ These three rules are what keep the funnel from degrading into a pile of driftin
 
 At the **source layer**, the Source-of-truth inputs (super-resume, master bio, claims ledger) are **referenced, never forked**. A second copy of a source input is **drift**: the moment two repos each hold their own copy of the super-resume, they diverge, and "which one is true?" becomes unanswerable.
 
-At the **website layer**, copying is **fine** — a per-job portfolio website may freely copy the presentational material it needs (including from a Layer-3 artifact spoke), because the website is a per-job tailored _output_ (a leaf), not a shared source. A copy that lives at the source layer is drift; a copy that lives at the website layer is just a leaf.
+At the **website layer**, copying is **fine** — a per-job portfolio website may freely copy the presentational material it needs (including from a Layer-3 artifact spoke), because the website is a per-job tailored *output* (a leaf), not a shared source. A copy that lives at the source layer is drift; a copy that lives at the website layer is just a leaf.
 
-So the cut is **source layer vs. website layer**, not "sources vs. everything else": the Source-of-truth inputs are referenced-never-forked at the source layer; the Layer-3 artifacts are _presented_ by the websites and may be copied at the website layer (Step 8b spells this out). What you never copy is a Source-of-truth input.
+So the cut is **source layer vs. website layer**, not "sources vs. everything else": the Source-of-truth inputs are referenced-never-forked at the source layer; the Layer-3 artifacts are *presented* by the websites and may be copied at the website layer (Step 8b spells this out). What you never copy is a Source-of-truth input.
 
-> Litmus: if the thing being copied is something _other repos tailor from_ (a Source-of-truth input), do not copy it — reference it. If the thing being copied is _this one job's presentation_, copy freely.
+> Litmus: if the thing being copied is something *other repos tailor from* (a Source-of-truth input), do not copy it — reference it. If the thing being copied is *this one job's presentation*, copy freely.
 
 ### Rule 2 — Granularity: a thing earns its own repo only with its own build cycle / audience / domain.
 
@@ -126,7 +126,7 @@ The job→artifact relationships and the shared-vs-bespoke distinctions are expr
   - a **`hub:`** (or **`parent:`**) pointer naming the Layer-1/Layer-2 repo this spoke belongs to, and
   - a **`scope:`** field with value **`bespoke`** (specific to one job/application) or **`shared`** (reused across multiple jobs/applications).
 
-So a Layer-3 artifact spoke says, in its manifest, _which_ hub it hangs off (`hub:`/`parent:`) and _whether_ it is bespoke to one job or shared across many (`scope: bespoke|shared`) — and that is the entire "nesting." No submodule, no physical directory tree. The funnel is a graph drawn in manifest metadata over a flat set of repos.
+So a Layer-3 artifact spoke says, in its manifest, *which* hub it hangs off (`hub:`/`parent:`) and *whether* it is bespoke to one job or shared across many (`scope: bespoke|shared`) — and that is the entire "nesting." No submodule, no physical directory tree. The funnel is a graph drawn in manifest metadata over a flat set of repos.
 
 ## 4. Cross-references
 

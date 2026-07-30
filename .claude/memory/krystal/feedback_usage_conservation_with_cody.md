@@ -5,13 +5,11 @@ type: feedback
 originSessionId: ad1c87f8-9f5e-4b72-980c-2c68cd4505d9
 user: krystal
 ---
-
 From 2026-04-28: conserve Claude account usage. Cody is also using the account for their job hunt.
 
 **Why:** Shared account usage; need budget to last the week. Krystal's RLTI application work + Cody's job-hunt work both run through this account.
 
 **How to apply:**
-
 - Lean tool-call counts; batch parallel reads where possible
 - Prefer Glob + Read over Agent-spawn unless task genuinely needs Agent's broader scope
 - Don't run thoroughness="very thorough" Explore agents unless explicitly requested

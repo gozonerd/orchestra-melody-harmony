@@ -10,7 +10,7 @@ user: krystal
 
 In response to my own surfacing of the cross-cutting insight from the agitated-lalande Sonnet feedback:
 
-> _"codify what you mean explicitly should absolutely be a memory file! create it!"_
+> *"codify what you mean explicitly should absolutely be a memory file! create it!"*
 
 (Context: Sonnet thread agitated-lalande went through ASAE v05 hook gates by sequential rejection — each rule revealed itself only after the previous one passed. The friction was real BECAUSE Sonnet has less context-bandwidth than Opus to infer-from-related-files. Opus would have read /asae spec + commit-msg hook source + role-manifests folder + multiple gate audit log examples in parallel and inferred all the requirements. Sonnet didn't. Documentation written assuming Opus-class inference failed Sonnet-class reading.)
 
@@ -19,14 +19,12 @@ In response to my own surfacing of the cross-cutting insight from the agitated-l
 When writing methodology specs, skill docs, hook error messages, audit log templates, gate file conventions, or any artifact that's meant to enforce or instruct:
 
 **Codify the meaning EXPLICITLY at the surface where it's needed.** Don't rely on the reader to:
-
 - Infer-from-context (read 5 related files and synthesize)
 - Infer-from-related-files (cross-reference the hook source to learn what the spec means)
 - Infer-from-implicit-conventions (figure out the format by reading existing examples)
 - Infer-from-prior-rejection (learn the rule by failing and being told)
 
 Strong readers infer; weak readers fail. Documentation written assuming inference is brittle to:
-
 - Lower-context-window readers (Sonnet, Haiku)
 - Time-pressured readers (mid-task; can't read 5 files)
 - Reduced-attention readers (late, tired, meds wearing off)
@@ -49,24 +47,20 @@ This rule emerged from a specific empirical case (agitated-lalande's iterative h
 When authoring or reviewing methodology surfaces, check:
 
 ### Skill docs
-
 - Does Phase N enumerate ALL artifacts produced (not just primary ones)? → If not, add explicit enumeration (e.g., role-manifest as artifact #5 in /define-your-role-literal Phase 8)
 - Does each step's required output have its schema documented inline OR cross-referenced? → If not, add reference
 - Are required tools (gh, yq, etc.) listed? → If not, add prerequisites section
 
 ### Hook error messages
-
 - Does the error tell the reader what RULE was violated AND what to do about it? → If only "rule violated," add resolution path
 - Does the error point at the canonical resolution skill OR doc? → If not, add pointer
 - Does the error distinguish between failure-mode classes (e.g., "missing manifest" vs "malformed manifest")? → If not, add classification
 
 ### Gate audit log templates
-
 - Are required pass-block phrases visible at the template level OR only in the hook source? → If only in hook source, document at template (or refactor to structured-frontmatter per Mod 14 Q3 + the structured-frontmatter refactor)
 - Are required frontmatter fields enumerated with example values? → If not, add example block
 
 ### Reference docs
-
 - Does the doc state explicitly what it covers vs what it doesn't? → If not, add scope statement
 - Are cross-references one-way (you have to know to look here) or bidirectional (related surfaces point at this)? → If one-way, add pointers from related surfaces (per the META-9 + META-10 cross-reference network discipline)
 

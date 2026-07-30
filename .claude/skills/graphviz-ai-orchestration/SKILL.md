@@ -13,7 +13,6 @@ Generate professional, publication-quality Graphviz DOT diagrams for complex AI 
 ## Rendering
 
 Graphviz DOT is rendered in:
-
 - **Graphviz CLI** (`dot -Tpng input.dot -o output.png`) — highest quality
 - **Graphviz Online** (dreampuf.github.io/GraphvizOnline) — free, browser-based
 - **VS Code Graphviz extension** — live preview
@@ -24,44 +23,44 @@ Claude generates DOT notation as a code block or saves it as a `.dot` or `.gv` f
 
 ## When to Use Graphviz (vs. Other Diagram Types)
 
-| Use Case                            | Graphviz?             | Why / Why Not                                    |
-| ----------------------------------- | --------------------- | ------------------------------------------------ |
-| Dense dependency graph (20+ nodes)  | **Yes — primary use** | Best auto-layout engine for complex graphs       |
-| Multi-pipeline interconnection map  | **Yes**               | Handles cross-pipeline dependencies elegantly    |
-| Publication-quality static diagrams | **Yes**               | Fine-grained control over every visual element   |
-| Hierarchical cluster grouping       | **Yes**               | Subgraph clusters with independent styling       |
-| Custom node shapes and styling      | **Yes**               | Unlimited shape, color, font, and layout control |
-| Simple 5-10 node DAG                | **No**                | Use Mermaid — simpler syntax, renders in-thread  |
-| Human-AI swimlanes                  | **No**                | Use BPMN or PlantUML — better swimlane support   |
-| Interactive exploration             | **No**                | Use HTML+JS for zoom/click                       |
-| Sequence / call chains              | **No**                | Use PlantUML or Mermaid sequence diagrams        |
+| Use Case | Graphviz? | Why / Why Not |
+|---|---|---|
+| Dense dependency graph (20+ nodes) | **Yes — primary use** | Best auto-layout engine for complex graphs |
+| Multi-pipeline interconnection map | **Yes** | Handles cross-pipeline dependencies elegantly |
+| Publication-quality static diagrams | **Yes** | Fine-grained control over every visual element |
+| Hierarchical cluster grouping | **Yes** | Subgraph clusters with independent styling |
+| Custom node shapes and styling | **Yes** | Unlimited shape, color, font, and layout control |
+| Simple 5-10 node DAG | **No** | Use Mermaid — simpler syntax, renders in-thread |
+| Human-AI swimlanes | **No** | Use BPMN or PlantUML — better swimlane support |
+| Interactive exploration | **No** | Use HTML+JS for zoom/click |
+| Sequence / call chains | **No** | Use PlantUML or Mermaid sequence diagrams |
 
 ## Domain: AI Pipeline Orchestration Patterns
 
 ### Node Attributes for AI Concepts
 
-| AI Concept             | DOT Shape                 | Style              | Example                                               |
-| ---------------------- | ------------------------- | ------------------ | ----------------------------------------------------- |
-| Pipeline / major stage | `box3d` or `Mrecord`      | Bold, colored fill | `P1 [shape=box3d, style=filled, fillcolor="#4A90D9"]` |
-| Processing step        | `box`                     | Rounded            | `step1 [shape=box, style="rounded,filled"]`           |
-| Decision / gate        | `diamond`                 | Amber fill         | `gate1 [shape=diamond, fillcolor="#F5A623"]`          |
-| Human review           | `octagon`                 | Green fill         | `review1 [shape=octagon, fillcolor="#7ED321"]`        |
-| AI model               | `component`               | Purple fill        | `opus [shape=component, fillcolor="#9B59B6"]`         |
-| Data store             | `cylinder`                | Gray fill          | `kb [shape=cylinder, fillcolor="#E8E8E8"]`            |
-| External input         | `parallelogram`           | Teal fill          | `input1 [shape=parallelogram, fillcolor="#1ABC9C"]`   |
-| Start / end            | `circle` / `doublecircle` | —                  | `start [shape=circle]`                                |
-| Error state            | `box`                     | Red, dashed        | `error [shape=box, style="dashed", color="red"]`      |
+| AI Concept | DOT Shape | Style | Example |
+|---|---|---|---|
+| Pipeline / major stage | `box3d` or `Mrecord` | Bold, colored fill | `P1 [shape=box3d, style=filled, fillcolor="#4A90D9"]` |
+| Processing step | `box` | Rounded | `step1 [shape=box, style="rounded,filled"]` |
+| Decision / gate | `diamond` | Amber fill | `gate1 [shape=diamond, fillcolor="#F5A623"]` |
+| Human review | `octagon` | Green fill | `review1 [shape=octagon, fillcolor="#7ED321"]` |
+| AI model | `component` | Purple fill | `opus [shape=component, fillcolor="#9B59B6"]` |
+| Data store | `cylinder` | Gray fill | `kb [shape=cylinder, fillcolor="#E8E8E8"]` |
+| External input | `parallelogram` | Teal fill | `input1 [shape=parallelogram, fillcolor="#1ABC9C"]` |
+| Start / end | `circle` / `doublecircle` | — | `start [shape=circle]` |
+| Error state | `box` | Red, dashed | `error [shape=box, style="dashed", color="red"]` |
 
 ### Edge Attributes
 
-| Relationship             | DOT Style             | Example                                       |
-| ------------------------ | --------------------- | --------------------------------------------- |
-| Deterministic dependency | Solid arrow (default) | `P1 -> P2`                                    |
-| Conditional path         | Dashed                | `P1 -> P2 [style=dashed]`                     |
-| Data flow                | Bold/thick            | `P1 -> P2 [penwidth=2.0]`                     |
-| Labeled dependency       | Label                 | `P1 -> P2 [label="feeds curriculum map"]`     |
-| Cross-pipeline signal    | Dotted, colored       | `P3 -> P7 [style=dotted, color="#E74C3C"]`    |
-| Feedback / revision loop | Constraint=false      | `gate -> P1 [constraint=false, style=dashed]` |
+| Relationship | DOT Style | Example |
+|---|---|---|
+| Deterministic dependency | Solid arrow (default) | `P1 -> P2` |
+| Conditional path | Dashed | `P1 -> P2 [style=dashed]` |
+| Data flow | Bold/thick | `P1 -> P2 [penwidth=2.0]` |
+| Labeled dependency | Label | `P1 -> P2 [label="feeds curriculum map"]` |
+| Cross-pipeline signal | Dotted, colored | `P3 -> P7 [style=dotted, color="#E74C3C"]` |
+| Feedback / revision loop | Constraint=false | `gate -> P1 [constraint=false, style=dashed]` |
 
 ### Cluster (Subgraph) Patterns
 
@@ -171,17 +170,17 @@ digraph AI_Pipeline_Orchestration {
 
 ### Layout Control
 
-| Attribute          | Effect                      | Example                                     |
-| ------------------ | --------------------------- | ------------------------------------------- |
-| `rankdir`          | Flow direction              | `LR` (left-right), `TB` (top-bottom)        |
-| `rank=same`        | Force same horizontal level | `{rank=same; P4; P6}`                       |
-| `constraint=false` | Don't affect layout         | For feedback/revision edges                 |
-| `splines`          | Edge routing                | `ortho` (right-angle), `polyline`, `curved` |
-| `compound=true`    | Edges between clusters      | Required for cluster-to-cluster edges       |
-| `newrank=true`     | Better ranking algorithm    | Use for complex graphs                      |
-| `nodesep`          | Horizontal spacing          | `nodesep=0.8`                               |
-| `ranksep`          | Vertical/rank spacing       | `ranksep=1.2`                               |
-| `minlen`           | Minimum edge length         | `P1 -> P2 [minlen=2]`                       |
+| Attribute | Effect | Example |
+|---|---|---|
+| `rankdir` | Flow direction | `LR` (left-right), `TB` (top-bottom) |
+| `rank=same` | Force same horizontal level | `{rank=same; P4; P6}` |
+| `constraint=false` | Don't affect layout | For feedback/revision edges |
+| `splines` | Edge routing | `ortho` (right-angle), `polyline`, `curved` |
+| `compound=true` | Edges between clusters | Required for cluster-to-cluster edges |
+| `newrank=true` | Better ranking algorithm | Use for complex graphs |
+| `nodesep` | Horizontal spacing | `nodesep=0.8` |
+| `ranksep` | Vertical/rank spacing | `ranksep=1.2` |
+| `minlen` | Minimum edge length | `P1 -> P2 [minlen=2]` |
 
 ### Record Nodes (for detailed step info)
 
@@ -191,16 +190,16 @@ P1 [shape=record, label="{P1: Source Analysis|{Model: Opus 4.6|Time: ~15min}|{In
 
 ## Recommended Color Palette
 
-| Element            | Fill                              | Font  | Hex    |
-| ------------------ | --------------------------------- | ----- | ------ |
-| Pipeline node      | `#4A90D9`                         | White | Blue   |
-| QA gate            | `#F5A623`                         | Dark  | Amber  |
-| Human step         | `#7ED321`                         | White | Green  |
-| AI model           | `#9B59B6`                         | White | Purple |
-| Data store         | `#E8E8E8`                         | Dark  | Gray   |
-| Error path         | `#E74C3C`                         | White | Red    |
-| External input     | `#1ABC9C`                         | White | Teal   |
-| Cluster background | Lightened version of border color | —     | —      |
+| Element | Fill | Font | Hex |
+|---|---|---|---|
+| Pipeline node | `#4A90D9` | White | Blue |
+| QA gate | `#F5A623` | Dark | Amber |
+| Human step | `#7ED321` | White | Green |
+| AI model | `#9B59B6` | White | Purple |
+| Data store | `#E8E8E8` | Dark | Gray |
+| Error path | `#E74C3C` | White | Red |
+| External input | `#1ABC9C` | White | Teal |
+| Cluster background | Lightened version of border color | — | — |
 
 ## Workflow
 
@@ -233,7 +232,6 @@ If saving to file, use `.dot` or `.gv` extension with standard naming:
 After generating the DOT code, include:
 
 > **To view this diagram:**
->
 > 1. Go to [Graphviz Online](https://dreampuf.github.io/GraphvizOnline) (free, no account needed)
 > 2. Paste the code
 > 3. The diagram renders immediately with auto-layout

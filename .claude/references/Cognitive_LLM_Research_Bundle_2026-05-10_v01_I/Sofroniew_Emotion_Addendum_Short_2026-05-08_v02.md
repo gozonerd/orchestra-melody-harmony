@@ -15,7 +15,7 @@ companion: Sofroniew_Emotion_Addendum_Long_2026-05-08_v02.md
 
 ## What this addendum corrects
 
-The Sofroniew paper presents activation-pattern findings about emotion-related content in Claude and hedges them as "emotion concepts" with "functional" effects. The v01 of this addendum hedged further by treating emotion as something the LLM might-or-might-not-have-in-some-sense. Both are wrong. Against the actual theoretical baseline in affective science, the paper's data is evidence of _Barrett-minus-interoception_ in the model. That is its own thing — neither human emotion in the full sense nor nothing emotion-like. The framing the paper needs is the precise structural analog, and the implications of finding that analog are substantial.
+The Sofroniew paper presents activation-pattern findings about emotion-related content in Claude and hedges them as "emotion concepts" with "functional" effects. The v01 of this addendum hedged further by treating emotion as something the LLM might-or-might-not-have-in-some-sense. Both are wrong. Against the actual theoretical baseline in affective science, the paper's data is evidence of *Barrett-minus-interoception* in the model. That is its own thing — neither human emotion in the full sense nor nothing emotion-like. The framing the paper needs is the precise structural analog, and the implications of finding that analog are substantial.
 
 ## The argument
 

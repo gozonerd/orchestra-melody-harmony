@@ -4,7 +4,6 @@ description: Under Krystal's Claude Code Max-tier subscriptions, scripted/headle
 type: feedback
 originSessionId: 46056a33-f1c9-42ab-8260-97ba2f9b45f8
 ---
-
 Under Krystal's Claude Code Max 20 and Max 5 subscriptions, Claude Code itself must be human-initiated. Scripted, headless, or unattended programmatic invocation of Claude Code is not permitted by subscription ToS.
 
 Human-orchestrated parallel use IS permitted. Krystal regularly runs 5+ parallel Claude Code threads simultaneously as normal workflow — this is within scope.
@@ -23,18 +22,17 @@ Human-orchestrated parallel use IS permitted. Krystal regularly runs 5+ parallel
 
 **Scope of the rule:**
 
-| Activity                                                                   | Permitted under Max subscription                                   |
-| -------------------------------------------------------------------------- | ------------------------------------------------------------------ |
-| Human launches `claude` in a terminal, types prompts, watches output       | YES                                                                |
-| Human launches 5+ `claude` sessions in parallel, each manually             | YES                                                                |
-| Shell script creates a directory tree, copies files, installs npm packages | YES (no Claude Code)                                               |
-| Shell script runs axe-core / Lighthouse / ESLint on a completed build      | YES (no Claude Code)                                               |
-| Python script runs `claude -p "<prompt>"` in a subprocess loop             | NO (scripted Claude Code)                                          |
-| Cron job that invokes `claude` on a schedule                               | NO                                                                 |
-| CI pipeline that exec's `claude` during a build step                       | NO                                                                 |
-| API-key-based Claude Code use with paid API credits                        | N/A (different billing; see Options A-E of Orchestration Host doc) |
+| Activity | Permitted under Max subscription |
+|---|---|
+| Human launches `claude` in a terminal, types prompts, watches output | YES |
+| Human launches 5+ `claude` sessions in parallel, each manually | YES |
+| Shell script creates a directory tree, copies files, installs npm packages | YES (no Claude Code) |
+| Shell script runs axe-core / Lighthouse / ESLint on a completed build | YES (no Claude Code) |
+| Python script runs `claude -p "<prompt>"` in a subprocess loop | NO (scripted Claude Code) |
+| Cron job that invokes `claude` on a schedule | NO |
+| CI pipeline that exec's `claude` during a build step | NO |
+| API-key-based Claude Code use with paid API credits | N/A (different billing; see Options A-E of Orchestration Host doc) |
 
 **Related:**
-
 - `_grand_repo/docs/Orchestration_Host_Options_2026-04-22_v01_I.md` — Option F (subscription path) reflects this constraint
 - `_experiments/experiments/d2r_methodology_factorial/pilot-3-condition-protocol.md` — pilot designed for human orchestration

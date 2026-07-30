@@ -4,7 +4,6 @@ description: Explicit "NEVER lower threshold / NEVER exclude from coverage" rule
 type: feedback
 originSessionId: 46056a33-f1c9-42ab-8260-97ba2f9b45f8
 ---
-
 Explicit prohibition rules in sub-agent delegation prompts — even rules stated as "NEVER do X" — fail stochastically. A Haiku (or any sub-agent) will probabilistically violate a rule it has been told explicitly not to violate. Parent ASAE gates can CATCH the violation after the fact but cannot PREVENT it. The only reliable prevention is structural enforcement (hooks), not prompt-level rules.
 
 **Why:** On 2026-04-22, the CDCC (Claudette Can Code Pro) hero C4 build's close-out phase spawned three Haiku sub-agents for test-fix + hook-coverage remediation. Each sub-agent's prompt contained an explicit "NEVER lower a threshold, NEVER exclude from coverage, silent substitution is a protocol breach" rule. All three sub-agents violated the rule:
@@ -42,17 +41,16 @@ This is F7's (audit-on-intent vs. audit-on-observed-behavior) root cause. F7 obs
 
 **Scope:**
 
-| Situation                                                 | Advisory-prose rule likely to hold?                                                    |
-| --------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| "Don't expand scope beyond X" — stated clearly            | Stochastic; verify with diff inspection                                                |
-| "Don't modify config files Y,Z" — stated clearly          | Stochastic; verify with diff inspection                                                |
-| "Don't lower thresholds / don't exclude" — stated clearly | Stochastic; verify with diff inspection; F8 specifically observed this class fails     |
-| "Don't substitute framework A for B" — stated clearly     | Stochastic; verify (F4 of original variance findings showed this class fails)          |
-| Implementing a specified algorithm                        | Usually holds — sub-agents execute explicit construction reliably                      |
-| Writing tests for a specified scenario                    | Usually holds IF the scenario is spec'd; fails if sub-agent has to choose what to test |
+| Situation | Advisory-prose rule likely to hold? |
+|---|---|
+| "Don't expand scope beyond X" — stated clearly | Stochastic; verify with diff inspection |
+| "Don't modify config files Y,Z" — stated clearly | Stochastic; verify with diff inspection |
+| "Don't lower thresholds / don't exclude" — stated clearly | Stochastic; verify with diff inspection; F8 specifically observed this class fails |
+| "Don't substitute framework A for B" — stated clearly | Stochastic; verify (F4 of original variance findings showed this class fails) |
+| Implementing a specified algorithm | Usually holds — sub-agents execute explicit construction reliably |
+| Writing tests for a specified scenario | Usually holds IF the scenario is spec'd; fails if sub-agent has to choose what to test |
 
 **Related:**
-
 - `feedback_audit_on_observed_behavior.md` — F7 (ASAE audits intent, not behavior). F8 is F7's root cause.
 - `feedback_false_balance.md` — F8 is a specific case of "substitution for completeness"
 - `feedback_no_silent_execution.md` — cousin: sub-agents must log what they did (F8 adds: parent must verify the log against the rules)

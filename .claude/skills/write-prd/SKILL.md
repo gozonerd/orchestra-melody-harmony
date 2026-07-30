@@ -53,13 +53,11 @@ Check the invocation context:
 ### Step 2: Gather Required Content
 
 Walk through each required section with the user. For each section:
-
 - Present the section's instructions (from the template's italic text)
 - Ask the user for the content, or offer a draft based on context available
 - Capture the filled-in content
 
 Required sections (see template for details):
-
 1. Product Identity (name, version, one-line description)
 2. Users And Problem (primary users, problem statement, why now)
 3. Goals (primary goals, non-goals)
@@ -76,7 +74,6 @@ Optional sections can be filled or marked NA with one-line justification.
 ### Step 3: Run ASAE Gate On Draft
 
 Before saving, invoke `/asae` with scope:
-
 - target: the draft PRD content
 - sources: the template + user-provided inputs + prior context
 - prompt: "Author a PRD for [project name] per the template"
@@ -85,7 +82,6 @@ Before saving, invoke `/asae` with scope:
 - severity_policy: standard
 
 Domain-specific checks for PRD:
-
 - Every user segment described specifically (not "everyone" or "developers")
 - Problem statement has evidence, not only intuition
 - Goals measurable with targets and timeframes
@@ -103,7 +99,6 @@ Use `/file-versioning` rules if the project already has versioning conventions.
 ### Step 5: Present For Approval
 
 Present the saved PRD file path to the user with:
-
 - Validation checklist status (all boxes checked, or which items remain pending)
 - Stakeholder approval status
 
@@ -122,7 +117,6 @@ If the user is NOT in the environment where they want the PRD authored (e.g., th
 Portable prompt mode triggered by user saying: "give me a portable prompt to fill out the PRD" or equivalent.
 
 The generated portable prompt must:
-
 - Include the template content INLINE (so the receiving LLM doesn't need access to the template file)
 - Include the user's project context inline
 - Include the filename convention for the output

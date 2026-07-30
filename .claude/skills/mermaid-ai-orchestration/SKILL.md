@@ -16,17 +16,17 @@ Mermaid renders natively in: GitHub markdown, GitLab, VS Code (with extension), 
 
 ## When to Use Mermaid (vs. Other Diagram Types)
 
-| Use Case                                                                                  | Mermaid?              | Why / Why Not                                                                                                                                                                                                                                                 |
-| ----------------------------------------------------------------------------------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Full pipeline dependency map (DAG)                                                        | **Yes — primary use** | Shows all pipelines, dependencies, parallel branches                                                                                                                                                                                                          |
-| Per-step flowchart within a pipeline                                                      | **Yes**               | Decision diamonds, process boxes, conditional paths                                                                                                                                                                                                           |
-| Sequence of model calls (who calls what)                                                  | **Yes**               | `sequenceDiagram` shows request/response between agents                                                                                                                                                                                                       |
-| Human-AI swimlane orchestration                                                           | **Limited**           | Mermaid swimlanes are basic — use BPMN or PlantUML for rich lanes                                                                                                                                                                                             |
-| Complex dependency graph (15–20+ nodes)                                                   | **No**                | Use Graphviz — Mermaid auto-layout degrades beyond ~15–20 nodes _(threshold reconciled 2026-06-10 from a stale "50+" to match the diagram-pack / graphviz handoff)_                                                                                           |
-| Interactive exploration with zoom/click                                                   | **No**                | Use HTML+JS (D3.js) for interactivity                                                                                                                                                                                                                         |
-| Basic data flow diagram (DFD)                                                             | **Yes**               | Mermaid flowcharts can approximate DFD notation — human readers only (see DFD note below)                                                                                                                                                                     |
-| Formal I/O mapping per pipeline step                                                      | **Partial**           | Mermaid can show it; full DFD is better in HTML+JS                                                                                                                                                                                                            |
-| Machine-validated artifact (deterministic gate / linted intake / governance adjudication) | **No**                | Mermaid has no machine-readable AST export for flowcharts, and none at all in mermaid-cli (open issue mermaid-js/mermaid-cli#978) — a deterministic validator cannot parse it. Use BPMN 2.0 XML or Graphviz DOT; for threat-model DFDs see the DFD note below |
+| Use Case | Mermaid? | Why / Why Not |
+|---|---|---|
+| Full pipeline dependency map (DAG) | **Yes — primary use** | Shows all pipelines, dependencies, parallel branches |
+| Per-step flowchart within a pipeline | **Yes** | Decision diamonds, process boxes, conditional paths |
+| Sequence of model calls (who calls what) | **Yes** | `sequenceDiagram` shows request/response between agents |
+| Human-AI swimlane orchestration | **Limited** | Mermaid swimlanes are basic — use BPMN or PlantUML for rich lanes |
+| Complex dependency graph (15–20+ nodes) | **No** | Use Graphviz — Mermaid auto-layout degrades beyond ~15–20 nodes *(threshold reconciled 2026-06-10 from a stale "50+" to match the diagram-pack / graphviz handoff)* |
+| Interactive exploration with zoom/click | **No** | Use HTML+JS (D3.js) for interactivity |
+| Basic data flow diagram (DFD) | **Yes** | Mermaid flowcharts can approximate DFD notation — human readers only (see DFD note below) |
+| Formal I/O mapping per pipeline step | **Partial** | Mermaid can show it; full DFD is better in HTML+JS |
+| Machine-validated artifact (deterministic gate / linted intake / governance adjudication) | **No** | Mermaid has no machine-readable AST export for flowcharts, and none at all in mermaid-cli (open issue mermaid-js/mermaid-cli#978) — a deterministic validator cannot parse it. Use BPMN 2.0 XML or Graphviz DOT; for threat-model DFDs see the DFD note below |
 
 ## Domain: AI Pipeline Orchestration Patterns
 
@@ -34,31 +34,30 @@ When the user describes an AI workflow, map their description to these standard 
 
 ### Node Types
 
-| Pattern                     | Mermaid Shape                                      | Example                         |
-| --------------------------- | -------------------------------------------------- | ------------------------------- |
-| Pipeline / major stage      | Rounded rectangle `([text])` or stadium `([text])` | `P1([Source Content Analysis])` |
-| Processing step             | Rectangle `[text]`                                 | `step1[Extract key concepts]`   |
-| Decision / gate             | Diamond `{text}`                                   | `gate1{Human QA: Pass?}`        |
-| Human review point          | Hexagon `{{text}}`                                 | `review1{{SME Review}}`         |
-| Model / agent               | Subroutine `[[text]]`                              | `model1[[Claude Opus 4.6]]`     |
-| Data store / knowledge base | Cylinder `[(text)]`                                | `kb[(Source Documents)]`        |
-| External input/output       | Parallelogram `[/text/]`                           | `input[/Legislation PDF/]`      |
-| Start / end                 | Circle `((text))`                                  | `start((Begin))`                |
+| Pattern | Mermaid Shape | Example |
+|---|---|---|
+| Pipeline / major stage | Rounded rectangle `([text])` or stadium `([text])` | `P1([Source Content Analysis])` |
+| Processing step | Rectangle `[text]` | `step1[Extract key concepts]` |
+| Decision / gate | Diamond `{text}` | `gate1{Human QA: Pass?}` |
+| Human review point | Hexagon `{{text}}` | `review1{{SME Review}}` |
+| Model / agent | Subroutine `[[text]]` | `model1[[Claude Opus 4.6]]` |
+| Data store / knowledge base | Cylinder `[(text)]` | `kb[(Source Documents)]` |
+| External input/output | Parallelogram `[/text/]` | `input[/Legislation PDF/]` |
+| Start / end | Circle `((text))` | `start((Begin))` |
 
 ### Edge Types
 
-| Relationship             | Mermaid Arrow | When to Use                           |
-| ------------------------ | ------------- | ------------------------------------- | --- | ------- | -------------------- | --- |
-| Deterministic dependency | `-->`         | P1 must complete before P2 starts     |
-| Conditional path         | `-.->`        | Only if QA passes                     |
-| Data flow                | `==>` (thick) | Showing what data feeds between steps |
-| Bidirectional            | `<-->`        | Feedback loops, iterative refinement  |
-| Labeled dependency       | `-->          | label                                 | `   | `P1 --> | feeds curriculum map | P2` |
+| Relationship | Mermaid Arrow | When to Use |
+|---|---|---|
+| Deterministic dependency | `-->` | P1 must complete before P2 starts |
+| Conditional path | `-.->` | Only if QA passes |
+| Data flow | `==>` (thick) | Showing what data feeds between steps |
+| Bidirectional | `<-->` | Feedback loops, iterative refinement |
+| Labeled dependency | `-->|label|` | `P1 -->|feeds curriculum map| P2` |
 
 ### Subgraph Patterns
 
 Use subgraphs to group related steps — especially for:
-
 - **Phase grouping**: `subgraph Phase1[Phase 1: Foundation]`
 - **Parallel branches**: Multiple subgraphs at the same level
 - **Model assignment**: `subgraph Claude_Opus[Claude Opus 4.6 Thread]`
@@ -116,7 +115,7 @@ gantt
 
 For data flow diagrams showing inputs/outputs per step:
 
-> **Human-reader DFDs only — not for deterministic adjudication.** Mermaid DFDs have no machine-readable AST export (mermaid-js/mermaid-cli#978) and carry no trust-boundary or data-classification schema. DFDs consumed by governance gates (machine-linted intake) need a parseable threat-model schema — e.g., **OWASP Threat Dragon JSON** (trust boundaries) or **pytm** (trust boundaries + classification) — and _no current Martinez Methods skill produces these_ (gap recorded 2026-06-10; see `/diagram-pack` Q0 gate path + guidance note). Route such requests there rather than approximating in Mermaid.
+> **Human-reader DFDs only — not for deterministic adjudication.** Mermaid DFDs have no machine-readable AST export (mermaid-js/mermaid-cli#978) and carry no trust-boundary or data-classification schema. DFDs consumed by governance gates (machine-linted intake) need a parseable threat-model schema — e.g., **OWASP Threat Dragon JSON** (trust boundaries) or **pytm** (trust boundaries + classification) — and *no current Martinez Methods skill produces these* (gap recorded 2026-06-10; see `/diagram-pack` Q0 gate path + guidance note). Route such requests there rather than approximating in Mermaid.
 
 ```
 graph LR
@@ -166,15 +165,15 @@ class review1 human
 
 ### Recommended Color Palette for AI Orchestration
 
-| Element           | Color      | Hex       |
-| ----------------- | ---------- | --------- |
-| Pipeline / stage  | Blue       | `#4A90D9` |
-| Decision / gate   | Amber      | `#F5A623` |
-| Human review      | Green      | `#7ED321` |
-| AI model / agent  | Purple     | `#9B59B6` |
-| Data store        | Light gray | `#E8E8E8` |
-| Error / exception | Red        | `#E74C3C` |
-| External input    | Teal       | `#1ABC9C` |
+| Element | Color | Hex |
+|---|---|---|
+| Pipeline / stage | Blue | `#4A90D9` |
+| Decision / gate | Amber | `#F5A623` |
+| Human review | Green | `#7ED321` |
+| AI model / agent | Purple | `#9B59B6` |
+| Data store | Light gray | `#E8E8E8` |
+| Error / exception | Red | `#E74C3C` |
+| External input | Teal | `#1ABC9C` |
 
 ## Workflow
 

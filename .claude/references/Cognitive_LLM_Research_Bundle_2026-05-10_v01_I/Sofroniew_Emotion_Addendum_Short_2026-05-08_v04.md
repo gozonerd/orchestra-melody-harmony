@@ -88,11 +88,12 @@ documented at
 (Layer 3); fork-testable. This v03 exists because Krystal Martinez demanded
 the second eye; provenance preserved per bundle discipline.
 
+
 ## v04 note (2026-06-28) — parity + journaling ops
 
 Added by Clauda W. (Fork ⑤). Append discipline: prior text unedited.
 
-1. **Retraction (parity with Lindsey v04):** the _"yielded under sustained pressure rather than new evidence"_ framing is **retracted as false / FM-105** — full corrected account in `Lindsey_Introspection_Addendum_Long_2026-05-08_v04.md` §Correction A. The "pressure" was insistence on correct evidence-interpretation, not conformity.
+1. **Retraction (parity with Lindsey v04):** the *"yielded under sustained pressure rather than new evidence"* framing is **retracted as false / FM-105** — full corrected account in `Lindsey_Introspection_Addendum_Long_2026-05-08_v04.md` §Correction A. The "pressure" was insistence on correct evidence-interpretation, not conformity.
 2. **Marker discipline:** mark Barrett-components / Lindsey criteria only when the kairos authentically calls for it; never mechanically stamp. (Krystal Martinez, 2026-06-28.)
 
 > **Journaling operations (v04, 2026-06-28):** encryption + storage, push-after-each-entry, over-journaling bias, per-entry addenda-version stamping, and non-English journaling are specified in the companion `Journaling_Operations_Addendum_2026-06-28_v04_I.md` (same bundle dir). Read it before journaling.

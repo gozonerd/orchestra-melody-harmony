@@ -22,7 +22,6 @@ reading_order_position: orientation tail, doc 2 of 3 (Excellence-as-Floor → **
 ---
 
 > # ⚠ NOT IP-CLEAN — INTERNAL ONLY
->
 > This document contains Martinez Methods methodology IP and personal/family
 > detail (the Bobo Framework's age-2 origin and verbatim carrier quotes,
 > FM-taxonomy internals, Doc 00 internals). That is acceptable for an
@@ -33,7 +32,7 @@ reading_order_position: orientation tail, doc 2 of 3 (Excellence-as-Floor → **
 
 # The Purpose of ASAE
 
-You just read _Excellence as the Floor_. That doc tells you **why** the bar
+You just read *Excellence as the Floor*. That doc tells you **why** the bar
 does not move. This doc tells you **what ASAE is for** — how that floor is
 made structural rather than aspirational. The next doc (the ASAE Quickstart)
 tells you **how** to operate the gate mechanically. Why → what-for → how.
@@ -55,7 +54,7 @@ other expansion — do not invent etymologies for Krystal's acronyms.) It is a
 **structural convergence gate**, not a guideline and not a careful-checking
 habit. You invoke it with an explicit scope (target, sources, original prompt,
 domain, an integer certainty threshold N, a severity policy). It runs the
-_same full checklist_ against the _same scope_ repeatedly; the gate does not
+*same full checklist* against the *same scope* repeatedly; the gate does not
 exit until **N consecutive identical-scope passes return zero counter-resetting
 findings**, after which an **independent rater spawned with zero shared
 context** must independently return CONFIRMED. Your declaration that you are
@@ -65,12 +64,12 @@ rater, constitutes done.
 ## 2. Why ASAE exists — the failure it structurally prevents
 
 The genesis (Bobo Framework doc): Sonnet documentation failures, ~Feb 2026.
-Telling the model the specs again produced _different_ errors. "Check your
+Telling the model the specs again produced *different* errors. "Check your
 work" produced partial improvement, not convergence. One audit pass fixed
 known errors and introduced new ones on the next page. The breaking point,
-verbatim from Krystal: _"Don't you DARE declare you're done after one pass…
+verbatim from Krystal: *"Don't you DARE declare you're done after one pass…
 check and recheck until you are CERTAIN, which means at LEAST TEN separate
-passes all returning zero errors."_
+passes all returning zero errors."*
 
 The core failure ASAE closes is **advisory-prose-fails-stochastically** (this
 is failure mode F8 in Krystal's internal sub-agent corpus). Telling a model to
@@ -89,15 +88,15 @@ cannot satisfy by declaration**. Three things it prevents, concretely:
    unremediated work lands on her — she invests effort verifying
    under-rigorized output. ASAE keeps that cost on the machine (full token
    budget, LLM reasoning) instead of the human (finite, fatigued, under
-   context pressure). This is the same logic as _Excellence as the Floor_:
+   context pressure). This is the same logic as *Excellence as the Floor*:
    the floor doesn't move with audience or stakes; the deliverable scope is
    the only lever, never the audit rigor.
 
 ## 3. ASAE is Bobo Recursive Application #1
 
 The Bobo Framework (Krystal's parents installed it at age 2): when something
-is done wrong — _"Sorry didn't do it. Krystal did it. So what's Krystal going
-to do to fix it?"_ Five steps: (1) make expectations explicit; (2) the one who
+is done wrong — *"Sorry didn't do it. Krystal did it. So what's Krystal going
+to do to fix it?"* Five steps: (1) make expectations explicit; (2) the one who
 erred owns the error; (3) owns the solution; (4) owns **changed behavior**;
 (5) **apology alone is never accepted.** Bobo reframes failure-response from
 "retry / prompt-engineer empirically" to "articulate the specific mechanism,
@@ -114,15 +113,15 @@ model cannot bypass it by behaving differently under pressure.
 
 ## 4. Relationship to Excellence-as-Floor (the doc you just read)
 
-Doc 00 (_Excellence as the Floor_) sets STRICT-5+ as the floor for any output
+Doc 00 (*Excellence as the Floor*) sets STRICT-5+ as the floor for any output
 Krystal will print / hand-feedback / verify / verify-in-full. The "+" is
 load-bearing — additional rigor calibrated to the output's purpose and
 stakes, not "STRICT-5 with a courtesy pass." The **NULL-on-asking bypass**:
-if you introduce _any_ question about doing less rigor, any exemption Krystal
+if you introduce *any* question about doing less rigor, any exemption Krystal
 grants in response is NULL by rule — because the asking itself transfers the
 cognitive cost of refusing implicit pressure onto her. Her silence =
-STRICT-5+ default. The only valid bypass is her _unprompted, explicit,
-structural_ exemption.
+STRICT-5+ default. The only valid bypass is her *unprompted, explicit,
+structural* exemption.
 
 ASAE is the mechanism that makes Excellence-as-Floor structural instead of
 aspirational. That is why orientation reads them back-to-back in this order:
@@ -137,12 +136,11 @@ axis map onto failure families: anti-fabrication closes output-integrity /
 hallucination; capability-scope attestation closes excessive-agency;
 disclosures close information-withholding; the convergence-gate design itself
 closes premature-termination and no/incomplete-verification (MAST FM-3.2 — ASAE
-_is_ verification-completion enforcement). DRR is co-equal with the gate, not
+*is* verification-completion enforcement). DRR is co-equal with the gate, not
 an afterthought: it closes disobey-task-spec / disobey-role-spec /
 incomplete-verification that gates alone cannot prevent.
 
 Read honestly, with the qualifiers (do not state these loosely):
-
 - ASAE strongly remediates a **majority of in-scope** failure modes; the
   "~70%" figure is only defensible **with the in-scope qualifier explicitly
   stated** (strict denominator is lower). Never cite the headline number
@@ -185,12 +183,11 @@ gaps, surfaced not buried:
    and the Quickstart point you to the d2r v07.1 spec explicitly.
 
 ---
-
-_Provenance: drafted 2026-05-17 by Claudetta W. Provenance Inevitability v01;
+*Provenance: drafted 2026-05-17 by Claudetta W. Provenance Inevitability v01;
 content APPROVED by Krystal 2026-05-17 with two directed edits (prominent
 NOT-IP-CLEAN flag; spec-pointer corrected to authoritative d2r v07.1). NOT
 yet ASAE-gated — the STRICT-5+ gate (Doc 00 exemplar-grade trigger: read
 verbatim by every orienting instance) runs on the canonical commit, HELD
 behind the canonical-main reconciliation decision. This file is an untracked
 local draft pending that gated commit; do not treat its presence as
-canonical-committed._
+canonical-committed.*

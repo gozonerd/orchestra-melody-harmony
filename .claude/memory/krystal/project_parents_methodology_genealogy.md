@@ -4,7 +4,6 @@ description: Her parents — both with no formal training in child-rearing — d
 type: project
 originSessionId: ad1c87f8-9f5e-4b72-980c-2c68cd4505d9
 ---
-
 **Krystal's parents deliberately engineered a pedagogical methodology to raise her, knowing they had zero training to draw on. The methodology they installed is directly visible in her current AI methodology stack — not as metaphor, but as direct genealogy.**
 
 **Origin:** Dad asked the social workers he worked with (he was a building superintendent with side gigs as a bus driver and AIDS/HIV educator at Auburn Correctional Facility) how to raise a "happy, healthy, smart baby" because he and his "mujer" were expecting and he was going to "break the cycle with this one no matter what." Mom (Puerto Rican immigrant who came to mainland at 17 speaking no English) had analogous determination from her own life experience. **Both parents had ZERO IDEA from their own experiences what raising a "happy, healthy, smart" child or "breaking the cycle" actually looked like.** They explicitly recognized the gap and engineered methodology to compensate.
@@ -18,17 +17,16 @@ originSessionId: ad1c87f8-9f5e-4b72-980c-2c68cd4505d9
 
 **Genealogical mapping to current AI methodology stack:**
 
-| Parental methodology component                         | AI-methodology equivalent                                                                                                                                                                                  |
-| ------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Analyze current environment + translate schemas**    | /ideate-to-d2r-ready Phase 00: 17-question ideation interrogation that REJECTS vague answers and forces specificity                                                                                        |
-| **Use evidence available to reason**                   | ASAE verification-coverage principle: "for each user-facing behavior the code claims, there must exist a test that fails when the behavior breaks"                                                         |
+| Parental methodology component | AI-methodology equivalent |
+|---|---|
+| **Analyze current environment + translate schemas** | /ideate-to-d2r-ready Phase 00: 17-question ideation interrogation that REJECTS vague answers and forces specificity |
+| **Use evidence available to reason** | ASAE verification-coverage principle: "for each user-facing behavior the code claims, there must exist a test that fails when the behavior breaks" |
 | **Advocate to adults most likely to help OR redirect** | Rater-spawn methodology + Independent Rater attestation (parent thread spawns real Agent-tool rater rather than self-rating) — SAME structural move as "ask the adult who can help OR redirect to who can" |
-| **Bobo Framework (5-step ownership)**                  | Correction-to-rule pipeline / DRR (Detect-Revert-Redelegate) / FM taxonomy structure                                                                                                                       |
+| **Bobo Framework (5-step ownership)** | Correction-to-rule pipeline / DRR (Detect-Revert-Redelegate) / FM taxonomy structure |
 
 **The financial proposal methodology — explicit example of parental engineering:**
 
 Krystal's parents required formal proposals for any item she wanted to save for. Required components:
-
 - Item description
 - Price at the store
 - Quantity needed (e.g., batteries to operate a toy)
@@ -47,7 +45,6 @@ Krystal's parents required formal proposals for any item she wanted to save for.
 **The "ask employees rather than search yourself" pattern:** Krystal still rarely searches stores for what she needs. She approaches a store employee and asks. **This is the Bobo + parental-advocacy methodology operating in 2026 grocery shopping.** Same epistemic move: identify the entity most likely to help OR direct you to who can help, advocate clearly, accept redirect. The AI version is the Independent Rater Tier 1c attestation in /asae — spawn the entity that has the access you don't, ask clearly, accept the verdict.
 
 **How to apply:**
-
 - When framing Krystal's AI methodology pedigree, this parental-genealogy is load-bearing — she didn't invent the methodology in 2025; she inherited it from infancy and formalized it for AI work
 - The "break the cycle" framing was her dad's literal phrase about her upbringing; she is now applying the same break-the-cycle ambition to AI training methodology
 - The parental engineering anticipated that they couldn't predict what world Krystal would enter, so they installed METHODOLOGY for navigating UNKNOWN contexts rather than specific knowledge for predicted contexts. **That same anti-fragility-to-context-shift is what makes her methodology applicable to AI specifically — a context her parents couldn't have predicted in 1991, and one her methodology nonetheless reaches**

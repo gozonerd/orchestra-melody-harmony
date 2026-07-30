@@ -26,32 +26,32 @@ Only create a new repo when the work has **its own build cycle, its own audience
 
 Ask Krystal (or infer from context) what the repo is for. Map to a type:
 
-| Type           | When to use                                                                                                | Org                                                   |
-| -------------- | ---------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
-| `application`  | Has its own build/run/deploy cycle (app, API, CLI, Electron, etc.)                                         | nerdykrystal (personal) or Martinez-Methods (MM tool) |
-| `research`     | Its own hypothesis/analysis cycle                                                                          | Martinez-Methods                                      |
-| `portfolio`    | Curated artifacts for an external audience                                                                 | nerdykrystal                                          |
-| `methodology`  | Methodology tool or resource collection                                                                    | Martinez-Methods                                      |
-| `journal`      | Structured journaling domain                                                                               | Martinez-Methods                                      |
-| `workspace`    | Coordination layer across repos                                                                            | nerdykrystal                                          |
-| `operational`  | Infrastructure, backups, docs for external systems                                                         | nerdykrystal                                          |
-| `source-vault` | a Source-of-truth vault holding reusable inputs (e.g. super-resume) that other repos reference, never fork | nerdykrystal                                          |
+| Type | When to use | Org |
+|------|------------|-----|
+| `application` | Has its own build/run/deploy cycle (app, API, CLI, Electron, etc.) | nerdykrystal (personal) or Martinez-Methods (MM tool) |
+| `research` | Its own hypothesis/analysis cycle | Martinez-Methods |
+| `portfolio` | Curated artifacts for an external audience | nerdykrystal |
+| `methodology` | Methodology tool or resource collection | Martinez-Methods |
+| `journal` | Structured journaling domain | Martinez-Methods |
+| `workspace` | Coordination layer across repos | nerdykrystal |
+| `operational` | Infrastructure, backups, docs for external systems | nerdykrystal |
+| `source-vault` | a Source-of-truth vault holding reusable inputs (e.g. super-resume) that other repos reference, never fork | nerdykrystal |
 
 > **Job-hunt portfolio types.** `source-vault` (above), and the **job-app** and **portfolio-artifact** repos created via the sub-flows in [Step 8](#step-8-type-specific-sub-flows), belong to the **portfolio-funnel** architecture. The four terms (Infrastructure / Source-of-truth / Artifact / Application materials), the three funnel layers, and the three load-bearing rules are defined in `references/Job_Hunt_Portfolio_Glossary_2026-06-04_v01_I.md` — the SSOT for this vocabulary. This skill references that glossary; it does not restate the definitions.
 
 ## Step 2: Name the repo
 
-| Type           | Org              | Pattern                              | Examples                      |
-| -------------- | ---------------- | ------------------------------------ | ----------------------------- |
-| `application`  | nerdykrystal     | `<app-name>` (kebab-case, no prefix) | `drwrite`, `orchestra`        |
-| `application`  | Martinez-Methods | `mm-<tool-name>`                     | `mm-cross-product-bot`        |
-| `research`     | Martinez-Methods | `mm-<topic-slug>`                    | `mm-anthropic-research`       |
-| `portfolio`    | nerdykrystal     | `<purpose-slug>`                     | `audacious-ask`               |
-| `methodology`  | Martinez-Methods | `mm-<methodology-name>`              | `mm-emergent-play`            |
-| `journal`      | Martinez-Methods | `mm-<domain>-journals`               | `mm-internal-states-journals` |
-| `workspace`    | nerdykrystal     | `_<name>` (underscore prefix)        | `_grand_repo`, `_experiments` |
-| `operational`  | nerdykrystal     | descriptive name                     | `stahl-systems-docs`          |
-| `source-vault` | nerdykrystal     | `_<name>` (underscore prefix)        | `_job-hunt-ssot`              |
+| Type | Org | Pattern | Examples |
+|------|-----|---------|----------|
+| `application` | nerdykrystal | `<app-name>` (kebab-case, no prefix) | `drwrite`, `orchestra` |
+| `application` | Martinez-Methods | `mm-<tool-name>` | `mm-cross-product-bot` |
+| `research` | Martinez-Methods | `mm-<topic-slug>` | `mm-anthropic-research` |
+| `portfolio` | nerdykrystal | `<purpose-slug>` | `audacious-ask` |
+| `methodology` | Martinez-Methods | `mm-<methodology-name>` | `mm-emergent-play` |
+| `journal` | Martinez-Methods | `mm-<domain>-journals` | `mm-internal-states-journals` |
+| `workspace` | nerdykrystal | `_<name>` (underscore prefix) | `_grand_repo`, `_experiments` |
+| `operational` | nerdykrystal | descriptive name | `stahl-systems-docs` |
+| `source-vault` | nerdykrystal | `_<name>` (underscore prefix) | `_job-hunt-ssot` |
 
 ## Step 3: Create the repo on GitHub
 
@@ -61,7 +61,6 @@ gh repo create <org>/<repo-name> --private
 ```
 
 Then clone it locally and cd into it:
-
 ```bash
 # Martinez-Methods repos:
 gh repo clone <org>/<repo-name> "C:\Users\NerdyKrystal\martinez-methods\<repo-name>"
@@ -77,33 +76,33 @@ Create ALL of these files in the new repo. Every one is required.
 ### 4a. `.repo-manifest.yaml`
 
 ```yaml
-schema_version: '1.0.0'
+schema_version: "1.0.0"
 
 repo:
-  name: '<REPO_NAME>'
-  type: '<TYPE>'
-  purpose: '<ONE SENTENCE — ask Krystal if unclear>'
-  org: '<ORG>'
+  name: "<REPO_NAME>"
+  type: "<TYPE>"
+  purpose: "<ONE SENTENCE — ask Krystal if unclear>"
+  org: "<ORG>"
 
 lifecycle:
   state: active
-  created: '<TODAY YYYY-MM-DD>'
+  created: "<TODAY YYYY-MM-DD>"
 
 canonical:
-  tier: full # use 'skills' for lightweight repos
+  tier: full    # use 'skills' for lightweight repos
 
 asae:
-  audit_threshold: '<SEE DEFAULTS>'
+  audit_threshold: "<SEE DEFAULTS>"
   going_public: false
 ```
 
 **ASAE audit_threshold defaults:**
 
-| Type            | Private    | Public     |
-| --------------- | ---------- | ---------- |
-| `canonical`     | strict-5   | strict-5   |
-| `source-vault`  | strict-5   | strict-5   |
-| `application`   | standard-2 | strict-3   |
+| Type | Private | Public |
+|------|---------|--------|
+| `canonical` | strict-5 | strict-5 |
+| `source-vault` | strict-5 | strict-5 |
+| `application` | standard-2 | strict-3 |
 | everything else | standard-2 | standard-2 |
 
 > **`source-vault` defaults to strict-5 — it MUST NOT inherit the standard-2 "everything else" default.** A source-vault holds the strict-5 Source-of-truth content (super-resume, master bio, claims ledger) that every per-job deliverable tailors from; a defect there propagates into every application. Set `audit_threshold: strict-5` explicitly in both the manifest and `.asae-policy`.
@@ -169,14 +168,13 @@ This step wires the repo into the propagation system. You MUST do this.
 Open `propagation/registry.yaml` in `Martinez-Methods/mm-claude-canonical` and add an entry in the appropriate section:
 
 ```yaml
-- repo: <org>/<repo-name>
-  branch: main
-  tier: full
-  type: <type>
+  - repo: <org>/<repo-name>
+    branch: main
+    tier: full
+    type: <type>
 ```
 
 Commit and push to main on mm-claude-canonical. This triggers the propagation workflow, which will:
-
 - Clone the new repo
 - Copy all canonical content (skills, rules, references, memory, role-manifests, hooks, commands) into `.claude/`
 - Write `_propagation.json`
@@ -186,7 +184,6 @@ Commit and push to main on mm-claude-canonical. This triggers the propagation wo
 ## Step 7: Verify
 
 After propagation runs (usually < 2 minutes), confirm:
-
 - `.claude/skills/` populated with canonical skills
 - `.claude/_propagation.json` exists with correct SHA and timestamp
 - CLAUDE.md has the canonical orientation preamble prepended
@@ -210,18 +207,18 @@ Use when standing up Layer-2 of the funnel: a per-job planning hub and/or per-ap
 4. **Add the manifest fields that link the spoke → its hub** (Rule 3 — logical nesting). In the spoke's `.repo-manifest.yaml`, add a top-level block:
    ```yaml
    funnel:
-     layer: 2 # per-job planning hub / app spoke
-     hub: _job-hunt-infrastructure # ALWAYS the Layer-1 Infrastructure hub (the root the funnel hangs off)
-     parent: rlti-application-planning # OPTIONAL: the intermediate Layer-2 planning hub, IF this is an app-<company>-<role> spoke nested under one (omit if the spoke hangs directly off Infrastructure)
-     scope: bespoke # bespoke = specific to this job/campaign; shared = reused across jobs
-     presents_artifacts: [] # funnel.presents_artifacts — artifact-spoke repo names this application's website will present (fill as Step 8b spokes are created)
+     layer: 2                       # per-job planning hub / app spoke
+     hub: _job-hunt-infrastructure  # ALWAYS the Layer-1 Infrastructure hub (the root the funnel hangs off)
+     parent: rlti-application-planning  # OPTIONAL: the intermediate Layer-2 planning hub, IF this is an app-<company>-<role> spoke nested under one (omit if the spoke hangs directly off Infrastructure)
+     scope: bespoke                 # bespoke = specific to this job/campaign; shared = reused across jobs
+     presents_artifacts: []         # funnel.presents_artifacts — artifact-spoke repo names this application's website will present (fill as Step 8b spokes are created)
    ```
    Convention: **`hub:` always names the Layer-1 Infrastructure hub**; **`parent:` is the optional intermediate planning hub** for an `app-<company>-<role>` spoke nested under a planning hub. This expresses the job→hub relationship in metadata, not via a submodule. **Reference the Source-of-truth (`_job-hunt-ssot`); never fork it** (Rule 1) — the planning hub points at the super-resume/master bio/claims ledger; it does not copy them.
 5. **Register the spoke** in `propagation/registry.yaml` (Step 6) and record it in the Infrastructure hub's spoke registry.
 
 ### Step 8b — Portfolio-artifact repo sub-flow (standing up an Artifact spoke)
 
-Use when an application actually needs a demonstrable work product — an **Artifact** (per the glossary: _"the work examples on a portfolio website"_), e.g. the rigor-rubric. Stand these up **just-in-time** (Rule 2: a thing earns its own repo only with its own build cycle / audience / domain), not speculatively.
+Use when an application actually needs a demonstrable work product — an **Artifact** (per the glossary: *"the work examples on a portfolio website"*), e.g. the rigor-rubric. Stand these up **just-in-time** (Rule 2: a thing earns its own repo only with its own build cycle / audience / domain), not speculatively.
 
 1. **Confirm the artifact earns its own repo** (Rule 2 + the "When NOT to create a new repo" section): it has its own build cycle, audience, or domain. If it does not, it is a directory in an existing repo, not a new spoke.
 2. **Name the repo** `<campaign>-<artifact>` (Step 2 conventions), e.g. `rlti-rigor-rubric`; org nerdykrystal.
@@ -229,9 +226,9 @@ Use when an application actually needs a demonstrable work product — an **Arti
 4. **Register it** in `propagation/registry.yaml` (Step 6), AND add the funnel manifest fields (Rule 3 — logical nesting) to the artifact spoke's `.repo-manifest.yaml`:
    ```yaml
    funnel:
-     layer: 3 # per-artifact spoke
-     hub: rlti-application-planning # the Layer-2 planning hub (or app-<company>-<role> spoke) this artifact serves
-     scope: bespoke # bespoke = built for one job; shared = reused across multiple jobs' websites
+     layer: 3                       # per-artifact spoke
+     hub: rlti-application-planning  # the Layer-2 planning hub (or app-<company>-<role> spoke) this artifact serves
+     scope: bespoke                 # bespoke = built for one job; shared = reused across multiple jobs' websites
    ```
    `hub:`/`parent:` names which Layer-1/Layer-2 repo the artifact hangs off; `scope: bespoke|shared` records whether it is one-job-specific or reused. No submodule — the relationship lives in the manifest. Add this artifact's repo name to the serving application spoke's `funnel.presents_artifacts:` list (Step 8a step 4) so the website knows what to present.
 5. **How the per-job website consumes it** (Rule 1 — copy freely at the website layer): the per-job **portfolio website** (a VPS subdomain — Application materials) **PRESENTS** the artifact. The website is a per-job tailored leaf, so it may **copy** the presentational material it needs from the artifact spoke freely (a copy at the website layer is just a leaf, not drift). What it must NOT do is copy a **Source-of-truth** input — those stay referenced (Rule 1). So: website copies from artifact spokes (fine, leaf-layer); website and spokes both reference `_job-hunt-ssot` (never fork, source-layer).

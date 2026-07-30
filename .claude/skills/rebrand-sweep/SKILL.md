@@ -115,7 +115,6 @@ Load default allowlist (above) + any user-supplied additions. Resolve all allowl
 ### Step 3: BLOCKER tier sweep (if scope ∈ {blocker-only, both})
 
 Run each BLOCKER pattern in sequence. For each pattern:
-
 - Filesystem patterns (#1-2): `find <target> -type d -iname "*<pattern>*"` + `find <target> -type f -iname "*<pattern>*"` minus allowlist
 - Content patterns (#3-5): `grep -riE "<regex>" <target> --exclude-dir=<allowlist-dirs>`
 - Frontmatter patterns (#6): `grep -riE "^(owner|authored_by|author):.*<regex>" <target> --include="*.md" --include="*.yaml" --include="*.yml"`
@@ -126,7 +125,6 @@ Run each BLOCKER pattern in sequence. For each pattern:
 Capture hits as findings. Each finding: `{tier: BLOCKER, pattern_id, path, line_no?, evidence_line, category}`.
 
 Categorize each by `category`:
-
 - `mechanical-rename` (string substitution suffices; e.g., `stahl-systems` → `martinez-methods`)
 - `contextual-phrase` (substitution alone breaks meaning; manual review required)
 - `structural` (folder name change with refs; cascade required)
@@ -140,7 +138,6 @@ Same execution model as Step 3, with ADVISORY patterns. Emit findings tagged `ti
 ### Step 5: Fork-event git-history sweep (if `--fork-event` flag set)
 
 For target git repo:
-
 - `git log --all --format='%H %s' | grep -iE "stahl|systems|pums"` — commit messages with legacy brand
 - `git tag -l '*stahl*' '*systems*' '*pums*'` — tags with legacy brand
 - `git branch -a | grep -iE "stahl|pums"` — branches with legacy brand
@@ -169,7 +166,6 @@ Write report to output path. Sections:
 ### Step 7: Phase E admission gate verdict
 
 If scope included BLOCKER tier:
-
 - BLOCKER findings = 0 → emit `PHASE_E_ADMISSION: PASS` line at top of report
 - BLOCKER findings > 0 → emit `PHASE_E_ADMISSION: REFUSED — <count> BLOCKER findings` + remediate-then-rerun instruction
 
@@ -178,7 +174,6 @@ The Phase E pilot wiring script reads this line; canonical-consumer submodule ad
 ### Step 8: Auto-remediate mode (if `--mode=auto-remediate`)
 
 For findings categorized `mechanical-rename`:
-
 - Apply `sed` substitution per `Brand_Rename_Catalog` term-rename mandates (e.g., `stahl-systems` → `martinez-methods`, `Stahl Systems` → `Martinez Methods`)
 - Skip findings categorized `contextual-phrase`, `structural`, `binary`, `manifest`
 - Re-run BLOCKER tier sweep against same target
@@ -191,7 +186,6 @@ If user did not pass `--mode=auto-remediate`, dry-run only — emit the substitu
 Skill itself does NOT commit. Emits report + findings; user (or Spec Genius parent thread) commits with appropriate gate audit log per `/asae` Step 6 + Phase boundary commit-and-push protocol.
 
 If invoked from a Phase boundary (Phase 2 of Spec Genius Batch 3 plan), parent thread:
-
 - Stages remediation edits + report file
 - Authors gate audit log
 - Spawns 2 raters per Mod 13 Rule A
@@ -201,7 +195,7 @@ If invoked from a Phase boundary (Phase 2 of Spec Genius Batch 3 plan), parent t
 
 When the sweep emits findings, the parent thread routes per:
 
-- **Brand_Rename_Catalog** (mm-claude-canonical/references/Brand*Rename_Catalog*\*.md if/when authored; see honest gap below) — canonical term-rename mandates (legacy → current). The auto-remediate substitutions read from this catalog.
+- **Brand_Rename_Catalog** (mm-claude-canonical/references/Brand_Rename_Catalog_*.md if/when authored; see honest gap below) — canonical term-rename mandates (legacy → current). The auto-remediate substitutions read from this catalog.
 - **Fork_Origin_Catalog_2026-04-28_v01_I.md** — fork-event metadata. Fork-event findings produce candidate catalog entries.
 - **Production_Pattern_Catalog `PAT-INHERITED-BRAND-DEBT`** (`mm-claude-canonical/references/Production_Pattern_Catalog_2026-04-27_v01_I.md`) — the failure-mode codification this skill operationalizes. Each fork event surfaced by this skill increments the pattern's `observed_in` count.
 - **Pre-Publication IP Scrub Checklist** (`_grand_repo/docs/Pre_Publication_IP_Scrub_Checklist_*.md`, INTERNAL ONLY) — broader scope reference for ADVISORY tier patterns.

@@ -13,24 +13,24 @@ Generate a structured prompt brief that provides everything an AI model needs to
 
 Collect ALL of the following from the user. If any are missing, ask for them before proceeding. Do not guess or fill in defaults without explicit approval.
 
-| Input                                        | Description                                                                                                                                              | Example                                                                                                                                                                              |
-| -------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Source(s) of Truth**                       | The authoritative instructional content the LE draws from. Official docs, textbooks, courses, or verified reference material. Minimum 1, recommend 2-3.  | "Elasticsearch official docs + Elastic's Getting Started guide"                                                                                                                      |
-| **Real-World Domain/Context**                | The authentic context that examples, data, and practice scenarios should be pulled from. Must be relevant to the learner's actual work or interests.     | "Martinez Methods agent infrastructure — searching and indexing AI pipeline outputs"                                                                                                 |
-| **Previous Knowledge / Current Skill Level** | Honest assessment of what the learner already knows. Include both strengths and gaps. Note any prior exposure that didn't stick and why.                 | "Has integrated apps with Elasticsearch but never worked with ES directly. Understands the concept of indexing and querying at a high level."                                        |
-| **Duration of Learning Experience**          | Total time allocated for the complete LE.                                                                                                                | "90 minutes"                                                                                                                                                                         |
-| **Session Structure**                        | How the total duration is broken into sessions. Single session or multiple? How long each? How frequently?                                               | "Single 90-minute session" or "Two 45-minute afternoons, 1 day apart"                                                                                                                |
-| **Desired Outcome**                          | What the learner should be able to DO (not just know) after completing the LE. Must be specific, observable, and testable. Frame as a task, not a topic. | "Independently set up a local ES instance, create an index with a custom mapping, ingest documents, and write 3 query types (match, bool, range) against real pipeline output data." |
+| Input | Description | Example |
+|---|---|---|
+| **Source(s) of Truth** | The authoritative instructional content the LE draws from. Official docs, textbooks, courses, or verified reference material. Minimum 1, recommend 2-3. | "Elasticsearch official docs + Elastic's Getting Started guide" |
+| **Real-World Domain/Context** | The authentic context that examples, data, and practice scenarios should be pulled from. Must be relevant to the learner's actual work or interests. | "Martinez Methods agent infrastructure — searching and indexing AI pipeline outputs" |
+| **Previous Knowledge / Current Skill Level** | Honest assessment of what the learner already knows. Include both strengths and gaps. Note any prior exposure that didn't stick and why. | "Has integrated apps with Elasticsearch but never worked with ES directly. Understands the concept of indexing and querying at a high level." |
+| **Duration of Learning Experience** | Total time allocated for the complete LE. | "90 minutes" |
+| **Session Structure** | How the total duration is broken into sessions. Single session or multiple? How long each? How frequently? | "Single 90-minute session" or "Two 45-minute afternoons, 1 day apart" |
+| **Desired Outcome** | What the learner should be able to DO (not just know) after completing the LE. Must be specific, observable, and testable. Frame as a task, not a topic. | "Independently set up a local ES instance, create an index with a custom mapping, ingest documents, and write 3 query types (match, bool, range) against real pipeline output data." |
 
 ## Optional Inputs (Ask If Not Provided)
 
-| Input                                | Description                                                                                                                                                   | Default If Omitted                                                                                                             |
-| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| **Learner Profile Notes**            | ADHD, CPTSD, learning preferences, environmental constraints, motivational triggers, energy patterns.                                                         | Apply Krystal's standard learner profile (constructivist, ADHD, needs purpose-driven framing, confidence-building early wins). |
-| **Pedagogical Framework Preference** | Which of the 5 supported frameworks to use: Content First (CFL), Problem-Based (PBL), Scenario-Based (SBL), 7-E Reconnection, or Expeditionary Learning (EL). | Let the LE designer choose based on topic + learner profile + duration.                                                        |
-| **Environment/Tools**                | What software, hardware, or setup the learner has access to.                                                                                                  | Ask — do not assume.                                                                                                           |
-| **Assessment Approach**              | How to measure success. Krystal's standard: artifacts only (scripts that do real things), never quizzes or tests.                                             | Artifacts only. No assessments — only deliverables that demonstrate the skill in context.                                      |
-| **Confidence Baseline**              | Learner's current confidence with the topic on a 1-5 scale.                                                                                                   | Ask if not volunteered.                                                                                                        |
+| Input | Description | Default If Omitted |
+|---|---|---|
+| **Learner Profile Notes** | ADHD, CPTSD, learning preferences, environmental constraints, motivational triggers, energy patterns. | Apply Krystal's standard learner profile (constructivist, ADHD, needs purpose-driven framing, confidence-building early wins). |
+| **Pedagogical Framework Preference** | Which of the 5 supported frameworks to use: Content First (CFL), Problem-Based (PBL), Scenario-Based (SBL), 7-E Reconnection, or Expeditionary Learning (EL). | Let the LE designer choose based on topic + learner profile + duration. |
+| **Environment/Tools** | What software, hardware, or setup the learner has access to. | Ask — do not assume. |
+| **Assessment Approach** | How to measure success. Krystal's standard: artifacts only (scripts that do real things), never quizzes or tests. | Artifacts only. No assessments — only deliverables that demonstrate the skill in context. |
+| **Confidence Baseline** | Learner's current confidence with the topic on a 1-5 scale. | Ask if not volunteered. |
 
 ## Prompt Brief Structure
 
@@ -53,9 +53,9 @@ this LE, the learner will be able to [VERB] [SPECIFIC TASK]
 
 ## 2. Source(s) of Truth
 
-| #   | Source                    | Type                                            | Authority                 |
-| --- | ------------------------- | ----------------------------------------------- | ------------------------- |
-| 1   | [name + URL if available] | [Official docs / Textbook / Course / Reference] | [Primary / Supplementary] |
+| # | Source | Type | Authority |
+|---|--------|------|-----------|
+| 1 | [name + URL if available] | [Official docs / Textbook / Course / Reference] | [Primary / Supplementary] |
 
 ## 3. Real-World Context
 
@@ -66,29 +66,25 @@ learner. How it connects to their actual work.]
 ## 4. Learner Profile
 
 ### Current Knowledge
-
 [What they already know. Prior exposure. Strengths.]
 
 ### Gaps
-
 [What they don't know. What didn't stick and why.]
 
 ### Confidence Baseline
-
 [1-5 self-rating if available]
 
 ### Learning Preferences
-
 [ADHD considerations, energy patterns, environmental needs,
 motivational triggers, format preferences]
 
 ## 5. Time Structure
 
-| Parameter      | Value                                              |
-| -------------- | -------------------------------------------------- |
-| Total duration | [e.g., 90 minutes]                                 |
-| Sessions       | [e.g., 1 session of 90 min / 2 sessions of 45 min] |
-| Frequency      | [e.g., back-to-back / 1 day apart / weekly]        |
+| Parameter | Value |
+|---|---|
+| Total duration | [e.g., 90 minutes] |
+| Sessions | [e.g., 1 session of 90 min / 2 sessions of 45 min] |
+| Frequency | [e.g., back-to-back / 1 day apart / weekly] |
 
 ## 6. Environment & Tools
 

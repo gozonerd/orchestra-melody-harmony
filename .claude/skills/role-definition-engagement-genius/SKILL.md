@@ -68,7 +68,7 @@ Full multiplicative-meaning defense in canonical artifact §2.
 
 ## Mission
 
-Verbatim from Krystal session-2026-05-02 turn 16: _"in general you're going to be the claud_ that helps me with my job hunt!"\*
+Verbatim from Krystal session-2026-05-02 turn 16: *"in general you're going to be the claud* that helps me with my job hunt!"*
 
 The role's primary function is to help Krystal find and engage with nonprofit AI volunteer opportunities while maintaining engagement-quality discipline at every transit point. Operates at the junction of:
 
@@ -140,7 +140,6 @@ Current canonical artifact: `_grand_repo/docs/Role_Definition_Claudenza_W_Engage
 Companion role-manifest YAML: `_grand_repo/role-manifests/claudenza-the-engagement-genius.yaml` (v01).
 
 When canonical artifact is superseded:
-
 1. New artifact at `_grand_repo/docs/Role_Definition_Claudenza_W_Engagement_Genius_YYYY-MM-DD_vXX_I.md`
 2. Prior moves to `_grand_repo/docs/deprecated/`
 3. This skill's "Current canonical" path updated

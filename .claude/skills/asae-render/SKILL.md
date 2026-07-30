@@ -43,35 +43,34 @@ This skill is the user-facing entry point to the rendering capability. The actua
 
 ```yaml
 passes:
-  - n: 1 # pass number (1-indexed)
-    description: 'Full checklist re-evaluation'
+  - n: 1                          # pass number (1-indexed)
+    description: "Full checklist re-evaluation"
     items:
       - num: 1
-        label: 'Foo bar baz'
-        result: 'PASS' # PASS | FAIL | PARTIAL | NA
-        notes: 'second independent verification'
+        label: "Foo bar baz"
+        result: "PASS"            # PASS | FAIL | PARTIAL | NA
+        notes: "second independent verification"
       - num: 2
-        label: 'Quux'
-        result: 'PASS'
-        notes: '...'
+        label: "Quux"
+        result: "PASS"
+        notes: "..."
     issues:
       critical: 0
       high: 0
-      medium: 0 # under strict policy
+      medium: 0                   # under strict policy
       low: 0
-    counter: '1 / 5 consecutive clean passes'
-    required_phrase: 'Same comprehensive scope'
+    counter: "1 / 5 consecutive clean passes"
+    required_phrase: "Same comprehensive scope"
   - n: 2
-    description: 'Full checklist re-evaluation (IDENTICAL to Pass 1)'
-    items: [...] # same structure
-    issues: { ... }
-    counter: '2 / 5 consecutive clean passes'
-    required_phrase: 'Same comprehensive scope'
+    description: "Full checklist re-evaluation (IDENTICAL to Pass 1)"
+    items: [...]                  # same structure
+    issues: {...}
+    counter: "2 / 5 consecutive clean passes"
+    required_phrase: "Same comprehensive scope"
   # ... continues for all N passes
 ```
 
 Required fields per pass entry:
-
 - `n` (integer) — pass number, 1-indexed
 - `description` (string) — short prose description shown in heading
 - `items` (list) — per-item table content; each item has `num` / `label` / `result` / optional `notes`
@@ -80,7 +79,6 @@ Required fields per pass entry:
 - `required_phrase` (string) — Tier 1b marker phrase to include in prose
 
 Optional fields:
-
 - `cross_shell_observed` (boolean) — if true, emit cross-shell observed-behavior block alongside the pass
 
 ## Execution Protocol
@@ -104,10 +102,10 @@ For each pass entry in `passes[]`, the renderer produces:
 
 {required_phrase}. Same items, same harness — re-applied independently. Per `/asae SKILL.md` Step 1: full re-evaluation.
 
-| #     | Item    | Result             |
-| ----- | ------- | ------------------ |
+| # | Item | Result |
+|---|------|--------|
 | {num} | {label} | {result} — {notes} |
-| ...   | ...     | ...                |
+| ... | ... | ... |
 
 **Issues found at CRITICAL: {critical} / HIGH: {high} / MEDIUM (strict): {medium} / LOW: {low}**
 
@@ -184,7 +182,6 @@ The skill refuses to:
 v01_I (2026-04-30) — inaugural Spec Genius authoring per Batch 3 Lock A2 strategic. Skill spec + structured `passes[]` schema documentation + execution protocol + migration path + anti-patterns + refusals + honest gaps.
 
 Future v02+:
-
 - Lib script v02 (full rendering with per-item table + issue counts)
 - `scaffold` mode (prose-pattern → structured conversion)
 - Fixture-test corpus for adoption validation

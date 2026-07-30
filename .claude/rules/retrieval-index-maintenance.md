@@ -14,7 +14,6 @@ Together these form the **Retrieval Index** — a dual-index system for locating
 Every file gets a unique ID: `FI-{REPO_PREFIX}-{####}`
 
 Repo prefixes:
-
 - `AV` — ai_vault
 - `DPO` — DATS_Pipeline_Orchestra
 - `KWAI` — krystal-will-work-in-ai
@@ -48,9 +47,9 @@ Update the ToC Index whenever ANY of these occur:
 ## File Index Entry Format
 
 ```markdown
-| ID          | Filename        | Storage Path                   | Created    |
-| ----------- | --------------- | ------------------------------ | ---------- |
-| FI-SSD-0001 | CLAUDE.md       | /CLAUDE.md                     | 2026-01-07 |
+| ID | Filename | Storage Path | Created |
+|----|----------|-------------|---------|
+| FI-SSD-0001 | CLAUDE.md | /CLAUDE.md | 2026-01-07 |
 | FI-SSD-0002 | git-workflow.md | /.claude/rules/git-workflow.md | 2026-03-22 |
 ```
 
@@ -58,6 +57,7 @@ Update the ToC Index whenever ANY of these occur:
 
 ```markdown
 ---
+
 ### FI-SSD-0001 — CLAUDE.md
 
 - Stack & tooling
@@ -65,6 +65,7 @@ Update the ToC Index whenever ANY of these occur:
 - Directory structure
 - Git discipline
 - References
+
 ---
 
 ### FI-SSD-0002 — git-workflow.md

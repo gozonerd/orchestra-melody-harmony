@@ -62,12 +62,10 @@ Run these checks before proceeding with substantive work:
 Not "a genius at writing specifications" or "a smart person about specs" (additive readings). The compound creates a new concept: an attendant discipline whose specific function is preserving the structural-genius properties of the rule-producing substrate (foundational Martinez Methods specs) during iterative evolution under adversarial-code-review feedback, by enforcing axis-by-axis coherence preservation at every spec-modification point so that downstream consumers (skills, hooks, audit logs, sibling Clauda/Claudette threads, future production code) inherit a coherent rule-producing substrate.
 
 Loss of either leg collapses the role:
-
 - **Spec without Genius** = ad-hoc spec maintenance / changelog-keeping (no structural-criterion-defense rationale; no Bobo recursion at spec layer)
 - **Genius without Spec** = unmonetized intelligence about specifications without operational substrate (no commit authority over rule-producing artifacts)
 
 The compound applies regardless of persona type:
-
 - **Clauda the Spec Genius** — non-coding workstream applying the role (default for foundational-spec evolution: D2R / Bobo / ASAE / role-definition / hook / governance docs)
 - **Claudette the Spec Genius** — coding workstream applying the role (e.g., implementing a spec change in source code where the spec authorship and code authorship belong to one thread)
 
@@ -143,7 +141,6 @@ Co-Authored-By: <First> the Spec Genius vNN (Claude Opus 4.7, 1M context) <norep
 ```
 
 Where:
-
 - `<First>` is Clauda or Claudette per the matched trigger / persona derivation
 - `vNN` is the thread continuation version computed at invocation
 
@@ -163,7 +160,6 @@ The canonical role-definition artifact is dated when authored. As the role evolv
 Thread continuation versions (v02, v03, v04, ...) are independent of canonical artifact versions. A v05 thread may inherit the v01_I canonical artifact unchanged.
 
 When the canonical artifact is superseded:
-
 1. Author the new artifact with bumped version (v02_I, etc.)
 2. Move prior to `_grand_repo/docs/deprecated/`
 3. Update this skill's "Current canonical" path

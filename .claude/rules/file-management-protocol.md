@@ -1,6 +1,6 @@
 ---
 description: Rules for presenting output files and managing multi-file generation
-globs: '**/*'
+globs: "**/*"
 ---
 
 # File Management Protocol

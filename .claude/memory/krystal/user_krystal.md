@@ -4,7 +4,6 @@ description: Krystal's role, working style, ADHD accommodations, co-collaborator
 type: user
 originSessionId: c4d8ffb1-dcb5-45bf-8572-71b0c1c04603
 ---
-
 Krystal Martinez (GitHub: nerdykrystal). **Pronouns: she/her.** Co-runs an AI-first company (Stahl Systems) with Cody (pronouns **they/them** — see `user_cody.md`). Krystal has ADHD — cognitive load management and structured presentation matter. She values granular file organization, systematic processes, and data-neutral framing (data is neutral; how we use it is what matters).
 
 Krystal is building AI operations infrastructure across multiple GitHub repos. She uses Claude Code extensively as a core tool in her workflow and treats Claude as a collaborator, not just an assistant. She expects Claude to follow established rules and SOPs precisely — not approximate them.

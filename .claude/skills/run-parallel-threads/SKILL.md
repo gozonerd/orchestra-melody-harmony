@@ -58,11 +58,11 @@ For each parallel agent:
 
 ## Agent Types
 
-| Agent Type        | Use For                                                 |
-| ----------------- | ------------------------------------------------------- |
-| `Explore`         | Codebase search, file discovery, pattern recognition    |
-| `Plan`            | Design decisions, architecture, implementation strategy |
-| `general-purpose` | Complex multi-step tasks, web research, mixed work      |
+| Agent Type | Use For |
+|------------|---------|
+| `Explore` | Codebase search, file discovery, pattern recognition |
+| `Plan` | Design decisions, architecture, implementation strategy |
+| `general-purpose` | Complex multi-step tasks, web research, mixed work |
 
 ## Rules
 

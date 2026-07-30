@@ -17,7 +17,6 @@ Opus Raters E + F both returned "CONFIRMED_WITH_NOTES" with substantive findings
 **The structural failure:**
 
 CONFIRMED_WITH_NOTES is a middle-ground verdict that allows:
-
 1. Raters to surface substantive findings without committing to "this requires iteration"
 2. Auditing instances to close gates without resolving the findings
 3. Findings to be kicked to "v02 polish" / "non-blocking" buckets that lose them
@@ -45,9 +44,9 @@ Rater verdicts MUST be one of three (no middle-ground):
 4. **In canonical /asae methodology,** propose updating Step 6 rater attestation rubric to remove CONFIRMED_WITH_NOTES. Pending canonical update, apply this binary rubric in any super-resume / portfolio-application / high-stakes audit work.
 
 5. **Failure mode chain to remember:**
-   - CONFIRMED_WITH_NOTES verdict enables →
-   - auditing instance categorizes substantive findings as "polish" / "non-blocking" / "v02" →
-   - overclaims and inflations get institutionalized as polish →
+   - CONFIRMED_WITH_NOTES verdict enables → 
+   - auditing instance categorizes substantive findings as "polish" / "non-blocking" / "v02" → 
+   - overclaims and inflations get institutionalized as polish → 
    - artifact ships with misrepresentation that Krystal explicitly cannot afford (per `feedback_overclaims_are_misrepresentation_not_polish.md` standpoint discipline)
    - Fix is at the verdict-rubric layer: remove the middle ground; force binary commitment.
 

@@ -4,7 +4,6 @@ description: Cody's pronouns, role, and collaboration scope with Krystal across 
 type: user
 originSessionId: c4d8ffb1-dcb5-45bf-8572-71b0c1c04603
 ---
-
 **Name:** Cody
 **Pronouns:** **they/them/their/theirs** — these are the only pronouns to be used when referring to Cody, in every context, every surface, every thread
 **GitHub:** `karmuno`
@@ -15,7 +14,6 @@ originSessionId: c4d8ffb1-dcb5-45bf-8572-71b0c1c04603
 Cody is active in SOME Stahl Systems / Martinez Methods workstreams and explicitly NOT IN others. Do not assume involvement — check the workstream memory before looping them in.
 
 **Workstreams Cody IS in:**
-
 - `stahl-systems-docs` — general operations
 - `StrongMinds-DMIS` — StrongMinds consulting
 - DATS deliverables — regulatory pipeline work
@@ -23,7 +21,6 @@ Cody is active in SOME Stahl Systems / Martinez Methods workstreams and explicit
 - Portfolio website build (frontend-design plugin kept for this purpose)
 
 **Workstreams Cody is NOT in** (per `project_cody_not_in_asae_workstream.md`):
-
 - ASAE IP protection work
 - D2R Methodology Factorial experiments
 - Claude Cost build
@@ -50,4 +47,4 @@ Pronoun accuracy is basic respect for a collaborator Krystal works closely with.
 
 - `user_krystal.md` — Krystal's profile, pronouns she/her
 - `project_cody_not_in_asae_workstream.md` — scope boundary for Cody's involvement
-- `feedback_pronoun_discipline.md` — the enforcement rule governing consultation of user-\* files before pronoun use and the prohibition on demonstrating errors by enacting them
+- `feedback_pronoun_discipline.md` — the enforcement rule governing consultation of user-* files before pronoun use and the prohibition on demonstrating errors by enacting them

@@ -1,6 +1,6 @@
 ---
 description: Rules for completing tasks and handing off to next steps
-globs: '**/*'
+globs: "**/*"
 ---
 
 # Task Completion & Handoff

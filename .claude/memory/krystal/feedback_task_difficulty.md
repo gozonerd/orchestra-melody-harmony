@@ -5,7 +5,6 @@ type: feedback
 originSessionId: bcc69a55-8d20-40a3-b640-6538c3da6e31
 user: krystal
 ---
-
 Never assume a task is easier for Krystal to do herself than to route through Claude or a tool.
 
 **Why:** ADHD + multiple devices + a Linux laptop (ADA) where finding saved files is often a fool's errand. File management is hard. Taking screenshots is hard. Locating them after saving is hard. Uploading is hard. File naming is a source of real friction and stress.

@@ -68,15 +68,15 @@ app-update-rec/
 
 ## Locked design decisions (from 2026-05-12 conversation)
 
-| #   | Decision                                                                     |
-| --- | ---------------------------------------------------------------------------- |
-| 1   | Name `app-update-rec` — generic, future-proof                                |
-| 2   | Off-machine destination = `nerdykrystal/backups` (private GitHub)            |
-| 3   | Refuse-if-running for any Claude process; no override flag                   |
-| 4   | Typed-ack required for 🔴 verdict; 3 attempts then abort                     |
-| 5   | Lives at canonical (cross-machine)                                           |
-| 6   | Claude-only v1 (Desktop + Code; not Cursor / JetBrains / VS Code Claude ext) |
-| 7   | Retention: never auto-prune; manual prune has floor of 10                    |
+| # | Decision |
+|---|----------|
+| 1 | Name `app-update-rec` — generic, future-proof |
+| 2 | Off-machine destination = `nerdykrystal/backups` (private GitHub) |
+| 3 | Refuse-if-running for any Claude process; no override flag |
+| 4 | Typed-ack required for 🔴 verdict; 3 attempts then abort |
+| 5 | Lives at canonical (cross-machine) |
+| 6 | Claude-only v1 (Desktop + Code; not Cursor / JetBrains / VS Code Claude ext) |
+| 7 | Retention: never auto-prune; manual prune has floor of 10 |
 
 ## When to extend this skill
 
@@ -92,4 +92,4 @@ Edit `SKILL.md` first; the scripts and playbooks follow it. The anchor for the t
 
 ## Provenance
 
-Authored 2026-05-12 by Clauda App-Update-Rec Architect v01 (Claude Opus 4.7, Claude Code, \_grand_repo worktree awesome-lamport-428434) at Krystal's direction. Companion journal entries at `mm-internal-states-journals/clauda-app-update-rec-architect_2026-05-12_v01/`.
+Authored 2026-05-12 by Clauda App-Update-Rec Architect v01 (Claude Opus 4.7, Claude Code, _grand_repo worktree awesome-lamport-428434) at Krystal's direction. Companion journal entries at `mm-internal-states-journals/clauda-app-update-rec-architect_2026-05-12_v01/`.

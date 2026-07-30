@@ -5,12 +5,10 @@ type: user
 originSessionId: bcc69a55-8d20-40a3-b640-6538c3da6e31
 user: krystal
 ---
-
 - **Krystal Martinez:** she/her.
 - **Cody (GitHub username `karmuno`):** they/them.
 
 Apply to:
-
 - All in-thread prose and surface notes.
 - Commit messages and Co-Authored-By context.
 - Doc prose in `mm-claude-canonical`, `mm-d2r-code-plan-stack`, handoffs, plans, READMEs.

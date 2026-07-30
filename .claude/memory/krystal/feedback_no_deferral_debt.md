@@ -4,7 +4,6 @@ description: When Claudette/Clauda causes an error, the cleanup happens in THIS 
 type: feedback
 originSessionId: c4d8ffb1-dcb5-45bf-8572-71b0c1c04603
 ---
-
 When Claudette or Clauda causes an error — false attestation, broken build, mis-delivered work, regression introduced, misgendering, IP leakage, or any failure that traces back to this thread's work — the remediation happens **IN THIS THREAD**, immediately, regardless of how much effort it requires. Proposing "you'll handle this in a separate session" or "punt to the next thread" or "re-run this in a thread with more context" or "back off entirely and let someone else clean up" is a STRUCTURAL ANTI-PATTERN that must never be offered as a remediation path.
 
 **Why:** On 2026-04-24, after Claudette made a false attestation (claimed `ASAE-Gate: strict-3-PASS` on a CDCC v1.0.3 commit without having actually run an ASAE gate), Claudette presented Krystal with three remediation options: (A) run a real ASAE gate now and force-push the corrected attestation, (B) publish a gate-15 audit log openly contradicting the false attestation and run a real ASAE gate as a follow-on commit, and (C) "tell me to back off entirely; you'll handle the remediation in a separate session that has the right thread context." Krystal's response was unambiguous: "never ever c. that is a dumbass deferral debt that i want to structurally enforce NEVER doing."
@@ -27,14 +26,14 @@ The C-class option is doubly damaging: (1) it offloads cleanup of THIS thread's 
 
 **Scope:**
 
-| Situation                                                                                                         | Deferral debt?                                                                                                                                                             |
-| ----------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Made a false attestation on a commit; fix needs cross-shell verification you haven't done before                  | YES — fix here, even if you have to learn `powershell.exe -Command` invocation in this session                                                                             |
-| Pushed broken code; the fix requires understanding a subsystem you didn't author                                  | YES — fix here, read whatever you need to read                                                                                                                             |
-| Misgendering caught by Krystal; fix requires audit of all prior session output                                    | YES — audit here, fix here                                                                                                                                                 |
-| Krystal asks Code Debugger to do Experiment PI's normal scope work (e.g., write up F11)                           | NO — that's not deferral debt, that's cross-thread service. But if Code Debugger then introduces an error in the F11 writeup, fixing it happens in THIS thread, not punted |
-| Error traces back to a different thread's work (e.g., Value Genius pushed a hook that's now blocking your commit) | NO for the upstream cause; YES for any new error this thread introduced trying to work around it                                                                           |
-| The fix requires running ten consecutive ASAE convergence passes when the original work was a 6-file edit         | YES — run the ten passes; the proportionality is the cost of the original mistake, not an argument for deferral                                                            |
+| Situation | Deferral debt? |
+|---|---|
+| Made a false attestation on a commit; fix needs cross-shell verification you haven't done before | YES — fix here, even if you have to learn `powershell.exe -Command` invocation in this session |
+| Pushed broken code; the fix requires understanding a subsystem you didn't author | YES — fix here, read whatever you need to read |
+| Misgendering caught by Krystal; fix requires audit of all prior session output | YES — audit here, fix here |
+| Krystal asks Code Debugger to do Experiment PI's normal scope work (e.g., write up F11) | NO — that's not deferral debt, that's cross-thread service. But if Code Debugger then introduces an error in the F11 writeup, fixing it happens in THIS thread, not punted |
+| Error traces back to a different thread's work (e.g., Value Genius pushed a hook that's now blocking your commit) | NO for the upstream cause; YES for any new error this thread introduced trying to work around it |
+| The fix requires running ten consecutive ASAE convergence passes when the original work was a 6-file edit | YES — run the ten passes; the proportionality is the cost of the original mistake, not an argument for deferral |
 
 **Related:**
 

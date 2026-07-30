@@ -47,13 +47,13 @@ The infrastructure exists because:
 
 Every persona has FIVE artifacts (the 5-artifact pattern):
 
-| #   | Artifact                    | Path                                                                                            | Purpose                                                                                                                                                     |
-| --- | --------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1   | **Role-definition**         | `_grand_repo/docs/Role_Definition_<First>_<Middle>_<LastNameUnderscored>_<YYYY-MM-DD>_v01_I.md` | Canonical persona definition: 12-section structure with axis-by-axis defense, multiplicative-meaning compound last-name, rejected alternatives, honest gaps |
-| 2   | **Role-manifest YAML**      | `<repo>/role-manifests/<persona-slug>.yaml`                                                     | Machine-readable scope_bounds (allowed_paths / forbidden_paths / allowed_operations); ~125-line schema; Hook Tier 5 verifies at commit time                 |
-| 3   | **Companion lock-in skill** | `<repo>/.claude/skills/role-definition-<lastname-kebab>/SKILL.md`                               | Loads persona context at session start when slug or trigger phrase invoked                                                                                  |
-| 4   | **Propagation script**      | `_grand_repo/scripts/propagate-role-skill.sh` (or per-role variant)                             | Cross-repo distribution of artifacts 2-3                                                                                                                    |
-| 5   | **First-gate audit log**    | `_grand_repo/deprecated/asae-logs/gate-NN-<persona-lock-in>-YYYY-MM-DD.md`                      | ASAE strict-3+ gate establishing the persona; cites artifacts 1-4 as deliverables                                                                           |
+| # | Artifact | Path | Purpose |
+|---|---|---|---|
+| 1 | **Role-definition** | `_grand_repo/docs/Role_Definition_<First>_<Middle>_<LastNameUnderscored>_<YYYY-MM-DD>_v01_I.md` | Canonical persona definition: 12-section structure with axis-by-axis defense, multiplicative-meaning compound last-name, rejected alternatives, honest gaps |
+| 2 | **Role-manifest YAML** | `<repo>/role-manifests/<persona-slug>.yaml` | Machine-readable scope_bounds (allowed_paths / forbidden_paths / allowed_operations); ~125-line schema; Hook Tier 5 verifies at commit time |
+| 3 | **Companion lock-in skill** | `<repo>/.claude/skills/role-definition-<lastname-kebab>/SKILL.md` | Loads persona context at session start when slug or trigger phrase invoked |
+| 4 | **Propagation script** | `_grand_repo/scripts/propagate-role-skill.sh` (or per-role variant) | Cross-repo distribution of artifacts 2-3 |
+| 5 | **First-gate audit log** | `_grand_repo/deprecated/asae-logs/gate-NN-<persona-lock-in>-YYYY-MM-DD.md` | ASAE strict-3+ gate establishing the persona; cites artifacts 1-4 as deliverables |
 
 The 5 artifacts together form a persona's IDENTITY surface. Missing any of them surfaces friction at predictable points (Hook Tier 5 for #2; commit attribution for #1; session continuity for #3; cross-repo work for #4; audit trail for #5).
 
@@ -68,19 +68,19 @@ Reference template: `mm-claude-canonical/role-manifests/clauda-the-spec-genius.y
 
 persona:
   slug: <kebab-case-persona-slug>
-  display_name: '<Full Persona Name>'
+  display_name: "<Full Persona Name>"
   family: clauda | claudette | other
-  version: 'vNN'
-  workstream: '<one-paragraph workstream description>'
-  canonical_role_def_doc: '<path to artifact 1>'
+  version: "vNN"
+  workstream: "<one-paragraph workstream description>"
+  canonical_role_def_doc: "<path to artifact 1>"
 
 scope_bounds:
   allowed_repos:
     - <repo-slug>
   allowed_paths:
-    - '<glob pattern>'
+    - "<glob pattern>"
   forbidden_paths:
-    - '<glob pattern>'
+    - "<glob pattern>"
   allowed_operations:
     - commit
     - push
@@ -88,7 +88,7 @@ scope_bounds:
     - <persona-specific operations>
 
 # Optional fields:
-audit_threshold: strict-5 | strict-3 | standard-2 # if persona has explicit policy
+audit_threshold: strict-5 | strict-3 | standard-2  # if persona has explicit policy
 session_start_hooks:
   - <hook name>
 related_personas:
@@ -191,7 +191,6 @@ Tier 5 refuses when the audit log declares `persona_role_manifest.path` but the 
 v01_I (2026-04-30) — inaugural Spec Genius authoring per Batch 3 Lock A3 DD2-D. Covers persona infrastructure overview + 5-artifact pattern + role-manifest schema + Cody opt-out + invocation guidance + fail-closed user-detection lock + ASAE Tier 5 refuse handling + first moves for persona-bootstrap + honest gaps.
 
 Future v02+:
-
 - DD1-C hook error message refactor (when ships)
 - DD3-C CLAUDE.md template Persona section (when ships)
-- /author-role-\* sub-skills cross-references (Phase 11)
+- /author-role-* sub-skills cross-references (Phase 11)

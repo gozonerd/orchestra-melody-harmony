@@ -25,14 +25,12 @@ Origin: Krystal, 2026-05-20 — "that quick progress check format is EXCELLENT! 
 ## When to use
 
 **INVOKE when:**
-
 - The user invokes `/quick-progress-check` or asks "where are we on this", "progress check", "status check", or "give me a progress check".
 - You are reporting progress partway through a multi-step task — this is a valid lightweight in-thread report that satisfies no-silent-execution without a wall of text.
 
-**DISTINCT FROM `/scope-recap`:** scope-recap is the end-of-scope _retrospective_ (what worked / what to improve / in-flight). quick-progress-check is a _live status snapshot_ of where each work item stands. Use scope-recap to close a scope; use quick-progress-check to check status mid-flight.
+**DISTINCT FROM `/scope-recap`:** scope-recap is the end-of-scope *retrospective* (what worked / what to improve / in-flight). quick-progress-check is a *live status snapshot* of where each work item stands. Use scope-recap to close a scope; use quick-progress-check to check status mid-flight.
 
 **DO NOT:**
-
 - Auto-invoke it as a time/pacing nudge (per feedback_parallel_threads_no_check_ins).
 - Use it as a retrospective (that is scope-recap).
 
@@ -42,7 +40,6 @@ Origin: Krystal, 2026-05-20 — "that quick progress check format is EXCELLENT! 
 2. **The table**, exactly these columns:
 
    | ID | Item | Status |
-
 3. **(optional) ONE-line closer** — what's next or "nothing for you to do" — with **no pacing pressure**.
 
 ### REQUIRED: uniform IDs on every row
@@ -57,14 +54,14 @@ Every row MUST have a unique ID. No exceptions — never a row without one, neve
 
 ### Status emoji legend
 
-| Emoji | Meaning                                                  |
-| ----- | -------------------------------------------------------- |
-| ✅    | done (and verified — see Rule 2)                         |
-| ⏳    | in progress / running                                    |
-| ⬜    | pending / not started                                    |
-| 🔜    | next up (ready to start once the current item completes) |
-| 🚫    | blocked (name the blocker in the Item cell)              |
-| ❌    | failed (name why in the Item cell)                       |
+| Emoji | Meaning |
+|---|---|
+| ✅ | done (and verified — see Rule 2) |
+| ⏳ | in progress / running |
+| ⬜ | pending / not started |
+| 🔜 | next up (ready to start once the current item completes) |
+| 🚫 | blocked (name the blocker in the Item cell) |
+| ❌ | failed (name why in the Item cell) |
 
 ## Discipline rules (binding)
 

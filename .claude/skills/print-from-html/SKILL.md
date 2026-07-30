@@ -7,8 +7,8 @@ type: skill
 classification: utility-class
 provenance: Extracted from mm-fm-taxonomy Batch 2 partner-review workflow. Krystal needed schema.sql and architecture.md printed for her partner to review on paper. Pattern generalized to any source file.
 changelog:
-  - '1.0.0 (2026-05-12): Initial release. 16 file formats, syntax highlighting, markdown rendering, CSV tables, print CSS.'
-  - '1.1.0 (2026-05-12): Added Mermaid diagram handling — primary path via mmdc CLI pre-render to inline SVG (offline-capable); fallback via CDN-loaded mermaid.js (requires internet at print time). Anti-pattern about external dependencies updated to allow Mermaid CDN as documented exception.'
+  - "1.0.0 (2026-05-12): Initial release. 16 file formats, syntax highlighting, markdown rendering, CSV tables, print CSS."
+  - "1.1.0 (2026-05-12): Added Mermaid diagram handling — primary path via mmdc CLI pre-render to inline SVG (offline-capable); fallback via CDN-loaded mermaid.js (requires internet at print time). Anti-pattern about external dependencies updated to allow Mermaid CDN as documented exception."
   - "1.1.1 (2026-05-12): Default output location changed from Desktop root (`C:\\Users\\NerdyKrystal\\Desktop\\`) to Krystal's curated print-queue subfolder (`C:\\Users\\NerdyKrystal\\Desktop\\claude files to print\\`). Folder is `mkdir -p`'d if missing — no silent fallback to Desktop root. Surfaced during the 2026-05-12 BoB play-journal print-to-html invocation; Krystal directed the change inline. Gate-31 canonical (strict-5 / 2 raters PARTIAL → corrected inline → effectively CONFIRMED; first attempt as gate-26 FLAGged for ID collision, renamed gate-30 per next-unused-integer)."
 ---
 
@@ -34,12 +34,12 @@ Krystal works with a partner who reviews on paper. This skill eliminates the fri
 
 ## Inputs
 
-| Input               | Required | Description                                                                                                                                                                                                                                                                                 |
-| ------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Source file path(s) | Yes      | One or more files to make printable                                                                                                                                                                                                                                                         |
-| Output location     | No       | Where to write the HTML. Default: `C:\Users\NerdyKrystal\Desktop\claude files to print\` (Krystal's curated print-queue folder; keeps print-ready HTML separate from other Desktop clutter). Folder is created via `mkdir -p` if missing — no silent fallback to Desktop root (per Step 5). |
-| Paper size          | No       | Default: letter. Also supports A4.                                                                                                                                                                                                                                                          |
-| Custom title        | No       | Override the document title (default: filename)                                                                                                                                                                                                                                             |
+| Input | Required | Description |
+|-------|----------|-------------|
+| Source file path(s) | Yes | One or more files to make printable |
+| Output location | No | Where to write the HTML. Default: `C:\Users\NerdyKrystal\Desktop\claude files to print\` (Krystal's curated print-queue folder; keeps print-ready HTML separate from other Desktop clutter). Folder is created via `mkdir -p` if missing — no silent fallback to Desktop root (per Step 5). |
+| Paper size | No | Default: letter. Also supports A4. |
+| Custom title | No | Override the document title (default: filename) |
 
 ## Execution Protocol
 
@@ -47,25 +47,25 @@ Krystal works with a partner who reviews on paper. This skill eliminates the fri
 
 Read the full file. Determine format from extension:
 
-| Extension                    | Format                | Rendering strategy                                    |
-| ---------------------------- | --------------------- | ----------------------------------------------------- |
-| `.sql`                       | SQL                   | Monospace + SQL syntax highlighting                   |
-| `.py`                        | Python                | Monospace + Python syntax highlighting                |
-| `.js`, `.ts`, `.tsx`, `.jsx` | JavaScript/TypeScript | Monospace + JS syntax highlighting                    |
-| `.yaml`, `.yml`              | YAML                  | Monospace + YAML syntax highlighting                  |
-| `.json`                      | JSON                  | Monospace + JSON syntax highlighting                  |
-| `.md`                        | Markdown              | Rendered prose (headings, tables, code blocks, lists) |
-| `.sh`, `.bash`               | Shell                 | Monospace + shell syntax highlighting                 |
-| `.csv`                       | CSV                   | Rendered as HTML table                                |
-| `.toml`                      | TOML                  | Monospace + TOML syntax highlighting                  |
-| `.html`, `.htm`              | HTML                  | Source view with monospace + HTML syntax highlighting |
-| `.rs`                        | Rust                  | Monospace + Rust syntax highlighting                  |
-| `.go`                        | Go                    | Monospace + Go syntax highlighting                    |
-| `.rb`                        | Ruby                  | Monospace + Ruby syntax highlighting                  |
-| `.java`                      | Java                  | Monospace + Java syntax highlighting                  |
-| `.css`, `.scss`              | CSS                   | Monospace + CSS syntax highlighting                   |
-| `.xml`                       | XML                   | Monospace + XML syntax highlighting                   |
-| `.txt`, other                | Plain text            | Monospace, no highlighting                            |
+| Extension | Format | Rendering strategy |
+|-----------|--------|-------------------|
+| `.sql` | SQL | Monospace + SQL syntax highlighting |
+| `.py` | Python | Monospace + Python syntax highlighting |
+| `.js`, `.ts`, `.tsx`, `.jsx` | JavaScript/TypeScript | Monospace + JS syntax highlighting |
+| `.yaml`, `.yml` | YAML | Monospace + YAML syntax highlighting |
+| `.json` | JSON | Monospace + JSON syntax highlighting |
+| `.md` | Markdown | Rendered prose (headings, tables, code blocks, lists) |
+| `.sh`, `.bash` | Shell | Monospace + shell syntax highlighting |
+| `.csv` | CSV | Rendered as HTML table |
+| `.toml` | TOML | Monospace + TOML syntax highlighting |
+| `.html`, `.htm` | HTML | Source view with monospace + HTML syntax highlighting |
+| `.rs` | Rust | Monospace + Rust syntax highlighting |
+| `.go` | Go | Monospace + Go syntax highlighting |
+| `.rb` | Ruby | Monospace + Ruby syntax highlighting |
+| `.java` | Java | Monospace + Java syntax highlighting |
+| `.css`, `.scss` | CSS | Monospace + CSS syntax highlighting |
+| `.xml` | XML | Monospace + XML syntax highlighting |
+| `.txt`, other | Plain text | Monospace, no highlighting |
 
 If the file has no extension or an unrecognized one, treat as plain text.
 
@@ -76,16 +76,18 @@ Every output file is a single self-contained HTML page (no external CSS/JS depen
 ```html
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<title>{document title}</title>
-		<style>
-			{all CSS inline — print + screen}
-		</style>
-	</head>
-	<body>
-		{screen-only print instructions banner} {document header: title + metadata} {rendered content}
-	</body>
+<head>
+  <meta charset="UTF-8">
+  <title>{document title}</title>
+  <style>
+    {all CSS inline — print + screen}
+  </style>
+</head>
+<body>
+  {screen-only print instructions banner}
+  {document header: title + metadata}
+  {rendered content}
+</body>
 </html>
 ```
 
@@ -95,15 +97,15 @@ Every output file is a single self-contained HTML page (no external CSS/JS depen
 
 Use `<pre>` with `<span>` tags for syntax highlighting. Highlighting is print-friendly — no bright neon colors. Palette:
 
-| Token type                   | Style                                                                  | Print-safe rationale                         |
-| ---------------------------- | ---------------------------------------------------------------------- | -------------------------------------------- |
-| Keywords                     | `font-weight: bold; color: #1a1a8a;`                                   | Bold blue — visible in B&W as bold           |
-| Types / built-ins            | `font-weight: bold; color: #5a1a5a;`                                   | Bold purple — distinguishable from keywords  |
-| Strings / values             | `color: #2a6a2a;`                                                      | Dark green — readable in B&W as lighter gray |
-| Comments                     | `color: #666; font-style: italic;`                                     | Gray italic — clearly secondary              |
-| Numbers                      | `color: #8a4a1a;`                                                      | Dark orange/brown — distinct from strings    |
-| Operators / punctuation      | `color: #333;`                                                         | Near-black — blends with structure           |
-| Section headers / decorators | `background: #e8e8e8; border-left: 3px solid #333; font-weight: bold;` | Gray bar — visual section breaks             |
+| Token type | Style | Print-safe rationale |
+|------------|-------|---------------------|
+| Keywords | `font-weight: bold; color: #1a1a8a;` | Bold blue — visible in B&W as bold |
+| Types / built-ins | `font-weight: bold; color: #5a1a5a;` | Bold purple — distinguishable from keywords |
+| Strings / values | `color: #2a6a2a;` | Dark green — readable in B&W as lighter gray |
+| Comments | `color: #666; font-style: italic;` | Gray italic — clearly secondary |
+| Numbers | `color: #8a4a1a;` | Dark orange/brown — distinct from strings |
+| Operators / punctuation | `color: #333;` | Near-black — blends with structure |
+| Section headers / decorators | `background: #e8e8e8; border-left: 3px solid #333; font-weight: bold;` | Gray bar — visual section breaks |
 
 **Language-specific keyword lists:**
 
@@ -154,7 +156,6 @@ If `@mermaid-js/mermaid-cli` is installed (the `mmdc` command is on PATH):
 Install command if `mmdc` is missing: `npm install -g @mermaid-js/mermaid-cli` (requires Node.js).
 
 Check for availability cross-platform:
-
 - Bash / Git Bash: `command -v mmdc` (returns path if present, empty if not)
 - PowerShell: `Get-Command mmdc -ErrorAction SilentlyContinue`
 - Windows cmd: `where mmdc`
@@ -170,14 +171,14 @@ If `mmdc` is NOT available AND the user is online at print time (or has explicit
 
 ```html
 <script type="module">
-	import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-	mermaid.initialize({
-		startOnLoad: true,
-		theme: 'default',
-		flowchart: { useMaxWidth: true, htmlLabels: true },
-		er: { useMaxWidth: true },
-		gantt: { useMaxWidth: true }
-	});
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'default',
+    flowchart: { useMaxWidth: true, htmlLabels: true },
+    er: { useMaxWidth: true },
+    gantt: { useMaxWidth: true }
+  });
 </script>
 ```
 
@@ -185,11 +186,11 @@ If `mmdc` is NOT available AND the user is online at print time (or has explicit
 
 ```css
 pre.mermaid {
-	background: #fff;
-	border: 1px solid #ddd;
-	border-left: 1px solid #ddd;
-	text-align: center;
-	padding: 0.4em;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  text-align: center;
+  padding: 0.4em;
 }
 ```
 
@@ -197,12 +198,12 @@ pre.mermaid {
 
 **Decision rule:**
 
-| Situation                                                     | Strategy                                                                     |
-| ------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| `mmdc` on PATH                                                | Use primary (SVG pre-render) — always                                        |
-| `mmdc` NOT on PATH, user offline / wants offline-capable file | Offer to install `mmdc` first, then SVG pre-render                           |
-| `mmdc` NOT on PATH, user confirms online at print time        | Use fallback (CDN), document the network requirement in the on-screen banner |
-| `mmdc` NOT on PATH, user preference unclear                   | Ask before falling back — don't silently use CDN                             |
+| Situation | Strategy |
+|-----------|----------|
+| `mmdc` on PATH | Use primary (SVG pre-render) — always |
+| `mmdc` NOT on PATH, user offline / wants offline-capable file | Offer to install `mmdc` first, then SVG pre-render |
+| `mmdc` NOT on PATH, user confirms online at print time | Use fallback (CDN), document the network requirement in the on-screen banner |
+| `mmdc` NOT on PATH, user preference unclear | Ask before falling back — don't silently use CDN |
 
 **Always check `mmdc` availability before bypassing the self-contained rule.** The CDN fallback is a documented exception, not a free pass.
 
@@ -222,38 +223,27 @@ Every HTML file includes both screen and print stylesheets:
 
 ```css
 @media print {
-	body {
-		margin: 0.5in;
-	}
-	.no-print {
-		display: none;
-	}
-	pre,
-	table {
-		page-break-inside: avoid;
-	}
-	h2,
-	h3 {
-		page-break-after: avoid;
-	}
-	@page {
-		margin: 0.6in 0.5in;
-		@top-right {
-			content: '{document title}';
-			font-size: 8pt;
-			color: #666;
-		}
-		@bottom-center {
-			content: 'Page ' counter(page) ' of ' counter(pages);
-			font-size: 8pt;
-			color: #666;
-		}
-	}
+  body { margin: 0.5in; }
+  .no-print { display: none; }
+  pre, table { page-break-inside: avoid; }
+  h2, h3 { page-break-after: avoid; }
+  @page {
+    margin: 0.6in 0.5in;
+    @top-right {
+      content: "{document title}";
+      font-size: 8pt;
+      color: #666;
+    }
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-size: 8pt;
+      color: #666;
+    }
+  }
 }
 ```
 
 **Print-specific rules:**
-
 - Code files: 9-9.5pt monospace, `pre { white-space: pre-wrap; word-wrap: break-word; }` (wrap long lines rather than clip)
 - Prose files: 10-10.5pt serif body
 - Tables: `page-break-inside: avoid` (keep tables together when possible)
@@ -264,7 +254,8 @@ Every HTML file includes both screen and print stylesheets:
 
 ```html
 <div class="no-print">
-	Press <strong>Ctrl+P</strong> to print this page. Optimized for letter/A4 paper.
+  Press <strong>Ctrl+P</strong> to print this page.
+  Optimized for letter/A4 paper.
 </div>
 ```
 
@@ -275,7 +266,6 @@ Styled with light green background, centered, sans-serif.
 **Filename convention:** `{source-filename-without-ext}-print.html`
 
 Examples:
-
 - `schema.sql` → `schema-sql-print.html`
 - `architecture.md` → `architecture-md-print.html`
 - `registry.yaml` → `registry-yaml-print.html`
@@ -285,12 +275,11 @@ Examples:
 
 This is Krystal's curated print-queue folder — keeps print-ready HTML files in one place rather than scattered across Desktop. If the folder doesn't exist at invocation time, create it (`mkdir -p`) rather than falling back silently to Desktop root. If the user specifies a different location, use that instead.
 
-_Added 2026-05-12 per Krystal's direction "put it in the claude files to print folder and add that step to the skill" (BoB play journal print-to-html invocation, this same date)._
+*Added 2026-05-12 per Krystal's direction "put it in the claude files to print folder and add that step to the skill" (BoB play journal print-to-html invocation, this same date).*
 
 ### Step 6: Confirm
 
 Tell the user:
-
 - Filename and location
 - Source format detected
 - How to print ("Open in browser, Ctrl+P")
@@ -302,7 +291,6 @@ If multiple files were processed, list all output files.
 When the user provides multiple files, process each one independently. Generate one HTML file per source file. Report all output paths at the end.
 
 Example:
-
 ```
 User: "print these for me: db/schema.sql, docs/architecture.md, .repo-manifest.yaml"
 

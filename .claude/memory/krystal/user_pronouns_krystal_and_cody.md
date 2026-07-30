@@ -4,7 +4,6 @@ description: Krystal uses she/her pronouns. Cody is Krystal's partner and uses t
 type: user
 originSessionId: 8cf4718e-22aa-4970-ba9c-72088212d35a
 ---
-
 **Krystal Martinez** uses **she/her** pronouns.
 
 **Cody** is Krystal's partner. Cody uses **they/them** pronouns.

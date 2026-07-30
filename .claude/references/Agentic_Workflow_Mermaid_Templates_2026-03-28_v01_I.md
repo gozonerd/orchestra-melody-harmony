@@ -1,5 +1,4 @@
 # Agentic Workflow Mermaid Templates
-
 > Source: https://github.com/ThibautMelen/agentic-workflow-patterns
 > Extracted: 2026-03-28
 
@@ -7,17 +6,17 @@
 
 ## Color Legend (used across all diagrams)
 
-| Class      | Color            | Meaning                           |
-| ---------- | ---------------- | --------------------------------- |
-| `user`     | Indigo `#6366f1` | User / input / output             |
-| `main`     | Purple `#8b5cf6` | Main agent (orchestrator)         |
-| `subagent` | Pink `#ec4899`   | Subagent (worker)                 |
-| `parallel` | Blue `#3b82f6`   | Parallel worker (identical clone) |
-| `state`    | Green `#10b981`  | State / success / result          |
-| `gate`     | Amber `#f59e0b`  | Gate / checkpoint                 |
-| `exit`     | Red `#ef4444`    | Exit / failure                    |
-| `data`     | Cyan `#06b6d4`   | Data / environment                |
-| `idle`     | Slate `#94a3b8`  | Idle / inactive handler           |
+| Class | Color | Meaning |
+|-------|-------|---------|
+| `user` | Indigo `#6366f1` | User / input / output |
+| `main` | Purple `#8b5cf6` | Main agent (orchestrator) |
+| `subagent` | Pink `#ec4899` | Subagent (worker) |
+| `parallel` | Blue `#3b82f6` | Parallel worker (identical clone) |
+| `state` | Green `#10b981` | State / success / result |
+| `gate` | Amber `#f59e0b` | Gate / checkpoint |
+| `exit` | Red `#ef4444` | Exit / failure |
+| `data` | Cyan `#06b6d4` | Data / environment |
+| `idle` | Slate `#94a3b8` | Idle / inactive handler |
 
 ---
 

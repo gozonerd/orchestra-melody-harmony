@@ -13,7 +13,6 @@ Generate professional, ISO-standard BPMN 2.0 XML for AI pipeline orchestration. 
 ## Rendering
 
 BPMN XML is rendered in:
-
 - **bpmn.io** (free, browser-based) — paste XML or upload .bpmn file
 - **Camunda Modeler** (free desktop app) — full BPMN editing
 - **Flowable** — enterprise orchestration platform with AI extensions
@@ -23,37 +22,37 @@ Claude generates the XML as a code block or saves it as a `.bpmn` file.
 
 ## When to Use BPMN (vs. Other Diagram Types)
 
-| Use Case                               | BPMN?                 | Why / Why Not                                             |
-| -------------------------------------- | --------------------- | --------------------------------------------------------- |
-| Human-AI orchestration (who does what) | **Yes — primary use** | Swimlanes formalize actor assignment                      |
-| Decision gateways / QA gates           | **Yes**               | Exclusive/inclusive/parallel gateways are first-class     |
-| Exception handling paths               | **Yes**               | Error events, compensation, escalation built-in           |
-| Multi-model thread assignment          | **Yes**               | Each model gets its own lane                              |
-| Dual-mode execution (ET vs. ST)        | **Yes**               | Conditional branching with gateway notation               |
-| Simple pipeline dependency DAG         | **No**                | Use Mermaid — BPMN is overkill for pure dependency graphs |
-| Interactive exploration                | **No**                | Use HTML+JS for zoom/click interactivity                  |
-| Quick in-thread sketch                 | **No**                | Use Mermaid — BPMN XML is verbose and needs a renderer    |
+| Use Case | BPMN? | Why / Why Not |
+|---|---|---|
+| Human-AI orchestration (who does what) | **Yes — primary use** | Swimlanes formalize actor assignment |
+| Decision gateways / QA gates | **Yes** | Exclusive/inclusive/parallel gateways are first-class |
+| Exception handling paths | **Yes** | Error events, compensation, escalation built-in |
+| Multi-model thread assignment | **Yes** | Each model gets its own lane |
+| Dual-mode execution (ET vs. ST) | **Yes** | Conditional branching with gateway notation |
+| Simple pipeline dependency DAG | **No** | Use Mermaid — BPMN is overkill for pure dependency graphs |
+| Interactive exploration | **No** | Use HTML+JS for zoom/click interactivity |
+| Quick in-thread sketch | **No** | Use Mermaid — BPMN XML is verbose and needs a renderer |
 
 ## Domain: AI Pipeline Orchestration Patterns
 
 ### BPMN Elements Mapped to AI Orchestration
 
-| AI Concept                        | BPMN Element                                        | Symbol                      |
-| --------------------------------- | --------------------------------------------------- | --------------------------- |
-| Pipeline / major stage            | **Pool** or **Subprocess**                          | Rectangle container         |
-| Processing step                   | **Task** (Service Task for AI, User Task for human) | Rounded rectangle           |
-| Human QA gate                     | **User Task** + **Exclusive Gateway**               | Person icon + diamond       |
-| Model routing decision            | **Exclusive Gateway**                               | Diamond with X              |
-| Parallel execution                | **Parallel Gateway**                                | Diamond with +              |
-| Conditional branching (ET vs. ST) | **Inclusive Gateway**                               | Diamond with O              |
-| AI agent / model                  | **Swimlane (Lane)**                                 | Horizontal band within pool |
-| Human reviewer                    | **Swimlane (Lane)**                                 | Horizontal band within pool |
-| Orchestrator                      | **Swimlane (Lane)**                                 | Horizontal band within pool |
-| Error / exception                 | **Error Boundary Event**                            | Circle with lightning bolt  |
-| Timer / deadline                  | **Timer Event**                                     | Circle with clock           |
-| Data input                        | **Data Object**                                     | Page with folded corner     |
-| Knowledge base                    | **Data Store**                                      | Cylinder                    |
-| Signal between pipelines          | **Message Flow**                                    | Dashed arrow with envelope  |
+| AI Concept | BPMN Element | Symbol |
+|---|---|---|
+| Pipeline / major stage | **Pool** or **Subprocess** | Rectangle container |
+| Processing step | **Task** (Service Task for AI, User Task for human) | Rounded rectangle |
+| Human QA gate | **User Task** + **Exclusive Gateway** | Person icon + diamond |
+| Model routing decision | **Exclusive Gateway** | Diamond with X |
+| Parallel execution | **Parallel Gateway** | Diamond with + |
+| Conditional branching (ET vs. ST) | **Inclusive Gateway** | Diamond with O |
+| AI agent / model | **Swimlane (Lane)** | Horizontal band within pool |
+| Human reviewer | **Swimlane (Lane)** | Horizontal band within pool |
+| Orchestrator | **Swimlane (Lane)** | Horizontal band within pool |
+| Error / exception | **Error Boundary Event** | Circle with lightning bolt |
+| Timer / deadline | **Timer Event** | Circle with clock |
+| Data input | **Data Object** | Page with folded corner |
+| Knowledge base | **Data Store** | Cylinder |
+| Signal between pipelines | **Message Flow** | Dashed arrow with envelope |
 
 ### Swimlane Architecture for AI Workflows
 
@@ -71,13 +70,13 @@ Pool: [Pipeline Name]
 
 ### Gateway Patterns
 
-| Pattern                    | Gateway Type    | Use Case                                    |
-| -------------------------- | --------------- | ------------------------------------------- |
-| Pass/Fail QA gate          | Exclusive (XOR) | Human reviews output → approve or send back |
-| ET vs. ST mode selection   | Exclusive (XOR) | Route based on execution mode               |
-| Parallel pipeline branches | Parallel (AND)  | P4 and P6 run simultaneously after P5       |
-| Optional enrichment steps  | Inclusive (OR)  | Include if source material warrants it      |
-| Multi-model fan-out        | Parallel (AND)  | Same input sent to multiple models          |
+| Pattern | Gateway Type | Use Case |
+|---|---|---|
+| Pass/Fail QA gate | Exclusive (XOR) | Human reviews output → approve or send back |
+| ET vs. ST mode selection | Exclusive (XOR) | Route based on execution mode |
+| Parallel pipeline branches | Parallel (AND) | P4 and P6 run simultaneously after P5 |
+| Optional enrichment steps | Inclusive (OR) | Include if source material warrants it |
+| Multi-model fan-out | Parallel (AND) | Same input sent to multiple models |
 
 ## BPMN 2.0 XML Structure
 
@@ -148,27 +147,27 @@ Pool: [Pipeline Name]
 
 ### Task Types
 
-| BPMN Task          | XML Element          | AI Use                                    |
-| ------------------ | -------------------- | ----------------------------------------- |
-| Service Task       | `<serviceTask>`      | AI model execution (generation, analysis) |
-| User Task          | `<userTask>`         | Human review, approval, override          |
-| Script Task        | `<scriptTask>`       | Automated validation, format check        |
-| Send Task          | `<sendTask>`         | Notify human, trigger downstream pipeline |
-| Receive Task       | `<receiveTask>`      | Wait for human input, external signal     |
-| Manual Task        | `<manualTask>`       | Fully manual step (e.g., print review)    |
-| Business Rule Task | `<businessRuleTask>` | Model routing logic, complexity scoring   |
+| BPMN Task | XML Element | AI Use |
+|---|---|---|
+| Service Task | `<serviceTask>` | AI model execution (generation, analysis) |
+| User Task | `<userTask>` | Human review, approval, override |
+| Script Task | `<scriptTask>` | Automated validation, format check |
+| Send Task | `<sendTask>` | Notify human, trigger downstream pipeline |
+| Receive Task | `<receiveTask>` | Wait for human input, external signal |
+| Manual Task | `<manualTask>` | Fully manual step (e.g., print review) |
+| Business Rule Task | `<businessRuleTask>` | Model routing logic, complexity scoring |
 
 ### Event Types
 
-| Event      | XML Element                   | AI Use                                |
-| ---------- | ----------------------------- | ------------------------------------- |
-| Start      | `<startEvent>`                | Pipeline begins                       |
-| End        | `<endEvent>`                  | Pipeline completes                    |
-| Timer      | `<timerEventDefinition>`      | Deadline for human review             |
-| Error      | `<errorEventDefinition>`      | Model failure, hallucination detected |
-| Signal     | `<signalEventDefinition>`     | Cross-pipeline coordination           |
-| Message    | `<messageEventDefinition>`    | Inter-thread communication            |
-| Escalation | `<escalationEventDefinition>` | Escalate to human orchestrator        |
+| Event | XML Element | AI Use |
+|---|---|---|
+| Start | `<startEvent>` | Pipeline begins |
+| End | `<endEvent>` | Pipeline completes |
+| Timer | `<timerEventDefinition>` | Deadline for human review |
+| Error | `<errorEventDefinition>` | Model failure, hallucination detected |
+| Signal | `<signalEventDefinition>` | Cross-pipeline coordination |
+| Message | `<messageEventDefinition>` | Inter-thread communication |
+| Escalation | `<escalationEventDefinition>` | Escalate to human orchestrator |
 
 ## Workflow
 
@@ -200,7 +199,6 @@ If saving to file, use `.bpmn` extension with standard naming:
 After generating the XML, include:
 
 > **To view this diagram:**
->
 > 1. Go to [bpmn.io/modeler](https://demo.bpmn.io/) (free, no account needed)
 > 2. Click the upload icon (folder) in the top-left
 > 3. Paste or upload this XML

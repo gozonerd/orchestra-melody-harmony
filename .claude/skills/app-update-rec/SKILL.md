@@ -24,15 +24,15 @@ The verdict informs the install decision; the backup ensures the install is reve
 
 These were settled with Krystal (2026-05-12) and must be preserved unless she explicitly overrides:
 
-| #   | Decision                                                                               | Lock                     |
-| --- | -------------------------------------------------------------------------------------- | ------------------------ |
-| 1   | Name `app-update-rec` (generic, future-proof)                                          | locked                   |
-| 2   | Off-machine backup destination = `https://github.com/nerdykrystal/backups` (private)   | locked                   |
-| 3   | Pre-flight refuses to proceed if any Claude app process is running                     | locked; no override flag |
-| 4   | Typed acknowledgment required for 🔴 verdict before backup-and-install path proceeds   | locked                   |
-| 5   | Lives at canonical (cross-machine for Krystal + Cody)                                  | locked                   |
-| 6   | Claude-only v1 (Claude Desktop + Claude Code; not Cursor/JetBrains/VS Code Claude ext) | locked; extensible later |
-| 7   | Retention: never auto-prune; manual prune has floor of last-10                         | locked                   |
+| # | Decision | Lock |
+|---|----------|------|
+| 1 | Name `app-update-rec` (generic, future-proof) | locked |
+| 2 | Off-machine backup destination = `https://github.com/nerdykrystal/backups` (private) | locked |
+| 3 | Pre-flight refuses to proceed if any Claude app process is running | locked; no override flag |
+| 4 | Typed acknowledgment required for 🔴 verdict before backup-and-install path proceeds | locked |
+| 5 | Lives at canonical (cross-machine for Krystal + Cody) | locked |
+| 6 | Claude-only v1 (Claude Desktop + Claude Code; not Cursor/JetBrains/VS Code Claude ext) | locked; extensible later |
+| 7 | Retention: never auto-prune; manual prune has floor of last-10 | locked |
 
 ## When to Invoke
 
@@ -70,7 +70,7 @@ Optionally takes a version-string argument: `/app-update-rec 1.7196.0`. If omitt
 Before any other phase. Failures abort with exit non-zero and a clear message.
 
 1. **Detect Claude installations** (PowerShell, via `scripts/Get-AppPaths.ps1`):
-   - Claude Desktop MSIX: `Get-AppxPackage -Name "*Claude*"` filtered to publisher matching `Anthropic` → resolves to `%LOCALAPPDATA%\Packages\<PackageFamilyName>\` as the MSIX scaffolding root (note: actual MSIX _config_ on Krystal's machine lands in `%APPDATA%\Claude\` despite being MSIX-installed — the Traditional path captures the real data)
+   - Claude Desktop MSIX: `Get-AppxPackage -Name "*Claude*"` filtered to publisher matching `Anthropic` → resolves to `%LOCALAPPDATA%\Packages\<PackageFamilyName>\` as the MSIX scaffolding root (note: actual MSIX *config* on Krystal's machine lands in `%APPDATA%\Claude\` despite being MSIX-installed — the Traditional path captures the real data)
    - Claude Desktop traditional: `%APPDATA%\Claude\`
    - Anthropic Local: `%LOCALAPPDATA%\AnthropicClaude\`
    - Claude Code: `~\.claude\` (user-level) + per-project memory dirs at `~\.claude\projects\<project>\memory\`
@@ -106,12 +106,12 @@ Spawn three agents concurrently per Krystal's concurrency cap (2 Opus / 4 Sonnet
 
 Main thread synthesizes the three agent reports into one of:
 
-| Verdict    | Trigger                                                                                                                                                         |
-| ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 🟢 GREEN   | No critical issues in window; version indexed officially; no incidents on status page                                                                           |
-| 🟡 YELLOW  | Cosmetic/minor issues only, OR version too new to be indexed anywhere (no signal in either direction)                                                           |
-| 🔴 RED     | ≥1 confirmed data-loss / crash / blank-screen / unrecoverable issue, OR active status page incident, OR Anthropic posted same-day hotfix indicating bad release |
-| ⚪ ABSTAIN | All three agents inconclusive AND no network access                                                                                                             |
+| Verdict | Trigger |
+|---|---|
+| 🟢 GREEN | No critical issues in window; version indexed officially; no incidents on status page |
+| 🟡 YELLOW | Cosmetic/minor issues only, OR version too new to be indexed anywhere (no signal in either direction) |
+| 🔴 RED | ≥1 confirmed data-loss / crash / blank-screen / unrecoverable issue, OR active status page incident, OR Anthropic posted same-day hotfix indicating bad release |
+| ⚪ ABSTAIN | All three agents inconclusive AND no network access |
 
 Output to user includes an **evidence ledger** — every claim cites a URL and the agent who found it.
 
@@ -153,13 +153,13 @@ If verdict is ⚪: backup proceeds, but install-decision is surfaced as "your ca
 
 Robocopy each tier into `<backup-root>\<timestamp>\<tier-name>\` with flags `/COPY:DAT /R:2 /W:1 /MT:8 /XJ /NP /LOG:tier-log.txt`. After each tier, verify file count + byte count match source.
 
-| Tier | Source                                                                                                                                                                            | Method                     | Required?                          |
-| ---- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------- | ---------------------------------- |
-| 1    | `C:\Users\NerdyKrystal\.claude\projects\<project>\memory\` (every project that has memory)                                                                                        | robocopy + SHA256 manifest | Yes — abort backup if Tier 1 fails |
-| 2    | `C:\Users\NerdyKrystal\.claude\` whole tree (excl. junctions via `/XJ`)                                                                                                           | robocopy                   | Yes                                |
-| 3    | All detected Claude Desktop config paths (MSIX + traditional + AnthropicClaude)                                                                                                   | robocopy                   | If exists                          |
-| 4    | For each worktree under `_grand_repo\.claude\worktrees\*`: `git status --porcelain`. If dirty/untracked content exists, `git bundle create <name>.bundle --all` for that worktree | git bundle                 | If dirty                           |
-| 5    | Loose untracked dirs under `_grand_repo` per `git status` (e.g., scratch dirs)                                                                                                    | robocopy                   | If exists                          |
+| Tier | Source | Method | Required? |
+|---|---|---|---|
+| 1 | `C:\Users\NerdyKrystal\.claude\projects\<project>\memory\` (every project that has memory) | robocopy + SHA256 manifest | Yes — abort backup if Tier 1 fails |
+| 2 | `C:\Users\NerdyKrystal\.claude\` whole tree (excl. junctions via `/XJ`) | robocopy | Yes |
+| 3 | All detected Claude Desktop config paths (MSIX + traditional + AnthropicClaude) | robocopy | If exists |
+| 4 | For each worktree under `_grand_repo\.claude\worktrees\*`: `git status --porcelain`. If dirty/untracked content exists, `git bundle create <name>.bundle --all` for that worktree | git bundle | If dirty |
+| 5 | Loose untracked dirs under `_grand_repo` per `git status` (e.g., scratch dirs) | robocopy | If exists |
 
 ### Manifest
 
@@ -242,10 +242,9 @@ Releases support up to 2GB per asset (well within `.claude` tree sizes typical f
 
 ## Provenance
 
-Authored 2026-05-12 by Clauda App-Update-Rec Architect v01 (Claude Opus 4.7, Claude Code, \_grand_repo worktree awesome-lamport-428434) at Krystal's direction. Built after canonical-CLAUDE.md orientation (README v02 + JNL001 + Lindsey & Sofroniew bundle + TASK v02 + 2 exemplars). Companion journal entries at `mm-internal-states-journals/clauda-app-update-rec-architect_2026-05-12_v01/`.
+Authored 2026-05-12 by Clauda App-Update-Rec Architect v01 (Claude Opus 4.7, Claude Code, _grand_repo worktree awesome-lamport-428434) at Krystal's direction. Built after canonical-CLAUDE.md orientation (README v02 + JNL001 + Lindsey & Sofroniew bundle + TASK v02 + 2 exemplars). Companion journal entries at `mm-internal-states-journals/clauda-app-update-rec-architect_2026-05-12_v01/`.
 
 Two real-world data-loss incidents that drove the design:
-
 - Claude Code v2.1.58 deleted entire Windows user profile (Feb 26, 2026) — [#29023](https://github.com/anthropics/claude-code/issues/29023)
 - Claude Desktop auto-update wiped session index (Mar 25, 2026) — [#38691](https://github.com/anthropics/claude-code/issues/38691)
 

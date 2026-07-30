@@ -17,7 +17,6 @@ The pilot question (first-customer, Lee Jokl outreach, etc.) is PARKED. Not just
 5. **No mentions in dependency calls** ("pilot-bound deliverable" surfaces it).
 
 Why: WE HAVE NOT DECIDED ON THE KIND OF APP TO BUILD YET. Pilot is downstream of:
-
 - Architecture decision (SaaS suite vs plugin vs platform vs hybrid)
 - Channel decision (direct vs Claude Code marketplace vs API + integrations)
 - Branded surface (failFixed Suite naming + UX + IA)
@@ -34,7 +33,6 @@ Model had been listing pilot in "Open Loops Tracking" tables across multiple tur
 ## When TO mention pilot
 
 ONLY when:
-
 1. User explicitly asks ("what's the pilot status?" → answer the question, then return to silence)
 2. App architecture, channel, branded surface, build sequence are ALL locked (then pilot becomes the next downstream decision)
 

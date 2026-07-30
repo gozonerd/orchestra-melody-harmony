@@ -78,11 +78,9 @@ Print:     Full_Context_Assessment_2026-03-22_v02_PRINT.docx
 ### Reference files
 
 For the complete spec with all DXA conversion values and implementation notes:
-
 - **`references/martinez-methods-print-spec.md`** — Full Martinez Methods Print Optimized Spec v02
 
 ### Scripts
 
 Template for generating print-optimized docx files:
-
 - **`scripts/gen_print_docx_template.js`** — Reusable Node.js template with all Martinez Methods defaults. Copy and modify the sections array for each document.

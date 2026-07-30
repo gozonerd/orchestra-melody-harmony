@@ -1,6 +1,6 @@
 ---
 description: Celebratory task tracking format for milestones
-globs: '**/*'
+globs: "**/*"
 ---
 
 # Task Tracking Format
@@ -8,7 +8,6 @@ globs: '**/*'
 ## When to Use
 
 At milestones:
-
 - Completion of a methodology phase
 - Completion of a deliverable draft
 - Successful file management confirmation

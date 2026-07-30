@@ -1,6 +1,6 @@
 ---
 description: Mandatory file naming pattern and version increment logic for all Martinez Methods outputs
-globs: '**/*'
+globs: "**/*"
 ---
 
 # File Naming and Versioning
@@ -14,7 +14,6 @@ Every new file must include:
 ```
 
 **Components:**
-
 - `PREFIX_` — Project prefix (e.g., `CLI-SM-DATS_`, `CLI-SS-OPS_`). Optional for personal/internal files.
 - `Description` — Descriptive name, underscores for spaces
 - `YYYY-MM-DD` — Date created or last major version
@@ -30,28 +29,28 @@ Replace all spaces with underscores.
 
 ## Version Format
 
-| Component | Symbol              | Meaning                                   |
-| --------- | ------------------- | ----------------------------------------- |
-| N         | Number (1, 2, 3...) | Main version — higher = more correct      |
-| X         | Letter (A, B, C...) | Iteration variant — parallel alternatives |
-| R         | Number (1, 2, 3...) | Revision within iteration                 |
+| Component | Symbol | Meaning |
+|-----------|--------|---------|
+| N | Number (1, 2, 3...) | Main version — higher = more correct |
+| X | Letter (A, B, C...) | Iteration variant — parallel alternatives |
+| R | Number (1, 2, 3...) | Revision within iteration |
 
 ### The Core Rule
 
-| Symbol Type   | ALWAYS Means | Relationship                         |
-| ------------- | ------------ | ------------------------------------ |
-| Number change | FIX          | One is "more correct" than the other |
-| Letter change | ITERATION    | Both are valid alternatives          |
+| Symbol Type | ALWAYS Means | Relationship |
+|-------------|-------------|--------------|
+| Number change | FIX | One is "more correct" than the other |
+| Letter change | ITERATION | Both are valid alternatives |
 
 ## When to Increment
 
-| Change Type                           | Action       |
-| ------------------------------------- | ------------ |
-| Typo fix, formatting only             | Same version |
+| Change Type | Action |
+|-------------|--------|
+| Typo fix, formatting only | Same version |
 | Clarification without behavior change | Same version |
-| New rule or behavior change           | Increment N  |
-| Structural reorganization             | Increment N  |
-| Parallel alternative approach         | New X letter |
+| New rule or behavior change | Increment N |
+| Structural reorganization | Increment N |
+| Parallel alternative approach | New X letter |
 
 ## Final Version
 

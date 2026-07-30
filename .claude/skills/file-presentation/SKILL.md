@@ -47,7 +47,6 @@ For EACH file, present in this order:
 ## Inputs Section Rules
 
 The Inputs table lists ONLY the files directly specified as inputs for this task. Do NOT include:
-
 - Files read as part of onboarding SOPs (Best Practices, reading journals)
 - Background context files that weren't part of the task prompt
 - Files the agent happened to read but that weren't specified inputs
@@ -69,7 +68,6 @@ When presenting a file, check whether the prompt that produced it is documented:
 ## "Present in thread"
 
 When Krystal says "present it to me in thread" or "present in thread":
-
 - Render the FULL file content inline in the conversation
 - Use a reinforced fenced code block (12 `~` outer fence) if the content contains markdown or code blocks
 - Still include the metadata table above the content

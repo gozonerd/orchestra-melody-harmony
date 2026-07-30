@@ -20,14 +20,14 @@ The Bobo Framework principle (mechanism articulation → rule production → str
 
 Each axis gets its config file at the instance scope:
 
-| Axis                 | Per-instance config                  | Loader                |
-| -------------------- | ------------------------------------ | --------------------- |
-| Maturity tier        | `<pipeline>/.maturity.yaml`          | A25 MAVB hook         |
-| ASAE policy          | `<repo>/.asae-policy`                | commit-msg hook v03+  |
-| Persona scope        | `<persona>/role-manifest.yaml`       | role-definition skill |
-| Bidx routing         | `<workflow>/BIDX-1.yaml`             | bidx loader           |
-| Audit strategy       | `<task-type>/.audit-strategy.yaml`   | A23 TTAFMT hook       |
-| Maturity transitions | `<pipeline>/.maturity-history.jsonl` | A25 transition logic  |
+| Axis | Per-instance config | Loader |
+|------|--------------------|--------|
+| Maturity tier | `<pipeline>/.maturity.yaml` | A25 MAVB hook |
+| ASAE policy | `<repo>/.asae-policy` | commit-msg hook v03+ |
+| Persona scope | `<persona>/role-manifest.yaml` | role-definition skill |
+| Bidx routing | `<workflow>/BIDX-1.yaml` | bidx loader |
+| Audit strategy | `<task-type>/.audit-strategy.yaml` | A23 TTAFMT hook |
+| Maturity transitions | `<pipeline>/.maturity-history.jsonl` | A25 transition logic |
 
 If the per-instance config is missing, the system MUST refuse to act with a clear message indicating what config is needed and where. Falling back to a global default is the F8-class regression.
 

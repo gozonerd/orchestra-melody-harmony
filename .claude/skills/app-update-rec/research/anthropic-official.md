@@ -40,18 +40,22 @@ For each source: `WebFetch` with prompt like "Does this page mention version {VE
 
 ```json
 {
-	"version_queried": "{VERSION}",
-	"version_in_release_notes": false,
-	"release_notes_excerpt": null,
-	"hotfix_posted_within_24h": false,
-	"hotfix_versions": [],
-	"rollback_notice": false,
-	"rollback_excerpt": null,
-	"status_page_active_incident": false,
-	"incident_summary": null,
-	"known_issues_excerpt": null,
-	"sources_fetched": ["https://status.claude.com/", "https://support.claude.com/...", "..."],
-	"fetch_failures": []
+  "version_queried": "{VERSION}",
+  "version_in_release_notes": false,
+  "release_notes_excerpt": null,
+  "hotfix_posted_within_24h": false,
+  "hotfix_versions": [],
+  "rollback_notice": false,
+  "rollback_excerpt": null,
+  "status_page_active_incident": false,
+  "incident_summary": null,
+  "known_issues_excerpt": null,
+  "sources_fetched": [
+    "https://status.claude.com/",
+    "https://support.claude.com/...",
+    "..."
+  ],
+  "fetch_failures": []
 }
 ```
 

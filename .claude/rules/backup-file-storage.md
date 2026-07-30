@@ -1,6 +1,6 @@
 ---
 description: Where to store backup copies of files and when to create them
-globs: '**/*'
+globs: "**/*"
 ---
 
 # Backup File Storage
@@ -16,7 +16,6 @@ globs: '**/*'
 ### Primary: `nerdykrystal-backups` repo
 
 For important backups that need to survive regardless of what happens to the source repo:
-
 ```
 nerdykrystal-backups/
   documents/{source-category}/
@@ -31,7 +30,6 @@ For version-level backups within the same project — superseded versions of fil
 ## Backup Naming
 
 Follow standard naming convention with `_BACKUP` appended before the extension:
-
 ```
 Original:  Report_2026-03-25_v02_I.md
 Backup:    Report_2026-03-25_v02_I_BACKUP.md
@@ -40,7 +38,6 @@ Backup:    Report_2026-03-25_v02_I_BACKUP.md
 ## Claude Code Config Backups
 
 Before modifying any `.claude/` directory structure, snapshot the current state to:
-
 ```
 nerdykrystal-backups/claude-code-configs/{repo-name}/YYYY-MM-DD/
 ```

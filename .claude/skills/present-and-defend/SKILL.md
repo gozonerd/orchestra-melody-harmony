@@ -18,13 +18,11 @@ The skill exists because Krystal explicitly asked for it on 2026-04-28 after inv
 ## When to Use
 
 **INVOKE when:**
-
 - Krystal explicitly invokes `/present-and-defend` (or equivalent — "present and defend rationale," "defend each option," "deeper walkthrough")
 - A multi-question decision walkthrough has just been surfaced AND Krystal signals she's not ready to lock — wants more substance per option before deciding
 - Krystal indicates uncertainty ("I genuinely don't know what to choose," "make me choose based on robust evidence and reasoning," "max effort," "go research if you need to")
 
 **DO NOT invoke when:**
-
 - Krystal already locked the questions with her answers (re-presenting after lock = wasting her time)
 - Single-question or trivial decisions (deep-rationale format is overkill for "yes/no" questions)
 - Krystal signaled she wants the standard chunk size ("give it all to me at once," "default")
@@ -39,13 +37,11 @@ For each question in the previously-surfaced walkthrough:
 #### Option {letter} — {option name}
 
 **Defense:**
-
 1. [load-bearing argument with specific evidence/precedent reference]
 2. [argument tied to established discipline pattern or empirical evidence]
 3. [...]
 
 **Weakness:**
-
 - [honest admission of where this option fails or where it has costs]
 - [edge cases or failure modes the option doesn't catch]
 
@@ -59,10 +55,9 @@ For each question in the previously-surfaced walkthrough:
 
 ## Summary table
 
-| Question              | My recommendation                  | Strength of lean                              |
-| --------------------- | ---------------------------------- | --------------------------------------------- |
+| Question | My recommendation | Strength of lean |
+|---|---|---|
 | Q{N} — {abbreviation} | **Option {letter} ({short name})** | Strongly / lightly held — [primary reasoning] |
-
 [...]
 
 Your read?
@@ -89,7 +84,6 @@ The weakness section must name actual gaps the option has, not strawman gaps tha
 ### Rule 3 — SYNTHESIS TIES TO ESTABLISHED PATTERNS
 
 The per-question synthesis section names the deciding factor in terms Krystal will recognize from her own established methodology:
-
 - Reference locked memory rules by name (e.g., "Per `feedback_codify_larger_principles.md` §3 evidence-required-for-narrowing")
 - Reference established discipline patterns (e.g., "Same defense-in-depth pattern that won META-1 Q3 + Mod 12 tandem-update + META-3 multi-source")
 - Reference empirical evidence (e.g., "Empirical failure mode was X, not Y")
@@ -99,7 +93,6 @@ DO NOT use generic synthesis ("Option C balances the tradeoffs"). Specific patte
 ### Rule 4 — STRENGTH-OF-LEAN HONESTY
 
 In the summary table, mark each recommendation with explicit strength:
-
 - **Strongly held** — established discipline pattern + empirical evidence converge here; alternative would require active contradiction
 - **Lightly held** — recommendation has reasoning but alternative is defensible; would accept alternative
 - **Genuine uncertainty** — both/all options have strong cases; surface the uncertainty rather than fake-confidence

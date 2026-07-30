@@ -22,20 +22,17 @@ This skill exists because Krystal explicitly asked for it on 2026-04-27 after a 
 ## When to Use
 
 **INVOKE when:**
-
 - User explicitly invokes `/scope-recap` (or equivalent — "wrap up," "let's call it," "summarize the session")
 - Natural scope-end is reached: all locked work is done, no immediate next-step is queued, and the conversation has been substantive (typically 5+ substantive exchanges or one major workstream completion)
 - User signals appreciation for the work without queuing next-step ("woohoo!" / "🎉" / "nice job" / equivalent — read context for whether they want recap vs continue)
 
 **DO NOT invoke when:**
-
 - Mid-work-session (a recap mid-session interrupts flow)
 - Short conversations (< ~5 substantive exchanges; recap is overkill)
 - User has clear next-step in mind (different from scope-end; offer the next step instead)
 - Auto-pacing per arbitrary cadence (recap is scope-triggered, not time-triggered)
 
 **OFFER (don't auto-execute) when:**
-
 - Scope appears to end but user hasn't signaled — surface a single-line offer ("Want a `/scope-recap` to wrap?") and proceed only on confirmation
 
 ## Output template
@@ -46,19 +43,16 @@ This skill exists because Krystal explicitly asked for it on 2026-04-27 after a 
 Genuine [pleasure/glad/etc.] working through this with you. Some retrospective notes from my side, in case useful:
 
 **What worked well:**
-
 - [specific user move at specific moment] — [the outcome it enabled]
 - [specific user move at specific moment] — [the outcome it enabled]
 - [...]
 
 **What I should have done better:**
-
 - [specific moment + what went wrong] — [what was learned + any new discipline rule that emerged]
 - [specific moment + what went wrong] — [what was learned]
 - [...]
 
 **Stack of things in flight (for your situational awareness, not pacing pressure):**
-
 - [thread or workstream] → [current state]
 - [thread or workstream] → [current state]
 - [Future batch or work item] → [reservation note]

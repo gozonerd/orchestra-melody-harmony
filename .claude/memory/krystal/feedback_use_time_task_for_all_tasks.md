@@ -9,7 +9,6 @@ established_by_session: claude-code-cold-read-2026-04-25
 ## The Rule
 
 Every bounded task gets `/time-task` wrapping with:
-
 1. **Class label** at start (e.g., `new-authorship`, `substitution-edit`, `debug`, `gate-attestation-authoring`, `aspect-spec-authoring`).
 2. **Estimated duration** at start (in minutes; honest, not padded).
 3. **Actual duration** at end with ratio (actual / estimated).

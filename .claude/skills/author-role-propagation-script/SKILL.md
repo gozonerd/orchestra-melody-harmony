@@ -31,7 +31,7 @@ Post-SSOT-wrangler era: most persona artifacts (role-manifest YAML in `mm-claude
 ## When NOT to invoke
 
 - SSOT-wrangler daily-sync covers the persona's distribution needs (no per-script required)
-- Other artifacts (use sibling /author-role-\* sub-skills)
+- Other artifacts (use sibling /author-role-* sub-skills)
 
 ## Inputs
 

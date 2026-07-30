@@ -73,7 +73,6 @@ These are ALL invalid deferral patterns under this rule. If I CAN do the work, I
 ## Why the rule exists
 
 **Operational reality:**
-
 - This is NOT a company with several humans operating handoff queues
 - Krystal works across multiple Claude accounts simultaneously
 - LLMs are stochastic; no later session is guaranteed to honor a hand-off plan
@@ -81,7 +80,6 @@ These are ALL invalid deferral patterns under this rule. If I CAN do the work, I
 - The cost of a stalled handoff (Krystal carrying the mental load + checking on N other threads) >> the cost of me just doing the work now under whatever attribution applies
 
 **The cost-benefit inverts what was assumed:**
-
 - Old framing: "wrong-persona attribution drift" is the cost
 - New framing: "Krystal carrying the work in her head until verified-delegated" is the FAR higher cost
 
