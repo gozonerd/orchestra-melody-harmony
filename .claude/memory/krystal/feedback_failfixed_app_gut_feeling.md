@@ -5,11 +5,13 @@ type: feedback
 originSessionId: de4cd3d9-137c-4d63-a1bc-dac72e2d635a
 user: krystal
 ---
+
 ## The gut feeling (load-bearing premise; verbatim from Krystal 2026-04-27)
 
-> *"We are trying to make failFixed a universal d2r code plan when the power of asae is its universality and agnosticism in its applicability. THAT'S what we should focus on designing app wise...the universal core that we can then extend into dare to rise specific verticals that map to the dept-specific bundles we have been discussing."*
+> _"We are trying to make failFixed a universal d2r code plan when the power of asae is its universality and agnosticism in its applicability. THAT'S what we should focus on designing app wise...the universal core that we can then extend into dare to rise specific verticals that map to the dept-specific bundles we have been discussing."_
 
 **Plain unpacking** (paraphrased; defer to verbatim above when in doubt):
+
 - failFixed is NOT a universal D2R code plan. That framing collapses the abstraction.
 - ASAE's power is its universality + agnosticism in applicability. failFixed should productize the **universal ASAE core**.
 - D2R-specific verticals map to the dept-specific bundles (Code D2R / Research Synthesis / Regulatory / Methodology Authoring / Brand & Design / Finance / HR / Marketing / Sales / Customer Service / Internal Audit / Privacy / Procurement / IT Ops / InfoSec — the 15 bundles).

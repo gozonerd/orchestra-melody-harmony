@@ -16,25 +16,29 @@ user: krystal
 
 1. **Do NOT route any task to Grok / xAI models** (`grok-*`, `grok-N`, any future xAI naming).
 2. **Do NOT propose Grok** as part of a verifier set, model-routing config, fallback option, or "best tool for X" suggestion — regardless of any benchmark performance claim.
-3. **Do NOT use Grok via aggregator APIs** (e.g., Abacus AI's grok-* offerings). Same financial-pipeline outcome.
+3. **Do NOT use Grok via aggregator APIs** (e.g., Abacus AI's grok-\* offerings). Same financial-pipeline outcome.
 4. **If a tool / workflow defaults to Grok**, configure it OUT before running.
 5. **If a user / collaborator / hiring manager suggests Grok**, decline and explain via the standpoint principle (the personal is political; methodology IP-stack refuses to participate in xAI's revenue).
 
 **Soft rule companion — Meta / Llama:**
 
 Krystal verbatim:
+
 > "in general, llama has never impressed me and meta is also a company i like to withhold financial support from when possible, though this is not a hard rule like with grok."
 
 So:
+
 - **Avoid Meta / Llama** when alternatives exist.
 - Not a hard rule. If a task genuinely requires open-weight Llama (e.g., research replication where Llama is the specified comparison model), proceed but document the rationale.
 
 **Soft rule companion — Gemini via Google API ONLY:**
 
 Krystal verbatim:
+
 > "you NEVER use gemini via the abacus ai api btw. only through the google api key."
 
 So:
+
 - **Gemini = Google API key directly** (Krystal's paid subscription tier + AI Studio API key at `https://aistudio.google.com/apikey`).
 - **NEVER Gemini via Abacus AI** even when Abacus offers it.
 

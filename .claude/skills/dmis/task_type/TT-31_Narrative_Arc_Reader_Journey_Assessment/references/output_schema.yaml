@@ -9,13 +9,13 @@ structure:
     properties:
       logical_sequence_score:
         type: number
-        description: "0-10 scale; how well sections build logically"
+        description: '0-10 scale; how well sections build logically'
       thesis_statement:
         type: string
-        description: "Primary purpose/thesis as identified"
+        description: 'Primary purpose/thesis as identified'
       key_messages:
         type: array
-        description: "Main messages that should persist throughout document"
+        description: 'Main messages that should persist throughout document'
 
   section_transitions:
     type: array
@@ -30,7 +30,7 @@ structure:
         enum: [strong, adequate, weak, missing]
       bridge_present:
         type: boolean
-        description: "Does transition sentence/paragraph exist?"
+        description: 'Does transition sentence/paragraph exist?'
       coherence_issue:
         type: string
         description: "If weak or missing, what's the gap?"
@@ -60,7 +60,7 @@ structure:
         type: string
       confusion_points:
         type: array
-        description: "Where reader might lose thread"
+        description: 'Where reader might lose thread'
         items:
           location:
             type: string
@@ -70,7 +70,7 @@ structure:
             type: string
       engagement_arc:
         type: string
-        description: "How document holds reader attention over time"
+        description: 'How document holds reader attention over time'
 
   executive_summary_alignment:
     type: object
@@ -79,10 +79,10 @@ structure:
         type: boolean
       content_coverage:
         type: number
-        description: "% of main points from summary that appear in body"
+        description: '% of main points from summary that appear in body'
       message_fidelity:
         type: number
-        description: "How accurately summary captures document"
+        description: 'How accurately summary captures document'
       alignment_issues:
         type: array
 
@@ -91,7 +91,7 @@ structure:
     properties:
       overall_coherence_score:
         type: number
-        description: "0-10 scale"
+        description: '0-10 scale'
       flow_assessment:
         type: string
         enum: [excellent, good, acceptable, poor]

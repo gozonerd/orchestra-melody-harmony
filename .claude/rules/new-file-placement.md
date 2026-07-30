@@ -1,6 +1,6 @@
 ---
 description: Where to place brand new files that are not modifications of existing ones
-globs: "**/*"
+globs: '**/*'
 ---
 
 # New File Placement

@@ -15,7 +15,7 @@ provenance: Methodology Mods Batch 3 Lock A4 (per Batch 3 Handoff §3 Lock A4)
 
 ## What this skill does
 
-Authors the companion lock-in skill (artifact 3 of 5). The lock-in skill loads the persona's context into the current session when triggered by slug or invocation phrase. Trigger pattern: `claud*_*_<lastname-kebab>` (where * = wildcard).
+Authors the companion lock-in skill (artifact 3 of 5). The lock-in skill loads the persona's context into the current session when triggered by slug or invocation phrase. Trigger pattern: `claud*_*_<lastname-kebab>` (where \* = wildcard).
 
 The lock-in skill is what new threads invoke FIRST when continuing a workstream that already has a locked-in persona — it loads the role-definition + role-manifest + workstream context + persona-specific operating-constraint reminders.
 
@@ -27,7 +27,7 @@ The lock-in skill is what new threads invoke FIRST when continuing a workstream 
 
 ## When NOT to invoke
 
-- Other artifacts (use sibling /author-role-* sub-skills)
+- Other artifacts (use sibling /author-role-\* sub-skills)
 - Editing existing role-definition-value-genius / role-definition-spec-genius lock-in skills (modify directly)
 
 ## Inputs

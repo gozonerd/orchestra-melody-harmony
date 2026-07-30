@@ -9,6 +9,7 @@ type: project
 Model: Opus 4.6 (1M context). CWD: C:\Users\Krystal Martinez\Repos.
 
 ### What Was Accomplished
+
 - Full 12-pass Best Practices reading journal + Entry 13
 - PEK Cold Read Assessment (4 phases) — rated Krystal as Principal-level, 12/12 HIRE
 - Read and absorbed Portfolio Designer Handoff Brief v02 from Job Hunter thread
@@ -19,6 +20,7 @@ Model: Opus 4.6 (1M context). CWD: C:\Users\Krystal Martinez\Repos.
 - Diagram Research v02 — added DFD as 6th diagram type
 
 ### Key Files Produced (Original Session)
+
 - `krystal-will-work-in-ai/04_Portfolio_Design/PORT1_Funnel_Architecture_2026-03-28_v01_I.md`
 - `krystal-will-work-in-ai/04_Portfolio_Design/Portfolio_Curator_Architecture_Handoff_2026-03-28_v01_I.md`
 - `.claude/references/AI_Pipeline_Orchestration_Diagram_Research_2026-03-28_v02_I.md`
@@ -30,9 +32,11 @@ Model: Opus 4.6 (1M context). CWD: C:\Users\Krystal Martinez\Repos.
 Onboarded via Thread Onboarding Task Brief. Transcript read from zip export. New 12-pass reading journal + Entry 13 completed.
 
 ### New Locked Decisions
+
 - **LOCK-09:** VPS (RackNerd) for all 5 domains + chatbot. Single infrastructure, Nginx for static sites, AnythingLLM for RAG chatbot.
 
 ### Chatbot Design Decisions
+
 - **Platform:** AnythingLLM (self-hosted, Docker)
 - **Model:** Nemotron 3 Super 120B via separate API keys (not sharing with Nemorch)
 - **Personality:** Krystal's #1 fan — transparently biased, enthusiastic, can't understand why anyone wouldn't hire Krystal. Very open about her angle.
@@ -40,18 +44,20 @@ Onboarded via Thread Onboarding Task Brief. Transcript read from zip export. New
 - **Timing:** MVP if it doesn't become a distraction; PORT1 live with content comes first.
 
 ### VPS Setup — COMPLETED
+
 Server: 104.168.46.112 (Ubuntu 24.04 LTS, RackNerd KVM)
 
-| Component | Status |
-|-----------|--------|
-| Non-root user `nerdykrystal` | Created, sudo + docker groups |
-| Nginx | Running, 5 virtual hosts configured |
-| HTTPS (Certbot) | All 5 domains secured (www.store skipped — DNS issue) |
-| Placeholder pages | Live on all 5 domains |
-| AnythingLLM | Running in Docker on port 3001, persistent storage at /home/nerdykrystal/anythingllm/storage |
-| Docker | Also running Cody's VentureKeep app |
+| Component                    | Status                                                                                       |
+| ---------------------------- | -------------------------------------------------------------------------------------------- |
+| Non-root user `nerdykrystal` | Created, sudo + docker groups                                                                |
+| Nginx                        | Running, 5 virtual hosts configured                                                          |
+| HTTPS (Certbot)              | All 5 domains secured (www.store skipped — DNS issue)                                        |
+| Placeholder pages            | Live on all 5 domains                                                                        |
+| AnythingLLM                  | Running in Docker on port 3001, persistent storage at /home/nerdykrystal/anythingllm/storage |
+| Docker                       | Also running Cody's VentureKeep app                                                          |
 
 ### Domains
+
 - krystalmartinez.com — PORT1 (get me contacted)
 - krystalmartinez.cv — PORT2 (get me hired)
 - krystalmartinez.work — fractional consulting
@@ -59,6 +65,7 @@ Server: 104.168.46.112 (Ubuntu 24.04 LTS, RackNerd KVM)
 - krystalmartinez.store — paid playbooks
 
 ### Outstanding Items (as of 2026-04-06)
+
 1. AnythingLLM setup wizard (LLM provider, embedding model, workspace config)
 2. Plug in OpenRouter API key for Nemotron 3 Super 120B
 3. Create workspace and upload knowledge base docs

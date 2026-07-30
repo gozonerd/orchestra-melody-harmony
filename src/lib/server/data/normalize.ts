@@ -47,7 +47,9 @@ export function normalizeOpenRouterModel(model: OpenRouterModel): NormalizedMode
 		description: model.description || null,
 
 		inputPricePerMil: normalizeOpenRouterPrice((pricing as Record<string, string>).prompt || '0'),
-		outputPricePerMil: normalizeOpenRouterPrice((pricing as Record<string, string>).completion || '0'),
+		outputPricePerMil: normalizeOpenRouterPrice(
+			(pricing as Record<string, string>).completion || '0'
+		),
 
 		// Benchmarks null until matched with HF data
 		benchmarkCoding: null,

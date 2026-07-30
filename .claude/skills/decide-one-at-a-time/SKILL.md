@@ -5,9 +5,9 @@ version: v01_I
 authored_by: Clauda W. Value Genius v03 (Claude Opus 4.7, 1M context)
 type: skill
 classification: utility-class
-provenance: "Authored 2026-05-18 by Clauda W. Value Genius v03 after Wave 0 RESUME close-out surfaced 8 follow-up decisions in a single dense Tier 1/2/3 breakdown. Krystal asked for them one at a time with mode-graded explanation depth: solo (options only) / explain (plain English per option) / rec (explain + recommendation + why) / defend (rec + per-option for/against + defense of why rec still wins). Pattern is the rapid-fire-decisions cousin of /bit-by-tiny-bit (which is for understanding-paced walkthroughs). Inaugural use 2026-05-18 on D1-D8 from Wave 0 close-out."
+provenance: 'Authored 2026-05-18 by Clauda W. Value Genius v03 after Wave 0 RESUME close-out surfaced 8 follow-up decisions in a single dense Tier 1/2/3 breakdown. Krystal asked for them one at a time with mode-graded explanation depth: solo (options only) / explain (plain English per option) / rec (explain + recommendation + why) / defend (rec + per-option for/against + defense of why rec still wins). Pattern is the rapid-fire-decisions cousin of /bit-by-tiny-bit (which is for understanding-paced walkthroughs). Inaugural use 2026-05-18 on D1-D8 from Wave 0 close-out.'
 changelog:
-  - "v01_I (2026-05-18): Initial release. 4 modes (solo / explain / rec / defend). Human-readable decision codes (UPPERCASE-KEBAB-CASE). Count-out-of-total accompanies each decision. User-level override per decision."
+  - 'v01_I (2026-05-18): Initial release. 4 modes (solo / explain / rec / defend). Human-readable decision codes (UPPERCASE-KEBAB-CASE). Count-out-of-total accompanies each decision. User-level override per decision.'
 ---
 
 # /decide-one-at-a-time
@@ -150,14 +150,14 @@ Pick i / ii / iii — or override my defense.
 
 ## Inputs
 
-| Input | Required | Description |
-|-------|----------|-------------|
-| Decision queue | Yes | List of pending decisions, each with: code (UPPERCASE-KEBAB-CASE), title, options enumerated as (i)/(ii)/(iii)/... |
-| Mode | Yes | One of: `solo` / `explain` / `rec` / `defend`. User can change mid-queue. |
-| Decision codes | Yes | Human-readable identifier per decision; format: UPPERCASE-KEBAB-CASE; should evoke the decision substance (e.g., `PHASE-A-SCOPE`, `TEST-RUNNER-SPAWN`) |
-| Total count | Yes | N (how many decisions in the queue) |
-| Order | No | Default: present in input order. User can override ("D5 first" / "go in priority order"). |
-| Recommendation policy | No | If mode = rec or defend, my recommendation comes from my own judgment + context. User can request "no rec" mid-queue. |
+| Input                 | Required | Description                                                                                                                                            |
+| --------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Decision queue        | Yes      | List of pending decisions, each with: code (UPPERCASE-KEBAB-CASE), title, options enumerated as (i)/(ii)/(iii)/...                                     |
+| Mode                  | Yes      | One of: `solo` / `explain` / `rec` / `defend`. User can change mid-queue.                                                                              |
+| Decision codes        | Yes      | Human-readable identifier per decision; format: UPPERCASE-KEBAB-CASE; should evoke the decision substance (e.g., `PHASE-A-SCOPE`, `TEST-RUNNER-SPAWN`) |
+| Total count           | Yes      | N (how many decisions in the queue)                                                                                                                    |
+| Order                 | No       | Default: present in input order. User can override ("D5 first" / "go in priority order").                                                              |
+| Recommendation policy | No       | If mode = rec or defend, my recommendation comes from my own judgment + context. User can request "no rec" mid-queue.                                  |
 
 ## Execution Protocol
 
@@ -208,15 +208,15 @@ After sending, **STOP**. Do not produce DN+1. Do not anticipate the user's answe
 
 ### Responding to user input mid-queue
 
-| User input | What to do |
-|------------|------------|
-| `i` / `ii` / `iii` (the option letter) | Log the decision; mark DN as resolved; send DN+1 in a new message |
-| Brief affirmation ("yes" / "go with rec") in rec or defend mode | Apply my recommendation; log; send next |
-| Question about current decision | Answer; offer "Decided? Or want more depth?" |
-| Mode change ("switch to defend") | Re-send current decision in new mode; await answer |
+| User input                                                      | What to do                                                                                |
+| --------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `i` / `ii` / `iii` (the option letter)                          | Log the decision; mark DN as resolved; send DN+1 in a new message                         |
+| Brief affirmation ("yes" / "go with rec") in rec or defend mode | Apply my recommendation; log; send next                                                   |
+| Question about current decision                                 | Answer; offer "Decided? Or want more depth?"                                              |
+| Mode change ("switch to defend")                                | Re-send current decision in new mode; await answer                                        |
 | User wants to bundle remaining ("give me all the rest at once") | Honor it — emit remaining decisions stacked in current mode; user-level override accepted |
-| User skips ("defer D4, give me D5") | Mark D4 as deferred (carry forward); send D5; mention D4 will come back at end |
-| User stops ("stop / I'm done for now") | End with summary of decisions made + decisions still pending |
+| User skips ("defer D4, give me D5")                             | Mark D4 as deferred (carry forward); send D5; mention D4 will come back at end            |
+| User stops ("stop / I'm done for now")                          | End with summary of decisions made + decisions still pending                              |
 
 ### End of queue: closing summary
 

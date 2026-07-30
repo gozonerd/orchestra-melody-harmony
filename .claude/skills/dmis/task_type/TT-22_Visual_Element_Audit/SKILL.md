@@ -1,9 +1,9 @@
 ---
-title: "Visual Element Audit"
-skill_id: "SK-22"
+title: 'Visual Element Audit'
+skill_id: 'SK-22'
 version: v02_I
 date: 2026-03-06
-task_type: "TT-22"
+task_type: 'TT-22'
 pipeline_assignments: [P4, P6]
 owner: Martinez Methods
 ---
@@ -11,16 +11,20 @@ owner: Martinez Methods
 # Visual Element Audit
 
 ## Purpose
+
 Verify tables, figures, diagrams: labeling, referencing, sourcing, purpose, completeness. This task type performs comprehensive quality review of all visual elements in DATS outputs to ensure they support the narrative accurately and clearly.
 
 ## Pipeline Context
+
 - **Pipelines:** P4 (Final Review & Integration), P6 (Distribution & Audience Adaptation)
 - **Raw Tasks Covered:** P4.2-L15, P4.2-L16, P4.2-PS-m
 - **Dependencies:** Complete integrated document with all visual elements, source data, figure/table specifications
 - **Purpose:** Ensure all visual elements enhance understanding and meet quality standards
 
 ## Input Specification
+
 Inputs to TT-22 include:
+
 - Complete DATS document from P4 final integration with all embedded figures, tables, diagrams
 - Source data for all tables and figures
 - Figure/table captions and labels
@@ -30,6 +34,7 @@ Inputs to TT-22 include:
 - Previously published visual elements for style consistency
 
 ## Output Specification
+
 - Output must conform to: `schemas/tt22_output.yaml`
 - Reference schema in: `references/output_schema.yaml`
 - Produce comprehensive visual element audit with:
@@ -45,6 +50,7 @@ Inputs to TT-22 include:
   - Remediation recommendations for each issue identified
 
 ## Methodology
+
 1. **Visual Inventory:** Identify all tables, figures, diagrams, charts in document
 2. **Labeling Audit:** Check each element for clear title, axis labels, legends, and captions
 3. **Reference Verification:** Confirm every visual element is referenced at least once in narrative
@@ -58,6 +64,7 @@ Inputs to TT-22 include:
 11. **Comparison:** Check visual elements against published standards for similar information types
 
 ## Quality Criteria
+
 - **Labeling Completeness:** All elements clearly labeled with titles, source citations, and interpretive captions
 - **Narrative Integration:** Each visual element referenced and integrated into text flow
 - **Source Integrity:** All data sourced, verified, and properly attributed
@@ -67,7 +74,9 @@ Inputs to TT-22 include:
 - **Consistency:** Visual style and design conventions consistent across all elements
 
 ## Accuracy Rules
+
 All outputs must comply with the 9 Critical Accuracy Rules (ACC-001 through ACC-009) defined in `ACCURACY_RULES.md`:
+
 - ACC-001: CommCare current use vs. history (distinguish SMZ active deployment from Uganda pilot)
 - ACC-002: Dimagi pilot = StrongMinds-wide (both Uganda and Zambia)
 - ACC-003: Dimagi ≠ CommCare (platform vs. consulting firm)
@@ -79,6 +88,7 @@ All outputs must comply with the 9 Critical Accuracy Rules (ACC-001 through ACC-
 - ACC-009: CommCare DET is standalone (separate Python CLI)
 
 ## Anti-Patterns
+
 - **Orphaned Figures:** Visual elements in document that aren't referenced or explained in text
 - **Source Gaps:** Tables or figures without clear source attribution or with disputed data
 - **Unreadable Details:** Text in figures too small, colors indistinguishable, legends missing
@@ -87,4 +97,5 @@ All outputs must comply with the 9 Critical Accuracy Rules (ACC-001 through ACC-
 - **Accessibility Ignorance:** Color-only encoding of information, poor contrast ratios, no alt text
 
 ## Examples
+
 See example outputs in `references/example_outputs/` for gold-standard visual element audits showing complete inventory with labeling verification, source documentation, purpose assessment, accuracy validation, and remediation recommendations for clarity and accessibility.

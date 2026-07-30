@@ -157,6 +157,7 @@ Use this structure for your reading journal file:
 3. {Takeaway}
 
 **Commitments:**
+
 1. {Commitment}
 
 ---
@@ -168,17 +169,16 @@ Use this structure for your reading journal file:
 ## 13. Entry 13 — Consolidated Commitments
 
 **From Pass 1 (First Impressions):**
+
 1. {Commitment}
 
-**From Pass 2 (Cognitive Load & ADHD):**
-2. {Commitment}
-3. {Commitment}
+**From Pass 2 (Cognitive Load & ADHD):** 2. {Commitment} 3. {Commitment}
 
 {...continue through all passes...}
 
 ---
 
-*Reading journal completed {YYYY-MM-DD} by {Your Name}.*
+_Reading journal completed {YYYY-MM-DD} by {Your Name}._
 ```
 
 ---
@@ -198,11 +198,11 @@ Before delivering your journal, verify:
 
 ## Version History
 
-| Version | Date | Changes |
-|---------|------|---------|
-| v01_I | 2026-03-21 | Initial SOP. 12 lenses specified based on Opus the Dispatcher's reading journal from 2026-03-18. |
-| v02_I | 2026-03-21 | Audit pass. Fixed stale file path for Best Practices document (was referencing old filename with 2026-02-27 date, now updated to 2026-03-21 v06_I). Removed incorrect note about filename not being updated. Added note about Random Repo copy. Updated journal template to use numbered headings per Stahl Systems markdown standards. |
+| Version | Date       | Changes                                                                                                                                                                                                                                                                                                                                 |
+| ------- | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| v01_I   | 2026-03-21 | Initial SOP. 12 lenses specified based on Opus the Dispatcher's reading journal from 2026-03-18.                                                                                                                                                                                                                                        |
+| v02_I   | 2026-03-21 | Audit pass. Fixed stale file path for Best Practices document (was referencing old filename with 2026-02-27 date, now updated to 2026-03-21 v06_I). Removed incorrect note about filename not being updated. Added note about Random Repo copy. Updated journal template to use numbered headings per Stahl Systems markdown standards. |
 
 ---
 
-*Stahl Systems Document — SOP_Best_Practices_Reading_Journal_2026-03-21_v02_I.md*
+_Stahl Systems Document — SOP_Best_Practices_Reading_Journal_2026-03-21_v02_I.md_

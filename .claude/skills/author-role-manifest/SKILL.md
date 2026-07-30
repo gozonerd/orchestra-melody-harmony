@@ -27,7 +27,7 @@ This artifact is the MACHINE-READABLE scope authority for the persona. Hook v05+
 
 ## When NOT to invoke
 
-- Other artifacts (use sibling /author-role-* sub-skills)
+- Other artifacts (use sibling /author-role-\* sub-skills)
 - Editing the canonical clauda-the-spec-genius.yaml (modify directly + commit; no skill invocation needed)
 
 ## Inputs
@@ -45,19 +45,19 @@ This artifact is the MACHINE-READABLE scope authority for the persona. Hook v05+
 
 persona:
   slug: <kebab-case>
-  display_name: "<Persona Name vNN>"
+  display_name: '<Persona Name vNN>'
   family: clauda | claudette | other
-  version: "vNN"
-  workstream: "<one-paragraph workstream description>"
-  canonical_role_def_doc: "<path to artifact 1>"
+  version: 'vNN'
+  workstream: '<one-paragraph workstream description>'
+  canonical_role_def_doc: '<path to artifact 1>'
 
 scope_bounds:
   allowed_repos:
     - <repo-slug>
   allowed_paths:
-    - "<glob>"
+    - '<glob>'
   forbidden_paths:
-    - "<glob>"
+    - '<glob>'
   allowed_operations:
     - commit
     - push
@@ -65,7 +65,7 @@ scope_bounds:
     - <persona-specific>
 
 # Optional fields
-audit_threshold: strict-5 | strict-3 | standard-2  # if persona has explicit policy
+audit_threshold: strict-5 | strict-3 | standard-2 # if persona has explicit policy
 session_start_hooks:
   - <hook>
 related_personas:
@@ -84,10 +84,12 @@ If standalone: surface prompts for missing context (workstream / scope bounds).
 ### Step 2: Apply scope-bounds heuristics
 
 Default allowed_paths by family:
+
 - **Clauda** (non-coding): `_grand_repo/docs/**` + `_grand_repo/.claude/skills/**` + persona-specific role-manifests + spec authoring paths
-- **Claudette** (coding): `repos/<app-name>/**` (excluding plugin/src/** unless persona is plugin-author) + test paths + build configs
+- **Claudette** (coding): `repos/<app-name>/**` (excluding plugin/src/\*\* unless persona is plugin-author) + test paths + build configs
 
 Default forbidden_paths (universal):
+
 - `**/.env*` (secrets)
 - `**/credentials.json` (secrets)
 - Other persona-specific exclusions

@@ -1,5 +1,6 @@
 <script lang="ts">
-	let { onSubmit, isLoading = false }: { onSubmit: (task: string) => void; isLoading?: boolean } = $props();
+	let { onSubmit, isLoading = false }: { onSubmit: (task: string) => void; isLoading?: boolean } =
+		$props();
 	let taskInput = $state('');
 	let charCount = $derived(taskInput.length);
 	let isValid = $derived(taskInput.trim().length > 0 && taskInput.length <= 2000);
@@ -30,7 +31,7 @@
 		rows="4"
 		maxlength="2000"
 		aria-describedby="task-help char-count"
-		class="w-full resize-y rounded-lg border border-zinc-700 bg-zinc-900 px-4 py-3 text-zinc-200 placeholder-zinc-500 focus-visible:border-zinc-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400"
+		class="w-full resize-y rounded-lg border border-zinc-700 bg-zinc-900 px-4 py-3 text-zinc-200 placeholder-zinc-500 focus-visible:border-zinc-500 focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:outline-none"
 		disabled={isLoading}
 	></textarea>
 	<div class="mt-2 flex items-center justify-between text-sm text-zinc-500">
@@ -40,11 +41,12 @@
 	<button
 		type="submit"
 		disabled={!isValid || isLoading}
-		class="mt-4 w-full rounded-lg bg-zinc-200 px-6 py-3 text-base font-semibold text-zinc-900 transition-colors hover:bg-zinc-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 disabled:cursor-not-allowed disabled:opacity-50"
+		class="mt-4 w-full rounded-lg bg-zinc-200 px-6 py-3 text-base font-semibold text-zinc-900 transition-colors hover:bg-zinc-100 focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50"
 	>
 		{#if isLoading}
 			<span class="inline-flex items-center gap-2">
-				<span class="h-4 w-4 animate-spin rounded-full border-2 border-zinc-600 border-t-zinc-900"></span>
+				<span class="h-4 w-4 animate-spin rounded-full border-2 border-zinc-600 border-t-zinc-900"
+				></span>
 				Analyzing...
 			</span>
 		{:else}

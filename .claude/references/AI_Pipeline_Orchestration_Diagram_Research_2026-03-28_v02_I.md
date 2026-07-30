@@ -1,5 +1,5 @@
 ---
-title: "AI Pipeline Orchestration Diagram Types: Industry Standard Research"
+title: 'AI Pipeline Orchestration Diagram Types: Industry Standard Research'
 version: v02_I
 date: 2026-03-28
 status: Research Snapshot
@@ -69,18 +69,18 @@ Standard flowcharts remain common for high-level overviews but lack the formal s
 
 ## Claude Capability Matrix
 
-| Diagram Type | In-Thread? | Write Code For? | Render Location |
-|---|---|---|---|
-| **Mermaid (DAG/flowchart)** | Yes | Yes | GitHub, VS Code, Notion, in-thread |
-| **ASCII diagrams** | Yes | N/A | Anywhere text renders |
-| **SVG (raw)** | No | Yes | Browser, embed in docs |
-| **BPMN (XML)** | No | Yes | bpmn.io, Camunda, Flowable |
-| **PlantUML** | No | Yes | plantuml.com, VS Code extension |
-| **Graphviz/DOT** | No | Yes | Graphviz CLI, online renderers |
-| **DFD (Data Flow Diagram)** | No (Mermaid partial) | Yes | Mermaid (basic), D3.js/HTML (interactive), draw.io |
-| **D3.js / HTML+JS** | No | Yes | Open HTML file in browser |
-| **Python (matplotlib/graphviz)** | No | Yes | Run .py to generate PNG/SVG |
-| **draw.io XML** | No | Yes | Import into draw.io/diagrams.net |
+| Diagram Type                     | In-Thread?           | Write Code For? | Render Location                                    |
+| -------------------------------- | -------------------- | --------------- | -------------------------------------------------- |
+| **Mermaid (DAG/flowchart)**      | Yes                  | Yes             | GitHub, VS Code, Notion, in-thread                 |
+| **ASCII diagrams**               | Yes                  | N/A             | Anywhere text renders                              |
+| **SVG (raw)**                    | No                   | Yes             | Browser, embed in docs                             |
+| **BPMN (XML)**                   | No                   | Yes             | bpmn.io, Camunda, Flowable                         |
+| **PlantUML**                     | No                   | Yes             | plantuml.com, VS Code extension                    |
+| **Graphviz/DOT**                 | No                   | Yes             | Graphviz CLI, online renderers                     |
+| **DFD (Data Flow Diagram)**      | No (Mermaid partial) | Yes             | Mermaid (basic), D3.js/HTML (interactive), draw.io |
+| **D3.js / HTML+JS**              | No                   | Yes             | Open HTML file in browser                          |
+| **Python (matplotlib/graphviz)** | No                   | Yes             | Run .py to generate PNG/SVG                        |
+| **draw.io XML**                  | No                   | Yes             | Import into draw.io/diagrams.net                   |
 
 ### In-Thread Capability
 
@@ -105,16 +105,16 @@ Claude can generate code files that the user renders externally:
 
 ## Recommendation Matrix for AI Pipeline Orchestration
 
-| Diagram Purpose | Best Format | Why |
-|---|---|---|
-| Full pipeline dependency map | DAG (Mermaid) | Shows all 10 pipelines, dependencies, parallel paths |
-| Per-pipeline step detail with gates | BPMN or swimlane | Human review gates, exception handling, model routing |
-| Thread assignment / model routing | Swimlane (BPMN-style) | Shows which model handles which step |
-| Input/output mapping per step | DFD | Shows what feeds in, what comes out, where data flows |
+| Diagram Purpose                           | Best Format                 | Why                                                            |
+| ----------------------------------------- | --------------------------- | -------------------------------------------------------------- |
+| Full pipeline dependency map              | DAG (Mermaid)               | Shows all 10 pipelines, dependencies, parallel paths           |
+| Per-pipeline step detail with gates       | BPMN or swimlane            | Human review gates, exception handling, model routing          |
+| Thread assignment / model routing         | Swimlane (BPMN-style)       | Shows which model handles which step                           |
+| Input/output mapping per step             | DFD                         | Shows what feeds in, what comes out, where data flows          |
 | Prompt assembly / RAG input visualization | DFD or RAG pipeline diagram | Shows how documents + templates + context feed into generation |
-| High-level stage overview | Flowchart / Mermaid | Quick conceptual view |
-| Portable, in-doc rendering | Mermaid | Works in GitHub markdown natively |
-| Interactive exploration | HTML+JS (D3.js) | Zoom, click, tooltips for complex pipelines |
+| High-level stage overview                 | Flowchart / Mermaid         | Quick conceptual view                                          |
+| Portable, in-doc rendering                | Mermaid                     | Works in GitHub markdown natively                              |
+| Interactive exploration                   | HTML+JS (D3.js)             | Zoom, click, tooltips for complex pipelines                    |
 
 ### 6. DFD (Data Flow Diagram) — For Input/Output Mapping
 
@@ -128,6 +128,7 @@ DFDs are the standard for visualizing what feeds INTO a process step and what co
 Particularly relevant for the DPO's Appendix C (I/O Mapping), where every step of every pipeline has numbered inputs with their sources. A DFD makes this operational rigor visible.
 
 **Research sources (2026-03-28):**
+
 - Miro AI Data Flow Diagram Maker (https://miro.com/ai/diagram-ai/ai-data-flow-diagram-maker/)
 - Lucidchart DFD Software (https://www.lucidchart.com/pages/examples/data-flow-diagram-software)
 - PromptLayer LLM Architecture Diagrams Guide (https://blog.promptlayer.com/llm-architecture-diagrams-a-practical-guide-to-building-powerful-ai-applications/)

@@ -4,6 +4,7 @@ description: "Clauda" (and "Claudette") replace "Claude" in all Martinez Methods
 type: feedback
 originSessionId: 46056a33-f1c9-42ab-8260-97ba2f9b45f8
 ---
+
 When naming thread personas, AI assistant roles, or any Martinez Methods-owned label that would otherwise incorporate "Claude," use **"Clauda"** or **"Claudette"** instead. "Claude" is Anthropic's trademark and reserved for references to Anthropic's actual product (Claude Code, Claude.ai, the Claude model family). Martinez Methods' own naming conventions use Clauda / Claudette as the in-brand personifications.
 
 **Why:** Stated explicitly on 2026-04-24: "to keep us from copyright and ip infringement clauda is replacing claude in our naming schemes." This is prophylactic IP protection — avoiding confusability with Anthropic's mark in Martinez Methods' brand surface.
@@ -22,19 +23,20 @@ When naming thread personas, AI assistant roles, or any Martinez Methods-owned l
 
 **Scope:**
 
-| Context | Use |
-|---|---|
-| Martinez Methods thread persona | Clauda or Claudette |
-| Martinez Methods AI assistant role name | Clauda or Claudette |
-| Martinez Methods internal-facing documentation referring to the AI team member | Clauda or Claudette |
-| Reference to Anthropic's Claude Code product | Claude Code |
-| Reference to Anthropic's Claude model (Opus/Sonnet/Haiku) | Claude Opus 4.7, etc. |
-| Reference to Anthropic's API | Anthropic API / Claude API |
-| Reference to `Claude Cost` product (existing Martinez Methods product) | Claude Cost (legacy; rename TBD per Krystal) |
-| Reference to `Claude Clarified Chat` (existing) | Claude Clarified Chat (legacy; rename TBD per Krystal) |
-| NEW Martinez Methods product naming | Must use Clauda / Claudette / neither — never "Claude" |
+| Context                                                                        | Use                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------ |
+| Martinez Methods thread persona                                                | Clauda or Claudette                                    |
+| Martinez Methods AI assistant role name                                        | Clauda or Claudette                                    |
+| Martinez Methods internal-facing documentation referring to the AI team member | Clauda or Claudette                                    |
+| Reference to Anthropic's Claude Code product                                   | Claude Code                                            |
+| Reference to Anthropic's Claude model (Opus/Sonnet/Haiku)                      | Claude Opus 4.7, etc.                                  |
+| Reference to Anthropic's API                                                   | Anthropic API / Claude API                             |
+| Reference to `Claude Cost` product (existing Martinez Methods product)         | Claude Cost (legacy; rename TBD per Krystal)           |
+| Reference to `Claude Clarified Chat` (existing)                                | Claude Clarified Chat (legacy; rename TBD per Krystal) |
+| NEW Martinez Methods product naming                                            | Must use Clauda / Claudette / neither — never "Claude" |
 
 **Related:**
+
 - `feedback_ip_language.md` — branded terminology only
 - `feedback_ip_discipline_filesystem.md` — IP discipline at every operational layer
 - `project_audacious_ask_current.md` — Martinez Methods brand strategy

@@ -19,17 +19,20 @@ When Krystal has multiple deep research thread outputs on the same topic, this s
 The unified document has three sections:
 
 ### Section 1: Executive Summary
+
 - High-level synthesis of the entire research corpus
 - What was researched, what was found, what it means
 - Length: 1-2 pages
 
 ### Section 2: Key Points (2-3 pages)
+
 - The most important findings distilled
 - Each key point supported by **verbatim quotes** from the source DR threads
 - Quotes attributed to their source thread
 - This section should stand alone — someone reading only this section gets the essential picture
 
 ### Section 3: Full Unified Content
+
 - All information from all DR threads, unified and deduplicated
 - **Deduplication is by claim** — if multiple threads make the same claim, it appears once with all supporting sources cited
 - Organized by topic/theme, not by source thread

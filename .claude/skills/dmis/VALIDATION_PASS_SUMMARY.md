@@ -51,6 +51,7 @@ SUCCESSES: 20
 **Problem**: AFR descriptions were abbreviated/different from canonical versions in SK-R02
 
 **Fix Applied**: Updated all 6 AFR descriptions to match canonical definitions:
+
 - AFR-001: Every factual claim requires a traceable source
 - AFR-002: Never invent statistics, quotes, or regulatory citations
 - AFR-003: When uncertain, flag as [NEEDS VERIFICATION]
@@ -67,6 +68,7 @@ SUCCESSES: 20
 **Problem**: Layer descriptions were generic; should match actual task names from TT catalog
 
 **Fix Applied**: Updated all 8 layer descriptions in convergence audit table:
+
 - L1 (TT-06): Requirements Compliance Verification
 - L2 (TT-07): Regulatory Cross-Reference Verification
 - L3 (TT-08): Rule-Based Compliance Testing
@@ -152,31 +154,31 @@ SUCCESSES: 20
 
 ### Coverage Analysis
 
-| Category | Count | Status |
-|----------|-------|--------|
-| Task-Type Skills (TT-01 through TT-33) | 33 | ✓ All validated |
-| Methodology Skills | 3 | ✓ All validated |
-| Regulatory Skills | 2 | ✓ All validated |
-| Pipeline Skills | 7 | ✓ All validated |
-| **Total Skills** | **45** | **✓ All validated** |
+| Category                               | Count  | Status              |
+| -------------------------------------- | ------ | ------------------- |
+| Task-Type Skills (TT-01 through TT-33) | 33     | ✓ All validated     |
+| Methodology Skills                     | 3      | ✓ All validated     |
+| Regulatory Skills                      | 2      | ✓ All validated     |
+| Pipeline Skills                        | 7      | ✓ All validated     |
+| **Total Skills**                       | **45** | **✓ All validated** |
 
 ### Accuracy Rules Coverage
 
-| Rule Type | Count | Status |
-|-----------|-------|--------|
-| Critical Accuracy Rules (ACC) | 9 | ✓ All present in SK-R02 |
-| Anti-Fabrication Rules (AFR) | 6 | ✓ All present in SK-R02 |
-| Generation Skills with AFR | 7 | ✓ TT-01-05, TT-24, TT-27 |
+| Rule Type                     | Count | Status                   |
+| ----------------------------- | ----- | ------------------------ |
+| Critical Accuracy Rules (ACC) | 9     | ✓ All present in SK-R02  |
+| Anti-Fabrication Rules (AFR)  | 6     | ✓ All present in SK-R02  |
+| Generation Skills with AFR    | 7     | ✓ TT-01-05, TT-24, TT-27 |
 
 ### Quality Checks
 
-| Check | Result |
-|-------|--------|
-| Version Consistency (v02_I) | ✓ 33/33 task-type skills |
-| Pipeline Layer Accuracy | ✓ All 5 pipelines verified |
-| Removed Concepts Scan | ✓ No violations found |
-| AFR References | ✓ All generation skills compliant |
-| ACC References | ✓ Sample verification passed |
+| Check                       | Result                            |
+| --------------------------- | --------------------------------- |
+| Version Consistency (v02_I) | ✓ 33/33 task-type skills          |
+| Pipeline Layer Accuracy     | ✓ All 5 pipelines verified        |
+| Removed Concepts Scan       | ✓ No violations found             |
+| AFR References              | ✓ All generation skills compliant |
+| ACC References              | ✓ Sample verification passed      |
 
 ---
 
@@ -185,6 +187,7 @@ SUCCESSES: 20
 ### Expected Warnings (Not Issues)
 
 Three warnings remain for TT-24 through TT-33 regarding missing reference files:
+
 - Missing `output_schema.yaml` (TT-24-33)
 - Empty `example_outputs/` directories (TT-24-33)
 - Missing `scripts/validate_output.py` (TT-24-33)

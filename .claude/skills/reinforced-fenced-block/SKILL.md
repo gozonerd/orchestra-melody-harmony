@@ -25,7 +25,7 @@ Inside the tilde fence, use standard backtick fences (```) for code blocks, mark
 
 ## Example
 
-~~~~~~~~~~~~
+````
 ## This is a heading inside the block
 
 Here is some text with `inline code` and a full code block:
@@ -44,7 +44,7 @@ And another nested block:
 ```
 
 All of this renders cleanly because the outer fence uses tildes, not backticks.
-~~~~~~~~~~~~
+````
 
 ## When to Use
 

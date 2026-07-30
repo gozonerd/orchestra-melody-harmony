@@ -22,21 +22,21 @@
 
 persona:
   slug: claude-and-cody
-  display_name: "Claude & Cody"
+  display_name: 'Claude & Cody'
   family: standalone
   pronouns: they/them
-  version: "v01"
-  workstream: "All Cody authoring across Martinez Methods repos: skills, memory, references, methodology contributions, rule packs, hook proposals, role-definition contributions"
+  version: 'v01'
+  workstream: 'All Cody authoring across Martinez Methods repos: skills, memory, references, methodology contributions, rule packs, hook proposals, role-definition contributions'
   canonical_role_def_doc: null
 
 scope_bounds:
   allowed_repos:
     - all_martinez_methods_repos
   allowed_paths:
-    - "**/*"
+    - '**/*'
   forbidden_paths:
-    - "**/.env*"
-    - "**/secrets/**"
+    - '**/.env*'
+    - '**/secrets/**'
   allowed_operations:
     - commit
     - push
@@ -52,9 +52,9 @@ scope_bounds:
     - secrets_handling
     - role_manifest_edits_to_other_personas
   authority_caveats:
-    - "Methodology proposals (D2R stack changes, /asae extensions) coordinate with Spec Genius (clauda-the-spec-genius)"
-    - "Memory authoring uses memory/cody/ directory with `user: cody` frontmatter"
-    - "Pronouns they/them in any prose references to Cody"
+    - 'Methodology proposals (D2R stack changes, /asae extensions) coordinate with Spec Genius (clauda-the-spec-genius)'
+    - 'Memory authoring uses memory/cody/ directory with `user: cody` frontmatter'
+    - 'Pronouns they/them in any prose references to Cody'
 
 handoff:
   hands_off_to: []
@@ -73,5 +73,5 @@ mast_alignment:
 honest_gaps:
   - "Manifest authored by SSOT-wrangler thread on Cody's behalf; Cody has not yet personally edited this file. They/them invited to revise at will."
   - "scope_bounds is intentionally permissive; if specific restrictions emerge from Cody's actual authoring patterns, narrow incrementally."
-  - "Standard Claudette/Clauda protocol of one-persona-per-workstream is INTENTIONALLY NOT enforced for Cody per their/them preference."
+  - 'Standard Claudette/Clauda protocol of one-persona-per-workstream is INTENTIONALLY NOT enforced for Cody per their/them preference.'
 ---

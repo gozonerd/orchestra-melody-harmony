@@ -16,6 +16,7 @@ This skill is paired with `/calibrate-estimates` which reads the log and produce
 ## What Changed in v02
 
 v01 logged a single estimate. v02 logs both:
+
 - **gut_estimate_minutes** — what the user/Claude initially estimates
 - **calibrated_estimate_minutes** — gut × class-specific calibration factor (null if insufficient class data)
 
@@ -61,6 +62,7 @@ What the skill does:
    - If `n < 5`, calibration factor is null. Calibrated estimate is null. Skill reports "Insufficient calibration data for class X (n=K). Logging gut estimate only."
    - If `n >= 5`, calibration factor = median(gut_ratio) for the class. Calibrated estimate = gut_estimate × calibration_factor (rounded to nearest minute, minimum 1).
 5. Appends a JSONL line:
+
 ```json
 {
   "task_id": "...",
@@ -76,6 +78,7 @@ What the skill does:
   "status": "started"
 }
 ```
+
 6. Returns to user:
    - If calibrated: "Gut: 30 min. Calibrated (class research, n=21, factor 0.44): 13 min. Logging both. task_id: <uuid>"
    - If not calibrated: "Gut: 30 min. No calibration data for class X yet (n=2 < 5 threshold). Logging gut only. task_id: <uuid>"
@@ -94,6 +97,7 @@ What the skill does:
 4. Computes `gut_ratio` = actual_minutes / gut_estimate_minutes.
 5. Computes `calibrated_ratio` = actual_minutes / calibrated_estimate_minutes (null if calibrated_estimate was null).
 6. Appends a JSONL line:
+
 ```json
 {
   "task_id": "...",
@@ -107,6 +111,7 @@ What the skill does:
   "status": "completed"
 }
 ```
+
 7. Returns a calibration note:
    - If calibrated estimate existed: "Gut 30 / calibrated 13 / actual 18.2. Gut-ratio 0.61 (over-estimated by 39%); calibrated-ratio 1.40 (calibrated under-estimated by 40%). Class research running median: see /calibrate-estimates."
    - If no calibrated estimate: "Gut 30 / actual 18.2. Gut-ratio 0.61. Class X now has n=K completed entries; needs ≥5 for calibration to activate."
@@ -117,25 +122,25 @@ See `_grand_repo/data/task_timing_log_schema_2026-04-26_v02_I.md` for the canoni
 
 Required fields per row:
 
-| Field | Type | Notes |
-|---|---|---|
-| `task_id` | UUID string | Generated at start |
-| `ts_start` | ISO 8601 UTC | Start timestamp |
-| `ts_end` | ISO 8601 UTC | End timestamp (only on completion) |
-| `task_class` | enum string | See list above |
-| `description` | string | Free-form, ≤200 chars |
-| `gut_estimate_minutes` | integer | Pre-task gut estimate |
-| `calibrated_estimate_minutes` | integer or null | Computed at start; null if insufficient class history |
-| `calibration_factor_used` | float or null | The class median gut_ratio used; null if no calibration |
-| `calibration_factor_n` | integer or null | n of completed class entries used for the factor |
-| `actual_minutes` | float | Post-task actual (only on completion) |
-| `gut_ratio` | float | actual_minutes / gut_estimate_minutes |
-| `calibrated_ratio` | float or null | actual_minutes / calibrated_estimate_minutes |
-| `model` | string | e.g., "opus-4.7" |
-| `session_id` | string | If known, the Claude Code session id |
-| `status` | enum | "started" or "completed" |
-| `outcome` | string | Free-form, ≤200 chars (only on completion) |
-| `scope_creep` | boolean | Optional, on completion |
+| Field                         | Type            | Notes                                                   |
+| ----------------------------- | --------------- | ------------------------------------------------------- |
+| `task_id`                     | UUID string     | Generated at start                                      |
+| `ts_start`                    | ISO 8601 UTC    | Start timestamp                                         |
+| `ts_end`                      | ISO 8601 UTC    | End timestamp (only on completion)                      |
+| `task_class`                  | enum string     | See list above                                          |
+| `description`                 | string          | Free-form, ≤200 chars                                   |
+| `gut_estimate_minutes`        | integer         | Pre-task gut estimate                                   |
+| `calibrated_estimate_minutes` | integer or null | Computed at start; null if insufficient class history   |
+| `calibration_factor_used`     | float or null   | The class median gut_ratio used; null if no calibration |
+| `calibration_factor_n`        | integer or null | n of completed class entries used for the factor        |
+| `actual_minutes`              | float           | Post-task actual (only on completion)                   |
+| `gut_ratio`                   | float           | actual_minutes / gut_estimate_minutes                   |
+| `calibrated_ratio`            | float or null   | actual_minutes / calibrated_estimate_minutes            |
+| `model`                       | string          | e.g., "opus-4.7"                                        |
+| `session_id`                  | string          | If known, the Claude Code session id                    |
+| `status`                      | enum            | "started" or "completed"                                |
+| `outcome`                     | string          | Free-form, ≤200 chars (only on completion)              |
+| `scope_creep`                 | boolean         | Optional, on completion                                 |
 
 ## Backward Compatibility
 

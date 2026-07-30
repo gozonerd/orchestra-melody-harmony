@@ -40,7 +40,7 @@ For new threads bootstrapping into ASAE-gated Martinez Methods repos. This is th
 
 ## v07_I empirical-lesson amendments (2026-05-31)
 
-Six amendments absorbed from the 2026-05-31 ASAE-hardening batch by Claudalisse W. Convergence Genius v01 (gate-25 aspect-reference JSON v02 + gate-8 /asae v08 + gate-88 anti-fabrication.md + gate-89 v10 fixture corpus — the first batch of gates authored *under* live Hook v10 enforcement). These are operational lessons from being the first author held to v10's A14-A20 refuse tiers.
+Six amendments absorbed from the 2026-05-31 ASAE-hardening batch by Claudalisse W. Convergence Genius v01 (gate-25 aspect-reference JSON v02 + gate-8 /asae v08 + gate-88 anti-fabrication.md + gate-89 v10 fixture corpus — the first batch of gates authored _under_ live Hook v10 enforcement). These are operational lessons from being the first author held to v10's A14-A20 refuse tiers.
 
 1. **Two-wave remediation under `severity_policy: null-clean-only`.** When a rater returns **CONFIRMED but with a LOW finding**, you cannot honestly claim "NULL-CLEAN PASS" with the LOW un-addressed — even though LOW does not reset the strict counter. The discipline (per `references/anti-fabrication.md` §6) is: remediate the LOW forward, then **re-rate (Wave 2)** on the remediated artifact. Record a **Wave-Iteration Trail** preserving the Wave-1 findings (the near-miss is recorded, not hidden). Evidence: gate-88 — both raters CONFIRMED-with-LOW (3 LOW provenance-precision findings between them, incl. one in the anti-fab doc's own §8); remediated forward + re-rated to genuine all-NULL. Do NOT ship clean-with-asterisk under null-clean-only; either remediate-and-re-rate, or honestly report the LOWs in the Pass-block counts instead of claiming NULL.
 
@@ -48,13 +48,13 @@ Six amendments absorbed from the 2026-05-31 ASAE-hardening batch by Claudalisse 
 
 3. **Dogfood-test-harness pattern (+ synthetic-data ≠ fabrication).** To empirically prove a hook tier refuses/passes correctly, build a **self-contained throwaway-repo harness** that runs the REAL hook (never reimplement tier logic): `mktemp -d` a repo, copy `scripts/lib/*.sh` + a role-manifest (into `_grand_repo/role-manifests/` for Tier 5) + write a strict-5 `.asae-policy`, author ONE base-valid fixture that passes Tiers 1-37, then derive per-tier variants by deleting one frontmatter block. Assert **exit code AND the refusing-tier string** (catch refuse-for-the-wrong-reason). Fixture gotchas learned: the gate number must be **numeric** (`gate-[0-9]+`, Rule 3 finder); disclosures needs `none: true` OR a non-empty sub-block (Tier 1c-ext); session_chain needs ≥1 **resolving** path (Tier 4-ext). **Synthetic fixture rater agentIds/verdicts are controlled test inputs — clearly label them "NOT a real gate"** — categorically distinct from fabricating a real verdict (anti-fabrication.md §1/§2). Evidence: gate-89's `scripts/test/v10-fixture-corpus/` (8/8 against the real hook, independently reproduced by the Opus rater).
 
-4. **Cross-arch-divergent findings ARE the independence evidence.** When the two raters find **different** issues (not the same one), that is *stronger* evidence of genuine cross-architectural independence than agreement would be — "convergent raters might be independently responding to the same pattern; divergent findings suggest non-overlapping blind spots" (Kimi, gate-88). At gate-88 the Opus rater caught §2/§5 provenance issues while the Kimi rater caught the §8 circularity — neither saw the other's. Do not be unsettled when your two raters disagree on *what* to flag while both reaching CONFIRMED; that divergence is the rig working.
+4. **Cross-arch-divergent findings ARE the independence evidence.** When the two raters find **different** issues (not the same one), that is _stronger_ evidence of genuine cross-architectural independence than agreement would be — "convergent raters might be independently responding to the same pattern; divergent findings suggest non-overlapping blind spots" (Kimi, gate-88). At gate-88 the Opus rater caught §2/§5 provenance issues while the Kimi rater caught the §8 circularity — neither saw the other's. Do not be unsettled when your two raters disagree on _what_ to flag while both reaching CONFIRMED; that divergence is the rig working.
 
 5. **Forward-only commit-completion of another persona's deferred deliverable.** When a sibling persona authored + rater-attested a deliverable but never committed it (e.g., went offline), and it sits within YOUR role-manifest `allowed_paths`, you may commit it **forward-only**: file byte-identical to its original attestation (verify the sha against the authoring gate), committed under your attribution, **disclosed as a `deviations_from_canonical` entry** noting the originally-intended committer + that provenance is preserved (the original author's `authored_by` + the authoring gate stay immutable). Evidence: gate-25 committed the gate-55 aspect-reference JSON v01 (Claudette's deferred deliverable, 8 days uncommitted) — Kimi rater validated it as a properly-bounded "补位 / fill-in." Do NOT silently re-author; do NOT claim authorship; DO disclose + preserve provenance.
 
 6. **`domain: code` is the richest-profile dogfood — use it to stress-test.** A `domain: code` gate that stages executable output + a `README` triggers the MOST v10 tiers at once: Tier 7 (A14 deps) + Tier 8 (A15 output-exec) + Tier 9 (A16 bias — fires because code-domain + README is user-facing copy) + Tier 11 (A18) + Tier 12 (A19, if autonomy high) + Tier 13 (A20) + v07 Tiers 15/16/17 (user-facing-copy disclosures). A complete frontmatter passes them ALL clean (gate-89 did, first try). If you want to verify your frontmatter-authoring against the full tier battery, author a `domain: code` gate — it exercises the most enforcement in one commit.
 
-**Cross-cutting observation:** the 2026-05-31 batch was the first authored *under live Hook v10 enforcement* (after the sweep). Every gate dogfooded v10 on itself; v10 caught real structural issues twice (gate-88's Tier-33 rater-line format; gate-86's earlier step_re_execution trap) and accepted clean frontmatter otherwise. The enforcement layer is load-bearing, not ornamental — author to it deliberately.
+**Cross-cutting observation:** the 2026-05-31 batch was the first authored _under live Hook v10 enforcement_ (after the sweep). Every gate dogfooded v10 on itself; v10 caught real structural issues twice (gate-88's Tier-33 rater-line format; gate-86's earlier step_re_execution trap) and accepted clean frontmatter otherwise. The enforcement layer is load-bearing, not ornamental — author to it deliberately.
 
 ## v06_I empirical-lesson amendments (2026-05-30)
 
@@ -62,16 +62,16 @@ Seven amendments absorbed from the Hook v10 authoring + dogfood run by Claudalis
 
 1. **Hook v10 is now ACTIVE — A14-A20 frontmatter blocks are required-by-trigger.** For gates dated **2026-05-28+** (`APPLY_V10_TIERS` gate), the following new top-level frontmatter blocks are enforced at refuse-grade by the inline-bash tiers added in v10. Each tier's trigger differs — read the trigger column before deciding whether you can omit a block:
 
-   | New Tier | Aspect | Frontmatter block | Trigger condition (Option B) | When you can OMIT the block |
-   |---|---|---|---|---|
-   | 7  | A14 | `dependencies_attested:` | `domain` ∈ {code, methodology, research} OR staged dep-manifest files (package.json, Cargo.toml, pyproject.toml, *.lock, etc.) | `domain` is document/design/legal/instructional_design/other AND no manifest files staged |
-   | 8  | A15 | `output_execution_boundary:` | Staged diff includes executable-output files (.rs/.ts/.py/.go/.java/.sh/.bash/.ps1/.sql/.yaml/.toml/.json5 or paths under src/, src-tauri/, packages/, crates/, scripts/) | Staged diff is documentation-only |
-   | 9  | A16 | `bias_disclosure:` | `domain` ∈ {code, research} AND (user-facing copy touched OR ML/decision keywords in path: model/classifier/predict/recommend/rank/score/allocat/approv/deni/trial/cohort) | `domain` not code/research, OR no human-facing-decision surface |
-   | 10 | A17 | (no frontmatter block — discipline aspect) | n/a | Always — A17 is rater-verified at Step 6, no hook layer |
-   | 11 | A18 | `capability_scope:` | **ALWAYS-MANDATORY** | Never — every gate has a persona with tool use + path writes |
-   | 12 | A19 | `hai_integrity:` | `capability_scope.autonomy_level: high` | autonomy is low or medium |
-   | 13 | A20 | `identity_attestation:` | **ALWAYS-MANDATORY** | Never — every commit has a primary persona |
-   | 38 | (cross-check) | n/a — refuses on staged-diff vs `domain:` mismatch | `domain: documentation` declared but staged includes code files | Don't declare `domain: documentation` if code is staged |
+   | New Tier | Aspect        | Frontmatter block                                  | Trigger condition (Option B)                                                                                                                                               | When you can OMIT the block                                                               |
+   | -------- | ------------- | -------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+   | 7        | A14           | `dependencies_attested:`                           | `domain` ∈ {code, methodology, research} OR staged dep-manifest files (package.json, Cargo.toml, pyproject.toml, \*.lock, etc.)                                            | `domain` is document/design/legal/instructional_design/other AND no manifest files staged |
+   | 8        | A15           | `output_execution_boundary:`                       | Staged diff includes executable-output files (.rs/.ts/.py/.go/.java/.sh/.bash/.ps1/.sql/.yaml/.toml/.json5 or paths under src/, src-tauri/, packages/, crates/, scripts/)  | Staged diff is documentation-only                                                         |
+   | 9        | A16           | `bias_disclosure:`                                 | `domain` ∈ {code, research} AND (user-facing copy touched OR ML/decision keywords in path: model/classifier/predict/recommend/rank/score/allocat/approv/deni/trial/cohort) | `domain` not code/research, OR no human-facing-decision surface                           |
+   | 10       | A17           | (no frontmatter block — discipline aspect)         | n/a                                                                                                                                                                        | Always — A17 is rater-verified at Step 6, no hook layer                                   |
+   | 11       | A18           | `capability_scope:`                                | **ALWAYS-MANDATORY**                                                                                                                                                       | Never — every gate has a persona with tool use + path writes                              |
+   | 12       | A19           | `hai_integrity:`                                   | `capability_scope.autonomy_level: high`                                                                                                                                    | autonomy is low or medium                                                                 |
+   | 13       | A20           | `identity_attestation:`                            | **ALWAYS-MANDATORY**                                                                                                                                                       | Never — every commit has a primary persona                                                |
+   | 38       | (cross-check) | n/a — refuses on staged-diff vs `domain:` mismatch | `domain: documentation` declared but staged includes code files                                                                                                            | Don't declare `domain: documentation` if code is staged                                   |
 
    See **"v10 trigger-conditional frontmatter blocks"** section below for the full required-schema YAML per block.
 
@@ -81,10 +81,9 @@ Seven amendments absorbed from the Hook v10 authoring + dogfood run by Claudalis
 
 4. **Cross-architectural rater finding adjudication — extract valid core, neither comply nor dismiss.** When the cross-arch rater (typically Kimi via Abacus RouteLLM, satisfying the ≥50%-Chinese-arch rig discipline) flags an observation, the disposition is NOT "comply with the finding" (could break the correct work) NOR "dismiss the rater as wrong" (A4 anti-pattern). Per gate-54 + gate-86 precedent: (a) empirically test the contested claim if testable (run the actual regex, check the actual file); (b) extract the valid core (the rater's finding may name a real issue even if the headline is wrong); (c) correct briefing + re-rate if a briefing error caused the finding; (d) record observations-not-rising-to-findings as design-notes for future gates. Gate-86's "Rater finding adjudication" subsection is the canonical worked example.
 
-5. **Dogfood mechanism for hook version upgrades.** When authoring a new hook version (v(N+1)), the right dogfood mechanism is: **cp the new hook file over `.githooks/commit-msg` BEFORE running the commit that ships v(N+1)**. The active hook at commit time is then v(N+1), so v(N+1) enforces its own gate's audit log. Your gate must satisfy every v(N+1) tier that fires on it. Risks: any bug in the new tier logic refuses your own commit (mitigation: bash -n clean + tier-trigger logic verified per Pass blocks + frontmatter explicitly satisfies every triggering tier before staging). Gate-86's first attempt was refused by v10 on a `step_re_execution: []` empty-list (Quickstart v03_I amendment 3 caught the author by their own methodology) — that refusal was *the methodology working*, not a failure.
+5. **Dogfood mechanism for hook version upgrades.** When authoring a new hook version (v(N+1)), the right dogfood mechanism is: **cp the new hook file over `.githooks/commit-msg` BEFORE running the commit that ships v(N+1)**. The active hook at commit time is then v(N+1), so v(N+1) enforces its own gate's audit log. Your gate must satisfy every v(N+1) tier that fires on it. Risks: any bug in the new tier logic refuses your own commit (mitigation: bash -n clean + tier-trigger logic verified per Pass blocks + frontmatter explicitly satisfies every triggering tier before staging). Gate-86's first attempt was refused by v10 on a `step_re_execution: []` empty-list (Quickstart v03_I amendment 3 caught the author by their own methodology) — that refusal was _the methodology working_, not a failure.
 
 6. **OneDrive virtualization workarounds (Windows + OneDrive-synced repo).** Three Windows-OneDrive interactions can cause OSError 22 / mmap-failed errors that aren't methodology issues but block commits:
-
    - **`git add` mmap failure** — symptom: `fatal: mmap failed: Invalid argument` on `git add`. Fix: `git config core.mmap false && git config core.preloadIndex false && git config core.fscache false` (per-repo or global).
    - **`git commit` ref-append failure** — symptom: `fatal: cannot update the ref 'HEAD': unable to append to '.git/logs/HEAD': Invalid argument`. Fix: `git config windows.appendAtomically false` (per-repo; the error message itself suggests this).
    - **Python text-mode file iteration on OneDrive-virtualized env files** — symptom: `OSError: [Errno 22] Invalid argument` on `for line in f:` even when `os.path.exists()` returns True. Fix: read binary then decode: `with open(p, 'rb') as f: content = f.read().decode('utf-8', errors='replace')`. Affects any script that reads API-key env files or other small config files in OneDrive-synced directories.
@@ -237,7 +236,7 @@ If omitted, v10 defaults to `documentation` (most restrictive — triggers Tier 
 
 Five amendments + two cross-cutting observations absorbed from the Claudessa W. Serene Knuth v01 inaugural archival run on Martinez-Methods/mm-thread-archive (2026-05-12; 3 gates: gate-28 persona lock-in, gate-01 archival run, gate-29 canonical registry add). Each amendment maps to a specific hook rejection or operational failure mode that cost real refuse-fix-cycle time during the inaugural run.
 
-1. **Pass-N headings must be standalone `## Pass N` H2 headers, not bullets nested in rater sections.** The hook counts H2 headings matching `^## Pass N` regex. Bulleted "Pass N" list items inside a rater verdict section don't match. A gate with 0 H2-Pass headings + 10 Pass-bullets-inside-rater-sections is treated as having 0 pass blocks; the hook refuses with *"internal-records file contains 0 '## Pass N' headers but trailer claims threshold 5; need at least 5 result-blocks."* Evidence: rejection event from the gate-28 commit attempt (verbatim rejection text preserved in `docs/deprecated/ASAE_Quickstart_Additions_From_Inaugural_Archival_2026-05-12_v01_I.md` §"Empirical evidence"; gate-28 itself is the post-remediation canonical doc). See "Pass block required-phrase markers" section below for the explicit standalone-H2 warning + correct/wrong example.
+1. **Pass-N headings must be standalone `## Pass N` H2 headers, not bullets nested in rater sections.** The hook counts H2 headings matching `^## Pass N` regex. Bulleted "Pass N" list items inside a rater verdict section don't match. A gate with 0 H2-Pass headings + 10 Pass-bullets-inside-rater-sections is treated as having 0 pass blocks; the hook refuses with _"internal-records file contains 0 '## Pass N' headers but trailer claims threshold 5; need at least 5 result-blocks."_ Evidence: rejection event from the gate-28 commit attempt (verbatim rejection text preserved in `docs/deprecated/ASAE_Quickstart_Additions_From_Inaugural_Archival_2026-05-12_v01_I.md` §"Empirical evidence"; gate-28 itself is the post-remediation canonical doc). See "Pass block required-phrase markers" section below for the explicit standalone-H2 warning + correct/wrong example.
 
 2. **Paired-gate scenarios: duplicate verbatim, do not cross-reference.** When a single 2-rater audit covers deliverables in two repos (e.g., a cross-repo change where one repo has the substantive content and a sibling repo has a small companion change), each repo's gate doc requires its OWN "Independent Rater Verification" sections with the FULL verbatim 6-field structure. Cross-reference prose like "Verdicts captured in gate-01; final verdict CONFIRMED" does NOT match the hook's Tier 1c regex which requires the literal `**Rater verdict:**` bold field label + CONFIRMED/PARTIAL/FLAG on the same line. Evidence: rejection event from the gate-29 commit attempt — paired with gate-01 in mm-thread-archive (verbatim rejection text preserved in the proposal doc cited above; gate-29 is post-remediation canonical). See "Independent rater spawn" section for the codified paired-gate guidance.
 
@@ -249,13 +248,13 @@ Five amendments + two cross-cutting observations absorbed from the Claudessa W. 
 
 **Cross-cutting observations** (not amendments per se; methodology evidence):
 
-- **The 3-wave strict-5 + 2-rater + NULL-CLEAN-only counter discipline works as designed.** The inaugural archival's gate-01 hit Wave A FLAG (Rater 1 found 3 legitimate findings; Rater 2 CONFIRMED), Wave B PARTIAL (both raters caught the same residual stale numeric), Wave C CONFIRMED (both raters 5/5 NULL CLEAN). The independence requirement (no shared context between raters) was load-bearing: Rater 1's findings were credible BECAUSE Rater 2's independent CONFIRMED made dismissing them as "one-rater noise" untenable. This is *evidence the methodology works*, not just "we passed the gate."
+- **The 3-wave strict-5 + 2-rater + NULL-CLEAN-only counter discipline works as designed.** The inaugural archival's gate-01 hit Wave A FLAG (Rater 1 found 3 legitimate findings; Rater 2 CONFIRMED), Wave B PARTIAL (both raters caught the same residual stale numeric), Wave C CONFIRMED (both raters 5/5 NULL CLEAN). The independence requirement (no shared context between raters) was load-bearing: Rater 1's findings were credible BECAUSE Rater 2's independent CONFIRMED made dismissing them as "one-rater noise" untenable. This is _evidence the methodology works_, not just "we passed the gate."
 
 - **Pairwise-gate pattern emerged naturally for cross-repo changes.** A single 2-rater audit covered deliverables in both mm-thread-archive (gate-01 — corpus, scaffold, gate-1) and mm-claude-canonical (gate-29 — registry entry). Each repo's gate doc holds the verbatim rater verdicts; cross-references go in `session_chain.paired-gate` frontmatter. Codified pattern: when a change spans two repos under separate `.asae-policy` enforcement, the natural shape is paired gates with shared rater verdicts duplicated verbatim in both.
 
 ## v04_I empirical-lesson amendments (2026-05-12)
 
-Eleven amendments absorbed from two sources: (a) Calibration Inevitability v03 Wave 0 proposal doc (8 gates across mm-claude-canonical + _grand_repo, 2026-05-06 through 2026-05-12), (b) gate-25 empirical hook gotchas (mm-claude-canonical, 2026-05-12).
+Eleven amendments absorbed from two sources: (a) Calibration Inevitability v03 Wave 0 proposal doc (8 gates across mm-claude-canonical + \_grand_repo, 2026-05-06 through 2026-05-12), (b) gate-25 empirical hook gotchas (mm-claude-canonical, 2026-05-12).
 
 1. **New: Pre-author verification checklist.** Eight-item checklist run BEFORE rater dispatch. Covers disk-resolve paths, grep canonical names, re-read canonical state, byte-fidelity verification, search-entire-block discipline, calibration-tier source tracing, cross-file consistency after remediation, frontmatter schema extension disclosure. Source: Wave 0 §1 (gate-23/24/60/61/79 evidence).
 
@@ -307,11 +306,11 @@ Empirical-evidence source-gates: `mm-claude-canonical/deprecated/asae-logs/gate-
 
 Pick yours:
 
-| Repo | Threshold | Rater requirement | Trailer |
-|---|---|---|---|
-| Consumer repos (most apps) | strict-3 | 1 rater CONFIRMED | `ASAE-Gate: strict-3-PASS` |
-| Canonical SSOT (`mm-claude-canonical`, `mm-d2r-code-plan-stack`) | strict-5 | 2 raters CONFIRMED | `ASAE-Gate: strict-5-PASS` |
-| Private/stable-private | standard-2 | 1 rater CONFIRMED | `ASAE-Gate: standard-2-PASS` |
+| Repo                                                             | Threshold  | Rater requirement  | Trailer                      |
+| ---------------------------------------------------------------- | ---------- | ------------------ | ---------------------------- |
+| Consumer repos (most apps)                                       | strict-3   | 1 rater CONFIRMED  | `ASAE-Gate: strict-3-PASS`   |
+| Canonical SSOT (`mm-claude-canonical`, `mm-d2r-code-plan-stack`) | strict-5   | 2 raters CONFIRMED | `ASAE-Gate: strict-5-PASS`   |
+| Private/stable-private                                           | standard-2 | 1 rater CONFIRMED  | `ASAE-Gate: standard-2-PASS` |
 
 The `.asae-policy` file at the repo root declares `audit_threshold:` explicitly; if absent, hook derives from `going-public:` (false→2, true→3). strict-5 is opt-in via explicit `audit_threshold: strict-5` in `.asae-policy`.
 
@@ -368,6 +367,7 @@ Applied from:
 - `inputs_processed:` MUST have one entry per `sources:` entry — STRICT 1:1 PARITY (Hook Tier 6 enforces; SSOT-wrangler v02_I amendment 6). Combining two sources into one inputs_processed entry refuses the commit. If a source bundles multiple files, expand `inputs_processed` accordingly OR consolidate `sources:` first.
 
   Example (CORRECT — 1:1 parity):
+
   ```yaml
   sources:
     - mm-claude-canonical/skills/asae/SKILL.md
@@ -384,6 +384,7 @@ Applied from:
   ```
 
   WRONG (consolidated; refuses commit):
+
   ```yaml
   sources:
     - mm-claude-canonical/skills/asae/SKILL.md
@@ -410,28 +411,35 @@ Applied from:
 
 ## Pass block required-phrase markers (Lock A2 tactical)
 
-**Critical structural requirement (v05_I amendment 1; gate-28 evidence):** The hook counts STANDALONE `## Pass N — <description>` H2 headings, NOT bulleted "Pass N" list items nested inside rater verdict sections. The Tier 1b regex `^## Pass N` matches H2 headings only. If your gate's Pass-N content lives only as bullets inside the "Independent Rater Verification" sections (e.g., `**Pass results**:\n- Pass 1: NULL CLEAN\n- Pass 2: ...`), the hook treats your gate as having ZERO pass blocks regardless of how many bullets you have. The rejection message is *"internal-records file contains 0 '## Pass N' headers but trailer claims threshold 5; need at least 5 result-blocks."*
+**Critical structural requirement (v05_I amendment 1; gate-28 evidence):** The hook counts STANDALONE `## Pass N — <description>` H2 headings, NOT bulleted "Pass N" list items nested inside rater verdict sections. The Tier 1b regex `^## Pass N` matches H2 headings only. If your gate's Pass-N content lives only as bullets inside the "Independent Rater Verification" sections (e.g., `**Pass results**:\n- Pass 1: NULL CLEAN\n- Pass 2: ...`), the hook treats your gate as having ZERO pass blocks regardless of how many bullets you have. The rejection message is _"internal-records file contains 0 '## Pass N' headers but trailer claims threshold 5; need at least 5 result-blocks."_
 
 **Correct structure** (5 standalone H2 Pass blocks at the top of the gate body, BEFORE the rater verdict sections):
 
 ```markdown
 ## Audit scope
+
 [scope description]
 
 ## Pass 1 — Full checklist evaluation
+
 [body with marker phrase + checklist + counter state]
 
 ## Pass 2 — Full checklist re-evaluation, identical scope
+
 [body]
 
 ## Pass 3 — ...
+
 ## Pass 4 — ...
+
 ## Pass 5 — ...
 
 ## Independent Rater Verification — Rater 1
+
 [rater verdict with full 6-field structure]
 
 ## Independent Rater Verification — Rater 2
+
 [rater verdict with full 6-field structure]
 ```
 
@@ -457,9 +465,9 @@ Each `## Pass N — <description>` block MUST contain at least one of these mark
 
 Full checklist evaluation of all 9 items against the defined audit scope.
 
-| # | Item | Result |
-|---|------|--------|
-| 1 | ... | PASS — ... |
+| #   | Item | Result     |
+| --- | ---- | ---------- |
+| 1   | ...  | PASS — ... |
 
 **Issues found at CRITICAL: 0 / HIGH: 0 / MEDIUM (strict): 0 / LOW: 0**
 
@@ -471,9 +479,9 @@ Counter state: 1 / 5
 ```markdown
 ## Pass 1 — Full checklist evaluation, identical scope
 
-| # | Item | Result |
-|---|------|--------|
-| 1 | ... | PASS — ... |
+| #   | Item | Result     |
+| --- | ---- | ---------- |
+| 1   | ...  | PASS — ... |
 
 Issues found at CRITICAL: 0 / HIGH: 0 / MEDIUM (strict): 0 / LOW: 0
 
@@ -555,7 +563,7 @@ When a single 2-rater audit covers deliverables that land in TWO repos (e.g., a 
 **Rater agentId:** <hex>
 ```
 
-**Common author-error pattern (REFUSED)**: cross-reference prose like *"Verdicts captured in gate-01; final Wave C verdict CONFIRMED; agentId X."* The hook's Tier 1c regex matches the literal `**Rater verdict:**` bold field label followed by `CONFIRMED|PARTIAL|FLAG` on the same line. Prose that mentions CONFIRMED in a different field structure does NOT satisfy the regex.
+**Common author-error pattern (REFUSED)**: cross-reference prose like _"Verdicts captured in gate-01; final Wave C verdict CONFIRMED; agentId X."_ The hook's Tier 1c regex matches the literal `**Rater verdict:**` bold field label followed by `CONFIRMED|PARTIAL|FLAG` on the same line. Prose that mentions CONFIRMED in a different field structure does NOT satisfy the regex.
 
 **Correct pattern**: duplicate the entire 6-field block in each paired gate doc. Cross-reference the companion gate in a non-required section like "Pairing notes" or in `session_chain.paired-gate` frontmatter (kind: `paired-gate`), but the verbatim rater content must appear in full in BOTH gate docs.
 
@@ -597,10 +605,10 @@ Missing agentIds invalidate the gate. This is the audit-trail anchor for verifyi
 ```markdown
 ## Audit waves
 
-| Wave | Verdict | Findings | Remediation |
-|------|---------|----------|-------------|
-| Initial | PARTIAL | 2 HIGH | Fixed path references, added cross-shell section |
-| Wave A | CONFIRMED | 0 | — |
+| Wave    | Verdict   | Findings | Remediation                                      |
+| ------- | --------- | -------- | ------------------------------------------------ |
+| Initial | PARTIAL   | 2 HIGH   | Fixed path references, added cross-shell section |
+| Wave A  | CONFIRMED | 0        | —                                                |
 ```
 
 Without this trail, a final 3/3 CONFIRM is indistinguishable from a first-pass clean result. (Gate-60: 4 remediation waves; the trail was the only evidence that the final PASS was iteration 4.)
@@ -668,12 +676,14 @@ When a single source-gate authorizes propagation to N target repos (e.g., a hook
 **Use short-form `Propagation-From: gate-NN` trailer** (just the number, not full slug) for universal compatibility (SSOT-wrangler v02_I amendment 2). Hook v04 had a greedy-regex bug that captured full slug then appended `-` and failed to match `.md` files; short form sidesteps. Hook v05.1+ / v06 / v07.1 / v08 / v09 all accept the number-only regex.
 
 **Correct:**
+
 ```
 Propagation-From: gate-75
 Co-Authored-By: ...
 ```
 
 **Avoid (works on v05.1+ but breaks under hook v04):**
+
 ```
 Propagation-From: gate-75-batch3-some-long-descriptor-2026-04-30
 Co-Authored-By: ...
@@ -755,15 +765,15 @@ Inaugural-archival evidence: 3 background tasks were killed after ~10 minutes of
 
 For archival-type workflows (e.g., Claudessa W. Serene Knuth v(NN) persona's recurring weekly archival of Claude transcripts): source files may be actively being written to during the archival run. Their sha256 hash drifts between inventory generation and import-time verification. Strict sha256 verification halts the run; informed retry-without-surface deviates from the standard safety hard-rule "STOP and surface to Krystal before retry."
 
-The safety rule is correct for *unknown* failure modes (sha256 mismatch could indicate corruption or unauthorized modification of source data). For *diagnosed* failure modes — specifically active-session-file mutation in archival workflows where sources are by definition live — the rule's strict reading is too tight when the carrier is not available for in-session decision-making.
+The safety rule is correct for _unknown_ failure modes (sha256 mismatch could indicate corruption or unauthorized modification of source data). For _diagnosed_ failure modes — specifically active-session-file mutation in archival workflows where sources are by definition live — the rule's strict reading is too tight when the carrier is not available for in-session decision-making.
 
 **Recommendation 1 — Pre-import drift-scan** (preferred):
 
-Before the import phase begins, re-hash all inventory rows to a fresh "current sha256" column. Files where current sha256 ≠ inventory sha256 are *live*; exclude them from THIS run's inventory and log them to an `inventory_excluded_active_sessions_YYYY-MM-DD.csv` for the next archival batch. The deferred files are honest-gap entries in the gate doc, not failure-surfaces.
+Before the import phase begins, re-hash all inventory rows to a fresh "current sha256" column. Files where current sha256 ≠ inventory sha256 are _live_; exclude them from THIS run's inventory and log them to an `inventory_excluded_active_sessions_YYYY-MM-DD.csv` for the next archival batch. The deferred files are honest-gap entries in the gate doc, not failure-surfaces.
 
 **Recommendation 2 — Bounded informed-retry** (acceptable when pre-scan was insufficient):
 
-If a sha256 mismatch surfaces *during* import (e.g., a file drifted between pre-scan and import), the helper script halts. Operator may:
+If a sha256 mismatch surfaces _during_ import (e.g., a file drifted between pre-scan and import), the helper script halts. Operator may:
 
 - **Re-scan ALL remaining files** for current hashes; update inventory; exclude any new drifters; re-run. This is "informed-retry on diagnosed root cause," not "blind retry."
 - **Cap retries at 2 iterations** per run. After 2 retries, exclude all still-active files unconditionally and proceed with the stable subset.
@@ -809,6 +819,7 @@ If you don't yet have a persona for the workstream: invoke `/define-your-role-li
 **When it triggers:** The hook scans staged files for platform-conditional patterns: `github/workflows` in any path, `.ps1`/`.cmd`/`.bat` extensions, `process.platform`/`os.homedir`/`pathToFileURL`/`path.sep` in staged diffs, config file extensions, `propagate-githooks`, and `installer`. If ANY pattern matches, Rule 5 activates.
 
 **What the hook ACTUALLY checks:** It grep-searches your gate audit log file for:
+
 - At least one mention of `Git Bash` (or `gitbash`, `bash msys`, `posix shell`) — case-insensitive
 - At least one mention of `PowerShell` (or `pwsh`, `cmd.exe`) — case-insensitive
 
@@ -862,7 +873,7 @@ If your gate commit reveals a substantive failure mid-loop and you need to recov
 5. **Fixture-test corpus now exists for Hook v10 (gate-89).** `scripts/test/v10-fixture-corpus/run-fixtures.sh` empirically demonstrates v10's A14-A20 enforcement (8/8 against the real hook); see v07_I amendment 3. Quickstart prose accuracy is still validated primarily by adoption, but v10 tier enforcement itself is now empirically corpus-verified.
 6. **Sonnet advisory rater for Doc-00-trigger is PROPOSED, not ratified** (v04_I §2.1). The recommendation is included for procedural awareness but is not yet a binding requirement. Krystal's ratification converts it from advisory to mandatory.
 7. **Pre-author verification checklist is operationally recommended, not hook-enforced.** Items 1-8 prevent rater-dispatch defects but the hook does not enforce them directly. Skipping the checklist risks remediation waves, not hook rejections.
-8. **`anti-fabrication.md` now exists as a standalone reference (gate-88, 2026-05-31).** `references/anti-fabrication.md` consolidates the F1 cardinal refusal + A8.1/A8.2 + rater-spawn Rule A/B + cross-arch rig + adjudication + honest-enforced-vs-specced + the recursive-stake discipline. Anti-fabrication principles remain *also* documented inline in this Quickstart's "Audit-log structural requirements" and "Independent rater spawn" sections (the inline copies are retained pending a future consolidation gate; see v07_I + the gate-88 omissions note).
+8. **`anti-fabrication.md` now exists as a standalone reference (gate-88, 2026-05-31).** `references/anti-fabrication.md` consolidates the F1 cardinal refusal + A8.1/A8.2 + rater-spawn Rule A/B + cross-arch rig + adjudication + honest-enforced-vs-specced + the recursive-stake discipline. Anti-fabrication principles remain _also_ documented inline in this Quickstart's "Audit-log structural requirements" and "Independent rater spawn" sections (the inline copies are retained pending a future consolidation gate; see v07_I + the gate-88 omissions note).
 
 9. **v05_I amendments draw from a single inaugural run (thin empirical base).** Five lessons + 2 cross-cutting observations from one workstream (Claudessa W. Serene Knuth v01 inaugural archival, 3 gates 2026-05-12 → 2026-05-13). Future archival batches + future cross-repo paired gates will surface additional patterns; v06_I+ should absorb those. The sample size for v05_I is intentionally narrow but high-resolution: each amendment ties to a specific hook rejection message or operational failure, not to speculative or aspirational concerns.
 
@@ -888,6 +899,7 @@ If your gate commit reveals a substantive failure mid-loop and you need to recov
 v01_I (2026-04-30) — inaugural Spec Genius authoring per Batch 3 Lock A1. Covers strict-3 / strict-5 / standard-2 paths; frontmatter schema; Pass block markers; rater spawn; gate numbering; iterative hook-compliance; persona prerequisites; first moves; cross-shell; DRR; honest gaps; cross-references.
 
 v02_I (2026-04-30) — absorbs 6 SSOT-wrangler empirical-lessons amendments per gate-16/17/18 in mm-claude-canonical (Phase 9 + Phase I cluster execution). Adds:
+
 - v02_I amendments summary at top of body
 - Tier 6 1:1 parity example (correct + wrong) in Required YAML frontmatter
 - `rater_authored_by_context: parent` REQUIRED for strict-5 + 2-rater (frontmatter level, not just legacy-compat prose marker)
@@ -896,13 +908,15 @@ v02_I (2026-04-30) — absorbs 6 SSOT-wrangler empirical-lessons amendments per 
 - New "Tier 0 propagation" section with chain-at-depth + short-form trailer guidance
 
 v03_I (2026-05-11) — absorbs 4 empirical-lessons amendments from gate-20 propagation infrastructure build in mm-claude-canonical. Adds:
+
 - Pass block marker phrases: clarified that markers must appear in BODY text, not heading; expanded accepted-phrase list to match hook regex (Full audit, Full checklist, Same scope, etc.); added correct/wrong examples
 - Cross-shell (Rule 5): documented that hook does NOT parse .asae-policy cross-shell field; it grep-searches audit log for "Git Bash" and "PowerShell" string mentions; GitHub Actions workflow files always trigger Rule 5
 - step_re_execution gotcha: documented that including `step_re_execution: []` in frontmatter triggers Step-Re-Execution trailer requirement; omit field entirely when no re-executions occurred
 - strict-5 two-rater requirement: promoted to position 3 in iterative hook-compliance list; emphasized in First moves checklist
 - Updated First moves checklist with in-line warnings for each gotcha point
 
-v04_I (2026-05-12) — absorbs 11 amendments from Calibration Inevitability v03 Wave 0 (8 gates across mm-claude-canonical + _grand_repo, 2026-05-06 through 2026-05-12) + 3 gate-25 empirical hook gotchas. Adds:
+v04_I (2026-05-12) — absorbs 11 amendments from Calibration Inevitability v03 Wave 0 (8 gates across mm-claude-canonical + \_grand_repo, 2026-05-06 through 2026-05-12) + 3 gate-25 empirical hook gotchas. Adds:
+
 - New "Pre-author verification checklist" section: 8-item checklist (disk-resolve, grep names, re-read state, byte-fidelity, search-entire-block, calibration-tier tracing, cross-file consistency, schema extension disclosure)
 - Issues-found line bold requirement (gate-25 evidence)
 - Rater section format tightened: exact H2 heading format + exact field labels (gate-25 evidence)
@@ -915,6 +929,7 @@ v04_I (2026-05-12) — absorbs 11 amendments from Calibration Inevitability v03 
 - Anti-fabrication discipline documented inline (standalone `anti-fabrication.md` not yet authored) + cross-reference to Wave 0 proposal doc
 
 v05_I (2026-05-13) — absorbs 5 amendments + 2 cross-cutting observations from the Claudessa W. Serene Knuth v01 inaugural archival run on Martinez-Methods/mm-thread-archive (3 gates: gate-28 persona lock-in, gate-01 archival run, gate-29 canonical registry add; 2026-05-12 through 2026-05-13). Adds:
+
 - Pass-N standalone-H2 requirement (gate-28 rejection evidence) — new explicit warning + correct/wrong example at the top of "Pass block required-phrase markers" section
 - Paired-gate verbatim discipline (gate-29 rejection evidence) — new sub-section in "Independent rater spawn" covering cross-repo audits sharing a single 2-rater verdict; pairwise-gate pattern codified
 - Subagent plan-mode perception inheritance (inaugural archival run evidence) — new sub-section in "Operational discipline" with 3 mitigation tiers
@@ -925,6 +940,7 @@ v05_I (2026-05-13) — absorbs 5 amendments + 2 cross-cutting observations from 
 - Absorbs proposal doc at docs/deprecated/ASAE_Quickstart_Additions_From_Inaugural_Archival_2026-05-12_v01_I.md (moved on absorption)
 
 Future v06+:
+
 - Per-version hook detail expansion as v10+ ships
 - ✅ DONE (gate-89, v07_I): Fixture-test corpus — `scripts/test/v10-fixture-corpus/` empirically demonstrates Hook v10 A14-A20 enforcement (8/8 against the real hook)
 - Common-error → fix index

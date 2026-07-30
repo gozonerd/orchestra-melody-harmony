@@ -14,7 +14,7 @@ _One line per memory file. Files live in this same directory. This is the canoni
 
 - [Krystal Martinez — User Profile](user_krystal.md) — Pronouns she/her, role, ADHD, Cody, AI-first company, working style preferences
 - [Cody — User Profile](user_cody.md) — Pronouns they/them, GitHub karmuno, workstream scope (CDCC G5 dogfood + stahl-systems-docs + StrongMinds-DMIS + DATS; NOT in ASAE/D2R/Claude Cost workstream)
-- [Pronoun Discipline](feedback_pronoun_discipline.md) — Always consult user-* memory before any pronoun use; default to they/them when unknown; never enact the error inside "don't" examples; repeat after correction is violation not ignorance
+- [Pronoun Discipline](feedback_pronoun_discipline.md) — Always consult user-\* memory before any pronoun use; default to they/them when unknown; never enact the error inside "don't" examples; repeat after correction is violation not ignorance
 - [No Deferral Debt](feedback_no_deferral_debt.md) — When Claudette/Clauda causes an error, cleanup happens in THIS thread immediately, regardless of effort; never propose "handle in a separate session" as a remediation option
 - [Behavioral Feedback](feedback_behavioral.md) — Never fake work, don't over-self-criticize, ordered lists, no unsolicited resource management
 - [Laptop Migration](project_migration.md) — Fresh start on new laptop (NerdyKrystal), no configs, repos cloned from git

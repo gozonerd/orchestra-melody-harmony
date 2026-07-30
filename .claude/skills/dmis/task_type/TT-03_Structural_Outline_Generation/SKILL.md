@@ -1,9 +1,9 @@
 ---
-title: "Structural Outline Generation"
-skill_id: "SK-03"
+title: 'Structural Outline Generation'
+skill_id: 'SK-03'
 version: v02_I
 date: 2026-03-06
-task_type: "TT-03"
+task_type: 'TT-03'
 pipeline_assignments: [P3]
 owner: Martinez Methods
 ---
@@ -11,9 +11,11 @@ owner: Martinez Methods
 # Structural Outline Generation
 
 ## Purpose
+
 Synthesize multiple upstream inputs → produce detailed structural blueprint. This task type creates comprehensive outlines that serve as detailed blueprints for downstream content generation, ensuring structural coherence and coverage completeness across complex multi-section documents.
 
 ## Pipeline Context
+
 - **Pipeline Assignment**: P3
 - **Raw Tasks**: P3.1
 - **Thread Count**: 5 threads per section
@@ -21,20 +23,25 @@ Synthesize multiple upstream inputs → produce detailed structural blueprint. T
 - **Primary Use**: Creating detailed structural plans before prose generation; ensuring comprehensive coverage across all required sections
 
 ## Input Specification
+
 The agent receives:
+
 - **Upstream Deliverables**: Content from P1 and P2 tasks (instructional documents, domain syntheses)
 - **Document Specification**: Requirements for overall document structure, section hierarchy, and coverage areas
 - **Organizational Standards**: Section ordering rules, formatting conventions, and consistency requirements
 - **Integration Points**: Explicit mappings of how upstream content fits into the broader document structure
 
 ## Output Specification
+
 The agent must produce a detailed structural outline document in YAML format conforming to the authoritative schema.
+
 - Output must conform to: `schemas/tt03_output.yaml`
 - Reference schema in: `references/output_schema.yaml`
 - Key sections: Table of Contents, Section Descriptions, Subsection Details, Integration Points, Coverage Verification
 - Outline must show clear hierarchy with explicit content assignments and placeholder annotations
 
 ## Methodology
+
 1. **Analyze document specification** - Clarify overall structure requirements, section hierarchy, and coverage expectations
 2. **Review upstream deliverables** - Inventory P1 and P2 outputs; understand their scope and key content
 3. **Design section structure** - Create detailed section hierarchy that organizes upstream content logically
@@ -45,6 +52,7 @@ The agent must produce a detailed structural outline document in YAML format con
 8. **Validate coverage** - Cross-check outline against all document specification requirements
 
 ## Quality Criteria
+
 - **Completeness**: All specification requirements are reflected in outline structure; no coverage gaps
 - **Clarity**: Section purposes are explicitly stated; content boundaries are unambiguous
 - **Hierarchy**: Section nesting is logical and consistent; levels are appropriate for document complexity
@@ -53,7 +61,9 @@ The agent must produce a detailed structural outline document in YAML format con
 - **Actionability**: Outline provides sufficient detail for downstream prose writers to execute without ambiguity
 
 ## Accuracy Rules
+
 All outputs must comply with the 9 Critical Accuracy Rules (ACC-001 through ACC-009) defined in `ACCURACY_RULES.md`:
+
 - **ACC-001**: CommCare current use vs. history (distinguish SMZ active deployment from Uganda pilot)
 - **ACC-002**: Dimagi pilot = StrongMinds-wide (both Uganda and Zambia)
 - **ACC-003**: Dimagi ≠ CommCare (platform vs. consulting firm)
@@ -65,7 +75,9 @@ All outputs must comply with the 9 Critical Accuracy Rules (ACC-001 through ACC-
 - **ACC-009**: CommCare DET is standalone (separate Python CLI)
 
 ### Anti-Fabrication Rules
+
 AFR-001 through AFR-006 from ACCURACY_RULES.md must be enforced:
+
 - **AFR-001**: Every factual claim requires a traceable source
 - **AFR-002**: Never invent statistics, quotes, or regulatory citations
 - **AFR-003**: When uncertain, flag as [NEEDS VERIFICATION]
@@ -74,6 +86,7 @@ AFR-001 through AFR-006 from ACCURACY_RULES.md must be enforced:
 - **AFR-006**: Quote verification — fuzzy match ≥ 85% against source
 
 ## Anti-Patterns
+
 - **Structural Misalignment**: Creating outline structure that doesn't match specification or organizational standards
 - **Floating Content**: Assigning upstream materials to outline sections without considering logical fit
 - **Coverage Gaps**: Failing to account for all specification requirements; leaving sections without assigned content
@@ -81,8 +94,10 @@ AFR-001 through AFR-006 from ACCURACY_RULES.md must be enforced:
 - **Downstream Impossibility**: Designing outline structure that makes coherent prose generation impractical
 
 ## Examples
+
 See example outputs in `references/example_outputs/` for gold-standard demonstrations of detailed structural outlines with explicit content mapping and gap identification.
 
 ---
+
 **Last Updated**: 2026-03-06 (v02_I validated - AFR references added)
 **Status**: Active

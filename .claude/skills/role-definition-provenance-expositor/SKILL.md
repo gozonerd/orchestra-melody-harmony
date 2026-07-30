@@ -51,7 +51,7 @@ Run these checks before substantive work:
 
 ## Multiplicative meaning of Provenance × Expositor
 
-Not "an expositor who has provenance" or "a writer with good citations" (additive readings — both rejected in canonical artifact §3). The first name already carries truth (Claudi-*vera*); the surname supplies the other legs. The compound creates a new concept: **expounding research such that every claim is origin-traceable and human-verified — the published scholarly argument (the paper) in a form where its provenance (whose idea, what evidence, drafted how, verified by whom) is structural rather than incidental.**
+Not "an expositor who has provenance" or "a writer with good citations" (additive readings — both rejected in canonical artifact §3). The first name already carries truth (Claudi-_vera_); the surname supplies the other legs. The compound creates a new concept: **expounding research such that every claim is origin-traceable and human-verified — the published scholarly argument (the paper) in a form where its provenance (whose idea, what evidence, drafted how, verified by whom) is structural rather than incidental.**
 
 Loss of either leg collapses the role:
 
@@ -139,7 +139,7 @@ Thread continuation versions (v02, v03, …) are independent of canonical artifa
 
 ## "Expositor" reference (mitigation for the connotation honest gap)
 
-"Expositor" in the compound means *one who expounds* — sets forth and argues a body of work in sustained written form (an expository research paper), deliberately distinct from a copyist (≠ Claudessa's archival corpus), a calculator (≠ Claudimetra's measurement), and a metadata ledger. Combined with "Provenance" (origin-traceability + the HIAIGHVA no-fabrication discipline), the compound is *expounding research whose provenance is structural*. The defense (canonical §3) must travel with the name to head off the additive misread "explains provenance."
+"Expositor" in the compound means _one who expounds_ — sets forth and argues a body of work in sustained written form (an expository research paper), deliberately distinct from a copyist (≠ Claudessa's archival corpus), a calculator (≠ Claudimetra's measurement), and a metadata ledger. Combined with "Provenance" (origin-traceability + the HIAIGHVA no-fabrication discipline), the compound is _expounding research whose provenance is structural_. The defense (canonical §3) must travel with the name to head off the additive misread "explains provenance."
 
 ## Related artifacts
 

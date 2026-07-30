@@ -163,6 +163,7 @@ Where the user is stuck, offer 2–3 candidate drafts for the user to react to, 
 **On pass:**
 
 Produce a Phase 1 summary block containing:
+
 - The twelve answers (Questions 1-5 PRD-readiness; Questions 6-8 UXD-readiness; Questions 9-12 applicability-gate readiness)
 - Project name
 - Project prefix
@@ -173,12 +174,12 @@ Produce a Phase 1 summary block containing:
 - Captured anti-pattern targets (per Question 8)
 - Track applicability decisions table (Questions 9-12):
 
-  | Track | Question | Decision | Justification or Detail |
-  |-------|----------|----------|------------------------|
-  | 17 (Cost) | Q9 | APPLICABLE / NA | [spend ceiling + drivers OR NA justification] |
-  | 18 (i18n) | Q10 | APPLICABLE / NA | [locale plan OR NA justification] |
-  | 19 (AI/ML) | Q11 | APPLICABLE / NA | [AI feature + model + eval plan OR NA justification] |
-  | 20 (Compliance) | Q12 | APPLICABLE / NA | [frameworks + data classes OR NA justification] |
+  | Track           | Question | Decision        | Justification or Detail                              |
+  | --------------- | -------- | --------------- | ---------------------------------------------------- |
+  | 17 (Cost)       | Q9       | APPLICABLE / NA | [spend ceiling + drivers OR NA justification]        |
+  | 18 (i18n)       | Q10      | APPLICABLE / NA | [locale plan OR NA justification]                    |
+  | 19 (AI/ML)      | Q11      | APPLICABLE / NA | [AI feature + model + eval plan OR NA justification] |
+  | 20 (Compliance) | Q12      | APPLICABLE / NA | [frameworks + data classes OR NA justification]      |
 
 Save the Phase 1 summary to `[planning-directory]/[prefix]_Phase1_Ideation_Summary_[YYYY-MM-DD]_v01_I.md` per `/file-versioning` conventions. This file becomes the ideation context input for `/write-prd` in Phase 2 Step 2.1 AND for `/write-uxd` in Phase 2 Step 2.5.
 
@@ -193,6 +194,7 @@ Report phase-by-phase progress per the no-silent-execution rule: at minimum a sh
 **Step 2.1: PRD**
 
 Invoke `/write-prd` with:
+
 - Project name + project prefix from Phase 1 summary
 - Phase 1 summary path (as ideation context)
 - Planning directory
@@ -205,6 +207,7 @@ Wait for `/write-prd` to complete its own convergence gate and Krystal's approva
 **Step 2.2: TRD**
 
 Invoke `/write-trd` with:
+
 - Project name + project prefix
 - PRD reference (path from Step 2.1)
 - Planning directory
@@ -217,6 +220,7 @@ Wait for TRD to complete and be approved. Capture path.
 **Step 2.3: AVD**
 
 Invoke `/write-avd` with:
+
 - Project name + project prefix
 - PRD reference + TRD reference
 - Planning directory
@@ -231,6 +235,7 @@ Wait for AVD to complete and be approved. Capture path.
 **Step 2.4: TQCD**
 
 Invoke `/write-tqcd` with:
+
 - Project name + project prefix
 - PRD reference + TRD reference + AVD reference (path, whether full AVD or Skipped-Status)
 - Planning directory
@@ -243,6 +248,7 @@ Wait for TQCD to complete and be approved. Capture path.
 **Step 2.5: UXD**
 
 Invoke `/write-uxd` with:
+
 - Project name + project prefix
 - PRD reference (UXD draws user segments + journeys from PRD Sections 2 + 4)
 - TRD reference (UXD's design system runs on the tech stack TRD specifies)
@@ -273,11 +279,10 @@ Individual gates catch per-document issues. This phase catches issues that only 
   - **TRD** must declare the standard applicable AND name the tech-stack support for it (e.g., for accessibility: jsx-a11y eslint plugin, ARIA library, accessibility-aware framework choice)
   - **UXD** must specify the design-layer behavior for that standard (e.g., for accessibility: Section 5 Accessibility-As-Delight criteria — ARIA label quality, keyboard nav quality, screen reader experience, motion preferences)
   - **TQCD** must operationalize the test gates for that standard (e.g., for accessibility: Section 3.5 Per-Standard Exit Criteria — axe-core thresholds, Lighthouse Accessibility score, keyboard nav coverage)
-  
+
   All three sides required for a hardwired standard. Missing in TRD → declaration is aspirational, no stack support. Missing in UXD → design-layer behavior unspecified, implementer falls back to generic defaults at Stage NN+1. Missing in TQCD → no test gate, no enforcement. Any 1-of-3 or 2-of-3 alignment is a finding; 3-of-3 alignment passes.
 
 - **N-way alignment for production-engineering tracks:** Beyond the three-way TRD↔UXD↔TQCD check above, the Stage 00 16+4 expansion (2026-04-26) introduces additional alignment chains. Each chain enforces that a track's outputs land coherently across every document that should reference them. Missing any leg of a chain is a finding (severity HIGH on production-engineering tracks; severity MEDIUM on applicability-gated tracks where NA-with-justification is permitted but inconsistency between sides is still a finding).
-
   - **Security chain (TRD ↔ AVD ↔ TQCD):** TRD §3.3 declared standards + threat model (Track 9) + auth model (Track 15) → AVD §3.1 auth components + §6.4 security architecture + threat-model trust boundaries → TQCD §8 security gates (pre-commit / CI / pre-deploy) + §8.4 auth & identity gates. Missing in any leg → finding.
   - **Observability chain (TRD ↔ AVD ↔ TQCD ↔ runbook):** TRD §3.8 logging/metrics/tracing/alerting requirements (Track 10) → AVD §3.1 observability components + §6.1 logging-and-observability cross-cutting concern → TQCD §10.1 observability acceptance criteria → runbook(s) referenced from TQCD must exist with alert→runbook→action chain documented for every alert.
   - **Reliability chain (TRD ↔ AVD ↔ TQCD):** TRD §3.2 RTO/RPO + resilience patterns + queue/async patterns (Track 14) → AVD §3.1 queue components + §5.7 backup & DR plan with last-drill-date → TQCD §7.4 reliability/stress gates with chaos/fault-injection pass conditions + §2.2 stress test categories declared YES with target scenarios.
@@ -298,7 +303,7 @@ Individual gates catch per-document issues. This phase catches issues that only 
   - Stage 02 = 3
   - Stage 03+ = 3
   - Stage QA = 5
-  Any deviation from these defaults must have a written rationale in the TQCD; deviations without rationale are findings.
+    Any deviation from these defaults must have a written rationale in the TQCD; deviations without rationale are findings.
 
 - **NFR operationalization (TRD ↔ TQCD):** Every TRD Section 3 non-functional requirement maps to at least one TQCD exit criterion in Sections 3–8. Any TRD NFR with no TQCD exit criterion is a finding. Any TQCD exit criterion with no corresponding TRD NFR is a finding.
 
@@ -315,6 +320,7 @@ Individual gates catch per-document issues. This phase catches issues that only 
 **Gate invocation:**
 
 Invoke `/asae` with:
+
 - `target`: the set of five document paths from Phase 2 + the reference design assets directory from Step 2.5
 - `sources`: the five templates + the Phase 1 summary + any standards referenced in TRD/TQCD/UXD
 - `prompt`: "Audit cross-doc consistency across PRD, TRD, AVD, TQCD, UXD per the Phase 3 checklist in /ideate-to-d2r-ready (including the three-way TRD↔UXD↔TQCD standards alignment check + the UXD reality-anchor verification + the N-way alignment chains for security / observability / reliability / data lifecycle / auth / release engineering / performance / deployment / cost / i18n / AI-ML / compliance — every chain leg verified)"
@@ -328,30 +334,30 @@ Under `strict`, CRITICAL, HIGH, and MEDIUM findings all reset the counter and mu
 
 When the audit finds an inconsistency, route remediation to the appropriate authorship skill:
 
-| Inconsistency locus | Route to |
-|---|---|
-| User segment mismatch | `/write-prd` (if PRD is root cause) or `/write-trd` / `/write-tqcd` / `/write-uxd` (if downstream misstatement) |
-| Tech constraint propagation | `/write-avd` (re-author constraint-aware sections) or `/write-uxd` (if UXD design tokens incompatible with TRD stack) |
-| Standards mismatch (any 1-of-3 or 2-of-3 in the TRD↔UXD↔TQCD three-way alignment) | Whichever side is missing. Standards declared in TRD with no UXD design-layer behavior → `/write-uxd` Section 5. Standards declared in TRD with no TQCD test gate → `/write-tqcd` Section 3. UXD design-layer behavior or TQCD test gate without TRD declaration → `/write-trd` (decide whether to declare or remove). Confirm with user. |
-| ASAE threshold deviation | `/write-tqcd` (Section 9.2) |
-| NFR–exit-criterion mismatch | `/write-tqcd` (add exit criterion) or `/write-trd` (remove orphan NFR) |
-| Mini-ADR ungrounded | `/write-avd` (Section 7) |
-| Coverage alignment gap | `/write-tqcd` (Section 5.2) |
-| UXD component-token mismatch with AVD inventory | `/write-uxd` (add missing tokens) or `/write-avd` (add missing components); confirm with user which is source of truth |
-| UXD reference asset missing at declared path | `/write-uxd` Section 8.1 (capture the missing asset OR remove the reference); the UXD reality-anchor cannot be aspirational |
-| UXD anti-pattern coverage gap (Phase 1 Question 8 anti-patterns missing from UXD Section 7) | `/write-uxd` Section 7 (add the named anti-patterns from Phase 1) |
-| Security chain leg missing (TRD↔AVD↔TQCD) | Whichever side missing: `/write-trd` §3.3 / `/write-avd` §3.1 + §6.4 / `/write-tqcd` §8 |
-| Observability chain leg missing | `/write-trd` §3.8 / `/write-avd` §3.1 + §6.1 / `/write-tqcd` §10.1 / runbook author |
-| Reliability chain leg missing | `/write-trd` §3.2 / `/write-avd` §3.1 + §5.7 / `/write-tqcd` §7.4 + §2.2 |
-| Data-lifecycle chain leg missing | `/write-trd` §3.4 / `/write-avd` §4.3 + §6.4 / `/write-tqcd` §3.3 + §10.4 / `/write-prd` §6.2 |
-| Auth chain leg missing | `/write-trd` §3.3 / `/write-avd` §3.1 + §5.6 / `/write-tqcd` §8.4 |
-| Release-engineering chain leg missing | `/write-trd` §3.9 / `/write-tqcd` §10.2 / runbook author |
-| Performance & scale chain leg missing | `/write-trd` §3.1 / `/write-avd` §4 + §3.1 / `/write-tqcd` §7.1 + §7.3 |
-| Deployment-architecture chain leg missing | `/write-trd` §6.6 / `/write-avd` §5 (load-bearing) / `/write-tqcd` §10.2 |
-| Cost applicability-gate inconsistency (Phase 1 Q9 ↔ PRD §6.5 ↔ TRD §3.10 ↔ TQCD §7.5) | Whichever leg disagrees; user confirms canonical decision |
-| i18n applicability-gate inconsistency (Phase 1 Q10 ↔ PRD §6.6 ↔ TRD §3.11 ↔ TQCD §7.6) | Whichever leg disagrees; user confirms canonical decision |
-| AI/ML applicability-gate inconsistency (Phase 1 Q11 ↔ TRD §2 + §3.3 ↔ AVD §3.1 ↔ TQCD §10.3) | Whichever leg disagrees; user confirms canonical decision |
-| Compliance applicability-gate inconsistency (Phase 1 Q12 ↔ PRD §6.2 ↔ TRD §3.4 ↔ TQCD §10.4) | Whichever leg disagrees; user confirms canonical decision |
+| Inconsistency locus                                                                          | Route to                                                                                                                                                                                                                                                                                                                                  |
+| -------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| User segment mismatch                                                                        | `/write-prd` (if PRD is root cause) or `/write-trd` / `/write-tqcd` / `/write-uxd` (if downstream misstatement)                                                                                                                                                                                                                           |
+| Tech constraint propagation                                                                  | `/write-avd` (re-author constraint-aware sections) or `/write-uxd` (if UXD design tokens incompatible with TRD stack)                                                                                                                                                                                                                     |
+| Standards mismatch (any 1-of-3 or 2-of-3 in the TRD↔UXD↔TQCD three-way alignment)            | Whichever side is missing. Standards declared in TRD with no UXD design-layer behavior → `/write-uxd` Section 5. Standards declared in TRD with no TQCD test gate → `/write-tqcd` Section 3. UXD design-layer behavior or TQCD test gate without TRD declaration → `/write-trd` (decide whether to declare or remove). Confirm with user. |
+| ASAE threshold deviation                                                                     | `/write-tqcd` (Section 9.2)                                                                                                                                                                                                                                                                                                               |
+| NFR–exit-criterion mismatch                                                                  | `/write-tqcd` (add exit criterion) or `/write-trd` (remove orphan NFR)                                                                                                                                                                                                                                                                    |
+| Mini-ADR ungrounded                                                                          | `/write-avd` (Section 7)                                                                                                                                                                                                                                                                                                                  |
+| Coverage alignment gap                                                                       | `/write-tqcd` (Section 5.2)                                                                                                                                                                                                                                                                                                               |
+| UXD component-token mismatch with AVD inventory                                              | `/write-uxd` (add missing tokens) or `/write-avd` (add missing components); confirm with user which is source of truth                                                                                                                                                                                                                    |
+| UXD reference asset missing at declared path                                                 | `/write-uxd` Section 8.1 (capture the missing asset OR remove the reference); the UXD reality-anchor cannot be aspirational                                                                                                                                                                                                               |
+| UXD anti-pattern coverage gap (Phase 1 Question 8 anti-patterns missing from UXD Section 7)  | `/write-uxd` Section 7 (add the named anti-patterns from Phase 1)                                                                                                                                                                                                                                                                         |
+| Security chain leg missing (TRD↔AVD↔TQCD)                                                    | Whichever side missing: `/write-trd` §3.3 / `/write-avd` §3.1 + §6.4 / `/write-tqcd` §8                                                                                                                                                                                                                                                   |
+| Observability chain leg missing                                                              | `/write-trd` §3.8 / `/write-avd` §3.1 + §6.1 / `/write-tqcd` §10.1 / runbook author                                                                                                                                                                                                                                                       |
+| Reliability chain leg missing                                                                | `/write-trd` §3.2 / `/write-avd` §3.1 + §5.7 / `/write-tqcd` §7.4 + §2.2                                                                                                                                                                                                                                                                  |
+| Data-lifecycle chain leg missing                                                             | `/write-trd` §3.4 / `/write-avd` §4.3 + §6.4 / `/write-tqcd` §3.3 + §10.4 / `/write-prd` §6.2                                                                                                                                                                                                                                             |
+| Auth chain leg missing                                                                       | `/write-trd` §3.3 / `/write-avd` §3.1 + §5.6 / `/write-tqcd` §8.4                                                                                                                                                                                                                                                                         |
+| Release-engineering chain leg missing                                                        | `/write-trd` §3.9 / `/write-tqcd` §10.2 / runbook author                                                                                                                                                                                                                                                                                  |
+| Performance & scale chain leg missing                                                        | `/write-trd` §3.1 / `/write-avd` §4 + §3.1 / `/write-tqcd` §7.1 + §7.3                                                                                                                                                                                                                                                                    |
+| Deployment-architecture chain leg missing                                                    | `/write-trd` §6.6 / `/write-avd` §5 (load-bearing) / `/write-tqcd` §10.2                                                                                                                                                                                                                                                                  |
+| Cost applicability-gate inconsistency (Phase 1 Q9 ↔ PRD §6.5 ↔ TRD §3.10 ↔ TQCD §7.5)        | Whichever leg disagrees; user confirms canonical decision                                                                                                                                                                                                                                                                                 |
+| i18n applicability-gate inconsistency (Phase 1 Q10 ↔ PRD §6.6 ↔ TRD §3.11 ↔ TQCD §7.6)       | Whichever leg disagrees; user confirms canonical decision                                                                                                                                                                                                                                                                                 |
+| AI/ML applicability-gate inconsistency (Phase 1 Q11 ↔ TRD §2 + §3.3 ↔ AVD §3.1 ↔ TQCD §10.3) | Whichever leg disagrees; user confirms canonical decision                                                                                                                                                                                                                                                                                 |
+| Compliance applicability-gate inconsistency (Phase 1 Q12 ↔ PRD §6.2 ↔ TRD §3.4 ↔ TQCD §10.4) | Whichever leg disagrees; user confirms canonical decision                                                                                                                                                                                                                                                                                 |
 
 Between iterations, apply edits via the routed skill. Re-invoking `/write-*` in remediation mode is lightweight (target a specific section; do not re-run the full authorship protocol unless a section requires full re-authoring).
 
@@ -364,6 +370,7 @@ Phase 3 exits successfully only when the convergence gate reaches its threshold 
 ### Phase 4: Approval Gate + Bundle Commit
 
 Present the four completed docs to the user with:
+
 - File paths
 - Approval status per document
 - Phase 3 convergence gate summary table (iterations, findings, edits applied, final status)
@@ -410,29 +417,29 @@ Wait for explicit approval.
 
 5. **Commit** with a descriptive message per the `github-discipline` rule. Template (use a here-doc to preserve formatting):
 
-    ```
-    Add [Project Name] D2R prerequisite bundle via /ideate-to-d2r-ready
+   ```
+   Add [Project Name] D2R prerequisite bundle via /ideate-to-d2r-ready
 
-    Produced by /ideate-to-d2r-ready end-to-end on [YYYY-MM-DD]:
-    - Phase 1 ideation summary (all 8 interrogation questions passed —
-      5 PRD-readiness + 3 UXD-readiness)
-    - PRD: [one-line description from PRD Section 1.3]
-    - TRD: [one-line description]
-    - AVD: [one-line description OR "Skipped-Status (rationale: <reason>)"]
-    - TQCD: [one-line description]
-    - UXD: [one-line description] + reference assets at [assets dir]
-    - Phase 3 cross-doc audit: convergence gate PASS at threshold 3 strict,
-      [N] iterations, [M] edits applied. Three-way TRD↔UXD↔TQCD standards
-      alignment verified. UXD reality-anchor verified (reference assets
-      exist at declared paths).
+   Produced by /ideate-to-d2r-ready end-to-end on [YYYY-MM-DD]:
+   - Phase 1 ideation summary (all 8 interrogation questions passed —
+     5 PRD-readiness + 3 UXD-readiness)
+   - PRD: [one-line description from PRD Section 1.3]
+   - TRD: [one-line description]
+   - AVD: [one-line description OR "Skipped-Status (rationale: <reason>)"]
+   - TQCD: [one-line description]
+   - UXD: [one-line description] + reference assets at [assets dir]
+   - Phase 3 cross-doc audit: convergence gate PASS at threshold 3 strict,
+     [N] iterations, [M] edits applied. Three-way TRD↔UXD↔TQCD standards
+     alignment verified. UXD reality-anchor verified (reference assets
+     exist at declared paths).
 
-    Stakeholder approval: [stakeholder name + role], [YYYY-MM-DD].
+   Stakeholder approval: [stakeholder name + role], [YYYY-MM-DD].
 
-    Co-Authored-By: Clauda the [persona] (Opus 4.7, 1M context) <noreply@anthropic.com>
-    ASAE-Gate: strict-3-PASS
-    ```
+   Co-Authored-By: Clauda the [persona] (Opus 4.7, 1M context) <noreply@anthropic.com>
+   ASAE-Gate: strict-3-PASS
+   ```
 
-    If a pre-commit hook fails, report the failure verbatim and do NOT bypass (never pass `--no-verify`). User resolves the hook failure and re-approves.
+   If a pre-commit hook fails, report the failure verbatim and do NOT bypass (never pass `--no-verify`). User resolves the hook failure and re-approves.
 
 6. **Push** per the `feedback_no_prs_default` rule:
    - On private repos where the user is the sole committer: push to `main` / `master` (whichever the repo uses as default) on the current branch. Direct commit to main is the default; no PR.
@@ -458,15 +465,15 @@ Wait for explicit approval.
 
 **Git operation failure modes and handling:**
 
-| Failure | Response |
-|---|---|
-| Planning directory not in a git repo | Skip git ops; warn user; proceed to bundle-ready report |
-| Pre-commit hook blocks | Report hook failure verbatim; do NOT bypass; user resolves + re-approves |
-| Commit fails for other reasons | Report error; halt; user investigates |
-| Push fails on auth | Report auth failure; halt; user resolves |
-| Push fails on non-fast-forward | Report; halt; surface rebase / merge options; never force-push without explicit user instruction |
-| Push fails on branch protection | Report protection rule; halt; user decides PR vs. direct commit by policy |
-| Files outside target repo | Warn + skip staging those files; still commit the in-repo subset if non-empty |
+| Failure                              | Response                                                                                         |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| Planning directory not in a git repo | Skip git ops; warn user; proceed to bundle-ready report                                          |
+| Pre-commit hook blocks               | Report hook failure verbatim; do NOT bypass; user resolves + re-approves                         |
+| Commit fails for other reasons       | Report error; halt; user investigates                                                            |
+| Push fails on auth                   | Report auth failure; halt; user resolves                                                         |
+| Push fails on non-fast-forward       | Report; halt; surface rebase / merge options; never force-push without explicit user instruction |
+| Push fails on branch protection      | Report protection rule; halt; user decides PR vs. direct commit by policy                        |
+| Files outside target repo            | Warn + skip staging those files; still commit the in-repo subset if non-empty                    |
 
 ### Phase 5 (Optional): Portable Prompt Generation
 

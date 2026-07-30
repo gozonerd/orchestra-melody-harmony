@@ -11,6 +11,7 @@ DrWrite is a desktop markdown editor built with Electron Forge + React 19 + Type
 **How to apply:** Tech stack is LOCKED. Source editor (CodeMirror) LEFT, WYSIWYG (TipTap) RIGHT. Markdown string is single source of truth in Zustand store. `lastEditedBy` flag prevents sync loops.
 
 **Build status as of 2026-04-07: FULL APP COMPLETE**
+
 - 49 features across 7 phases
 - 289 tests (259 Vitest + 17 Node + 13 Playwright E2E)
 - Test-to-source ratio: 1.03:1

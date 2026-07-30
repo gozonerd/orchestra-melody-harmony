@@ -52,6 +52,7 @@ Before doing anything else, read `references/anti-patterns/PSCAD_AntiPatterns_20
 PRD + TRD + TQVCD must exist and be approved. If any missing, refuse to proceed and offer `/ideate-to-d2r-ready` for the full six-doc flow or the appropriate individual authorship skill.
 
 Read PRD, TRD, AVD (if exists), TQVCD, UXD (if exists). Cache key facts:
+
 - PRD §6 operational constraints + PRD §1.1 user model (drives PSCAD §2 production conditions)
 - TRD §3.1 perf budgets + TRD §3.2 reliability requirements (drives PSCAD §2 condition thresholds)
 - AVD §3-4 architecture (drives plausibility check for PSCAD §2 conditions)
@@ -76,6 +77,7 @@ The template defines the 11-section structure. The catalog defines the canonical
 Walk through each required section. **§3 Patterns In Scope and §5 Gaps Identified are load-bearing per Mod 8; do not skip their walkthroughs (Step 3a + Step 3b below).**
 
 Required sections:
+
 1. Document Identity (PRD/TRD/AVD/TQVCD/UXD references; catalog reference; revisions)
 2. **Audit Scope** — production conditions in scope (concurrency / volume / sequence / resource pressure / latency / failure injection) + out of scope with empirical narrowing reasons
 3. **Patterns In Scope** — see Step 3a walkthrough; per-pattern catalog reference + description + detection signature + coverage status
@@ -166,6 +168,7 @@ Declare severity policy: matches TQVCD severity policy (strict for regulated dom
 ### Step 6: Run ASAE Gate On Draft
 
 Invoke `/asae` with:
+
 - target: PSCAD draft
 - sources: PSCAD template + Production Pattern Catalog + PRD + TRD + AVD (if exists) + TQVCD + UXD (if exists) + user inputs
 - prompt: "Author a PSCAD for [project name] per the template + catalog"
@@ -174,6 +177,7 @@ Invoke `/asae` with:
 - severity_policy: standard
 
 Domain-specific checks for PSCAD:
+
 - §3 every catalog pattern in scope has a PSCAD-PAT entry
 - §3 every project-specific candidate pattern marked for catalog promotion per §8
 - §4 every PSCAD-CC has non-tautological coverage rationale (not "the function is tested" but "the test applies the production-shaped condition")
@@ -192,11 +196,11 @@ Save to planning directory.
 Present for approval. On `✓`: mark approved.
 
 - **Orchestrated mode**: return a structured handoff block to the caller with `{status: approved, path: [PSCAD path], project_name, project_prefix, planning_directory, prd_path, trd_path, avd_path, tqvcd_path, uxd_path, threshold_deviations: [list or none], pattern_promotion_candidates: [list or none], gaps_with_disclosure: [list or none]}`. Do not emit next-step guidance — the orchestrator handles the next step.
-- **Standalone mode**: inform user the PSCAD is ready for D2R consumption. If any pattern_promotion_candidates exist, recommend a separate ASAE strict-3 catalog-promotion gate to add the new PAT-* entries to `_grand_repo/docs/Production_Pattern_Catalog_2026-04-27_v01_I.md`. Recommend `/ideate-to-d2r-ready` as the usual path for the full six-doc bundle.
+- **Standalone mode**: inform user the PSCAD is ready for D2R consumption. If any pattern_promotion_candidates exist, recommend a separate ASAE strict-3 catalog-promotion gate to add the new PAT-\* entries to `_grand_repo/docs/Production_Pattern_Catalog_2026-04-27_v01_I.md`. Recommend `/ideate-to-d2r-ready` as the usual path for the full six-doc bundle.
 
 ## Portable Prompt Mode
 
-Same pattern as other write-* skills. Note: the portable prompt for PSCAD must include the Production Pattern Catalog INLINE (the full catalog content) so a receiving LLM has the reference material; PSCAD-PAT entries reference catalog patterns by id.
+Same pattern as other write-\* skills. Note: the portable prompt for PSCAD must include the Production Pattern Catalog INLINE (the full catalog content) so a receiving LLM has the reference material; PSCAD-PAT entries reference catalog patterns by id.
 
 ## Anti-Patterns
 

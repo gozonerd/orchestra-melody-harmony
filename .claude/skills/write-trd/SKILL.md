@@ -42,6 +42,7 @@ Before doing anything else, read `references/anti-patterns/TRD_AntiPatterns_2026
 ### Step 1: Verify PRD Prerequisite And Check Invocation Mode
 
 Before loading the template, verify a completed PRD exists and is approved. If missing:
+
 - If the user has said "skip the PRD" or "the PRD will come later" — refuse to proceed. A TRD written without a PRD is ungrounded. Offer to invoke `/write-prd` first or `/ideate-to-d2r-ready` for the full four-doc flow.
 - If the user provides a PRD path, read it and cache key facts (users, goals, constraints) for cross-referencing during TRD authorship.
 
@@ -58,11 +59,13 @@ Read `.claude/skills/dare-to-rise-code-plan/references/TRD_Template_2026-04-26_v
 ### Step 3: Gather Required Content
 
 Walk through each required section. For each section:
+
 - Present the section's instructions
 - Ask the user for content OR offer a draft based on the PRD + any prior technical context
 - Cross-reference PRD sections where relevant (e.g., user journeys from PRD → user-facing behavior requirements in TRD)
 
 Required sections:
+
 1. Document Identity (PRD reference, revision history)
 2. Functional Requirements (core, user-facing behavior, system-facing behavior)
 3. Non-Functional Requirements (performance, reliability, security, privacy, **accessibility — hardwired WCAG 2.1 AA minimum**, maintainability, portability, observability)
@@ -77,6 +80,7 @@ Required sections:
 ### Step 4: Enforce Specificity
 
 The TRD's non-functional requirements must have specific numbers, not adjectives. During Step 3:
+
 - "Fast" → specific p50/p95/p99 latencies
 - "Secure" → specific standards applied (OWASP items, CERT items)
 - "Reliable" → specific uptime/MTBF targets
@@ -87,6 +91,7 @@ If the user provides only adjectives, push back and ask for numbers. If they don
 ### Step 5: Run ASAE Gate On Draft
 
 Invoke `/asae` with:
+
 - target: TRD draft
 - sources: template + PRD + user inputs
 - prompt: "Author a TRD for [project name] per the template, downstream of the PRD"
@@ -95,6 +100,7 @@ Invoke `/asae` with:
 - severity_policy: standard
 
 Domain-specific checks for TRD:
+
 - Every FR has acceptance criteria in testable terms
 - Every NFR has specific numbers (not adjectives)
 - WCAG 2.1 AA declared explicitly; any additional standards listed

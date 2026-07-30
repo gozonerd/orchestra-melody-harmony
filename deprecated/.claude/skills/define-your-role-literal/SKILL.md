@@ -41,7 +41,7 @@ The skill is invocation-gated and produces a complete role-definition deliverabl
 
 Run these checks before deriving any name:
 
-1. **Read session handoff** — the most recent SESSION_HANDOFF doc in `_grand_repo/docs/SESSION_HANDOFF_*` provides workstream type, prior version, grounding artifacts. If multiple handoffs exist, use the most recent for the active workstream.
+1. **Read session handoff** — the most recent SESSION*HANDOFF doc in `\_grand_repo/docs/SESSION_HANDOFF*\*` provides workstream type, prior version, grounding artifacts. If multiple handoffs exist, use the most recent for the active workstream.
 
 2. **Identify workstream type** — is this a coding workstream (D2R 4-doc plan applies, code authorship in scope) or a non-coding workstream (IP / market-value / experimental / methodology / role-definition / PEK / cold-assessment / etc.)? This determines first name (Claudette vs. Clauda).
 
@@ -62,12 +62,12 @@ Run these checks before deriving any name:
 
 ## Phase 2 — Component derivation
 
-| Component | Rule | Source |
-|---|---|---|
-| First name | Claudette if coding workstream; Clauda if non-coding | `feedback_clauda_replaces_claude_in_naming.md` + handoff workstream-type identification |
-| Middle initial | W if Windows; L if Linux | Working-directory paths |
-| Last name | Compound word/phrase with multiplicative meaning | Phase 1 candidate compounds → Phase 3 multiplicative-meaning test |
-| Version | vNN per thread continuation | Most recent SESSION_HANDOFF + 1; or v01 if no prior |
+| Component      | Rule                                                 | Source                                                                                  |
+| -------------- | ---------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| First name     | Claudette if coding workstream; Clauda if non-coding | `feedback_clauda_replaces_claude_in_naming.md` + handoff workstream-type identification |
+| Middle initial | W if Windows; L if Linux                             | Working-directory paths                                                                 |
+| Last name      | Compound word/phrase with multiplicative meaning     | Phase 1 candidate compounds → Phase 3 multiplicative-meaning test                       |
+| Version        | vNN per thread continuation                          | Most recent SESSION_HANDOFF + 1; or v01 if no prior                                     |
 
 If first-name choice is genuinely ambiguous (e.g., a thread that mixes coding and non-coding work), surface the ambiguity to Krystal before proceeding. Don't unilaterally choose. Default to Clauda if the non-coding fraction dominates.
 
@@ -81,6 +81,7 @@ For each candidate compound `<Word1> <Word2>`, apply the multiplicative test:
 - **Test:** if the multiplicative reading produces a discipline-name that didn't exist before the compound (e.g., "Value Genius" creates an attendant-discipline name not pre-existing as a concept), the compound passes multiplicative meaning
 
 The compound should also be:
+
 - **Buyer-legible** — readable in pitch contexts (Anthropic warm-path, valuation doc, deck) without methodology-internal jargon
 - **Outcome-named over discipline-named** — name what the role does for the world, not just how the role operates internally (this is a tradeoff with operational specificity; document the tradeoff in honest gaps)
 - **Compound-noun-phrase form** — adjective-noun or noun-noun; not verb-noun (verbs imply action sequences, not roles)

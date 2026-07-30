@@ -83,11 +83,11 @@ The `remaining` field carries the names of markers still open. The next-stage ga
 
 Hook v09 Tier 35 invokes `mm-claude-canonical/scripts/lib/carry_marker_validator.sh --validate <audit-log>` at commit time. Tier 35 maps lib script exit codes:
 
-| Exit code | Severity | Hook action |
-|---|---|---|
-| 0 | PASS (all checks pass; or no carry_marker_closures field present) | Commit allowed |
-| 1 | FAIL — orphan closure | Commit REFUSED |
-| 2 | WARN — double-closure OR cluster-size > 10 soft-warn | Commit allowed; stderr WARN message flagged |
+| Exit code | Severity                                                          | Hook action                                 |
+| --------- | ----------------------------------------------------------------- | ------------------------------------------- |
+| 0         | PASS (all checks pass; or no carry_marker_closures field present) | Commit allowed                              |
+| 1         | FAIL — orphan closure                                             | Commit REFUSED                              |
+| 2         | WARN — double-closure OR cluster-size > 10 soft-warn              | Commit allowed; stderr WARN message flagged |
 
 ### Orphan closure (REFUSE)
 
@@ -113,12 +113,12 @@ There is no hard cap on cluster size per Lock 8 spec. The threshold of 10 is heu
 
 ## Relationship to DRR sub-shapes (Aspect 21)
 
-| DRR sub-shape | Carry-marker usage |
-|---|---|
-| `full_revert` | NO carry-markers (work-product reverted; nothing deferred). |
-| `carry_forward` | ALL findings represented as carry-markers; closure happens at next stage with single `carry_marker_closures` entry. |
-| `carry_forward_sequenced` | Cluster opens at gate-N; partial closures at gates N+1 / N+2 / ...; final closure when `remaining` becomes empty. |
-| `uncommitted_revert` | NO carry-markers (working-tree only; pre-commit recovery; nothing committed needs closure). |
+| DRR sub-shape                   | Carry-marker usage                                                                                                                                                                    |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `full_revert`                   | NO carry-markers (work-product reverted; nothing deferred).                                                                                                                           |
+| `carry_forward`                 | ALL findings represented as carry-markers; closure happens at next stage with single `carry_marker_closures` entry.                                                                   |
+| `carry_forward_sequenced`       | Cluster opens at gate-N; partial closures at gates N+1 / N+2 / ...; final closure when `remaining` becomes empty.                                                                     |
+| `uncommitted_revert`            | NO carry-markers (working-tree only; pre-commit recovery; nothing committed needs closure).                                                                                           |
 | `disclosure_inline_remediation` | NO carry-markers in this gate (audit-log-only correction; no work-product deferred). The corrected gate may have had carry-markers; those carry their own closure path independently. |
 
 ## Adding new clusters mid-gate
@@ -159,6 +159,7 @@ Future enhancement (v02): cluster-status-tracking doc that aggregates open + par
 v01_I (2026-04-30) — inaugural Spec Genius authoring per Batch 3 Lock 8 (Mod 15). Schema + naming convention + severity-tiered enforcement + DRR-sub-shape relationship + lifecycle + honest gaps.
 
 Future v02+:
+
 - Cluster-status-tracking doc (open / partially-closed / abandoned aggregation)
 - Hook v10+ enforcement enhancements (calibrated cluster-size threshold; namespace collision detection)
 - Cluster-graph visualization tooling

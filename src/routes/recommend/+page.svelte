@@ -39,7 +39,10 @@
 
 <svelte:head>
 	<title>Get Recommendations — Orchestra Melody & Harmony</title>
-	<meta name="description" content="Describe your AI task and get model ensemble recommendations." />
+	<meta
+		name="description"
+		content="Describe your AI task and get model ensemble recommendations."
+	/>
 </svelte:head>
 
 <div class="mx-auto max-w-5xl px-6 py-12">
@@ -56,7 +59,7 @@
 	{#if recommendation}
 		<div class="mt-10 space-y-8" aria-live="polite">
 			<section>
-				<h2 class="mb-2 text-sm font-medium uppercase tracking-wider text-zinc-400">
+				<h2 class="mb-2 text-sm font-medium tracking-wider text-zinc-400 uppercase">
 					Task: {recommendation.task.category}
 				</h2>
 				<p class="text-zinc-300">{recommendation.overallReasoning}</p>

@@ -19,7 +19,7 @@ structure:
         enum: [present_intact, present_modified, missing, distorted]
       fidelity_score:
         type: number
-        description: "0-1 scale; 1.0 = perfectly preserved"
+        description: '0-1 scale; 1.0 = perfectly preserved'
       changes_detected:
         type: array
         description: List of modifications if any
@@ -44,7 +44,7 @@ structure:
         type: integer
       completeness_score:
         type: number
-        description: "Ratio of present to total winning components"
+        description: 'Ratio of present to total winning components'
 
   novel_content_detection:
     type: object
@@ -76,7 +76,7 @@ structure:
     properties:
       overall_fidelity_score:
         type: number
-        description: "Weighted average across all components; threshold >= 0.95"
+        description: 'Weighted average across all components; threshold >= 0.95'
       status:
         type: string
         enum: [pass, fail, conditional]

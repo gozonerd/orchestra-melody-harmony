@@ -47,11 +47,13 @@ Check the invocation context:
 ### Step 2: Gather Required Content
 
 Walk through each required section with the user. For each section:
+
 - Present the section's instructions (from the template's italic text)
 - Ask the user for the content, or offer a draft based on context available (PRD content, existing reference assets, ideation summary)
 - Capture the filled-in content
 
 Required sections (see template for details):
+
 1. Aesthetic Anchors — reference apps with screenshots, brand voice as concrete visual decisions, polish criteria as observable tests
 2. Visual Design System — color palette (semantic + hex + contrast), typographic scale, spacing system, component tokens
 3. Interaction Patterns — state catalog per component class, empty/loading/error/success state catalog per screen, animation guidelines
@@ -80,6 +82,7 @@ For Section 1.2, do NOT accept brand-voice decisions stated as adjectives ("mode
 ### Step 3: Run ASAE Gate On Draft
 
 Before saving, invoke `/asae` with scope:
+
 - target: the draft UXD content + the reference design assets in their declared locations
 - sources: the template + user-provided inputs + PRD reference + prior context
 - prompt: "Author a UXD for [project name] per the template, with reference-anchor discipline"
@@ -88,6 +91,7 @@ Before saving, invoke `/asae` with scope:
 - severity_policy: standard
 
 Domain-specific checks for UXD (per /asae domain=design checklist):
+
 - Reference apps named with concrete screenshots present at declared paths (not described in prose only)
 - Brand voice expressed as 5+ concrete visual decisions, not adjectives
 - Polish criteria are observable tests with 3-step checks, not adjectives
@@ -111,6 +115,7 @@ Use `/file-versioning` rules if the project already has versioning conventions.
 ### Step 5: Present For Approval
 
 Present the saved UXD file path AND the saved reference asset paths to the user with:
+
 - Validation checklist status (all boxes checked, or which items remain pending)
 - Reference asset existence status (each Section 8.1 asset confirmed present at declared path)
 - Stakeholder approval status
@@ -130,6 +135,7 @@ If the user is NOT in the environment where they want the UXD authored (e.g., th
 Portable prompt mode triggered by user saying: "give me a portable prompt to fill out the UXD" or equivalent.
 
 The generated portable prompt must:
+
 - Include the template content INLINE (so the receiving LLM doesn't need access to the template file)
 - Include the user's project context inline (PRD content if available, existing reference assets if available)
 - Include the filename convention for the output

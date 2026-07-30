@@ -10,7 +10,7 @@ structure:
     properties:
       target_formality:
         type: number
-        description: "0-10 scale; expected level"
+        description: '0-10 scale; expected level'
       target_technicality:
         type: number
       target_verbosity:
@@ -31,7 +31,7 @@ structure:
         properties:
           formality:
             type: number
-            description: "0-10 scale"
+            description: '0-10 scale'
           technicality:
             type: number
           verbosity:
@@ -41,10 +41,10 @@ structure:
             enum: [novice, intermediate, expert]
           active_voice_ratio:
             type: number
-            description: "0-1 scale; % of sentences in active voice"
+            description: '0-1 scale; % of sentences in active voice'
       deviation_from_mean:
         type: object
-        description: "Deviation on each dimension (in standard deviations)"
+        description: 'Deviation on each dimension (in standard deviations)'
         properties:
           formality_deviation:
             type: number
@@ -82,7 +82,7 @@ structure:
         enum: [formality, technicality, verbosity, voice]
       deviation_magnitude:
         type: number
-        description: "Standard deviations from mean"
+        description: 'Standard deviations from mean'
       flagged_as:
         type: string
         enum: [problematic, contextually_justified, intentional]
@@ -94,7 +94,7 @@ structure:
     properties:
       overall_tone_consistency:
         type: number
-        description: "0-1 scale; inverse of variance"
+        description: '0-1 scale; inverse of variance'
       recommendation:
         type: string
 

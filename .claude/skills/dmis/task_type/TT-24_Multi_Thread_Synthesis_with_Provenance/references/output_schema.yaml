@@ -52,13 +52,13 @@ structure:
         type: string
       q1_factual_ground_truth:
         type: boolean
-        description: "Is this a factual ground truth issue?"
+        description: 'Is this a factual ground truth issue?'
       q2_downstream_dependency:
         type: boolean
-        description: "Is there downstream dependency impact?"
+        description: 'Is there downstream dependency impact?'
       q3_framing_only:
         type: boolean
-        description: "Is divergence framing only, not content?"
+        description: 'Is divergence framing only, not content?'
       decision:
         type: string
         enum: [RESOLVE_BEFORE_SYNTHESIS, HALT, DOCUMENT_ONLY]

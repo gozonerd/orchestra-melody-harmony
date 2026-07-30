@@ -4,6 +4,7 @@ description: The ASAE IP protection work, D2R methodology experiments, and Claud
 type: project
 originSessionId: 46056a33-f1c9-42ab-8260-97ba2f9b45f8
 ---
+
 The work stream covering ASAE IP protection, D2R methodology factorial experiments, Claude Cost build, and related Martinez Methods IP artifacts is executed solo by Krystal. Cody is not a collaborator on this stream.
 
 **Why:** Stated explicitly on 2026-04-22: "cody is not in on this. it's just you and me." This differs from other Stahl Systems / Martinez Methods work streams where Cody is actively involved (e.g., regulatory pipeline execution, DATS deliverables, StrongMinds consulting historically).

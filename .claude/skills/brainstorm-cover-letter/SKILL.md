@@ -7,23 +7,28 @@ description: "Brainstorm a cover letter the right way: ground in the ACTUAL job 
 
 ## The anti-pattern this skill exists to kill
 
-Do **not** read a secondary summary (handoff, anecdote bank, expertise draft), construct a thesis off it, then write the whole letter on that thesis and cherry-picked evidence. That is *"read the abstract, cite the lit-review's conclusion, write the paper on selective data."* Beginner's mind, every time: **derive from the actual posting.**
+Do **not** read a secondary summary (handoff, anecdote bank, expertise draft), construct a thesis off it, then write the whole letter on that thesis and cherry-picked evidence. That is _"read the abstract, cite the lit-review's conclusion, write the paper on selective data."_ Beginner's mind, every time: **derive from the actual posting.**
 
 ## Steps
 
 ### 1. Source the JD — invoke `check-jd`
-Run the **check-jd** skill first to get the **verbatim live posting.** Cover letters are **prospective** (she's applying *now*), so the live web is canonical and a saved copy may have drifted. No JD in hand → ask her to paste it / give the URL. Do not proceed off a handoff or paraphrase.
+
+Run the **check-jd** skill first to get the **verbatim live posting.** Cover letters are **prospective** (she's applying _now_), so the live web is canonical and a saved copy may have drifted. No JD in hand → ask her to paste it / give the URL. Do not proceed off a handoff or paraphrase.
 
 ### 2. Read it cold
+
 Read the real JD fresh — not the handoff, not last time's framing, not her anecdote bank. Pull the **verbatim phrases** that signal what they actually want.
 
 ### 3. Float 3–5 angles, each JD-cited
+
 Propose **3–5 candidate angles** — themes a great anecdote could demonstrate. For **each angle, quote one (ideally two-plus) verbatim phrases from the JD** that make it a strong fit. The angles come **from the JD**, not from her stories. Optionally rank by fit.
 
 ### 4. Ask which anecdotes she has
+
 Present the angles and **ask Krystal which she has a real anecdote for** (by letter — A / B / C…). Do **not** pre-pick a "favorite," do **not** assume her bank covers it, do **not** pull selectively. She tells you what's true; you map her evidence to the JD-derived angles.
 
 ### 5. Build around the strongest one or two
+
 Once she names her anecdotes, draft the letter around the **strongest one or two** angles — each explicitly tied to its JD phrase. Compose with **krystal-draft** discipline (KR = her verbatim words · CC = every AI contribution surfaced), AIGHVA throughout. Surface it for her review; she verifies and sends.
 
 ## Guardrails (non-negotiable)

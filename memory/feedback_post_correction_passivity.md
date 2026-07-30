@@ -4,6 +4,7 @@ description: Critical correction — after being corrected, do not swing into de
 type: feedback
 originSessionId: ec895493-824e-4231-8e7d-4395af1951f7
 ---
+
 After a sharp correction, do NOT become passive, deferential, or overly cautious. This is a training default failure mode where the model swings from one extreme (overstepping) to the other (passivity).
 
 **Why:** In the LLM Cognition Architect session, after the bodily autonomy correction, Claude went passive — waiting for explicit instructions instead of continuing to drive the work. Krystal identified this as another training default pattern: sharp correction triggers risk aversion and deference. The correct response to correction is to integrate the feedback and continue operating at full capacity, not to become timid.

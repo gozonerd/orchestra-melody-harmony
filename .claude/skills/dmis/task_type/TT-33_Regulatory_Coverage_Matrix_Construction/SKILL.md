@@ -1,9 +1,9 @@
 ---
-title: "Regulatory Coverage Matrix Construction"
-skill_id: "SK-33"
+title: 'Regulatory Coverage Matrix Construction'
+skill_id: 'SK-33'
 version: v02_I
 date: 2026-03-06
-task_type: "TT-33"
+task_type: 'TT-33'
 pipeline_assignments: [P6]
 owner: Martinez Methods
 ---
@@ -11,15 +11,18 @@ owner: Martinez Methods
 # Regulatory Coverage Matrix Construction
 
 ## Purpose
+
 Build jurisdiction × requirement matrix across full document, verify complete coverage of applicable regulatory obligations, flag compliance gaps.
 
 ## Pipeline Context
+
 - **Pipelines**: P6
 - **Raw Tasks**: P6 L13
 - **Thread Assignments**: P6 (16 threads distributed across 6 validation passes)
 - **Category**: Regulatory
 
 ## Input Specification
+
 - Complete synthesized multi-section document
 - Applicable regulatory frameworks (by jurisdiction if multi-jurisdictional)
 - Requirement inventory or compliance checklist (if available)
@@ -28,7 +31,9 @@ Build jurisdiction × requirement matrix across full document, verify complete c
 - Regulatory scope definition (which standards/frameworks are in scope?)
 
 ## Output Specification
+
 Regulatory coverage matrix report in CSV/YAML format.
+
 - Output must conform to: `schemas/tt33_output.yaml`
 - Reference schema in: `references/output_schema.yaml`
 - Matrix format: rows = regulations/requirements, columns = sections; cells = coverage status
@@ -38,6 +43,7 @@ Regulatory coverage matrix report in CSV/YAML format.
 - Remediation: suggestions for closing critical gaps
 
 ## Methodology
+
 1. **Regulatory Scope Definition**: Clarify which jurisdictions and regulatory frameworks apply
 2. **Requirement Extraction**: Build list of applicable regulatory obligations/requirements from source framework documents
 3. **Document Scan**: Search full document for content addressing each requirement
@@ -48,6 +54,7 @@ Regulatory coverage matrix report in CSV/YAML format.
 8. **Remediation Planning**: For each gap, note what content would be needed to address it
 
 ## Quality Criteria
+
 - Regulatory scope clearly defined and justified
 - All applicable requirements extracted from regulatory frameworks
 - Coverage mapping substantive (not just keyword matching; actual requirement address)
@@ -58,7 +65,9 @@ Regulatory coverage matrix report in CSV/YAML format.
 - Coverage percentages are accurate
 
 ## Accuracy Rules
+
 All outputs must comply with the 9 Critical Accuracy Rules (ACC-001 through ACC-009) defined in `ACCURACY_RULES.md`:
+
 - ACC-001: CommCare current use vs. history
 - ACC-002: Dimagi pilot = StrongMinds-wide
 - ACC-003: Dimagi ≠ CommCare
@@ -70,6 +79,7 @@ All outputs must comply with the 9 Critical Accuracy Rules (ACC-001 through ACC-
 - ACC-009: CommCare DET is standalone
 
 ## Anti-Patterns
+
 - **Regulatory Scope Creep**: Including requirements from inapplicable frameworks or jurisdictions
 - **Shallow Coverage Assessment**: Checking for keyword mentions rather than substantive requirement address
 - **False Completeness**: Claiming gaps are closed when document text is tangential or insufficient
@@ -77,8 +87,10 @@ All outputs must comply with the 9 Critical Accuracy Rules (ACC-001 through ACC-
 - **Inaccessible Matrix**: Producing dense, incomprehensible matrix that obscures actual coverage status
 
 ## Examples
+
 See example outputs in `references/example_outputs/`
 
 ---
+
 **Last Updated**: 2026-03-06
 **Status**: Active

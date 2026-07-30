@@ -4,6 +4,7 @@ description: When Krystal explicitly rejects an option or option category, never
 type: feedback
 originSessionId: 93697f28-0c6a-42cc-8228-1a827d584521
 ---
+
 When Krystal explicitly rules out an option or category of options ("X is not adequate for my use case," "X is out of scope unless I bring it back," etc.), it stays out for the rest of the conversation. Do NOT:
 
 - Re-offer it under different framing or branding

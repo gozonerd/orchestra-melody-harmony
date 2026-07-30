@@ -27,16 +27,16 @@ Required sections must be completed before `/dare-to-rise-code-plan` Stage 00 ca
 
 ### 1.1 Project Name And Version
 
-*Project name matching PRD/TRD. Version matching PRD/TRD.*
+_Project name matching PRD/TRD. Version matching PRD/TRD._
 
 ### 1.2 PRD And TRD References
 
-*Cite the PRD and TRD this AVD is downstream of.*
+_Cite the PRD and TRD this AVD is downstream of._
 
 ### 1.3 Revision History
 
 | Version | Date | Changes | Reviewer |
-|---------|------|---------|----------|
+| ------- | ---- | ------- | -------- |
 
 ---
 
@@ -44,24 +44,26 @@ Required sections must be completed before `/dare-to-rise-code-plan` Stage 00 ca
 
 ### 2.1 One-Paragraph System Description
 
-*In 3-5 sentences, describe the system's shape at the highest level. Not what it does (that's the PRD). Not what it must do technically (that's the TRD). Its architectural shape — client-server, static site, CLI, library + consumers, distributed workers, event-driven, etc.*
+_In 3-5 sentences, describe the system's shape at the highest level. Not what it does (that's the PRD). Not what it must do technically (that's the TRD). Its architectural shape — client-server, static site, CLI, library + consumers, distributed workers, event-driven, etc._
 
 ### 2.2 Architectural Style
 
-*Name the architectural style(s) the system uses:*
-- *Monolithic / Microservices / Serverless / Static Site / CLI / Library / Hybrid*
-- *Synchronous / Asynchronous / Event-Driven / Request-Response*
-- *Stateful / Stateless*
-- *Client-Side / Server-Side / Hybrid*
+_Name the architectural style(s) the system uses:_
 
-*For each: one-line rationale.*
+- _Monolithic / Microservices / Serverless / Static Site / CLI / Library / Hybrid_
+- _Synchronous / Asynchronous / Event-Driven / Request-Response_
+- _Stateful / Stateless_
+- _Client-Side / Server-Side / Hybrid_
+
+_For each: one-line rationale._
 
 ### 2.3 Surface Layers
 
-*What surfaces does the system expose to consumers? For each surface:*
-- *Name*
-- *Consumer type (human user via UI, developer via API, developer via CLI, etc.)*
-- *Relationship to other surfaces (are they all wrappers around one core? Independent? Dependent?)*
+_What surfaces does the system expose to consumers? For each surface:_
+
+- _Name_
+- _Consumer type (human user via UI, developer via API, developer via CLI, etc.)_
+- _Relationship to other surfaces (are they all wrappers around one core? Independent? Dependent?)_
 
 ---
 
@@ -69,16 +71,18 @@ Required sections must be completed before `/dare-to-rise-code-plan` Stage 00 ca
 
 ### 3.1 Component Inventory
 
-*Every major component of the system. Required per component:*
-- *Component name*
-- *Responsibility (one sentence)*
-- *Inputs (from which other components or external sources)*
-- *Outputs (to which other components or external sinks)*
-- *Interfaces exposed (public API surface)*
+_Every major component of the system. Required per component:_
+
+- _Component name_
+- _Responsibility (one sentence)_
+- _Inputs (from which other components or external sources)_
+- _Outputs (to which other components or external sinks)_
+- _Interfaces exposed (public API surface)_
 
 The component inventory MUST include the following categories where applicable (NA-with-justification permitted):
 
 **Application components**
+
 - Frontend / UI components (cross-references TRD §6.7 design system)
 - Backend services / APIs
 - Background workers / job processors
@@ -86,6 +90,7 @@ The component inventory MUST include the following categories where applicable (
 - CLI surfaces
 
 **Data components**
+
 - Primary databases (operational stores)
 - Analytics / warehouse stores (if any)
 - Cache layers (cross-references TRD §3.1 caching strategy, Track 11)
@@ -93,6 +98,7 @@ The component inventory MUST include the following categories where applicable (
 - Search indexes (if any)
 
 **Observability components (Track 10, mandatory in production)**
+
 - Log aggregator (the named service: Datadog / Splunk / ELK / Loki / CloudWatch)
 - Metrics backend (Prometheus / Datadog / etc.)
 - Tracing backend (Jaeger / Tempo / Datadog APM / Honeycomb)
@@ -101,36 +107,40 @@ The component inventory MUST include the following categories where applicable (
 - These are first-class components, not afterthoughts. Each appears in the component diagram and the deployment topology.
 
 **Auth & identity components (Track 15, mandatory if system has auth)**
+
 - Identity provider (Auth0 / Cognito / Clerk / Keycloak / custom)
 - Session store (Redis / database / signed cookies)
 - Token validator / authorizer (gateway-level / service-level / sidecar)
 - Authorization policy engine if any (OPA / Cedar / framework-native)
 
 **Queue & messaging components (Track 14, applicability-gated)**
+
 - Message broker (SQS / RabbitMQ / Kafka / NATS / Redis Streams)
 - Dead-letter queue (DLQ) destinations
 - Event bus / pub-sub topics
 - Required if reliability patterns demand async / decoupled processing per TRD §3.2
 
 **AI / ML components (Track 19, applicability-gated)**
+
 - Model serving infrastructure (in-process / inference server / managed API)
 - Prompt / system-instruction store (versioned)
 - Eval harness location
 - Vector store / RAG retriever if applicable
 - Output safety / classifier components if applicable
-- Required IFF the product has AI in user-facing critical path*
+- Required IFF the product has AI in user-facing critical path\*
 
 ### 3.2 Boundaries
 
-*Where are the hard boundaries between components?*
-- *Process boundaries (separate processes, separate services)*
-- *Language / runtime boundaries (TypeScript vs Rust vs Python sidecar, etc.)*
-- *Trust boundaries (which components can be trusted with which data)*
-- *Release boundaries (which components ship together vs independently)*
+_Where are the hard boundaries between components?_
+
+- _Process boundaries (separate processes, separate services)_
+- _Language / runtime boundaries (TypeScript vs Rust vs Python sidecar, etc.)_
+- _Trust boundaries (which components can be trusted with which data)_
+- _Release boundaries (which components ship together vs independently)_
 
 ### 3.3 Component Diagram
 
-*Narrative description of component relationships (since this is a markdown doc, describe in prose or include a link to a separate diagram file). Required: every component in the inventory must appear; every arrow must have a direction and a label.*
+_Narrative description of component relationships (since this is a markdown doc, describe in prose or include a link to a separate diagram file). Required: every component in the inventory must appear; every arrow must have a direction and a label._
 
 ---
 
@@ -138,23 +148,25 @@ The component inventory MUST include the following categories where applicable (
 
 ### 4.1 Primary Data Flows
 
-*The main data journeys through the system. Required per flow:*
-- *Flow name*
-- *Trigger*
-- *Steps: data enters at X → transformed by Y → stored in Z (or transmitted to W)*
-- *Output: what the consumer sees / receives*
-- *Latency expectations (from TRD)*
+_The main data journeys through the system. Required per flow:_
+
+- _Flow name_
+- _Trigger_
+- _Steps: data enters at X → transformed by Y → stored in Z (or transmitted to W)_
+- _Output: what the consumer sees / receives_
+- _Latency expectations (from TRD)_
 
 ### 4.2 Secondary Data Flows
 
-*Background jobs, scheduled tasks, error-recovery flows.*
+_Background jobs, scheduled tasks, error-recovery flows._
 
 ### 4.3 Data Persistence Points
 
-*Where does data persist?*
-- *Location (database type, file system, client-side storage, etc.)*
-- *Lifetime (session / persistent / archival)*
-- *Consistency model (strong / eventual / last-write-wins)*
+_Where does data persist?_
+
+- _Location (database type, file system, client-side storage, etc.)_
+- _Lifetime (session / persistent / archival)_
+- _Consistency model (strong / eventual / last-write-wins)_
 
 ---
 
@@ -164,65 +176,72 @@ This section is load-bearing in v02 of the AVD: it captures the outputs of Stage
 
 ### 5.1 Deployment Targets
 
-*Every deployment target. Required per target:*
-- *Target name (production web, desktop release, npm package, plugin marketplace, etc.)*
-- *Hosting / distribution mechanism (specific provider + service per TRD §6.6: AWS Fargate, GCP Cloud Run, Vercel, Fly.io, on-prem k8s, etc.)*
-- *Build process (source → artifact)*
-- *Release cadence (cross-references TRD §3.9, Track 16)*
-- *Versioning scheme used at this target (cross-references TRD §3.9)*
+_Every deployment target. Required per target:_
+
+- _Target name (production web, desktop release, npm package, plugin marketplace, etc.)_
+- _Hosting / distribution mechanism (specific provider + service per TRD §6.6: AWS Fargate, GCP Cloud Run, Vercel, Fly.io, on-prem k8s, etc.)_
+- _Build process (source → artifact)_
+- _Release cadence (cross-references TRD §3.9, Track 16)_
+- _Versioning scheme used at this target (cross-references TRD §3.9)_
 
 ### 5.2 Runtime Environments
 
-*For each deployment target, the runtime environment it assumes:*
-- *Browser versions / OS versions / Node versions / etc.*
-- *Resource constraints (memory, CPU, disk)*
-- *Network assumptions*
-- *Container base image and security posture (distroless, non-root, scanned) if containerized*
-- *Auto-scaling configuration (min, max, scale triggers)*
+_For each deployment target, the runtime environment it assumes:_
+
+- _Browser versions / OS versions / Node versions / etc._
+- _Resource constraints (memory, CPU, disk)_
+- _Network assumptions_
+- _Container base image and security posture (distroless, non-root, scanned) if containerized_
+- _Auto-scaling configuration (min, max, scale triggers)_
 
 ### 5.3 Environment Strategy
 
-*Which environments exist and what they're for:*
-- *Local / dev / staging / prod / preview-per-PR — per Track 12*
-- *Environment parity expectations (how close staging mirrors prod)*
-- *Data strategy per environment (synthetic, anonymized prod snapshot, isolated)*
-- *Cost profile per environment (which envs run 24/7, which ephemeral)*
+_Which environments exist and what they're for:_
+
+- _Local / dev / staging / prod / preview-per-PR — per Track 12_
+- _Environment parity expectations (how close staging mirrors prod)_
+- _Data strategy per environment (synthetic, anonymized prod snapshot, isolated)_
+- _Cost profile per environment (which envs run 24/7, which ephemeral)_
 
 ### 5.4 Infrastructure-as-Code
 
-*How the infrastructure is reproducible — Track 12 outputs land here:*
-- *IaC tooling (Terraform / Pulumi / CDK / SST / framework-native — name the specific tool + version)*
-- *State management (where state lives, how it's locked, who can apply)*
-- *Module / stack organization (one repo per env? per service? monorepo with workspaces?)*
-- *Drift detection cadence and remediation policy*
-- *IaC review workflow (PR-based / direct-apply / manual approval gates)*
+_How the infrastructure is reproducible — Track 12 outputs land here:_
+
+- _IaC tooling (Terraform / Pulumi / CDK / SST / framework-native — name the specific tool + version)_
+- _State management (where state lives, how it's locked, who can apply)_
+- _Module / stack organization (one repo per env? per service? monorepo with workspaces?)_
+- _Drift detection cadence and remediation policy_
+- _IaC review workflow (PR-based / direct-apply / manual approval gates)_
 
 ### 5.5 Configuration And Secrets
 
-*How is configuration delivered to each runtime? Where do secrets live? How are they rotated?*
-- *Configuration source (env vars / config service / encrypted file / SSM Parameter Store / etc.)*
-- *Secrets backend (KMS / Secrets Manager / Vault / SOPS / etc.) — cross-references TRD §3.3*
-- *Secret rotation cadence per secret category (DB creds, API keys, signing keys)*
-- *Local-dev secret strategy (no real prod secrets, .env.example pattern)*
+_How is configuration delivered to each runtime? Where do secrets live? How are they rotated?_
+
+- _Configuration source (env vars / config service / encrypted file / SSM Parameter Store / etc.)_
+- _Secrets backend (KMS / Secrets Manager / Vault / SOPS / etc.) — cross-references TRD §3.3_
+- _Secret rotation cadence per secret category (DB creds, API keys, signing keys)_
+- _Local-dev secret strategy (no real prod secrets, .env.example pattern)_
 
 ### 5.6 Deployment Topology
 
-*If the system spans multiple deployment targets, describe the topology:*
-- *Which targets talk to which*
-- *Authentication between targets (mTLS, signed JWTs, internal-network-only)*
-- *Data replication or sync patterns*
-- *Network architecture (VPC layout, subnets, ingress/egress, service mesh if any)*
+_If the system spans multiple deployment targets, describe the topology:_
+
+- _Which targets talk to which_
+- _Authentication between targets (mTLS, signed JWTs, internal-network-only)_
+- _Data replication or sync patterns_
+- _Network architecture (VPC layout, subnets, ingress/egress, service mesh if any)_
 
 ### 5.7 Backup & Disaster Recovery (Track 12 + cross-references TRD §3.2)
 
-*Required:*
-- *What's backed up (specific data stores, configurations, encryption keys)*
-- *Backup frequency per data class*
-- *Backup storage location (different region / different provider / both)*
-- *Backup retention per class*
-- *Restore procedure (documented runbook location)*
-- *DR drill cadence (last performed date, target frequency)*
-- *Observed RTO and RPO from last drill vs. targets in TRD §3.2*
+_Required:_
+
+- _What's backed up (specific data stores, configurations, encryption keys)_
+- _Backup frequency per data class_
+- _Backup storage location (different region / different provider / both)_
+- _Backup retention per class_
+- _Restore procedure (documented runbook location)_
+- _DR drill cadence (last performed date, target frequency)_
+- _Observed RTO and RPO from last drill vs. targets in TRD §3.2_
 
 ---
 
@@ -230,74 +249,77 @@ This section is load-bearing in v02 of the AVD: it captures the outputs of Stage
 
 ### 6.1 Logging And Observability
 
-*Which components emit logs? What format? Where do they aggregate? (Cross-reference TRD Section 3.8.)*
+_Which components emit logs? What format? Where do they aggregate? (Cross-reference TRD Section 3.8.)_
 
 ### 6.2 Error Handling Strategy
 
-*System-wide error handling: thrown exceptions vs Result types vs error channels. Error propagation between components.*
+_System-wide error handling: thrown exceptions vs Result types vs error channels. Error propagation between components._
 
 ### 6.3 Concurrency Model
 
-*How does the system handle concurrent operations? Event loop, worker threads, async/await patterns, message queues, etc.*
+_How does the system handle concurrent operations? Event loop, worker threads, async/await patterns, message queues, etc._
 
 ### 6.4 Security Architecture
 
-*High-level: where is authentication enforced? Where is authorization enforced? Where does data encryption happen? (Cross-reference TRD Section 3.3.)*
+_High-level: where is authentication enforced? Where is authorization enforced? Where does data encryption happen? (Cross-reference TRD Section 3.3.)_
 
 ### 6.5 Accessibility Architecture
 
-*If the system has UI surfaces: how is accessibility architecturally enforced? Component library choice? Testing integration? (Cross-reference TRD Section 3.5 and TQCD Section 6.)*
+_If the system has UI surfaces: how is accessibility architecturally enforced? Component library choice? Testing integration? (Cross-reference TRD Section 3.5 and TQCD Section 6.)_
 
 ---
 
 ## 7. Architectural Decisions (Mini-ADRs)
 
-*For each significant architectural decision, record:*
+_For each significant architectural decision, record:_
 
-*Required format per decision:*
-- *Decision ID (AD-NN)*
-- *Title (one-line)*
-- *Status (Proposed / Accepted / Deprecated / Superseded)*
-- *Context: what problem was being solved*
-- *Options considered (with one-line summary each)*
-- *Decision: which option was chosen*
-- *Rationale: why this option*
-- *Consequences: what this decision locks in and what it forecloses*
+_Required format per decision:_
 
-*Examples of decisions that warrant an AD:*
-- *Language choice when multiple were viable*
-- *Framework choice*
-- *Sync vs async architectural choice*
-- *Monolithic vs service-oriented*
-- *Database choice*
-- *Client-side vs server-side*
-- *Custom library vs OSS adoption*
+- _Decision ID (AD-NN)_
+- _Title (one-line)_
+- _Status (Proposed / Accepted / Deprecated / Superseded)_
+- _Context: what problem was being solved_
+- _Options considered (with one-line summary each)_
+- _Decision: which option was chosen_
+- _Rationale: why this option_
+- _Consequences: what this decision locks in and what it forecloses_
+
+_Examples of decisions that warrant an AD:_
+
+- _Language choice when multiple were viable_
+- _Framework choice_
+- _Sync vs async architectural choice_
+- _Monolithic vs service-oriented_
+- _Database choice_
+- _Client-side vs server-side_
+- _Custom library vs OSS adoption_
 
 ---
 
 ## 8. Technical Debt And Known Compromises
 
-*Architectural compromises made in this version. Named so they're visible when decisions are revisited.*
+_Architectural compromises made in this version. Named so they're visible when decisions are revisited._
 
-*Required per item:*
-- *Compromise description*
-- *Why it was made*
-- *What it costs*
-- *When/whether to revisit*
+_Required per item:_
+
+- _Compromise description_
+- _Why it was made_
+- _What it costs_
+- _When/whether to revisit_
 
 ---
 
 ## 9. Open Architectural Questions
 
-*Unresolved architectural decisions. Stage 00 research should address these or Stage 01 must flag them for user decision.*
+_Unresolved architectural decisions. Stage 00 research should address these or Stage 01 must flag them for user decision._
 
 ---
 
 ## 10. Stakeholder Approvals
 
-*Who has approved this AVD?*
+_Who has approved this AVD?_
 
-*Required per stakeholder: name, role, approval date, notes.*
+_Required per stakeholder: name, role, approval date, notes._
 
 ---
 
@@ -319,6 +341,7 @@ This section is load-bearing in v02 of the AVD: it captures the outputs of Stage
 - [ ] Stakeholder approval documented
 
 A project does not require an AVD if:
+
 - The system is trivially simple (single file, no cross-component boundaries, no architectural choices to make)
 - In which case Stage 00 documents the AVD-skipped status with justification
 

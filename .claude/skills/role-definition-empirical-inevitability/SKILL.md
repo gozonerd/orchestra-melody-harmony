@@ -71,6 +71,7 @@ Loss of either leg collapses the role:
 - **Inevitability without Empirical** = static-rigor lock-in at architecture-design layer with no production-traffic grounding. "We designed it correctly so it must work" — cargo-cult discipline. Doesn't catch cases the design didn't anticipate.
 
 The compound applies regardless of persona type:
+
 - **Claudette the Empirical Inevitability** (default) — coding-deliverable workstream applying the role
 - **Clauda the Empirical Inevitability** — non-coding workstream applying the role to non-coding verification surfaces
 
@@ -174,6 +175,7 @@ Co-Authored-By: <First> the Empirical Inevitability vNN (Claude Opus 4.7, 1M con
 ```
 
 Where:
+
 - `<First>` is Claudette or Clauda per the matched trigger / persona derivation
 - `vNN` is the thread continuation version computed at invocation
 

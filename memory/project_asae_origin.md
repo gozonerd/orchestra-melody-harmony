@@ -23,6 +23,7 @@ Sonnet was producing documentation for an important idea. Krystal needed specifi
 6. **The breaking point** — Krystal told Sonnet: don't you DARE declare you're done after one pass. Audit, re-audit, re-re-audit. Make changes between audits. And I don't trust YOUR judgment that you're done — you ctrl+F and never read to the end. So check and recheck until you are CERTAIN, which means at LEAST TEN separate passes all returning zero errors. Then MAYBE I'll believe you.
 
 **What this sequence discovered:**
+
 - Telling the model to redo ≠ quality (intervention 1)
 - "Check your work" without a reference spec ≠ quality (intervention 2)
 - One audit against spec catches a lot but not everything (intervention 3-4)

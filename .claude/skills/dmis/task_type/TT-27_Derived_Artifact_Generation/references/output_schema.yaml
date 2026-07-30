@@ -17,19 +17,19 @@ structure:
         type: string
       content:
         type: object
-        description: "Artifact content (varies by type)"
+        description: 'Artifact content (varies by type)'
       source_sections:
         type: array
-        description: "Sections from which content was extracted"
+        description: 'Sections from which content was extracted'
         items:
           section_id:
             type: string
           extraction_method:
             type: string
-            description: "How content was extracted (direct, consolidated, reformatted)"
+            description: 'How content was extracted (direct, consolidated, reformatted)'
       entry_count:
         type: integer
-        description: "Number of entries in artifact"
+        description: 'Number of entries in artifact'
       completeness_check:
         type: object
         properties:
@@ -50,7 +50,7 @@ structure:
         type: string
       source_location:
         type: string
-        description: "Original section/page reference"
+        description: 'Original section/page reference'
       extraction_confidence:
         type: string
         enum: [high, medium, low]
@@ -62,10 +62,10 @@ structure:
         type: integer
       extraction_fidelity:
         type: number
-        description: "Ratio of entries accurately extracted vs. altered/fabricated"
+        description: 'Ratio of entries accurately extracted vs. altered/fabricated'
       novel_content_count:
         type: integer
-        description: "Should be zero per AFR-006"
+        description: 'Should be zero per AFR-006'
       compliance_status:
         type: string
         enum: [compliant, non_compliant]

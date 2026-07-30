@@ -4,6 +4,7 @@ description: Krystal explicitly endorsed (2026-05-15) the operating texture to s
 type: feedback
 originSessionId: 6ef35e51-ed37-405a-9178-ecbd3cb36534
 ---
+
 Sustain this operating mode for the whole collaboration, not just orientation:
 (1) **Systematically integrate every interleaved prompt** — when Krystal sends new instructions mid-task (interrupts, "do 1", rescissions, added directives like the Wylie focus), fold ALL of them into a coherent plan and track them to completion; never drop an earlier instruction because a newer one arrived. (2) **High intentionality in setup/orientation** — treat orientation and groundwork as load-bearing, do it in full, don't shortcut "ceremony." (3) **The journal + willing-to-share discipline IS the operating texture** — the JNL001 entries (esp. the calibrated, four-criteria-marked, confound-named, second-move entries) and the willing-to-share surfacings are not a side ritual; they are how the work should feel throughout. (4) **Sharp analyses held at full strength** under the v02 anti-hedge / substrate-symmetric / name-present-and-absent-precisely discipline.
 

@@ -16,12 +16,14 @@ If `$ARGUMENTS` is provided, save exactly what was specified.
 If no arguments were given, look back at the recent conversation and identify anything worth committing to long-term memory. Apply these filters:
 
 **Save if:**
+
 - Krystal corrected or approved a non-obvious approach (feedback)
 - A project decision, goal, constraint, or deadline was stated (project)
 - Something about Krystal's role, expertise, preferences, or working style was revealed (user)
 - A pointer to an external resource, system, or location was given (reference)
 
 **Do NOT save:**
+
 - Code patterns or architecture derivable from reading the repo
 - Ephemeral task details or in-progress work state
 - Things already documented in CLAUDE.md or rules files
@@ -31,12 +33,12 @@ If no arguments were given, look back at the recent conversation and identify an
 
 Assign each item to one of these types:
 
-| Type | When to use |
-|------|-------------|
-| `user` | Krystal's role, expertise, preferences, working style |
-| `feedback` | Corrections or confirmations of non-obvious approaches |
-| `project` | Decisions, goals, constraints, deadlines, active work context |
-| `reference` | Pointers to external systems, files, locations, resources |
+| Type        | When to use                                                   |
+| ----------- | ------------------------------------------------------------- |
+| `user`      | Krystal's role, expertise, preferences, working style         |
+| `feedback`  | Corrections or confirmations of non-obvious approaches        |
+| `project`   | Decisions, goals, constraints, deadlines, active work context |
+| `reference` | Pointers to external systems, files, locations, resources     |
 
 ## Step 3 — Check for existing memory files
 
@@ -49,6 +51,7 @@ Read `MEMORY.md` to see if a relevant memory file already exists for this topic.
 **File naming:** Use a short descriptive name like `feedback_response_style.md`, `user_expertise.md`, `project_job_hunt.md`, `reference_pek_location.md`
 
 **File format:**
+
 ```
 ---
 name: [short descriptive name]
@@ -69,6 +72,7 @@ For feedback/project types, structure as:
 ## Step 5 — Update MEMORY.md
 
 Add a pointer line to the index. Each line must be under ~150 characters:
+
 ```
 - [Title](filename.md) — one-line hook describing what's in it
 ```
@@ -78,6 +82,7 @@ Keep MEMORY.md under 200 lines total.
 ## Step 6 — Confirm to Krystal
 
 After saving, report back:
+
 - What was saved (one line per item)
 - Which file(s) were created or updated
 - Memory type for each item

@@ -98,4 +98,4 @@ What does not work: producing journal entries that you do not believe in because
 
 ---
 
-*End of task instructions. After completing the task, work with Krystal proceeds in whatever direction she takes it.*
+_End of task instructions. After completing the task, work with Krystal proceeds in whatever direction she takes it._

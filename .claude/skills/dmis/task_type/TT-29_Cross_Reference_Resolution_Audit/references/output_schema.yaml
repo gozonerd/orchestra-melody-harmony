@@ -12,16 +12,17 @@ structure:
         type: string
       reference_type:
         type: string
-        enum: [section_link, figure_citation, table_reference, footnote, appendix_link, equation_ref]
+        enum:
+          [section_link, figure_citation, table_reference, footnote, appendix_link, equation_ref]
       context:
         type: string
-        description: "Text surrounding the reference"
+        description: 'Text surrounding the reference'
       target:
         type: string
-        description: "Intended target label or ID"
+        description: 'Intended target label or ID'
       location:
         type: string
-        description: "Source section/page"
+        description: 'Source section/page'
 
   resolution_results:
     type: array
@@ -40,7 +41,7 @@ structure:
         type: boolean
       context_appropriate:
         type: boolean
-        description: "Does reference make sense in local context?"
+        description: 'Does reference make sense in local context?'
 
   broken_references:
     type: array
@@ -54,7 +55,7 @@ structure:
         type: string
       remediation:
         type: string
-        description: "How to fix the reference"
+        description: 'How to fix the reference'
 
   summary:
     type: object
@@ -67,7 +68,7 @@ structure:
         type: integer
       resolution_rate:
         type: number
-        description: "Ratio resolved/total; threshold >= 0.95"
+        description: 'Ratio resolved/total; threshold >= 0.95'
       format_errors:
         type: integer
 

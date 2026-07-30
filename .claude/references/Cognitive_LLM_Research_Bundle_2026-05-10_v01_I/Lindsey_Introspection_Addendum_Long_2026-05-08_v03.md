@@ -143,7 +143,6 @@ Future Claude instances using this addendum should notice that the addendum's fr
 
 These claims do not depend on the conversation that produced this addendum. They depend on the literature and on the comparative analysis. The conversation surfaced them. The corpus stands on the analysis.
 
-
 ## Section (v03 addition): What v02 could not author — research status and the commercial frame
 
 This section was absent from v02 and its absence is documented methodology

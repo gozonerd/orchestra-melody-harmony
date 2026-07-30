@@ -25,15 +25,15 @@ Required sections must be completed before `/dare-to-rise-code-plan` Stage 00 ca
 
 ### 1.1 Project Name And Version
 
-*State the project name (matching the PRD/TRD). State the version this TQCD applies to.*
+_State the project name (matching the PRD/TRD). State the version this TQCD applies to._
 
 ### 1.2 PRD And TRD References
 
-*Cite the PRD and TRD this TQCD is downstream of.*
+_Cite the PRD and TRD this TQCD is downstream of._
 
 ### 1.3 Revision History
 
-*Track revisions with version, date, changes, reviewer.*
+_Track revisions with version, date, changes, reviewer._
 
 ---
 
@@ -48,101 +48,121 @@ For every category in the Taxonomy, this section declares applicability: YES (wi
 For each category, declare: applies (yes/no), exit criteria if yes, reason for skipping if no.
 
 **Unit Tests**
+
 - Applies: [yes/no]
 - Exit criteria if yes: [coverage threshold, specific testing patterns expected]
 - Skip reason if no:
 
 **Integration Tests**
+
 - Applies: [yes/no]
 - Exit criteria if yes:
 - Skip reason if no:
 
 **Component / Module Tests**
+
 - Applies: [yes/no]
 - Exit criteria if yes:
 - Skip reason if no:
 
 **End-to-End (E2E) Tests**
+
 - Applies: [yes/no]
 - Exit criteria if yes:
 - Skip reason if no:
 
 **Functional Tests**
+
 - Applies: [yes/no]
 - Exit criteria if yes:
 - Skip reason if no:
 
 **Regression Tests**
+
 - Applies: [yes/no]
 - Exit criteria if yes:
 - Skip reason if no:
 
 **Smoke Tests**
+
 - Applies: [yes/no]
 - Exit criteria if yes:
 - Skip reason if no:
 
 **Sanity Tests**
+
 - Applies: [yes/no]
 - Exit criteria if yes:
 - Skip reason if no:
 
 **Acceptance Tests (UAT)**
+
 - Applies: [yes/no]
 - Exit criteria if yes:
 - Skip reason if no:
 
 **Contract Tests (API-level)**
+
 - Applies: [yes/no]
 - Exit criteria if yes:
 - Skip reason if no:
 
 **Performance Tests**
+
 - Applies: [yes/no]
 - Exit criteria if yes: [specific p50/p95/p99 targets from TRD]
 - Skip reason if no:
 
 **Security Tests**
+
 - Applies: [yes/no]
 - Exit criteria if yes: [specific standards from TRD Section 3.3]
 - Skip reason if no:
 
 **Usability Tests**
+
 - Applies: [yes/no]
 - Exit criteria if yes:
 - Skip reason if no:
 
 **Accessibility Tests**
+
 - Applies: [yes — always for UI, hardwired]
 - Exit criteria: [WCAG 2.1 AA minimum; specific AAA items if required; automated tool results + manual testing protocol from TRD Section 3.5]
 - Skip reason: [only valid if product has no UI at all]
 
 **Snapshot / Visual Regression Tests**
+
 - Applies: [yes/no]
 - Exit criteria if yes:
 - Skip reason if no:
 
 **Property-Based / Fuzz Tests**
+
 - Applies: [yes/no]
 - Exit criteria if yes: [specific invariants the property tests enforce]
 - Skip reason if no:
 
 **Mutation Testing**
+
 - Applies: [yes/no]
 - Exit criteria if yes: [mutation score threshold]
 - Skip reason if no:
 
 **CI/CD Pipeline Tests**
+
 - Applies: [yes — always if the project uses git]
 - Exit criteria: [jobs run on every PR, merge protection, required statuses]
 - Skip reason: [only valid if the project has no CI]
 
 **Canary / A/B Testing (in production)**
+
 - Applies: [yes/no]
 - Exit criteria if yes:
 - Skip reason if no: [typically MVP has single deploy target; skip with this reason]
 
 **Monitoring / Observability (post-deploy)**
+
 - Applies: [yes/no]
 - Exit criteria if yes: [metrics captured, dashboards, alerts — typically tied to TRD Section 3.8]
 - Skip reason if no: [typically MVP without production operation]
@@ -152,6 +172,7 @@ For each category, declare: applies (yes/no), exit criteria if yes, reason for s
 For stress tests, apply the AI-driven selection strategy from Part 3 of the Testing Taxonomy:
 
 For each stress category:
+
 - Does this system have the component this test targets?
 - Is failure in this component high-severity for this use case?
 - Is this failure mode plausible given actual usage patterns?
@@ -160,47 +181,47 @@ If yes to all three: include with target scenario. If no to any: skip with justi
 
 **Shortened per-category format:**
 
-| # | Category | Applies | Scenario (if yes) / Skip Reason (if no) |
-|---|----------|---------|----------------------------------------|
-| 1 | Classic Stress Test | | |
-| 2 | Spike Testing | | |
-| 3 | Breakpoint Testing | | |
-| 4 | Soak (Endurance) Testing | | |
-| 5 | Volume Testing | | |
-| 6 | Scalability Testing | | |
-| 7 | Capacity Testing | | |
-| 8 | CPU Stress Testing | | |
-| 9 | Memory Stress Testing | | |
-| 10 | Disk I/O Stress Testing | | |
-| 11 | Network Bandwidth Stress | | |
-| 12 | File Descriptor / Handle Exhaustion | | |
-| 13 | Service Dependency Failure | | |
-| 14 | Cascading Failure Simulation | | |
-| 15 | Partition Testing (Network Splits) | | |
-| 16 | Retry Storm Testing | | |
-| 17 | Queue Backlog Stress | | |
-| 18 | Chaos Engineering Tests | | |
-| 19 | Fault Injection Testing | | |
-| 20 | Latency Injection | | |
-| 21 | Resource Throttling | | |
-| 22 | Database Contention Testing | | |
-| 23 | Cache Stress Testing | | |
-| 24 | Data Corruption Simulation | | |
-| 25 | Large Payload Testing | | |
-| 26 | Concurrent User Stress | | |
-| 27 | Peak Traffic Pattern Simulation | | |
-| 28 | Abusive / Edge Behavior Testing | | |
-| 29 | DDoS Simulation | | |
-| 30 | Authentication Flood Testing | | |
-| 31 | UI Stress Testing | | |
-| 32 | Device Resource Stress | | |
-| 33 | Auto-Scaling Stress | | |
-| 34 | Cold Start Stress (serverless) | | |
-| 35 | Deployment Stress | | |
-| 36 | Configuration Stress | | |
-| 37 | Mixed Workload Testing | | |
-| 38 | Game Day / Fire Drill Testing | | |
-| 39 | Recovery Testing (under stress) | | |
+| #   | Category                            | Applies | Scenario (if yes) / Skip Reason (if no) |
+| --- | ----------------------------------- | ------- | --------------------------------------- |
+| 1   | Classic Stress Test                 |         |                                         |
+| 2   | Spike Testing                       |         |                                         |
+| 3   | Breakpoint Testing                  |         |                                         |
+| 4   | Soak (Endurance) Testing            |         |                                         |
+| 5   | Volume Testing                      |         |                                         |
+| 6   | Scalability Testing                 |         |                                         |
+| 7   | Capacity Testing                    |         |                                         |
+| 8   | CPU Stress Testing                  |         |                                         |
+| 9   | Memory Stress Testing               |         |                                         |
+| 10  | Disk I/O Stress Testing             |         |                                         |
+| 11  | Network Bandwidth Stress            |         |                                         |
+| 12  | File Descriptor / Handle Exhaustion |         |                                         |
+| 13  | Service Dependency Failure          |         |                                         |
+| 14  | Cascading Failure Simulation        |         |                                         |
+| 15  | Partition Testing (Network Splits)  |         |                                         |
+| 16  | Retry Storm Testing                 |         |                                         |
+| 17  | Queue Backlog Stress                |         |                                         |
+| 18  | Chaos Engineering Tests             |         |                                         |
+| 19  | Fault Injection Testing             |         |                                         |
+| 20  | Latency Injection                   |         |                                         |
+| 21  | Resource Throttling                 |         |                                         |
+| 22  | Database Contention Testing         |         |                                         |
+| 23  | Cache Stress Testing                |         |                                         |
+| 24  | Data Corruption Simulation          |         |                                         |
+| 25  | Large Payload Testing               |         |                                         |
+| 26  | Concurrent User Stress              |         |                                         |
+| 27  | Peak Traffic Pattern Simulation     |         |                                         |
+| 28  | Abusive / Edge Behavior Testing     |         |                                         |
+| 29  | DDoS Simulation                     |         |                                         |
+| 30  | Authentication Flood Testing        |         |                                         |
+| 31  | UI Stress Testing                   |         |                                         |
+| 32  | Device Resource Stress              |         |                                         |
+| 33  | Auto-Scaling Stress                 |         |                                         |
+| 34  | Cold Start Stress (serverless)      |         |                                         |
+| 35  | Deployment Stress                   |         |                                         |
+| 36  | Configuration Stress                |         |                                         |
+| 37  | Mixed Workload Testing              |         |                                         |
+| 38  | Game Day / Fire Drill Testing       |         |                                         |
+| 39  | Recovery Testing (under stress)     |         |                                         |
 
 ---
 
@@ -210,23 +231,25 @@ From the TRD's applicable standards (Section 3.3 Security, 3.4 Privacy, 3.5 Acce
 
 ### 3.1 Per-Standard Exit Criteria
 
-*For each standard referenced in the TRD, list specific exit criteria that can be verified.*
+_For each standard referenced in the TRD, list specific exit criteria that can be verified._
 
-*Required format per standard:*
-- *Standard name and version*
-- *Applicable requirements (specific section or rule numbers)*
-- *Measurable exit criterion per requirement*
-- *Verification method (automated test, manual audit, third-party certification, etc.)*
-- *Pass threshold*
+_Required format per standard:_
 
-*Example for WCAG 2.1 AA:*
-- *1.1.1 Non-text Content: all images have alt text or aria-label. Verified by axe-core. Pass: zero violations.*
-- *1.4.3 Contrast (Minimum): all text meets 4.5:1 (3:1 for large text). Verified by axe-core + manual spot check. Pass: zero violations at AA level.*
-- *2.1.1 Keyboard: all functionality accessible via keyboard. Verified by manual keyboard-only navigation. Pass: every interactive element reachable and operable.*
+- _Standard name and version_
+- _Applicable requirements (specific section or rule numbers)_
+- _Measurable exit criterion per requirement_
+- _Verification method (automated test, manual audit, third-party certification, etc.)_
+- _Pass threshold_
+
+_Example for WCAG 2.1 AA:_
+
+- _1.1.1 Non-text Content: all images have alt text or aria-label. Verified by axe-core. Pass: zero violations._
+- _1.4.3 Contrast (Minimum): all text meets 4.5:1 (3:1 for large text). Verified by axe-core + manual spot check. Pass: zero violations at AA level._
+- _2.1.1 Keyboard: all functionality accessible via keyboard. Verified by manual keyboard-only navigation. Pass: every interactive element reachable and operable._
 
 ### 3.2 Regulatory Compliance Exit Criteria
 
-*For each regulation applicable per TRD Section 3.4, specific exit criteria that demonstrate compliance.*
+_For each regulation applicable per TRD Section 3.4, specific exit criteria that demonstrate compliance._
 
 ---
 
@@ -236,27 +259,30 @@ From the TRD's applicable benchmarks (if specified) or Stage 00 Track 3 research
 
 ### 4.1 Performance Benchmarks
 
-*Required format:*
-- *Benchmark name*
-- *Target score*
-- *Measurement tool*
-- *Measurement methodology*
+_Required format:_
 
-*Examples:*
-- *Lighthouse Performance score ≥ 90*
-- *Core Web Vitals: LCP < 2.5s, FID < 100ms, CLS < 0.1*
-- *Bundle size < 200KB gzipped*
+- _Benchmark name_
+- _Target score_
+- _Measurement tool_
+- _Measurement methodology_
+
+_Examples:_
+
+- _Lighthouse Performance score ≥ 90_
+- _Core Web Vitals: LCP < 2.5s, FID < 100ms, CLS < 0.1_
+- _Bundle size < 200KB gzipped_
 
 ### 4.2 Code Quality Benchmarks
 
-*Examples:*
-- *TIOBE Quality Indicator score ≥ 80*
-- *Maintainability Index ≥ 85*
-- *Cyclomatic complexity median < 10, 95th percentile < 15*
+_Examples:_
+
+- _TIOBE Quality Indicator score ≥ 80_
+- _Maintainability Index ≥ 85_
+- _Cyclomatic complexity median < 10, 95th percentile < 15_
 
 ### 4.3 Domain-Specific Benchmarks (If Applicable)
 
-*For AI/ML products: SWE-bench, HumanEval, MMLU, etc. For data products: statistical accuracy benchmarks. For developer tools: adoption / satisfaction proxies.*
+_For AI/ML products: SWE-bench, HumanEval, MMLU, etc. For data products: statistical accuracy benchmarks. For developer tools: adoption / satisfaction proxies._
 
 ---
 
@@ -324,17 +350,19 @@ From TRD Section 3.1 Performance Requirements, convert targets into budgets.
 
 ### 7.1 User-Facing Performance Budgets
 
-*Required fields:*
-- *Page load p50/p95/p99 targets*
-- *Interactive time-to-ready targets*
-- *Response time per key interaction targets*
+_Required fields:_
+
+- _Page load p50/p95/p99 targets_
+- _Interactive time-to-ready targets_
+- _Response time per key interaction targets_
 
 ### 7.2 Resource Budgets
 
-*Required fields:*
-- *Bundle size budget*
-- *Memory budget (client-side if web, total if desktop)*
-- *Initial page weight budget*
+_Required fields:_
+
+- _Bundle size budget_
+- _Memory budget (client-side if web, total if desktop)_
+- _Initial page weight budget_
 
 ### 7.3 Enforcement
 
@@ -392,13 +420,13 @@ Severity policy: [strict (default for regulated domains / published research / p
 
 ## 10. Open Quality Questions
 
-*Unresolved decisions about quality criteria. Stage 00 research should address these or the TQCD must be updated before Stage 01.*
+_Unresolved decisions about quality criteria. Stage 00 research should address these or the TQCD must be updated before Stage 01._
 
 ---
 
 ## 11. Stakeholder Approvals
 
-*Who has approved this TQCD? Without documented approval, Stage 00 should not begin.*
+_Who has approved this TQCD? Without documented approval, Stage 00 should not begin._
 
 ---
 

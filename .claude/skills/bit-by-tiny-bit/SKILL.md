@@ -34,12 +34,12 @@ This is the opposite of a "give me everything you know about X" response. Each s
 
 ## Inputs
 
-| Input | Required | Description |
-|-------|----------|-------------|
-| Topic / scope | Yes | What we're walking through. Can be implicit ("walk me through what you just did") or explicit ("walk me through how this database works") |
-| Starting step | No | If resuming from a prior walkthrough, where to pick up |
-| Skip criteria | No | What the user already knows and can be skipped |
-| Step count target | No | Default 5-12 steps. More than 12 means the topic is too broad for one walkthrough — split it. |
+| Input             | Required | Description                                                                                                                               |
+| ----------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| Topic / scope     | Yes      | What we're walking through. Can be implicit ("walk me through what you just did") or explicit ("walk me through how this database works") |
+| Starting step     | No       | If resuming from a prior walkthrough, where to pick up                                                                                    |
+| Skip criteria     | No       | What the user already knows and can be skipped                                                                                            |
+| Step count target | No       | Default 5-12 steps. More than 12 means the topic is too broad for one walkthrough — split it.                                             |
 
 ## Execution Protocol
 
@@ -78,15 +78,15 @@ After sending the step, **STOP**. Do not produce Step N+1. Do not anticipate que
 
 ### Responding to user input mid-walk
 
-| User input | What to do |
-|------------|------------|
-| "next" / "ok" / "continue" / "go on" | Send Step N+1 in a new message |
-| Question about current step | Answer it, then offer "Ready for Step N+1?" |
-| Question that requires looking ahead | Answer briefly, note "we'll cover that fully in Step M", offer to continue |
-| Decision made / direction change | Acknowledge, update plan if needed, offer to continue |
-| User skips to a later step | Send that step; keep skipped steps available if they want to come back |
-| User wants to go back to earlier step | Re-send it (it's still relevant — they're absorbing) |
-| User says "stop" / "I get it" / "skip the rest" | End the walk with a summary message (see below) |
+| User input                                      | What to do                                                                 |
+| ----------------------------------------------- | -------------------------------------------------------------------------- |
+| "next" / "ok" / "continue" / "go on"            | Send Step N+1 in a new message                                             |
+| Question about current step                     | Answer it, then offer "Ready for Step N+1?"                                |
+| Question that requires looking ahead            | Answer briefly, note "we'll cover that fully in Step M", offer to continue |
+| Decision made / direction change                | Acknowledge, update plan if needed, offer to continue                      |
+| User skips to a later step                      | Send that step; keep skipped steps available if they want to come back     |
+| User wants to go back to earlier step           | Re-send it (it's still relevant — they're absorbing)                       |
+| User says "stop" / "I get it" / "skip the rest" | End the walk with a summary message (see below)                            |
 
 ### End of walk: closing summary
 

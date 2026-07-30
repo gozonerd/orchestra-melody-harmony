@@ -9,6 +9,7 @@ type: project
 Session title: "Opus-Million the Portfolio Curator". Model: Opus 4.6 (1M context). CWD: C:\Users\Krystal Martinez\Repos.
 
 ### Portfolio Architecture (LOCKED)
+
 - **Dual portfolio:** Portfolio 1 (landing/swarm payload, krystalmartinez.com) + Portfolio 2 (deep evidence, .cv)
 - **Structure:** Problem → Method → Evidence (NOT Problem → Artifact)
 - **5 portfolio problems:** P1=AI agent production failures, P2=AI spending/ROI, P3=compliance gaps, P4=adoption failures, P5=output quality/accountability
@@ -16,21 +17,25 @@ Session title: "Opus-Million the Portfolio Curator". Model: Opus 4.6 (1M context
 - **LE Generator** = Portfolio 1 IS the product. 3-tier: free open-source / paid customized playbook / enterprise self-hosted
 
 ### Domain Architecture
+
 - `.com` = Portfolio 1, `.cv` = Portfolio 2, `.site` = LE Generator, `.store` = paid playbooks, `.work` = fractional consulting
 - VPS purchased via RackNerd; domains pointed to it
 
 ### PEK (Portable Encyclopedia Krystal)
+
 - 9 thematic volumes, canonical location: `krystal-will-work-in-ai/02_Encyclopedia_Krystal/`
 - TEROS = Token-Efficient RAG Operating System; RIA = RAG Index Architecture
 - Old 60-volume version deprecated
 
 ### Failure Mode Taxonomy
+
 - Grew to 100+ FMs but assembly was non-rigorous
 - **Decision: rebuild from scratch** with defined categories, dedup criteria, per-FM review
 - 3 source layers preserved: FM-01–29 (original), FM-30–93 (ECT comprehensive sweep), FM-94–100 (late additions)
 - 3 SOPs written for grid generation, taxonomy assembly, taxonomy maintenance
 
 ### Outstanding Next Steps (as of 2026-03-29)
+
 1. Start Twin Brain governance thread (brief at `08_Session_Artifacts/Twin_Brain_Role_Brief_2026-03-28_v02_I.md`)
 2. Regenerate Unified Cold Assessment Synthesis from clean PEK
 3. Backbone Methods × Problems Grid v04 (v03 rejected — missing core idea column)

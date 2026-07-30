@@ -1,9 +1,9 @@
 ---
-title: "Specification Actionability Assessment"
-skill_id: "SK-17"
+title: 'Specification Actionability Assessment'
+skill_id: 'SK-17'
 version: v02_I
 date: 2026-03-06
-task_type: "TT-17"
+task_type: 'TT-17'
 pipeline_assignments: [P2, P3]
 owner: Martinez Methods
 ---
@@ -11,16 +11,20 @@ owner: Martinez Methods
 # Specification Actionability Assessment
 
 ## Purpose
+
 Evaluate whether each element is sufficiently specified for downstream execution. This task type assesses the practical implementability of specifications, recommendations, and procedural guidance in DATS outputs.
 
 ## Pipeline Context
+
 - **Pipelines:** P2 (Foundational Analysis), P3 (Synthesis & Integration)
 - **Raw Tasks Covered:** P3.2-L6, P3.2-PS-g, P2.2-L8
 - **Dependencies:** Specification elements from synthesis, implementation context, downstream consumer capabilities
 - **Purpose:** Ensure specifications provide sufficient detail for effective downstream use
 
 ## Input Specification
+
 Inputs to TT-17 include:
+
 - Complete specification/recommendation text from P3 synthesis
 - Implementation context documentation (what downstream systems can do)
 - Evidence supporting each specification element
@@ -29,6 +33,7 @@ Inputs to TT-17 include:
 - Constraints and capability limitations of downstream consumers
 
 ## Output Specification
+
 - Output must conform to: `schemas/tt17_output.yaml`
 - Reference schema in: `references/output_schema.yaml`
 - Produce actionability assessment with:
@@ -40,6 +45,7 @@ Inputs to TT-17 include:
   - Remediation recommendations with specific language additions
 
 ## Methodology
+
 1. **Element Extraction:** Identify all distinct specifications, recommendations, or procedural elements in synthesis output
 2. **Downstream Consumer Definition:** Establish who will use each specification and what they need to implement it
 3. **Sufficiency Assessment:** For each element, determine whether specification includes:
@@ -55,6 +61,7 @@ Inputs to TT-17 include:
 8. **Prioritization:** Flag critical gaps that block implementation vs. helpful details that enhance execution
 
 ## Quality Criteria
+
 - **Specificity:** Each specification can be understood and acted upon without requiring interpretation
 - **Completeness:** Specifications include success criteria, preconditions, resource needs, and decision rules
 - **Reality-Based:** Assessment grounded in actual downstream consumer capabilities and constraints
@@ -63,7 +70,9 @@ Inputs to TT-17 include:
 - **Evidence-Grounded:** Specifications assessed against supporting evidence and methodology documentation
 
 ## Accuracy Rules
+
 All outputs must comply with the 9 Critical Accuracy Rules (ACC-001 through ACC-009) defined in `ACCURACY_RULES.md`:
+
 - ACC-001: CommCare current use vs. history (distinguish SMZ active deployment from Uganda pilot)
 - ACC-002: Dimagi pilot = StrongMinds-wide (both Uganda and Zambia)
 - ACC-003: Dimagi ≠ CommCare (platform vs. consulting firm)
@@ -75,6 +84,7 @@ All outputs must comply with the 9 Critical Accuracy Rules (ACC-001 through ACC-
 - ACC-009: CommCare DET is standalone (separate Python CLI)
 
 ## Anti-Patterns
+
 - **Expert Assumption:** Assuming downstream consumers understand methodology or context better than they do
 - **Theoretical Sufficiency:** Marking specifications as actionable that assume access to expertise not available downstream
 - **Missing Contingencies:** Failing to identify gaps in guidance for non-standard situations or edge cases
@@ -82,4 +92,5 @@ All outputs must comply with the 9 Critical Accuracy Rules (ACC-001 through ACC-
 - **Scope Inflation:** Demanding implementation details beyond reasonable specification scope
 
 ## Examples
+
 See example outputs in `references/example_outputs/` for gold-standard actionability assessments showing element-by-element evaluation, gap identification with specific missing details, and remediation recommendations.

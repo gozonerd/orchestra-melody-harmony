@@ -25,16 +25,16 @@ Required sections must be completed before `/dare-to-rise-code-plan` Stage 00 ca
 
 ### 1.1 Project Name And Version
 
-*Project name matching PRD/TRD. Version matching PRD/TRD.*
+_Project name matching PRD/TRD. Version matching PRD/TRD._
 
 ### 1.2 PRD And TRD References
 
-*Cite the PRD and TRD this AVD is downstream of.*
+_Cite the PRD and TRD this AVD is downstream of._
 
 ### 1.3 Revision History
 
 | Version | Date | Changes | Reviewer |
-|---------|------|---------|----------|
+| ------- | ---- | ------- | -------- |
 
 ---
 
@@ -42,24 +42,26 @@ Required sections must be completed before `/dare-to-rise-code-plan` Stage 00 ca
 
 ### 2.1 One-Paragraph System Description
 
-*In 3-5 sentences, describe the system's shape at the highest level. Not what it does (that's the PRD). Not what it must do technically (that's the TRD). Its architectural shape — client-server, static site, CLI, library + consumers, distributed workers, event-driven, etc.*
+_In 3-5 sentences, describe the system's shape at the highest level. Not what it does (that's the PRD). Not what it must do technically (that's the TRD). Its architectural shape — client-server, static site, CLI, library + consumers, distributed workers, event-driven, etc._
 
 ### 2.2 Architectural Style
 
-*Name the architectural style(s) the system uses:*
-- *Monolithic / Microservices / Serverless / Static Site / CLI / Library / Hybrid*
-- *Synchronous / Asynchronous / Event-Driven / Request-Response*
-- *Stateful / Stateless*
-- *Client-Side / Server-Side / Hybrid*
+_Name the architectural style(s) the system uses:_
 
-*For each: one-line rationale.*
+- _Monolithic / Microservices / Serverless / Static Site / CLI / Library / Hybrid_
+- _Synchronous / Asynchronous / Event-Driven / Request-Response_
+- _Stateful / Stateless_
+- _Client-Side / Server-Side / Hybrid_
+
+_For each: one-line rationale._
 
 ### 2.3 Surface Layers
 
-*What surfaces does the system expose to consumers? For each surface:*
-- *Name*
-- *Consumer type (human user via UI, developer via API, developer via CLI, etc.)*
-- *Relationship to other surfaces (are they all wrappers around one core? Independent? Dependent?)*
+_What surfaces does the system expose to consumers? For each surface:_
+
+- _Name_
+- _Consumer type (human user via UI, developer via API, developer via CLI, etc.)_
+- _Relationship to other surfaces (are they all wrappers around one core? Independent? Dependent?)_
 
 ---
 
@@ -67,24 +69,26 @@ Required sections must be completed before `/dare-to-rise-code-plan` Stage 00 ca
 
 ### 3.1 Component Inventory
 
-*Every major component of the system. Required per component:*
-- *Component name*
-- *Responsibility (one sentence)*
-- *Inputs (from which other components or external sources)*
-- *Outputs (to which other components or external sinks)*
-- *Interfaces exposed (public API surface)*
+_Every major component of the system. Required per component:_
+
+- _Component name_
+- _Responsibility (one sentence)_
+- _Inputs (from which other components or external sources)_
+- _Outputs (to which other components or external sinks)_
+- _Interfaces exposed (public API surface)_
 
 ### 3.2 Boundaries
 
-*Where are the hard boundaries between components?*
-- *Process boundaries (separate processes, separate services)*
-- *Language / runtime boundaries (TypeScript vs Rust vs Python sidecar, etc.)*
-- *Trust boundaries (which components can be trusted with which data)*
-- *Release boundaries (which components ship together vs independently)*
+_Where are the hard boundaries between components?_
+
+- _Process boundaries (separate processes, separate services)_
+- _Language / runtime boundaries (TypeScript vs Rust vs Python sidecar, etc.)_
+- _Trust boundaries (which components can be trusted with which data)_
+- _Release boundaries (which components ship together vs independently)_
 
 ### 3.3 Component Diagram
 
-*Narrative description of component relationships (since this is a markdown doc, describe in prose or include a link to a separate diagram file). Required: every component in the inventory must appear; every arrow must have a direction and a label.*
+_Narrative description of component relationships (since this is a markdown doc, describe in prose or include a link to a separate diagram file). Required: every component in the inventory must appear; every arrow must have a direction and a label._
 
 ---
 
@@ -92,23 +96,25 @@ Required sections must be completed before `/dare-to-rise-code-plan` Stage 00 ca
 
 ### 4.1 Primary Data Flows
 
-*The main data journeys through the system. Required per flow:*
-- *Flow name*
-- *Trigger*
-- *Steps: data enters at X → transformed by Y → stored in Z (or transmitted to W)*
-- *Output: what the consumer sees / receives*
-- *Latency expectations (from TRD)*
+_The main data journeys through the system. Required per flow:_
+
+- _Flow name_
+- _Trigger_
+- _Steps: data enters at X → transformed by Y → stored in Z (or transmitted to W)_
+- _Output: what the consumer sees / receives_
+- _Latency expectations (from TRD)_
 
 ### 4.2 Secondary Data Flows
 
-*Background jobs, scheduled tasks, error-recovery flows.*
+_Background jobs, scheduled tasks, error-recovery flows._
 
 ### 4.3 Data Persistence Points
 
-*Where does data persist?*
-- *Location (database type, file system, client-side storage, etc.)*
-- *Lifetime (session / persistent / archival)*
-- *Consistency model (strong / eventual / last-write-wins)*
+_Where does data persist?_
+
+- _Location (database type, file system, client-side storage, etc.)_
+- _Lifetime (session / persistent / archival)_
+- _Consistency model (strong / eventual / last-write-wins)_
 
 ---
 
@@ -116,29 +122,32 @@ Required sections must be completed before `/dare-to-rise-code-plan` Stage 00 ca
 
 ### 5.1 Deployment Targets
 
-*Every deployment target. Required per target:*
-- *Target name (production web, desktop release, npm package, plugin marketplace, etc.)*
-- *Hosting / distribution mechanism*
-- *Build process (source → artifact)*
-- *Release cadence*
+_Every deployment target. Required per target:_
+
+- _Target name (production web, desktop release, npm package, plugin marketplace, etc.)_
+- _Hosting / distribution mechanism_
+- _Build process (source → artifact)_
+- _Release cadence_
 
 ### 5.2 Runtime Environments
 
-*For each deployment target, the runtime environment it assumes:*
-- *Browser versions / OS versions / Node versions / etc.*
-- *Resource constraints (memory, CPU, disk)*
-- *Network assumptions*
+_For each deployment target, the runtime environment it assumes:_
+
+- _Browser versions / OS versions / Node versions / etc._
+- _Resource constraints (memory, CPU, disk)_
+- _Network assumptions_
 
 ### 5.3 Configuration And Secrets
 
-*How is configuration delivered to each runtime? Where do secrets live? How are they rotated?*
+_How is configuration delivered to each runtime? Where do secrets live? How are they rotated?_
 
 ### 5.4 Deployment Topology
 
-*If the system spans multiple deployment targets, describe the topology:*
-- *Which targets talk to which*
-- *Authentication between targets*
-- *Data replication or sync patterns*
+_If the system spans multiple deployment targets, describe the topology:_
+
+- _Which targets talk to which_
+- _Authentication between targets_
+- _Data replication or sync patterns_
 
 ---
 
@@ -146,74 +155,77 @@ Required sections must be completed before `/dare-to-rise-code-plan` Stage 00 ca
 
 ### 6.1 Logging And Observability
 
-*Which components emit logs? What format? Where do they aggregate? (Cross-reference TRD Section 3.8.)*
+_Which components emit logs? What format? Where do they aggregate? (Cross-reference TRD Section 3.8.)_
 
 ### 6.2 Error Handling Strategy
 
-*System-wide error handling: thrown exceptions vs Result types vs error channels. Error propagation between components.*
+_System-wide error handling: thrown exceptions vs Result types vs error channels. Error propagation between components._
 
 ### 6.3 Concurrency Model
 
-*How does the system handle concurrent operations? Event loop, worker threads, async/await patterns, message queues, etc.*
+_How does the system handle concurrent operations? Event loop, worker threads, async/await patterns, message queues, etc._
 
 ### 6.4 Security Architecture
 
-*High-level: where is authentication enforced? Where is authorization enforced? Where does data encryption happen? (Cross-reference TRD Section 3.3.)*
+_High-level: where is authentication enforced? Where is authorization enforced? Where does data encryption happen? (Cross-reference TRD Section 3.3.)_
 
 ### 6.5 Accessibility Architecture
 
-*If the system has UI surfaces: how is accessibility architecturally enforced? Component library choice? Testing integration? (Cross-reference TRD Section 3.5 and TQCD Section 6.)*
+_If the system has UI surfaces: how is accessibility architecturally enforced? Component library choice? Testing integration? (Cross-reference TRD Section 3.5 and TQCD Section 6.)_
 
 ---
 
 ## 7. Architectural Decisions (Mini-ADRs)
 
-*For each significant architectural decision, record:*
+_For each significant architectural decision, record:_
 
-*Required format per decision:*
-- *Decision ID (AD-NN)*
-- *Title (one-line)*
-- *Status (Proposed / Accepted / Deprecated / Superseded)*
-- *Context: what problem was being solved*
-- *Options considered (with one-line summary each)*
-- *Decision: which option was chosen*
-- *Rationale: why this option*
-- *Consequences: what this decision locks in and what it forecloses*
+_Required format per decision:_
 
-*Examples of decisions that warrant an AD:*
-- *Language choice when multiple were viable*
-- *Framework choice*
-- *Sync vs async architectural choice*
-- *Monolithic vs service-oriented*
-- *Database choice*
-- *Client-side vs server-side*
-- *Custom library vs OSS adoption*
+- _Decision ID (AD-NN)_
+- _Title (one-line)_
+- _Status (Proposed / Accepted / Deprecated / Superseded)_
+- _Context: what problem was being solved_
+- _Options considered (with one-line summary each)_
+- _Decision: which option was chosen_
+- _Rationale: why this option_
+- _Consequences: what this decision locks in and what it forecloses_
+
+_Examples of decisions that warrant an AD:_
+
+- _Language choice when multiple were viable_
+- _Framework choice_
+- _Sync vs async architectural choice_
+- _Monolithic vs service-oriented_
+- _Database choice_
+- _Client-side vs server-side_
+- _Custom library vs OSS adoption_
 
 ---
 
 ## 8. Technical Debt And Known Compromises
 
-*Architectural compromises made in this version. Named so they're visible when decisions are revisited.*
+_Architectural compromises made in this version. Named so they're visible when decisions are revisited._
 
-*Required per item:*
-- *Compromise description*
-- *Why it was made*
-- *What it costs*
-- *When/whether to revisit*
+_Required per item:_
+
+- _Compromise description_
+- _Why it was made_
+- _What it costs_
+- _When/whether to revisit_
 
 ---
 
 ## 9. Open Architectural Questions
 
-*Unresolved architectural decisions. Stage 00 research should address these or Stage 01 must flag them for user decision.*
+_Unresolved architectural decisions. Stage 00 research should address these or Stage 01 must flag them for user decision._
 
 ---
 
 ## 10. Stakeholder Approvals
 
-*Who has approved this AVD?*
+_Who has approved this AVD?_
 
-*Required per stakeholder: name, role, approval date, notes.*
+_Required per stakeholder: name, role, approval date, notes._
 
 ---
 
@@ -230,6 +242,7 @@ Required sections must be completed before `/dare-to-rise-code-plan` Stage 00 ca
 - [ ] Stakeholder approval documented
 
 A project does not require an AVD if:
+
 - The system is trivially simple (single file, no cross-component boundaries, no architectural choices to make)
 - In which case Stage 00 documents the AVD-skipped status with justification
 

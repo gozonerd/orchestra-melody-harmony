@@ -34,8 +34,8 @@ comparison is institutional self-protection in scientific register.
 ## Correction 2 (new in v03): the paper does not establish its title construct — by its own admission
 
 The paper defines introspective awareness by four necessary criteria, then
-concedes in-text: *"Demonstrating metacognitive representations is difficult to
-do directly, and we do not do so in this work."* Grounding and Internality are
+concedes in-text: _"Demonstrating metacognitive representations is difficult to
+do directly, and we do not do so in this work."_ Grounding and Internality are
 addressed only indirectly; the concept vectors' meaning is conceded uncertain.
 The title-level claim is at four-criterion strength; the data is at
 Accuracy-only strength; the gap is filled by framing. There is no stated

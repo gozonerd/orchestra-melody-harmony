@@ -67,15 +67,15 @@ Examples:
 
 ### 3.2 Artifact codes
 
-| Code   | Artifact                                  | Plural form in prose |
-|--------|-------------------------------------------|----------------------|
-| `PRD`  | Product Requirements Document             | PRDs                 |
-| `TRD`  | Technical Requirements Document           | TRDs                 |
-| `AVD`  | Architecture & Validation Document        | AVDs                 |
-| `TQCD` | Test, Quality & Coverage Document         | TQCDs                |
-| `UXD`  | User Experience Document                  | UXDs                 |
-| `BIDX` | Bundle Index                              | bundle indexes       |
-| `REF`  | Reference document (e.g., this file)      | references           |
+| Code   | Artifact                             | Plural form in prose |
+| ------ | ------------------------------------ | -------------------- |
+| `PRD`  | Product Requirements Document        | PRDs                 |
+| `TRD`  | Technical Requirements Document      | TRDs                 |
+| `AVD`  | Architecture & Validation Document   | AVDs                 |
+| `TQCD` | Test, Quality & Coverage Document    | TQCDs                |
+| `UXD`  | User Experience Document             | UXDs                 |
+| `BIDX` | Bundle Index                         | bundle indexes       |
+| `REF`  | Reference document (e.g., this file) | references           |
 
 These seven codes are the **closed set** for v01 of this grammar. Adding a new code requires an amendment under the protocol defined in `Methodology_Versioning_And_Amendment_Protocol_2026-04-26_v01_I.md`.
 

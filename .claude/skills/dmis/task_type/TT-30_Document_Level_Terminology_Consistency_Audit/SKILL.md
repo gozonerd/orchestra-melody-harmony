@@ -1,9 +1,9 @@
 ---
-title: "Document Level Terminology Consistency Audit"
-skill_id: "SK-30"
+title: 'Document Level Terminology Consistency Audit'
+skill_id: 'SK-30'
 version: v02_I
 date: 2026-03-06
-task_type: "TT-30"
+task_type: 'TT-30'
 pipeline_assignments: [P6]
 owner: Martinez Methods
 ---
@@ -11,15 +11,18 @@ owner: Martinez Methods
 # Document Level Terminology Consistency Audit
 
 ## Purpose
+
 Build terminology index across full document, flag inconsistencies in term usage and definition, verify glossary coverage.
 
 ## Pipeline Context
+
 - **Pipelines**: P6
 - **Raw Tasks**: P6 L2, P6 L11
 - **Thread Assignments**: P6 (16 threads distributed across 6 validation passes)
 - **Category**: Validation
 
 ## Input Specification
+
 - Complete synthesized multi-section document
 - Glossary (if present in draft)
 - Domain-specific terminology reference (if available)
@@ -28,7 +31,9 @@ Build terminology index across full document, flag inconsistencies in term usage
 - Prior terminology consistency errors or known problematic terms
 
 ## Output Specification
+
 Terminology consistency audit report in YAML format.
+
 - Output must conform to: `schemas/tt30_output.yaml`
 - Reference schema in: `references/output_schema.yaml`
 - Terminology index: all extracted terms with first occurrence location and all uses
@@ -38,6 +43,7 @@ Terminology consistency audit report in YAML format.
 - Recommendations: standardization suggestions
 
 ## Methodology
+
 1. **Term Extraction**: Scan full document for domain-specific terminology, technical terms, acronyms
 2. **Occurrence Mapping**: Locate every occurrence of each term; track definition context if provided
 3. **Consistency Analysis**: Compare term usage across sections; identify variations in definition or treatment
@@ -48,6 +54,7 @@ Terminology consistency audit report in YAML format.
 8. **Summary Report**: Document inconsistencies by type (definition variance, acronym issues, glossary gaps), with remediation
 
 ## Quality Criteria
+
 - All significant domain terms extracted and indexed
 - Consistency check covers ≥ 95% of multi-occurrence terms
 - All acronyms defined on first use and consistently referenced thereafter
@@ -57,7 +64,9 @@ Terminology consistency audit report in YAML format.
 - No missed inconsistencies (false negatives)
 
 ## Accuracy Rules
+
 All outputs must comply with the 9 Critical Accuracy Rules (ACC-001 through ACC-009) defined in `ACCURACY_RULES.md`:
+
 - ACC-001: CommCare current use vs. history
 - ACC-002: Dimagi pilot = StrongMinds-wide
 - ACC-003: Dimagi ≠ CommCare
@@ -69,6 +78,7 @@ All outputs must comply with the 9 Critical Accuracy Rules (ACC-001 through ACC-
 - ACC-009: CommCare DET is standalone
 
 ## Anti-Patterns
+
 - **Over-Flagging Trivia**: Treating minor stylistic variations (e.g., "SMS" vs "text message" used intentionally) as inconsistencies
 - **Glossary-Only Audit**: Checking glossary definitions but ignoring usage variations in the document itself
 - **Acronym Blindness**: Missing undefined acronyms or overlooking inconsistent expansion
@@ -76,8 +86,10 @@ All outputs must comply with the 9 Critical Accuracy Rules (ACC-001 through ACC-
 - **Incomplete Extraction**: Missing specialized terminology or domain-specific vocabulary
 
 ## Examples
+
 See example outputs in `references/example_outputs/`
 
 ---
+
 **Last Updated**: 2026-03-06
 **Status**: Active

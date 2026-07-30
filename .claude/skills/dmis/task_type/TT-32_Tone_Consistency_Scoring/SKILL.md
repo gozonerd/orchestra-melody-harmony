@@ -1,9 +1,9 @@
 ---
-title: "Tone Consistency Scoring"
-skill_id: "SK-32"
+title: 'Tone Consistency Scoring'
+skill_id: 'SK-32'
 version: v02_I
 date: 2026-03-06
-task_type: "TT-32"
+task_type: 'TT-32'
 pipeline_assignments: [P6]
 owner: Martinez Methods
 ---
@@ -11,15 +11,18 @@ owner: Martinez Methods
 # Tone Consistency Scoring
 
 ## Purpose
+
 Score each section on formality level, technicality, verbosity, active/passive voice ratio, and reader assumption level. Flag deviations from document mean and recommend standardization.
 
 ## Pipeline Context
+
 - **Pipelines**: P6
 - **Raw Tasks**: P6 L8
 - **Thread Assignments**: P6 (16 threads distributed across 6 validation passes)
 - **Category**: Quality Assurance
 
 ## Input Specification
+
 - Complete synthesized multi-section document
 - Style guide (if available) with tone/voice specifications
 - Target reader profile and expected tone level
@@ -27,7 +30,9 @@ Score each section on formality level, technicality, verbosity, active/passive v
 - Section purpose/audience breakdown (if some sections have different intended readers)
 
 ## Output Specification
+
 Tone consistency audit report in YAML format.
+
 - Output must conform to: `schemas/tt32_output.yaml`
 - Reference schema in: `references/output_schema.yaml`
 - Per-section tone scores: formality (0-10), technicality (0-10), verbosity (0-10)
@@ -38,6 +43,7 @@ Tone consistency audit report in YAML format.
 - Recommendations: standardization suggestions by section
 
 ## Methodology
+
 1. **Baseline Extraction**: Identify target tone profile from style guide and overall document purpose
 2. **Section-by-Section Analysis**: For each section, assess:
    - Formality level (formal/professional language vs. conversational)
@@ -51,6 +57,7 @@ Tone consistency audit report in YAML format.
 6. **Recommendation Generation**: For problematic deviations, suggest specific rewording or restructuring
 
 ## Quality Criteria
+
 - Tone scoring methodology is objective and consistently applied across sections
 - Formality, technicality, and verbosity assessments are calibrated to actual document content
 - Active/passive ratio is quantitatively accurate (spot-check sentences)
@@ -60,7 +67,9 @@ Tone consistency audit report in YAML format.
 - Recommendations are rewriting-specific, not vague
 
 ## Accuracy Rules
+
 All outputs must comply with the 9 Critical Accuracy Rules (ACC-001 through ACC-009) defined in `ACCURACY_RULES.md`:
+
 - ACC-001: CommCare current use vs. history
 - ACC-002: Dimagi pilot = StrongMinds-wide
 - ACC-003: Dimagi ≠ CommCare
@@ -72,6 +81,7 @@ All outputs must comply with the 9 Critical Accuracy Rules (ACC-001 through ACC-
 - ACC-009: CommCare DET is standalone
 
 ## Anti-Patterns
+
 - **Tone Homogenization Bias**: Treating all deviations as problems; ignoring legitimate reasons for tone variation
 - **Shallow Scoring**: Assessing formality only; ignoring technicality, verbosity, and reader assumptions
 - **Arbitrary Thresholds**: Using inconsistent criteria to score tone dimensions across sections
@@ -79,8 +89,10 @@ All outputs must comply with the 9 Critical Accuracy Rules (ACC-001 through ACC-
 - **Over-Prescriptiveness**: Demanding voice consistency across sections with genuinely different purposes
 
 ## Examples
+
 See example outputs in `references/example_outputs/`
 
 ---
+
 **Last Updated**: 2026-03-06
 **Status**: Active

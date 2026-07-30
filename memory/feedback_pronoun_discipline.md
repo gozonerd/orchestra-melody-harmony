@@ -4,6 +4,7 @@ description: Always consult the user-<name>.md memory file for explicit pronouns
 type: feedback
 originSessionId: c4d8ffb1-dcb5-45bf-8572-71b0c1c04603
 ---
+
 Before any third-person singular pronoun is used to refer to any named collaborator of Krystal's, consult the corresponding `user_<name>.md` memory file for the explicit pronouns declared there. If no such memory file exists, **default to they/them** until explicit pronouns are confirmed by Krystal and captured in memory.
 
 **Why:** On 2026-04-24, in a CDCC deployment session, Claudette referred to Cody using masculine pronouns repeatedly across multiple drafts. Cody's pronouns are they/them. Krystal caught the error and requested a structural fix. In the first fix attempt, Claudette wrote a memory file whose "don't do this" examples spelled out the incorrect pronouns as literal strings referring to Cody — continuing the misgendering inside the document intended to prevent it. Krystal caught that too and named it correctly: repeating the error after correction is no longer ignorance; it is violation. The analogy Krystal drew is exact — a rule file that spells out a racial slur as a "don't say this" example would never be acceptable; the same standard applies to pronoun errors. The prevention must be structural in two layers: (1) consult memory before any pronoun use; (2) never demonstrate the error by enacting it.
@@ -12,9 +13,9 @@ Before any third-person singular pronoun is used to refer to any named collabora
 
 1. **Before writing a pronoun:** check if there is a `user_<name>.md` file in the memory directory for the person. If yes, use only the pronouns declared there.
 
-2. **If no user-* file exists and the person is a known collaborator of Krystal's:** default to they/them. Never infer from name, context, role, or any other signal. Do NOT ask Krystal mid-task unless the ambiguity is load-bearing — use they/them and note in-thread that a user-* memory entry should be created to capture the pronouns when convenient.
+2. **If no user-\* file exists and the person is a known collaborator of Krystal's:** default to they/them. Never infer from name, context, role, or any other signal. Do NOT ask Krystal mid-task unless the ambiguity is load-bearing — use they/them and note in-thread that a user-\* memory entry should be created to capture the pronouns when convenient.
 
-3. **Before presenting any draft containing pronouns to Krystal:** scan the draft for every pronoun that refers to a named collaborator. Verify each matches the user-* memory file. This includes:
+3. **Before presenting any draft containing pronouns to Krystal:** scan the draft for every pronoun that refers to a named collaborator. Verify each matches the user-\* memory file. This includes:
    - Slack message drafts to send to the collaborator
    - Slack message drafts about the collaborator
    - Handoff documents mentioning the collaborator
@@ -28,7 +29,7 @@ Before any third-person singular pronoun is used to refer to any named collabora
 
 6. **Never demonstrate a pronoun error by enacting it.** When writing documentation about pronoun discipline, training examples, rule files, or meta-commentary on this rule:
    - Give correct-usage examples ONLY
-   - Describe any error category in abstract terms (e.g., "using pronouns other than the ones declared in the user-* file," "using gendered pronouns instead of the declared pronouns")
+   - Describe any error category in abstract terms (e.g., "using pronouns other than the ones declared in the user-\* file," "using gendered pronouns instead of the declared pronouns")
    - Never spell out the wrong pronouns as quoted strings, "not X or Y" comparisons, "some people say X but should say Y" formulations, or any other construction that puts the incorrect pronouns in text referring to the named person
    - The "don't do this" pedagogy pattern is itself the error when the content of the example is a form of misgendering. Use abstract category descriptions instead.
 
@@ -36,24 +37,27 @@ Before any third-person singular pronoun is used to refer to any named collabora
 
 **Current collaborator pronoun registry** (cross-reference only; source of truth is the individual `user_<name>.md` files):
 
-| Name | Pronouns | Memory file |
-|---|---|---|
-| Krystal Martinez | she/her | `user_krystal.md` |
-| Cody | they/them | `user_cody.md` |
+| Name             | Pronouns  | Memory file       |
+| ---------------- | --------- | ----------------- |
+| Krystal Martinez | she/her   | `user_krystal.md` |
+| Cody             | they/them | `user_cody.md`    |
 
-Extend this table as new collaborators get user-* files.
+Extend this table as new collaborators get user-\* files.
 
 **Scope — this rule applies to:**
+
 - All third-person singular pronouns referring to named individuals
 - All writing surfaces: prose, code comments, commits, docs, memory files, drafts, Slack templates
 - All threads: Claudette the Code Debugger, Clauda the Experiment PI, Clauda the Value Genius, and any future threads
 - Rule and discipline documentation about pronouns themselves — item 6 applies here specifically
 
 **Scope — this rule does NOT apply to:**
+
 - Pronouns referring to abstract "the user" or "a developer" in documentation (where singular they is standard)
 - Self-reference by Claudette/Clauda (no pronouns used for the assistant entity per existing conventions)
 
 **Related:**
+
 - `user_krystal.md` — Krystal's profile, pronouns she/her
 - `user_cody.md` — Cody's profile, pronouns they/them
 - `feedback_ip_language.md` — parallel discipline pattern (branded terminology everywhere, enforced structurally not advisorily)

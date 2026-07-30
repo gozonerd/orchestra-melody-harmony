@@ -1,9 +1,9 @@
 ---
-title: "Contradiction Detection & Divergence Classification"
-skill_id: "SK-15"
+title: 'Contradiction Detection & Divergence Classification'
+skill_id: 'SK-15'
 version: v02_I
 date: 2026-03-06
-task_type: "TT-15"
+task_type: 'TT-15'
 pipeline_assignments: [P1, P2, P4]
 owner: Martinez Methods
 ---
@@ -11,16 +11,20 @@ owner: Martinez Methods
 # Contradiction Detection & Divergence Classification
 
 ## Purpose
+
 Identify cross-source disagreements and classify using binary decision tree. This task type systematically categorizes source disagreements to determine whether they require resolution before synthesis, halting processing, or can be documented and included in final output.
 
 ## Pipeline Context
+
 - **Pipelines:** P1 (Raw Input Processing), P2 (Foundational Analysis), P4 (Final Review & Integration)
 - **Raw Tasks Covered:** P1.2-L8, P2.2-L5 (contradiction part), P2.2-L11, P4.2-L7
 - **Dependencies:** Full thread inventory from P1, analysis comparisons from P2, convergence scoring from P4
 - **Purpose:** Manage disagreement in source material with systematic classification framework
 
 ## Input Specification
+
 Inputs to TT-15 include:
+
 - Complete thread analysis from P1.2-L8 identifying contradictions
 - Contradiction-scored analysis from P2.2-L5 and P2.2-L11
 - Statement-level comparisons across threads
@@ -29,6 +33,7 @@ Inputs to TT-15 include:
 - P4.2-L7 integration decisions and their justifications
 
 ## Output Specification
+
 - Output must conform to: `schemas/tt15_output.yaml`
 - Reference schema in: `references/output_schema.yaml`
 - Produce contradiction classification report with:
@@ -41,6 +46,7 @@ Inputs to TT-15 include:
   - Aggregate status: can proceed to synthesis or processing blocked
 
 ## Methodology
+
 1. **Contradiction Extraction:** Identify all statement pairs where sources directly contradict (not just differ in emphasis)
 2. **Context Preservation:** For each contradiction, document the specific thread sources, exact claims, and supporting evidence
 3. **Decision Tree Application:** For each contradiction, apply the three-question decision tree:
@@ -56,6 +62,7 @@ Inputs to TT-15 include:
 7. **Integration Recommendation:** Determine if processing can proceed to synthesis stage
 
 ## Quality Criteria
+
 - **Accuracy:** Contradictions accurately identified (genuine disagreement, not paraphrase variation)
 - **Decision Tree Compliance:** All contradictions receive proper tree-based classification
 - **Evidence Grounding:** Classification decisions supported by explicit reference to source material
@@ -64,7 +71,9 @@ Inputs to TT-15 include:
 - **Transparency:** Decision reasoning documented for each contradiction
 
 ## Accuracy Rules
+
 All outputs must comply with the 9 Critical Accuracy Rules (ACC-001 through ACC-009) defined in `ACCURACY_RULES.md`:
+
 - ACC-001: CommCare current use vs. history (distinguish SMZ active deployment from Uganda pilot)
 - ACC-002: Dimagi pilot = StrongMinds-wide (both Uganda and Zambia)
 - ACC-003: Dimagi ≠ CommCare (platform vs. consulting firm)
@@ -76,6 +85,7 @@ All outputs must comply with the 9 Critical Accuracy Rules (ACC-001 through ACC-
 - ACC-009: CommCare DET is standalone (separate Python CLI)
 
 ## Divergence Decision Tree
+
 ```
 CONTRADICTION IDENTIFIED
 ↓
@@ -100,6 +110,7 @@ Q1: Is there factual ground truth available?
 ```
 
 ## Anti-Patterns
+
 - **False Contradictions:** Marking paraphrase variations or complementary points as contradictions
 - **Shallow Tree Application:** Making classification decisions without properly evaluating all three questions
 - **Missing Context:** Classifying contradictions without documenting the threads involved or supporting evidence
@@ -108,4 +119,5 @@ Q1: Is there factual ground truth available?
 - **Silent Halts:** Identifying HALT-classified contradictions without explicitly blocking processing
 
 ## Examples
+
 See example outputs in `references/example_outputs/` for gold-standard contradiction classification showing proper decision tree application, evidence-grounded classifications, and remediation recommendations.

@@ -29,35 +29,35 @@ The 5 individual `*-ai-orchestration` skills each encode deep domain knowledge f
 
 ## Sibling skills
 
-| Skill | Best for | Renders in |
-|---|---|---|
-| `/mermaid-ai-orchestration` | DAGs, flowcharts, sequence diagrams, basic DFDs (≤ ~15 nodes) | GitHub markdown, GitLab, VS Code, Notion, Obsidian — in-thread or .md |
-| `/graphviz-ai-orchestration` | Dense dependency graphs (20+ nodes), publication-quality static diagrams, hierarchical clusters | Graphviz CLI, VS Code, Kroki, Jupyter — produces `.dot` / `.gv` / PNG |
-| `/plantuml-ai-orchestration` | Rich swimlanes (human + AI), formal UML (sequence/state/component), well-typed activity diagrams | PlantUML CLI, IntelliJ, VS Code, Kroki — produces `.puml` / PNG / SVG |
-| `/bpmn-ai-orchestration` | Business-process orchestration with formal BPMN 2.0 semantics (gateways, lanes, events, message flows) | bpmn.io, Camunda Modeler, Signavio — produces `.bpmn` |
-| `/html-interactive-ai-orchestration` | Interactive exploration with zoom / click / drill-down; rich data-flow diagrams with per-step I/O detail | Standalone HTML page; embed in docs or open in browser |
+| Skill                                | Best for                                                                                                 | Renders in                                                            |
+| ------------------------------------ | -------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `/mermaid-ai-orchestration`          | DAGs, flowcharts, sequence diagrams, basic DFDs (≤ ~15 nodes)                                            | GitHub markdown, GitLab, VS Code, Notion, Obsidian — in-thread or .md |
+| `/graphviz-ai-orchestration`         | Dense dependency graphs (20+ nodes), publication-quality static diagrams, hierarchical clusters          | Graphviz CLI, VS Code, Kroki, Jupyter — produces `.dot` / `.gv` / PNG |
+| `/plantuml-ai-orchestration`         | Rich swimlanes (human + AI), formal UML (sequence/state/component), well-typed activity diagrams         | PlantUML CLI, IntelliJ, VS Code, Kroki — produces `.puml` / PNG / SVG |
+| `/bpmn-ai-orchestration`             | Business-process orchestration with formal BPMN 2.0 semantics (gateways, lanes, events, message flows)   | bpmn.io, Camunda Modeler, Signavio — produces `.bpmn`                 |
+| `/html-interactive-ai-orchestration` | Interactive exploration with zoom / click / drill-down; rich data-flow diagrams with per-step I/O detail | Standalone HTML page; embed in docs or open in browser                |
 
 ## Routing decision tree
 
 Ask these in order; stop as soon as a format is uniquely indicated.
 
-### Q0 — Human reader or deterministic validator? *(added 2026-06-10 per June 2026 PipeKill research on machine-linted intake gates)*
+### Q0 — Human reader or deterministic validator? _(added 2026-06-10 per June 2026 PipeKill research on machine-linted intake gates)_
 
 Ask first, before everything else: **is this artifact consumed by a human reader, or by a deterministic validator / gate** (machine-linted intake gate, CI schema check, governance adjudication pipeline)?
 
-| Answer | Routing |
-|---|---|
-| "A human reads it" (doc, README, slide, review, presentation) | Continue to Q1–Q3 below |
+| Answer                                                                                     | Routing                                                                             |
+| ------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------- |
+| "A human reads it" (doc, README, slide, review, presentation)                              | Continue to Q1–Q3 below                                                             |
 | "A machine validates / adjudicates it" (linted intake gate, schema validator, policy gate) | Use the **gate path** below; do NOT continue to Q1–Q3 and do NOT default to Mermaid |
 
 **Gate path** — deterministic-validator consumers need a parseable, validatable grammar:
 
-| Artifact needed | Format | Skill |
-|---|---|---|
-| Process / orchestration model with formal gateway-lane-event semantics | BPMN 2.0 XML (XSD-validatable; lintable by Camunda / Flowable tooling) | `/bpmn-ai-orchestration` |
-| Dependency structure / DAG | Graphviz DOT (formal machine-parseable grammar; JSON DAG obtainable via `dot -Tdot_json`) | `/graphviz-ai-orchestration` |
-| Threat-model DFD (trust-boundary + data-classification semantics for governance adjudication) | e.g., OWASP Threat Dragon JSON or pytm (threat-model-as-code) | **GAP — no current skill.** See guidance note below |
-| Any other validator-consumed artifact (state machine, sequence contract, …) | Whatever schema the gate actually lints (XML/JSON with a published schema) | No sibling fits → author the schema directly in-thread + flag the gap to Krystal |
+| Artifact needed                                                                               | Format                                                                                    | Skill                                                                            |
+| --------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| Process / orchestration model with formal gateway-lane-event semantics                        | BPMN 2.0 XML (XSD-validatable; lintable by Camunda / Flowable tooling)                    | `/bpmn-ai-orchestration`                                                         |
+| Dependency structure / DAG                                                                    | Graphviz DOT (formal machine-parseable grammar; JSON DAG obtainable via `dot -Tdot_json`) | `/graphviz-ai-orchestration`                                                     |
+| Threat-model DFD (trust-boundary + data-classification semantics for governance adjudication) | e.g., OWASP Threat Dragon JSON or pytm (threat-model-as-code)                             | **GAP — no current skill.** See guidance note below                              |
+| Any other validator-consumed artifact (state machine, sequence contract, …)                   | Whatever schema the gate actually lints (XML/JSON with a published schema)                | No sibling fits → author the schema directly in-thread + flag the gap to Krystal |
 
 **Why the human-reader formats are wrong here:** Mermaid offers no machine-readable AST export for flowcharts — none in mermaid-cli at all (open upstream issue mermaid-js/mermaid-cli#978) — so a deterministic gate cannot lint what it cannot parse. HTML-interactive output is a rendering for human exploration, not a schema. Neither can be deterministically adjudicated.
 
@@ -65,33 +65,33 @@ Ask first, before everything else: **is this artifact consumed by a human reader
 
 ### Q1 — Where will it be consumed?
 
-| Answer | Format candidate(s) |
-|---|---|
-| "Inline in markdown / GitHub / a doc / chat" | Mermaid (primary) |
-| "Standalone image file for a slide deck / paper / report" | Graphviz, PlantUML |
-| "An interactive page / something I can click around in" | HTML-interactive |
-| "A formal business-process model" | BPMN |
+| Answer                                                    | Format candidate(s) |
+| --------------------------------------------------------- | ------------------- |
+| "Inline in markdown / GitHub / a doc / chat"              | Mermaid (primary)   |
+| "Standalone image file for a slide deck / paper / report" | Graphviz, PlantUML  |
+| "An interactive page / something I can click around in"   | HTML-interactive    |
+| "A formal business-process model"                         | BPMN                |
 
 ### Q2 — What kind of structure are you visualizing?
 
-| Answer | Format candidate(s) |
-|---|---|
-| "Dependency graph / DAG / which-pipeline-feeds-which" | Mermaid (≤ 15 nodes) → Graphviz (20+) |
-| "Sequence of who-calls-whom" | Mermaid sequence diagram, PlantUML sequence |
-| "Human-and-AI swimlanes" | PlantUML (rich), BPMN (formal) — NOT Mermaid (limited swimlane support) |
-| "Data flow with I/O per step" | Mermaid (basic), HTML-interactive (rich), Graphviz (publication-grade) |
-| "Process with gateways / events / message-passing" | BPMN |
-| "State machine / lifecycle" | PlantUML state, Mermaid stateDiagram |
+| Answer                                                | Format candidate(s)                                                     |
+| ----------------------------------------------------- | ----------------------------------------------------------------------- |
+| "Dependency graph / DAG / which-pipeline-feeds-which" | Mermaid (≤ 15 nodes) → Graphviz (20+)                                   |
+| "Sequence of who-calls-whom"                          | Mermaid sequence diagram, PlantUML sequence                             |
+| "Human-and-AI swimlanes"                              | PlantUML (rich), BPMN (formal) — NOT Mermaid (limited swimlane support) |
+| "Data flow with I/O per step"                         | Mermaid (basic), HTML-interactive (rich), Graphviz (publication-grade)  |
+| "Process with gateways / events / message-passing"    | BPMN                                                                    |
+| "State machine / lifecycle"                           | PlantUML state, Mermaid stateDiagram                                    |
 
 ### Q3 — Scale and audience?
 
-| Answer | Format candidate(s) |
-|---|---|
-| "Small (≤ 10 nodes), shipped to engineers" | Mermaid (lightest weight) |
-| "Medium (10–20 nodes), shipped to ops or PM" | PlantUML; Mermaid OK up to ~15 |
-| "Large (20+ nodes), publication or audit" | Graphviz |
-| "Compliance / regulatory / formal review" | BPMN (notation auditors recognize) |
-| "Stakeholder presentation, want zoom / drill-down" | HTML-interactive |
+| Answer                                             | Format candidate(s)                |
+| -------------------------------------------------- | ---------------------------------- |
+| "Small (≤ 10 nodes), shipped to engineers"         | Mermaid (lightest weight)          |
+| "Medium (10–20 nodes), shipped to ops or PM"       | PlantUML; Mermaid OK up to ~15     |
+| "Large (20+ nodes), publication or audit"          | Graphviz                           |
+| "Compliance / regulatory / formal review"          | BPMN (notation auditors recognize) |
+| "Stakeholder presentation, want zoom / drill-down" | HTML-interactive                   |
 
 If after the questions multiple formats are still viable: **default to Mermaid** (lowest friction; renders in-thread; good enough for the majority of AI-orchestration cases). Note the alternatives so the user can switch later. **This default applies to the human-reader path (Q0) only** — never default a validator/gate-consumed artifact to Mermaid; it has no machine-readable AST export for flowcharts (mermaid-js/mermaid-cli#978) and cannot be deterministically adjudicated.
 
@@ -123,6 +123,7 @@ Output: "Format already specified — routing to `/mermaid-ai-orchestration` dir
 > User: "Diagram the orchestration."
 
 Output:
+
 ```
 A few quick routing questions:
 0. Who consumes it — a human reader, or a deterministic validator/gate (machine-linted intake, CI schema check)?

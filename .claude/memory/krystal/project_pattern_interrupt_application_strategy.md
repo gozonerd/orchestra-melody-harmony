@@ -24,9 +24,11 @@ Both parts are required. WHY ME alone reads as "trust me." WHY NOT ML/CS alone r
 ### 2. The implicit-bias chain (what hiring managers process BEFORE reading credentials)
 
 Krystal verbatim:
+
 > "before my credentials, hiring managers see my name. that is three mismatches to the role that they see before my credentials. krystal. woman. martinez.latine. krystal martinez. latina. then, my credentials are read AGAINST MY RACE AND GENDER AND, BC WERE TALKING MENTAL MODELS AND SCHEMAS AND NOT INDIVIDUAL PREJUDICIAL BELIEFS VERY LIKELY CLASS IS TRIGGERED AS WELL AS A MISTMATCH TO THIS $850K ROLE."
 
 The chain:
+
 1. **Name** = Krystal (gendered: woman) + Martinez (racialized: Latina) + class triggers
 2. **Three mismatches activated before any content is read**: gender mismatch (high-status technical role) + race mismatch (high-status technical role) + class mismatch ($850K hero-role compensation)
 3. **Credentials are then read AGAINST race/gender/class schema** — they don't override the schema; they're filtered through it
@@ -37,12 +39,14 @@ The chain:
 ### 3. The pattern-interrupt-of-the-pattern-interrupt (the strategic move)
 
 Krystal verbatim:
+
 > "or, you get through all my evidence. it's graded against me being a woman of color and a non traditional candidate, but it doesn't have to prove further credentials. and then, at the end of my portfolio funnel website, you get to my resume (that i said didn't have the proof they needed to see if i only had 300 seconds of their attention) and see my credentials, and see my academic lineage (it'll be prominent for the frontierness of it all) and it then triggers 'THIS is what she said was not her best proof. wow, i really DO wonder what there is in portfolio 2/wow i really DO need to talk to this person whose least best card was her ivy league creds...' or at the very least it confirms what they already are thinking about the quality of my evidence. by introducing creds last, it's a pattern interrupt of itself, and it allows for a bit more critical thinking past heuristics and allows for the evidence to not have an extra layer of proof burden upon them."
 
 The move:
+
 1. **Evidence FIRST** — surface methodology + failure-mode work + pedagogical-translation thesis + ASAE/DRR/Bobo/D2R artifacts BEFORE any credential mention
 2. **Resume + academic lineage LAST** — at the END of the portfolio funnel
-3. **Frame-reversal trigger** — reader gets to credentials AFTER processing evidence: *"THIS is what she said was NOT her best proof. Wow, I really do need to talk to this person whose LEAST-BEST card was her Ivy League creds."*
+3. **Frame-reversal trigger** — reader gets to credentials AFTER processing evidence: _"THIS is what she said was NOT her best proof. Wow, I really do need to talk to this person whose LEAST-BEST card was her Ivy League creds."_
 4. **OR at minimum**: credentials confirm what reader already concluded about evidence quality (still net-positive)
 5. **Critical thinking past heuristics**: by introducing creds last, the reader's automatic credential-grading schema is interrupted; they have to think critically about the evidence on its own terms
 6. **Evidence doesn't carry extra proof burden** — without credential-priming, evidence is evaluated on its own merits, not as "proof of whether the Ivy admit was earned"
@@ -50,13 +54,14 @@ The move:
 ### 4. The fine balance: "CHALLENGE THAT HITS BUT DOESN'T THREATEN"
 
 Pattern-interrupt applications walk a knife's edge:
+
 - **Challenge** = the WHY NOT ML/CS argument MUST hit (otherwise no reason to hire Krystal over an ML/CS candidate)
 - **Doesn't threaten** = the challenge must NOT read as attacking the reader's own discipline / training / role
 - **Mechanism:** challenge the FRAME (ML/CS is the wrong tool for this specific job), not the PEOPLE doing ML/CS work. ML/CS people are excellent at ML/CS problems; this role is not an ML/CS problem; ergo Krystal is the better fit for THIS specific role, not "better than ML/CS people."
 
 ### 5. The N=1 framing discipline
 
-Earlier resumes had bare "N=1 in known intersection set" — surfaces a defensible-but-skeptically-readable claim. Iteration-4 RESOLVED added the qualifier: *"I name this intersection as one I have not yet found another practitioner occupying; I do not claim it as an empirical N=1 across a surveyed population."* This is the right framing. The N=1 claim is structural (intersection-rarity claim) not superiority (better-than-others claim).
+Earlier resumes had bare "N=1 in known intersection set" — surfaces a defensible-but-skeptically-readable claim. Iteration-4 RESOLVED added the qualifier: _"I name this intersection as one I have not yet found another practitioner occupying; I do not claim it as an empirical N=1 across a surveyed population."_ This is the right framing. The N=1 claim is structural (intersection-rarity claim) not superiority (better-than-others claim).
 
 **How to apply:**
 

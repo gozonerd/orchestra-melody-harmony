@@ -1,9 +1,9 @@
 ---
-title: "Presupposition Archaeology"
-skill_id: "SK-16"
+title: 'Presupposition Archaeology'
+skill_id: 'SK-16'
 version: v02_I
 date: 2026-03-06
-task_type: "TT-16"
+task_type: 'TT-16'
 pipeline_assignments: [P1, P2, P3, P4, P6]
 owner: Martinez Methods
 ---
@@ -11,16 +11,20 @@ owner: Martinez Methods
 # Presupposition Archaeology
 
 ## Purpose
+
 Read from specified audience perspective, flag every implicit assumption not grounded in the document. This task type performs deep analysis of unstated assumptions embedded in DATS narratives to ensure clarity and transparency for the intended audience.
 
 ## Pipeline Context
+
 - **Pipelines:** P1 (Raw Input Processing), P2 (Foundational Analysis), P3 (Synthesis & Integration), P4 (Final Review & Integration), P6 (Distribution & Audience Adaptation)
 - **Raw Tasks Covered:** P1.2-L6, P2.2-L9, P3.2-L7, P4.2-L8, P4.2-PS-f
 - **Dependencies:** Document text from all synthesis stages, audience specification, supporting evidence registry
 - **Purpose:** Ensure transparency by surfacing and grounding all implicit assumptions
 
 ## Input Specification
+
 Inputs to TT-16 include:
+
 - Complete DATS narrative text (from P4 final integration)
 - Audience specification (who is intended to read this?)
 - Full evidence database with source citations
@@ -29,6 +33,7 @@ Inputs to TT-16 include:
 - Any domain-specific background materials referenced
 
 ## Output Specification
+
 - Output must conform to: `schemas/tt16_output.yaml`
 - Reference schema in: `references/output_schema.yaml`
 - Produce presupposition audit with:
@@ -40,6 +45,7 @@ Inputs to TT-16 include:
   - Revised text incorporating explicit grounding (where feasible)
 
 ## Methodology
+
 1. **Audience Definition:** Establish baseline knowledge and context for target audience
 2. **Close Reading:** Read narrative from audience perspective, noting where comprehension depends on unstated background
 3. **Assumption Extraction:** For each key claim, identify prerequisite assumptions (factual, methodological, definitional)
@@ -54,6 +60,7 @@ Inputs to TT-16 include:
 8. **Transparency Report:** Document all excavated assumptions with grounding status
 
 ## Quality Criteria
+
 - **Comprehensiveness:** All key assumptions identified, not just obvious ones
 - **Audience Accuracy:** Assumptions identified from target audience perspective, not domain-expert perspective
 - **Precision:** Distinguishing between missing definitions, missing evidence, and missing context
@@ -62,7 +69,9 @@ Inputs to TT-16 include:
 - **Feasibility:** Remediation options realistic given document scope and audience needs
 
 ## Accuracy Rules
+
 All outputs must comply with the 9 Critical Accuracy Rules (ACC-001 through ACC-009) defined in `ACCURACY_RULES.md`:
+
 - ACC-001: CommCare current use vs. history (distinguish SMZ active deployment from Uganda pilot)
 - ACC-002: Dimagi pilot = StrongMinds-wide (both Uganda and Zambia)
 - ACC-003: Dimagi ≠ CommCare (platform vs. consulting firm)
@@ -74,6 +83,7 @@ All outputs must comply with the 9 Critical Accuracy Rules (ACC-001 through ACC-
 - ACC-009: CommCare DET is standalone (separate Python CLI)
 
 ## Anti-Patterns
+
 - **Expert Blindspot:** Identifying assumptions from domain-expert perspective rather than target audience perspective
 - **Assumption Inflation:** Flagging every logical prerequisite, including those too obvious for explicit statement
 - **Missing Context Gaps:** Focusing only on factual assumptions while missing definitional or methodological ones
@@ -81,4 +91,5 @@ All outputs must comply with the 9 Critical Accuracy Rules (ACC-001 through ACC-
 - **Shallow Archaeology:** Stopping at surface-level assumptions without examining underlying presuppositions
 
 ## Examples
+
 See example outputs in `references/example_outputs/` for gold-standard presupposition audits showing assumption identification from audience perspective, grounding assessment, and remediation recommendations.

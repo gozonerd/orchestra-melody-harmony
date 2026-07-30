@@ -11,6 +11,7 @@ This source tier is **lower-trust by design** — community posts can be wrong, 
 ## What to fetch (via WebSearch + WebFetch as needed)
 
 1. **Reddit r/ClaudeAI:**
+
    ```
    WebSearch: "{VERSION}" site:reddit.com/r/ClaudeAI
    WebSearch: "Claude Desktop {VERSION}" reddit
@@ -18,6 +19,7 @@ This source tier is **lower-trust by design** — community posts can be wrong, 
    ```
 
 2. **Hacker News:**
+
    ```
    WebSearch: "Claude Desktop {VERSION}" site:news.ycombinator.com
    WebSearch: "Claude {APP_FAMILY} update" news.ycombinator.com (last 7 days)
@@ -41,19 +43,19 @@ For top results that look relevant, optionally `WebFetch` to read the actual thr
 
 ```json
 {
-  "version_queried": "{VERSION}",
-  "version_specifically_named_in_threads": false,
-  "thread_count": 0,
-  "sentiment_skew": "none",
-  "top_threads": [
-    {
-      "url": "...",
-      "title": "...",
-      "platform": "reddit|hn|other",
-      "one_line_takeaway": "..."
-    }
-  ],
-  "search_failures": []
+	"version_queried": "{VERSION}",
+	"version_specifically_named_in_threads": false,
+	"thread_count": 0,
+	"sentiment_skew": "none",
+	"top_threads": [
+		{
+			"url": "...",
+			"title": "...",
+			"platform": "reddit|hn|other",
+			"one_line_takeaway": "..."
+		}
+	],
+	"search_failures": []
 }
 ```
 

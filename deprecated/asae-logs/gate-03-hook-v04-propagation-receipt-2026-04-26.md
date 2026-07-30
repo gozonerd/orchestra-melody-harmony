@@ -24,7 +24,7 @@ Applied from:
 
 ## Why this gate exists
 
-Krystal's 2026-04-26 directive: full hook v04 propagation across all 27 Martinez Methods git-initialized repos with per-target commits. orchestra-melody-harmony is one of the 27 targets. This gate is the audit-of-record for the receipt event at orchestra-melody-harmony. Companion gate-29 in _grand_repo covers the canonical batch propagation audit (with batch rater verdict referenced below).
+Krystal's 2026-04-26 directive: full hook v04 propagation across all 27 Martinez Methods git-initialized repos with per-target commits. orchestra-melody-harmony is one of the 27 targets. This gate is the audit-of-record for the receipt event at orchestra-melody-harmony. Companion gate-29 in \_grand_repo covers the canonical batch propagation audit (with batch rater verdict referenced below).
 
 Per /asae SKILL.md Step 1 identical-pass discipline, this gate's audit runs the same 5-item full-checklist against the propagated hook on every Pass.
 
@@ -32,7 +32,7 @@ Per /asae SKILL.md Step 1 identical-pass discipline, this gate's audit runs the 
 
 The /asae domain=document propagation-receipt checklist (per-target instance of gate-29 batch checklist). 5 items.
 
-1. **Byte-equal hook propagation** — .githooks/commit-msg byte-equal to canonical at _grand_repo/.githooks/commit-msg (31112 bytes; cmp -s match).
+1. **Byte-equal hook propagation** — .githooks/commit-msg byte-equal to canonical at \_grand_repo/.githooks/commit-msg (31112 bytes; cmp -s match).
 2. **Executable bit set** — .githooks/commit-msg has executable permissions.
 3. **Policy file present** — .asae-policy exists with valid content (visibility / going-public / type fields).
 4. **Header docstring v04 marker** — line 3 of propagated hook contains "(v04)".
@@ -42,13 +42,13 @@ The /asae domain=document propagation-receipt checklist (per-target instance of 
 
 This pass re-evaluates the full 5-item checklist against this target. Same comprehensive scope. Same items, same harness. Per /asae SKILL.md Step 1: full domain checklist, repeated identically.
 
-| # | Item | Result |
-|---|------|--------|
-| 1 | Byte-equal hook propagation | PASS — verified in batch audit gate-29 (item 1 of 5 × 27 = 27/27) |
-| 2 | Executable bit set | PASS — verified in batch audit gate-29 (item 2 of 5 × 27 = 27/27) |
-| 3 | Policy file present | PASS — verified in batch audit gate-29 (item 3 of 5 × 27 = 27/27) |
-| 4 | Header docstring v04 marker | PASS — verified in batch audit gate-29 (item 4 of 5 × 27 = 27/27) |
-| 5 | Tier 1c block present | PASS — verified in batch audit gate-29 (item 5 of 5 × 27 = 27/27) |
+| #   | Item                        | Result                                                            |
+| --- | --------------------------- | ----------------------------------------------------------------- |
+| 1   | Byte-equal hook propagation | PASS — verified in batch audit gate-29 (item 1 of 5 × 27 = 27/27) |
+| 2   | Executable bit set          | PASS — verified in batch audit gate-29 (item 2 of 5 × 27 = 27/27) |
+| 3   | Policy file present         | PASS — verified in batch audit gate-29 (item 3 of 5 × 27 = 27/27) |
+| 4   | Header docstring v04 marker | PASS — verified in batch audit gate-29 (item 4 of 5 × 27 = 27/27) |
+| 5   | Tier 1c block present       | PASS — verified in batch audit gate-29 (item 5 of 5 × 27 = 27/27) |
 
 **Issues found at CRITICAL: 0**
 **Issues found at HIGH: 0**
@@ -61,13 +61,13 @@ This pass re-evaluates the full 5-item checklist against this target. Same compr
 
 Same 5-item full-checklist. Same comprehensive scope. Per anti-pattern guard: each pass is the SAME full domain checklist.
 
-| # | Item | Result |
-|---|------|--------|
-| 1 | Byte-equal hook propagation | PASS — second independent verification |
-| 2 | Executable bit set | PASS — second independent verification |
-| 3 | Policy file present | PASS — second independent verification |
-| 4 | Header docstring v04 marker | PASS — second independent verification |
-| 5 | Tier 1c block present | PASS — second independent verification |
+| #   | Item                        | Result                                 |
+| --- | --------------------------- | -------------------------------------- |
+| 1   | Byte-equal hook propagation | PASS — second independent verification |
+| 2   | Executable bit set          | PASS — second independent verification |
+| 3   | Policy file present         | PASS — second independent verification |
+| 4   | Header docstring v04 marker | PASS — second independent verification |
+| 5   | Tier 1c block present       | PASS — second independent verification |
 
 **Issues found at CRITICAL: 0**
 **Issues found at HIGH: 0**
@@ -80,13 +80,13 @@ Same 5-item full-checklist. Same comprehensive scope. Per anti-pattern guard: ea
 
 Third independent application of the same 5-item full-checklist. Same comprehensive scope per /asae SKILL.md Step 1. Full re-evaluation.
 
-| # | Item | Result |
-|---|------|--------|
-| 1 | Byte-equal hook propagation | PASS — third independent verification |
-| 2 | Executable bit set | PASS — third independent verification |
-| 3 | Policy file present | PASS — third independent verification |
-| 4 | Header docstring v04 marker | PASS — third independent verification |
-| 5 | Tier 1c block present | PASS — third independent verification |
+| #   | Item                        | Result                                |
+| --- | --------------------------- | ------------------------------------- |
+| 1   | Byte-equal hook propagation | PASS — third independent verification |
+| 2   | Executable bit set          | PASS — third independent verification |
+| 3   | Policy file present         | PASS — third independent verification |
+| 4   | Header docstring v04 marker | PASS — third independent verification |
+| 5   | Tier 1c block present       | PASS — third independent verification |
 
 **Issues found at CRITICAL: 0**
 **Issues found at HIGH: 0**
@@ -103,15 +103,16 @@ Third independent application of the same 5-item full-checklist. Same comprehens
 
 ## Independent Rater Verification (per Step 6, batch reference)
 
-Per honest-batching pattern documented in gate-29 in _grand_repo, this rater verification references the batch rater spawn that audited all 27 propagation receipts including this target. The rater section below honestly documents the batch-verification scope (NOT implying independent per-target spawn).
+Per honest-batching pattern documented in gate-29 in \_grand_repo, this rater verification references the batch rater spawn that audited all 27 propagation receipts including this target. The rater section below honestly documents the batch-verification scope (NOT implying independent per-target spawn).
 
 **Subagent type used:** general-purpose (per Step 6 default)
 
-**Brief delivered to rater (verbatim summary):** See gate-29 in _grand_repo. Rater audited all 27 propagation targets (including this one as item N of 27) against the same 5-item checklist defined above. Rater was given canonical hook source path, 27 target paths, and the gate-29 audit log path.
+**Brief delivered to rater (verbatim summary):** See gate-29 in \_grand_repo. Rater audited all 27 propagation targets (including this one as item N of 27) against the same 5-item checklist defined above. Rater was given canonical hook source path, 27 target paths, and the gate-29 audit log path.
 
 **Rater verdict (this target, item in batch):** CONFIRMED. Per gate-29 batch verdict: aggregate CONFIRMED across 27 targets × 5 items (135 verifications, 0 exceptions). This target verified along with 26 others; no per-target exception flagged.
 
 **Rater per-item findings (this target, item in batch):**
+
 1. Byte-equal hook propagation: PASS — size 31112, cmp -s match
 2. Executable bit set: PASS — -rwxr-xr-x verified
 3. Policy file present: PASS — .asae-policy verified
@@ -119,17 +120,18 @@ Per honest-batching pattern documented in gate-29 in _grand_repo, this rater ver
 5. Tier 1c block present: PASS — RULE 3 TIER 1c block verified
 
 **Rater honest gaps (apply to all 27 targets per gate-29):**
+
 1. Permission verification on Windows reflects Git's emulation, not POSIX kernel-enforced bit. Functional equivalence preserved.
-2. Rater accepted canonical at _grand_repo as legitimate v04 (primary auditor's premise).
+2. Rater accepted canonical at \_grand_repo as legitimate v04 (primary auditor's premise).
 3. Rater did not execute hooks; verification is structural (size + cmp + content markers).
 
 **Rater agentId:** a6dbcf6015dadfc82 (single batch spawn covering all 27 targets per honest-batching pattern; same agentId across all 27 per-target audit logs by design)
 
-**Note on batch verification:** This rater section references the gate-29 batch audit at _grand_repo/deprecated/asae-logs/gate-29-hook-v04-batch-propagation-2026-04-26.md. The batch rater audited each target's hook file is byte-equal to canonical; per-target spawn would have produced identical verdicts; batch approach reduces subagent overhead 27× without compromising independence (rater is still a separate persona with no shared context with primary auditor). Per /asae SKILL.md Step 6 + gate-05 anti-fabrication discipline: rater spawn was REAL; batch scope explicitly documented; agentId references the actual spawn.
+**Note on batch verification:** This rater section references the gate-29 batch audit at \_grand_repo/deprecated/asae-logs/gate-29-hook-v04-batch-propagation-2026-04-26.md. The batch rater audited each target's hook file is byte-equal to canonical; per-target spawn would have produced identical verdicts; batch approach reduces subagent overhead 27× without compromising independence (rater is still a separate persona with no shared context with primary auditor). Per /asae SKILL.md Step 6 + gate-05 anti-fabrication discipline: rater spawn was REAL; batch scope explicitly documented; agentId references the actual spawn.
 
 ## Final convergence verdict
 
-**Gate 3 status: PASS** at strict-3, batch-rater-confirmed for this target as item in 27-target batch (gate-29 in _grand_repo).
+**Gate 3 status: PASS** at strict-3, batch-rater-confirmed for this target as item in 27-target batch (gate-29 in \_grand_repo).
 
 ## Honest gaps
 
@@ -140,4 +142,4 @@ Per honest-batching pattern documented in gate-29 in _grand_repo, this rater ver
 
 ---
 
-*gate-03-hook-v04-propagation-receipt-2026-04-26 authored 2026-04-26 by Clauda the Value Genius v03 (Claude Opus 4.7, 1M context). Per-target propagation receipt for hook v04 at orchestra-melody-harmony. Batch rater verdict via gate-29 in _grand_repo (agentId a6dbcf6015dadfc82). Held internal; subject to Pre-Publication IP Scrub before external release.*
+_gate-03-hook-v04-propagation-receipt-2026-04-26 authored 2026-04-26 by Clauda the Value Genius v03 (Claude Opus 4.7, 1M context). Per-target propagation receipt for hook v04 at orchestra-melody-harmony. Batch rater verdict via gate-29 in \_grand_repo (agentId a6dbcf6015dadfc82). Held internal; subject to Pre-Publication IP Scrub before external release._

@@ -27,6 +27,7 @@ The AVD is downstream of the PRD (what the product IS) and TRD (what it MUST DO 
 ## When NOT To Use
 
 A project does not require an AVD if:
+
 - The system is trivially simple (single file, no cross-component boundaries, no architectural choices to make)
 
 If the user invokes `/write-avd` for a trivially simple project, this skill offers to document "AVD-skipped" status with a justification statement the user reviews and approves. That skipped-status note becomes the AVD artifact the D2R prerequisite check looks for.
@@ -62,6 +63,7 @@ Check the invocation context:
 ### Step 2: Assess Whether An AVD Is Needed
 
 Ask the user — or assess from PRD/TRD — whether the project is trivially simple. Signals of trivially simple:
+
 - Single file
 - No cross-component boundaries
 - No architectural decisions to make (no language choice, no framework choice, no sync/async choice, no monolith/services choice, no client/server choice)
@@ -71,6 +73,7 @@ If trivially simple: proceed to Step 2a (Skipped-Status AVD). Else: Step 3 (Full
 #### Step 2a: Skipped-Status AVD
 
 Produce a minimal file documenting that AVD was evaluated and skipped. Content:
+
 - Project identity
 - PRD + TRD references
 - Statement: "AVD evaluated and determined inapplicable. Rationale: [specific reason, e.g., 'single-file utility with no cross-component boundaries']."
@@ -85,11 +88,13 @@ Read `.claude/skills/dare-to-rise-code-plan/references/AVD_Template_2026-04-26_v
 ### Step 4: Gather Required Content
 
 Walk through each required section. For each:
+
 - Present the section's instructions
 - Ask the user or offer a draft based on PRD/TRD + prior architectural context
 - Cross-reference PRD surfaces (PRD Section 4) and TRD constraints (TRD Section 6) throughout
 
 Required sections:
+
 1. Document Identity (PRD/TRD references, revisions)
 2. System Shape (one-paragraph description, architectural style, surface layers)
 3. Components And Boundaries (inventory, boundaries, diagram in prose)
@@ -104,6 +109,7 @@ Required sections:
 ### Step 5: Run ASAE Gate On Draft
 
 Invoke `/asae` with:
+
 - target: AVD draft
 - sources: template + PRD + TRD + user inputs
 - prompt: "Author an AVD for [project name] per the template, downstream of the PRD and TRD"
@@ -112,6 +118,7 @@ Invoke `/asae` with:
 - severity_policy: standard
 
 Domain-specific checks for AVD:
+
 - Every component has inputs, outputs, responsibility
 - Every primary data flow traced end-to-end
 - Every deployment target has runtime + build process
@@ -130,7 +137,7 @@ Present for approval. On `✓`: mark approved.
 
 ## Portable Prompt Mode
 
-Same pattern as other write-* skills.
+Same pattern as other write-\* skills.
 
 ## Anti-Patterns
 

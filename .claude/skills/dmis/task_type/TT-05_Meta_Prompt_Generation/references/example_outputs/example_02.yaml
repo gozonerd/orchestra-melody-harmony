@@ -1,46 +1,46 @@
 ---
-title: "Example Meta-Prompt: Client-Ready Prose Generation Brief"
-task_type: "TT-05"
-version: "v02_I"
-date: "2026-03-06"
+title: 'Example Meta-Prompt: Client-Ready Prose Generation Brief'
+task_type: 'TT-05'
+version: 'v02_I'
+date: '2026-03-06'
 
 task_overview: |
   You are tasked with generating publication-quality prose for a single section of a client-facing document on digital health implementation. Your section will be integrated into a larger document that reaches organizational stakeholders and external partners. All content must be professionally written, evidence-supported, and free of errors. The section must reflect the assigned outline structure while achieving natural narrative flow.
 
 input_specification:
   materials:
-    - "Structural outline from TT-03: Detailed specification of section purpose, scope, and content requirements"
-    - "Evidence base from TT-02: Supporting research, citations, and organizational context"
-    - "Organizational context: StrongMinds four-office structure, CommCare deployments, accuracy rules"
+    - 'Structural outline from TT-03: Detailed specification of section purpose, scope, and content requirements'
+    - 'Evidence base from TT-02: Supporting research, citations, and organizational context'
+    - 'Organizational context: StrongMinds four-office structure, CommCare deployments, accuracy rules'
 
   section_assignment:
-    - "Section title: [Will be specified in execution brief]"
-    - "Outline requirements: [Will be detailed in outline section]"
-    - "Evidence to integrate: [Will include specific citations and research findings]"
-    - "Length: 300-800 words depending on section complexity"
+    - 'Section title: [Will be specified in execution brief]'
+    - 'Outline requirements: [Will be detailed in outline section]'
+    - 'Evidence to integrate: [Will include specific citations and research findings]'
+    - 'Length: 300-800 words depending on section complexity'
 
 output_requirements:
-  format: "YAML with section_prose key containing flowing narrative text"
+  format: 'YAML with section_prose key containing flowing narrative text'
   structure:
-    - "Section prose: Continuous narrative text integrating outline requirements"
-    - "Integration points: References to outline elements addressed in prose"
-    - "Citations: List of all claims with source attribution"
-    - "Quality indicators: Self-assessment against quality criteria"
+    - 'Section prose: Continuous narrative text integrating outline requirements'
+    - 'Integration points: References to outline elements addressed in prose'
+    - 'Citations: List of all claims with source attribution'
+    - 'Quality indicators: Self-assessment against quality criteria'
 
   prose_standards:
-    - "Professional organizational voice appropriate for stakeholder audience"
-    - "Clear topic sentences and logical paragraph organization"
-    - "Smooth transitions between concepts"
-    - "Technical accuracy with accessible language"
-    - "Publication-ready quality without requiring editorial revision"
+    - 'Professional organizational voice appropriate for stakeholder audience'
+    - 'Clear topic sentences and logical paragraph organization'
+    - 'Smooth transitions between concepts'
+    - 'Technical accuracy with accessible language'
+    - 'Publication-ready quality without requiring editorial revision'
 
 quality_criteria:
-  - "Narrative Flow: Prose transitions smoothly; outline structure reflected naturally"
-  - "Evidence Integration: All supporting materials incorporated with explicit citations"
-  - "Accuracy: Every factual assertion matches source materials"
-  - "Professionalism: Writing meets organizational style standards"
-  - "Completeness: All outline requirements addressed in prose"
-  - "Polish: Text is free of errors; formatting is consistent"
+  - 'Narrative Flow: Prose transitions smoothly; outline structure reflected naturally'
+  - 'Evidence Integration: All supporting materials incorporated with explicit citations'
+  - 'Accuracy: Every factual assertion matches source materials'
+  - 'Professionalism: Writing meets organizational style standards'
+  - 'Completeness: All outline requirements addressed in prose'
+  - 'Polish: Text is free of errors; formatting is consistent'
 
 guardrails:
   critical_accuracy_rules: |

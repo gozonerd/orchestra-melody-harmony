@@ -24,15 +24,15 @@ First page: Version + date + author(s) + organization below title
 
 ## TYPOGRAPHY
 
-| Element | Spec |
-|---|---|
-| Font (all elements) | Lato |
-| Body text | 12pt |
-| Heading 1 | 16pt bold |
-| Heading 2 | 14pt bold |
-| Heading 3 | 13pt bold |
-| Header text | 9pt italic, color `#888888` |
-| Footer text | 9pt (not italic), color `#888888` |
+| Element             | Spec                              |
+| ------------------- | --------------------------------- |
+| Font (all elements) | Lato                              |
+| Body text           | 12pt                              |
+| Heading 1           | 16pt bold                         |
+| Heading 2           | 14pt bold                         |
+| Heading 3           | 13pt bold                         |
+| Header text         | 9pt italic, color `#888888`       |
+| Footer text         | 9pt (not italic), color `#888888` |
 
 **Fallback:** If Lato is unavailable in the rendering environment, it falls back to system sans-serif. Install or embed Lato for guaranteed output.
 
@@ -40,24 +40,24 @@ First page: Version + date + author(s) + organization below title
 
 ## SPACING
 
-| Element | Spec |
-|---|---|
-| Line spacing | 1.5 lines (360 DXA) |
-| Paragraph spacing after | 6pt (120 DXA) |
-| H1 before / after | 18pt / 12pt |
-| H2 before / after | 14pt / 9pt |
-| H3 before / after | 12pt / 6pt |
+| Element                 | Spec                |
+| ----------------------- | ------------------- |
+| Line spacing            | 1.5 lines (360 DXA) |
+| Paragraph spacing after | 6pt (120 DXA)       |
+| H1 before / after       | 18pt / 12pt         |
+| H2 before / after       | 14pt / 9pt          |
+| H3 before / after       | 12pt / 6pt          |
 
 ---
 
 ## PAGE LAYOUT
 
-| Element | Spec |
-|---|---|
-| Paper size | US Letter — 8.5″ × 11″ |
-| docx-js page size | width: 12240 DXA, height: 15840 DXA *(set explicitly — docx-js defaults to A4)* |
-| Margins | 1 inch all sides (1440 DXA each) |
-| Content width | 6.5 inches (9360 DXA) |
+| Element           | Spec                                                                            |
+| ----------------- | ------------------------------------------------------------------------------- |
+| Paper size        | US Letter — 8.5″ × 11″                                                          |
+| docx-js page size | width: 12240 DXA, height: 15840 DXA _(set explicitly — docx-js defaults to A4)_ |
+| Margins           | 1 inch all sides (1440 DXA each)                                                |
+| Content width     | 6.5 inches (9360 DXA)                                                           |
 
 ---
 
@@ -97,25 +97,25 @@ Required fields below the title, before body content:
 
 ## CITATIONS AND BIBLIOGRAPHY
 
-| Element | Spec |
-|---|---|
-| Style | APA 7th edition |
-| In-text format | `(Author, Year, p. X)` or `(Author, Year)` when page unavailable |
-| Bibliography placement | End of document, alphabetized by first author surname |
-| Hanging indent | 0.5 inch (720 DXA) |
+| Element                | Spec                                                             |
+| ---------------------- | ---------------------------------------------------------------- |
+| Style                  | APA 7th edition                                                  |
+| In-text format         | `(Author, Year, p. X)` or `(Author, Year)` when page unavailable |
+| Bibliography placement | End of document, alphabetized by first author surname            |
+| Hanging indent         | 0.5 inch (720 DXA)                                               |
 
 ---
 
 ## TECHNICAL IMPLEMENTATION (docx-js)
 
-| Conversion | Value |
-|---|---|
-| 1 inch | 1440 DXA |
-| 12pt font | size 24 (half-points) |
-| 1.5 line spacing | 360 DXA |
-| Content width | 9360 DXA |
-| Page width (US Letter) | 12240 DXA |
-| Page height (US Letter) | 15840 DXA |
+| Conversion              | Value                 |
+| ----------------------- | --------------------- |
+| 1 inch                  | 1440 DXA              |
+| 12pt font               | size 24 (half-points) |
+| 1.5 line spacing        | 360 DXA               |
+| Content width           | 9360 DXA              |
+| Page width (US Letter)  | 12240 DXA             |
+| Page height (US Letter) | 15840 DXA             |
 
 **Table widths:** Always use `WidthType.DXA` — never `PERCENTAGE`.  
 **Page size:** Always set explicitly. docx-js defaults to A4 and will produce incorrect output if not overridden.

@@ -37,12 +37,12 @@ This skill exists because the methodology evolves while real-world projects accu
 
 Per `references/Methodology_Versioning_And_Amendment_Protocol_2026-04-26_v01_I.md`:
 
-| Version | Bundle shape | Stage 00 tracks | Key features |
-|---------|--------------|-----------------|--------------|
-| 0.1.x | 4-doc (PRD/TRD/AVD/TQVCD) | 5 tracks | Initial bundle; pre-2026-04-25 |
-| 0.2.x | 5-doc (adds UXD) | 16+4 tracks | UXD addition (2026-04-25); Stage 00 expansion (2026-04-26); 11 N-way alignment chains; Q9-Q12 applicability gates |
-| 0.3.0 | 5-doc (TQVCD rename from TQCD) | 16+4 tracks | Heading-prefix IDs; non-visual excellence anchors (PRD §1.4); Reversal Cost (AVD §7); catastrophic states (UXD §3.2 + §3.4); locale visual treatment (UXD §6.5); Amendment Protocol; inline validation hooks; parallelization markers; Q13-Q16 non-visual readiness; TQCD → TQVCD full rename + cascade per Mod 6.5 (2026-04-27 Batch 1) |
-| 0.4.0 | 6-doc (adds PSCAD) | 16+4 tracks | TQVCD §5.0 Verification Coverage Headline Metric (behaviors-verified / behaviors-claimed) + §5.4 banned-phrase list per Mod 6.5; TQVCD §5.0 production_pattern field per Mod 8.1 (v05+ schema); PSCAD as 6th D2R sibling doc per Mod 8 (Pattern-Space Coverage Audit; references TQVCD-VC entries by id; PRD §6 + TRD §3.1+§3.2 derive PSCAD §2 production conditions); Production Pattern Catalog at `_grand_repo/docs/Production_Pattern_Catalog_2026-04-27_v01_I.md`; Q17 Runtime third-party destinations + ASAE A22 Runtime Egress Disclosure per Mod 12 |
+| Version | Bundle shape                   | Stage 00 tracks | Key features                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| ------- | ------------------------------ | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0.1.x   | 4-doc (PRD/TRD/AVD/TQVCD)      | 5 tracks        | Initial bundle; pre-2026-04-25                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| 0.2.x   | 5-doc (adds UXD)               | 16+4 tracks     | UXD addition (2026-04-25); Stage 00 expansion (2026-04-26); 11 N-way alignment chains; Q9-Q12 applicability gates                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| 0.3.0   | 5-doc (TQVCD rename from TQCD) | 16+4 tracks     | Heading-prefix IDs; non-visual excellence anchors (PRD §1.4); Reversal Cost (AVD §7); catastrophic states (UXD §3.2 + §3.4); locale visual treatment (UXD §6.5); Amendment Protocol; inline validation hooks; parallelization markers; Q13-Q16 non-visual readiness; TQCD → TQVCD full rename + cascade per Mod 6.5 (2026-04-27 Batch 1)                                                                                                                                                                                                                      |
+| 0.4.0   | 6-doc (adds PSCAD)             | 16+4 tracks     | TQVCD §5.0 Verification Coverage Headline Metric (behaviors-verified / behaviors-claimed) + §5.4 banned-phrase list per Mod 6.5; TQVCD §5.0 production_pattern field per Mod 8.1 (v05+ schema); PSCAD as 6th D2R sibling doc per Mod 8 (Pattern-Space Coverage Audit; references TQVCD-VC entries by id; PRD §6 + TRD §3.1+§3.2 derive PSCAD §2 production conditions); Production Pattern Catalog at `_grand_repo/docs/Production_Pattern_Catalog_2026-04-27_v01_I.md`; Q17 Runtime third-party destinations + ASAE A22 Runtime Egress Disclosure per Mod 12 |
 
 ## Execution Protocol
 
@@ -68,7 +68,7 @@ Migration paths supported in this skill version:
 
 - **v0.1.x → v0.2.x:** add UXD doc by invoking `/write-uxd` with PRD + TRD already authored as inputs; bump PRD/TRD/AVD/TQVCD frontmatter `methodology_version: 0.2.x`; Stage 00 track count expands to 16+4 in d2r-stage-00 expansion
 - **v0.2.x → v0.3.0:** apply 6 section-level additions per doc + frontmatter bump (see §3 Migration Specifications)
-- **v0.3.0-pre-rename → v0.3.0:** Mod 6.5 cascade — rename TQCD instance to TQVCD instance (file rename + 100+ TQCD→TQVCD substitutions in document body + TQCD-* heading-prefix IDs → TQVCD-* IDs) + add §5.0 Verification Coverage Headline Metric + §5.4 banned-phrase list + reframe §5.1 as internal-CI-only; update bundle index BIDX entries to reference new TQVCD filename
+- **v0.3.0-pre-rename → v0.3.0:** Mod 6.5 cascade — rename TQCD instance to TQVCD instance (file rename + 100+ TQCD→TQVCD substitutions in document body + TQCD-_ heading-prefix IDs → TQVCD-_ IDs) + add §5.0 Verification Coverage Headline Metric + §5.4 banned-phrase list + reframe §5.1 as internal-CI-only; update bundle index BIDX entries to reference new TQVCD filename
 - **v0.3.0 → v0.4.0:** Mod 8 cascade — add PSCAD doc by invoking `/write-pscad` with PRD + TRD + TQVCD already authored as inputs; populate TQVCD §5.0 `production_pattern` field on every TQVCD-VC entry per Mod 8.1 v05+ schema (catalog reference OR inline production_pattern_inline OR PAT-GENERIC-NO-PRODUCTION-SHAPE marker with rationale); bump all 6 docs' frontmatter `methodology_version: 0.4.0`; update bundle index BIDX to include PSCAD entry. Plus add Q17 Runtime third-party destinations to PRD ideation context (if Phase 00 ideation summary exists) and TRD §3.5 + ASAE A22 attestation block per Mod 12.
 - **v0.1.x → v0.4.0 (chained):** v0.1.x → v0.2.x → v0.3.0 → v0.3.0-pre-rename → v0.3.0 → v0.4.0 (run all phases in sequence)
 - **v0.2.x → v0.4.0 (chained):** v0.2.x → v0.3.0 → v0.3.0-pre-rename → v0.3.0 → v0.4.0
@@ -78,6 +78,7 @@ Migration paths supported in this skill version:
 For each doc in the bundle, generate a migration plan listing every change. Save to `[planning-directory]/bundle_upgrade_plan_[YYYY-MM-DD]_v01_I.md` for user review.
 
 > **Stop & Verify before continuing past Phase 2.** Confirm:
+>
 > - User reviewed the per-doc migration plan
 > - No doc has open questions the migration cannot auto-resolve
 > - User explicitly approved the plan
@@ -115,6 +116,7 @@ Generate the upgrade report at `[planning-directory]/bundle_upgrade_report_[YYYY
 ### v0.2.x → v0.3.0 Per-Doc Section Additions
 
 **PRD migration:**
+
 - Add Heading-Prefix IDs section to How-To-Use
 - Add §1.4 Non-Visual Excellence Anchors (1.4.1 Operational; 1.4.2 Failure-Communication; 1.4.3 Audit-Trail; 1.4.4 Documentation; 1.4.5 Brand Voice; 1.4.6 Anti-Patterns)
 - Add inline validation hooks at §2.1, §2.3, §3.1, §6.5, §6.6
@@ -125,6 +127,7 @@ Generate the upgrade report at `[planning-directory]/bundle_upgrade_report_[YYYY
 - Bump frontmatter: `version: v03_I`, `methodology_version: 0.3.0`
 
 **TRD migration:**
+
 - Add Heading-Prefix IDs section to How-To-Use
 - Add inline validation hooks at §3.1, §3.10
 - Add authorship parallelization markers
@@ -134,6 +137,7 @@ Generate the upgrade report at `[planning-directory]/bundle_upgrade_report_[YYYY
 - Bump frontmatter
 
 **AVD migration:**
+
 - Add Heading-Prefix IDs section
 - Add Reversal Cost field to §7 Mini-ADR format with worked example
 - Add inline validation hooks at §3.1, §4.1, §5.7, §7
@@ -144,6 +148,7 @@ Generate the upgrade report at `[planning-directory]/bundle_upgrade_report_[YYYY
 - Bump frontmatter
 
 **TQVCD migration:**
+
 - Add Heading-Prefix IDs section
 - Restructure §5.2 to Two-State Traceability Table (preserve original prose as introductory text; add table format with required columns)
 - Add inline validation hooks at §2.1, §2.2, §3.1, §5.2, §7.1, §7.5, §9.2, §10
@@ -153,6 +158,7 @@ Generate the upgrade report at `[planning-directory]/bundle_upgrade_report_[YYYY
 - Bump frontmatter
 
 **UXD migration:**
+
 - Add Heading-Prefix IDs section
 - Restructure §3.2 to add Catastrophic state column (5th column alongside empty/loading/error/success)
 - Add new §3.4 Catastrophic Failure Voice
@@ -175,15 +181,17 @@ Generate the upgrade report at `[planning-directory]/bundle_upgrade_report_[YYYY
 ### v0.3.0-pre-rename → v0.3.0 Per-Doc Mod 6.5 Cascade
 
 **TQCD → TQVCD instance migration:**
+
 - File rename: `<ProjectPrefix>_TQCD_<YYYY-MM-DD>_v<NN>_I.md` → `<ProjectPrefix>_TQVCD_<YYYY-MM-DD>_v<NN+1>_I.md`
 - Move old TQCD file to `[planning-directory]/deprecated/` per never-delete-always-deprecate rule
-- Bulk substitution in renamed file: `s/TQCD/TQVCD/g` (heading-prefix IDs TQCD-TC-* → TQVCD-TC-*; TQCD-CC-* → TQVCD-CC-*; TQCD-EC-* → TQVCD-EC-*; TQCD-BG-* → TQVCD-BG-*; TQCD-AT-* → TQVCD-AT-*; doc title "Testing & Quality Criteria Document" → "Test Quality + Verification Coverage Document")
+- Bulk substitution in renamed file: `s/TQCD/TQVCD/g` (heading-prefix IDs TQCD-TC-_ → TQVCD-TC-_; TQCD-CC-_ → TQVCD-CC-_; TQCD-EC-_ → TQVCD-EC-_; TQCD-BG-_ → TQVCD-BG-_; TQCD-AT-_ → TQVCD-AT-_; doc title "Testing & Quality Criteria Document" → "Test Quality + Verification Coverage Document")
 - Add new §5.0 Verification Coverage Headline Metric (behaviors-verified / behaviors-claimed metric + 3-step procedure + traceability table format with tautology_check column)
 - Reframe existing §5.1 Code Coverage as "Code Coverage (Internal CI Metric Only — NOT User-Facing Headline)"
 - Add new §5.4 Headline Metric Ban List (8+ banned phrases + 3 allowed-phrasing alternatives + 3 exemption paths)
 - Bump frontmatter: `version: v04_I` (or higher), `methodology_version: 0.3.0` (still 0.3.0 — v0.4.0 is the PSCAD-addition bump)
 
 **Other docs Mod 6.5 cascade:**
+
 - PRD/TRD/AVD/UXD: bulk substitution `s/TQCD/TQVCD/g` for any cross-references to TQCD; bump `methodology_version: 0.3.0`
 - Bundle index BIDX: update TQCD entry → TQVCD with new filename + new SHA-256
 
@@ -192,12 +200,14 @@ Generate the upgrade report at `[planning-directory]/bundle_upgrade_report_[YYYY
 ### v0.3.0 → v0.4.0 Per-Doc Mod 8 + Mod 12 Cascade
 
 **Add PSCAD as 6th D2R doc:**
+
 - Invoke `/write-pscad` with PRD + TRD + AVD + TQVCD + UXD already authored + approved as inputs
 - PSCAD authorship sequenced AFTER TQVCD per design — production-memory accumulation discipline (don't fast-forward; let the gap exist)
 - /write-pscad Step 1 verifies all 5 prerequisite docs exist; Step 2 loads PSCAD template + Production Pattern Catalog; Steps 3a-3b walk through patterns-in-scope + coverage matrix + gaps + remediations
 - New PSCAD instance file: `<ProjectPrefix>_PSCAD_<YYYY-MM-DD>_v01_I.md` saved to planning directory
 
 **TQVCD §5.0 production_pattern field population (Mod 8.1 v05+ schema):**
+
 - For each existing TQVCD-VC entry in §5.0 traceability table, add `production_pattern` field with one of:
   - Canonical catalog id from `_grand_repo/docs/Production_Pattern_Catalog_2026-04-27_v01_I.md` (preferred): e.g., `PAT-CONCURRENCY-LOCKFILE-SKIP`
   - Inline `production_pattern_inline` block (when no catalog pattern fits and project hasn't yet promoted)
@@ -205,11 +215,13 @@ Generate the upgrade report at `[planning-directory]/bundle_upgrade_report_[YYYY
 - Bump TQVCD frontmatter `version: v05_I` (or higher), `supersedes:` field updated
 
 **Mod 12 / A22 Runtime Egress cascade (PRD/TRD):**
+
 - If Phase 00 ideation summary exists, add Q17 Runtime Third-Party Destinations answer (or generate from existing TRD §3.5 + dependency analysis)
 - Add TRD §3.5 third-party-destinations subsection mirroring ASAE A22 attestation block format (per destination: hostname/URL pattern + protocol + data_classification + purpose + user_consent_gate + retention_per_their_tos + proxy_architecture)
 - For consuming /asae gate: populate `A22_runtime_egress_disclosure` block in frontmatter
 
 **Bundle index update:**
+
 - Add PSCAD entry to BIDX with v01_I version + SHA-256
 - Update bundle-doc count: 5 → 6
 - Bump all 6 docs' frontmatter `methodology_version: 0.4.0`

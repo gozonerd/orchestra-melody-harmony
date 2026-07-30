@@ -22,13 +22,13 @@ The skill produces a structured code plan whose execution is governed by determi
 
 This skill requires five standardized input documents to exist and be approved before Stage 00 can run. Without them, the plan is ungrounded and Stage 00 research has no scoping constraint.
 
-| # | Document | Purpose | Template | Authorship Skill |
-|---|----------|---------|----------|------------------|
-| 1 | **PRD** (Product Requirements) | What the product IS | `references/PRD_Template_2026-04-17_v01_I.md` | `/write-prd` |
-| 2 | **TRD** (Technical Requirements) | What the system MUST DO technically | `references/TRD_Template_2026-04-17_v01_I.md` | `/write-trd` |
-| 3 | **AVD** (Architecture Vision) | The system's high-level shape and boundaries | `references/AVD_Template_2026-04-17_v01_I.md` | `/write-avd` |
-| 4 | **TQCD** (Testing & Quality Criteria) | What success looks like quality-wise | `references/TQCD_Template_2026-04-17_v01_I.md` | `/write-tqcd` |
-| 5 | **UXD** (User Experience) | What the product looks like + feels like + how every state is rendered (visual design system, interaction patterns, accessibility-as-delight, polish criteria) | `references/UXD_Template_2026-04-25_v01_I.md` | `/write-uxd` |
+| #   | Document                              | Purpose                                                                                                                                                        | Template                                       | Authorship Skill |
+| --- | ------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- | ---------------- |
+| 1   | **PRD** (Product Requirements)        | What the product IS                                                                                                                                            | `references/PRD_Template_2026-04-17_v01_I.md`  | `/write-prd`     |
+| 2   | **TRD** (Technical Requirements)      | What the system MUST DO technically                                                                                                                            | `references/TRD_Template_2026-04-17_v01_I.md`  | `/write-trd`     |
+| 3   | **AVD** (Architecture Vision)         | The system's high-level shape and boundaries                                                                                                                   | `references/AVD_Template_2026-04-17_v01_I.md`  | `/write-avd`     |
+| 4   | **TQCD** (Testing & Quality Criteria) | What success looks like quality-wise                                                                                                                           | `references/TQCD_Template_2026-04-17_v01_I.md` | `/write-tqcd`    |
+| 5   | **UXD** (User Experience)             | What the product looks like + feels like + how every state is rendered (visual design system, interaction patterns, accessibility-as-delight, polish criteria) | `references/UXD_Template_2026-04-25_v01_I.md`  | `/write-uxd`     |
 
 The five templates are reusable across projects and across LLMs. Any sufficiently capable planner LLM given the same filled-in PRD + TRD + AVD + TQCD + UXD should produce a D2R code plan of comparable structure. This transferability enables experimental comparison of planner LLM quality given identical inputs.
 
@@ -89,11 +89,11 @@ Every sub-agent and every stage is assigned a specific model and effort level in
 
 #### Model Tier Table
 
-| Tier | Role | Examples |
-|------|------|----------|
-| **Opus** | Plans, decides, audits. Reserved for reasoning work. | Stage 00 research; Stage 01a skeleton authorship; Stage 01b full plan authorship; ASAE gate judgment; architectural decisions; content decisions for READMEs and docs (what to say); IP and license selection |
+| Tier       | Role                                                                                                                                                             | Examples                                                                                                                                                                                                                                                                                                                                                                                  |
+| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Opus**   | Plans, decides, audits. Reserved for reasoning work.                                                                                                             | Stage 00 research; Stage 01a skeleton authorship; Stage 01b full plan authorship; ASAE gate judgment; architectural decisions; content decisions for READMEs and docs (what to say); IP and license selection                                                                                                                                                                             |
 | **Sonnet** | Setup + judgment-requiring authoring + mid-complexity implementation. Handles work that requires knowing "what good looks like" but not architectural reasoning. | Stage 02 Project Scaffold (repo creation + README drafting per Opus's content decisions + LICENSE + package.json + tsconfig + eslint + vite + prettier + CI workflow + hook scripts + initial scaffolding + commit messages + initial push); mid-complexity implementation where Deep-spec would be fragile; security-sensitive code; nuanced error handling; setup error troubleshooting |
-| **Haiku** | Rote transcription of Deep-spec content. Executes fully-specified operations. | Stage 03+ feature implementation at Deep spec depth; exact function writes per exact spec; exact file writes per exact spec; exact command runs per exact spec; test case implementation from exact test spec |
+| **Haiku**  | Rote transcription of Deep-spec content. Executes fully-specified operations.                                                                                    | Stage 03+ feature implementation at Deep spec depth; exact function writes per exact spec; exact file writes per exact spec; exact command runs per exact spec; test case implementation from exact test spec                                                                                                                                                                             |
 
 #### Hard Rules
 
@@ -108,11 +108,11 @@ The hook layer makes violations structurally impossible. See "Hook Orchestration
 
 Every stage in Stage 01's output is tagged with a specification depth: `Shallow`, `Medium`, or `Deep`.
 
-| Depth | What The Executing Model Decides | When To Use |
-|-------|----------------------------------|-------------|
-| Shallow | Library choice, API, error handling, types, iteration style | Only when the executing model has high training coverage of the target stack AND the task is well-within its discretion |
-| Medium | API specifics, error handling patterns, types | When the executing model has moderate stack coverage and the library is pre-selected |
-| Deep | Only syntax transcription. Plan specifies exact library versions, API signatures, error types, return types, iteration idioms, import styles | Default when executing model is Haiku. Required when target stack is less common in executing model's training data. |
+| Depth   | What The Executing Model Decides                                                                                                             | When To Use                                                                                                             |
+| ------- | -------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| Shallow | Library choice, API, error handling, types, iteration style                                                                                  | Only when the executing model has high training coverage of the target stack AND the task is well-within its discretion |
+| Medium  | API specifics, error handling patterns, types                                                                                                | When the executing model has moderate stack coverage and the library is pre-selected                                    |
+| Deep    | Only syntax transcription. Plan specifies exact library versions, API signatures, error types, return types, iteration idioms, import styles | Default when executing model is Haiku. Required when target stack is less common in executing model's training data.    |
 
 Stage 01 must justify the depth choice per stage. Default assumption: if executing model is Haiku, depth is Deep unless justified otherwise.
 
@@ -125,29 +125,35 @@ Governance is enforced at three layers. Each layer is non-bypassable independent
 Located in `.claude/settings.json` or `.claude/settings.local.json`.
 
 **PreToolUse on `Write|Edit` in main session:**
+
 - Block direct code writes from the main (planning) session
 - Force delegation to an implementation sub-agent with the stage's assigned model
 - Error message: "Main session is planning-only. Delegate this write to the sub-agent assigned to stage [NN] per the D2R plan."
 
 **PreToolUse on `Bash` matching `git commit*`:**
+
 - Verify ASAE summary for the current stage appears in recent thread context
 - Verify test suite has passed (check exit code of most recent test command)
 - Verify accessibility audit has passed if stage produced UI
 - Block commit if any verification fails
 
 **PreToolUse on `Bash` matching `git push*`:**
+
 - Verify all stage commits are present
 - Verify final D2R summary exists in repo
 - Block push if any verification fails
 
 **PostToolUse on `Write|Edit`:**
+
 - Log every file write to the audit trail with timestamp, agent, stage, model, hash of content
 
 **Stop / StopFailure:**
+
 - Require ASAE summary table for the active stage to be in thread before allowing clean session end
 - If missing, append warning to session end and log to audit trail
 
 **UserPromptSubmit:**
+
 - Inject current D2R plan state into Claude's context (active stage, depth tag, model assignment, ASAE gate status)
 
 ### Layer 2: Git Hooks (Platform-Level Enforcement)
@@ -155,6 +161,7 @@ Located in `.claude/settings.json` or `.claude/settings.local.json`.
 Located in `.githooks/` in the repo root. Installed via `git config core.hooksPath .githooks` (typically auto-installed by the `prepare` script in `package.json`).
 
 **`pre-commit`:**
+
 - Run formatters (prettier, eslint, or language-appropriate) — refuse commit if violations
 - Run type check — refuse commit on type errors
 - Run test suite — refuse commit if any test fails or coverage drops below threshold
@@ -163,6 +170,7 @@ Located in `.githooks/` in the repo root. Installed via `git config core.hooksPa
 - Run secret scanner — refuse commit on detected secrets
 
 **`pre-push`:**
+
 - Run full regression test suite — refuse push on any regression
 - Run integration tests — refuse push on integration failure
 - Run build — refuse push if build fails
@@ -170,6 +178,7 @@ Located in `.githooks/` in the repo root. Installed via `git config core.hooksPa
 ### Layer 3: ASAE Gate (Invoked By Hooks, Executed By `/asae` Skill)
 
 Stage boundaries invoke the `/asae` skill with a scope definition declaring:
+
 - Target: the stage's output artifacts
 - Sources: the stage's inputs (prior stage outputs, Stage 00 research findings, Testing Taxonomy categories applicable to this stage, prerequisite PRD/TRD/AVD/TQCD)
 - Exit criteria: configured ASAE Certainty Threshold per stage (defaults: Stage 00 = 2, Stage 01a = 2, Stage 01b = 3, Stage 02 = 3, Stage 03+ = 3, Stage QA = 5)
@@ -184,10 +193,12 @@ Meta-ASAE is the defense-in-depth layer that verifies ASAE itself ran. Without m
 Meta-ASAE operates at two levels:
 
 **Hook-level meta-ASAE (automatic):**
+
 - `PreToolUse` hook on `Bash` matching `git commit*`: checks for the current stage's ASAE log file at its expected path, with expected structure (status, timestamp, severity totals, log path), before allowing commit. Blocks commit if missing or malformed.
 - Git `pre-commit` hook runs an ASAE log validator script: reads the most recent ASAE log for the current stage, verifies it parses as valid structured output, verifies status is PASS (not HALT — HALT means the gate didn't converge and the commit should not proceed without explicit escalation).
 
 **Stage-level meta-ASAE (explicit sub-stage):**
+
 - Every implementation stage (02, 03+, QA) has an explicit Stage NN-M sub-stage that runs between Stage NN-A (ASAE gate) and Stage NN-B (commit gate)
 - Stage NN-M invokes `/asae` with:
   - domain: `document` (the ASAE log IS a document)
@@ -205,6 +216,7 @@ The two levels compose: hook-level meta-ASAE catches gate-was-skipped as a commi
 ### Hook Installation Verification
 
 Every new repo initialized under D2R must ship with:
+
 - `.claude/settings.json` containing the PreToolUse, PostToolUse, Stop, UserPromptSubmit hook configurations
 - `.githooks/` containing `pre-commit` and `pre-push`
 - `package.json` (or equivalent) `prepare` script that installs the git hooks path
@@ -216,15 +228,15 @@ Stage 00 research must confirm hook support for the target stack. Stage 01 must 
 
 Every D2R plan follows this stage numbering:
 
-| Stage | Purpose | Model |
-|-------|---------|-------|
-| Stage 00 | Five-track research. Exits through ASAE gate at threshold 2. | Opus |
-| Stage 01a | Skeleton authorship — stage list with metadata. Exits through ASAE gate at threshold 2 + user approval gate. | Opus |
-| Stage 01b | Full plan authorship — Deep / Medium / Shallow content per stage, exactly as required for the executing model to operate. Exits through ASAE gate at threshold 3. | Opus |
-| Stage 02 | Project Scaffold — repo creation, README, LICENSE, configs, CI workflows, hook scripts, initial scaffolding, initial commit + push, Claude Code hook installation. Exits through ASAE gate at threshold 3 + commit gate. | Sonnet |
-| Stage 03...NN | Feature implementation stages at Deep spec depth. Each exits through ASAE gate at threshold 3 + commit gate. | Haiku (default) |
-| Stage NN+1 | Design Polish — visual + interaction polish pass against the prerequisite UXD. Iterates with `/asae` at `domain=design` until ASAE Certainty Threshold of 3 consecutive clean cycles. | Sonnet (visual judgment; Haiku is too generic for aesthetic-quality work per CCC empirical evidence) |
-| Stage QA | Convergence loop. Testing Taxonomy full applicable sweep + stress testing. Exits when ASAE Certainty Threshold of 5 consecutive clean cycles is reached. | Opus for judgment; Sonnet for remediation authoring; Haiku for rote fix transcription |
+| Stage         | Purpose                                                                                                                                                                                                                  | Model                                                                                                |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------- |
+| Stage 00      | Five-track research. Exits through ASAE gate at threshold 2.                                                                                                                                                             | Opus                                                                                                 |
+| Stage 01a     | Skeleton authorship — stage list with metadata. Exits through ASAE gate at threshold 2 + user approval gate.                                                                                                             | Opus                                                                                                 |
+| Stage 01b     | Full plan authorship — Deep / Medium / Shallow content per stage, exactly as required for the executing model to operate. Exits through ASAE gate at threshold 3.                                                        | Opus                                                                                                 |
+| Stage 02      | Project Scaffold — repo creation, README, LICENSE, configs, CI workflows, hook scripts, initial scaffolding, initial commit + push, Claude Code hook installation. Exits through ASAE gate at threshold 3 + commit gate. | Sonnet                                                                                               |
+| Stage 03...NN | Feature implementation stages at Deep spec depth. Each exits through ASAE gate at threshold 3 + commit gate.                                                                                                             | Haiku (default)                                                                                      |
+| Stage NN+1    | Design Polish — visual + interaction polish pass against the prerequisite UXD. Iterates with `/asae` at `domain=design` until ASAE Certainty Threshold of 3 consecutive clean cycles.                                    | Sonnet (visual judgment; Haiku is too generic for aesthetic-quality work per CCC empirical evidence) |
+| Stage QA      | Convergence loop. Testing Taxonomy full applicable sweep + stress testing. Exits when ASAE Certainty Threshold of 5 consecutive clean cycles is reached.                                                                 | Opus for judgment; Sonnet for remediation authoring; Haiku for rote fix transcription                |
 
 No stage may begin until the prior stage has passed its ASAE gate. No implementation stage (Stage 02+) may begin until Stage 01b has passed its ASAE gate. Stage 01a must pass its gate + user approval before Stage 01b begins. Stage NN+1 Design Polish cannot begin until all implementation stages have passed. Stage QA cannot begin until Design Polish has passed.
 
@@ -250,6 +262,7 @@ Tracks group thematically:
 Research what stack is structurally best for the specific code task being planned. The selection criterion is fit-to-use-case, not "what the executing model knows best." Under Deep plan-specification, executing-model training coverage is not a binding constraint.
 
 Research must cover:
+
 - Frontend framework options evaluated on accessibility defaults, bundle size, reactivity model, ecosystem maturity (per task type)
 - Backend / data processing options evaluated on computational fit, deployment complexity, security posture
 - Visualization, parsing, storage, export, testing, deployment libraries specifically applicable
@@ -264,19 +277,23 @@ Output: ranked stack recommendation with rejected alternatives and honest reason
 Research the enterprise standards and regulatory requirements that apply to this specific code task. Not aspirational — binding.
 
 For any application type:
+
 - ISO/IEC 25010:2023 (product quality model) — which sub-characteristics apply
 - CERT secure coding standards for the implementation language
 - CWE Top 25 (current year) vulnerabilities applicable to this task
 
 For UI applications:
+
 - WCAG 2.1 AA (or AAA where applicable) — hardwired, confirm no additional standard applies
 
 For web applications:
+
 - OWASP Top 10 Web Application Security Risks (current version)
 - OWASP LLM Top 10 if any LLM integration exists
 - OWASP API Security Top 10 if any API surface exists
 
 For regulated domains:
+
 - EU AI Act if AI output affects high-risk decisions
 - Applicable state laws (Colorado SB 24-205 etc.) if US AI deployment
 - FDA, FINRA, HIPAA, FERPA, GDPR, CCPA, PIPEDA per domain
@@ -288,6 +305,7 @@ Output: list of applicable standards with specific measurable exit criteria per 
 Research existing industry benchmarks that should be referenced or met. Benchmarks differ from standards — standards are binding requirements, benchmarks are measured comparisons.
 
 Examples:
+
 - Performance benchmarks (Core Web Vitals, Lighthouse, framework-specific)
 - Security benchmarks (CIS Benchmarks, STIG, NIST CSF)
 - Code quality benchmarks (TIOBE Quality Indicator, Maintainability Index thresholds)
@@ -301,6 +319,7 @@ Output: list of applicable benchmarks with target scores and rationale. Feeds TQ
 Research whether the planning model (typically Opus) can produce Deep-level specifications for the chosen stack. This is a first-class research track specific to the D2R methodology.
 
 Evaluate:
+
 - For each stage's language/framework, can Opus produce a spec at Deep level (exact library versions, API signatures, error types, return types, iteration idioms)?
 - Where Deep-level spec is producible, document the exact library-version-pinned API references available
 - Where Deep-level spec is not producible (exotic languages, unstable libraries, undocumented internals), flag explicitly — those stages may need to run at Medium depth with Sonnet as executor, or may need to shift to better-documented stack components
@@ -312,6 +331,7 @@ Output: per-stage depth feasibility assessment. If any stage requires Deep depth
 Research the installed skill and plugin ecosystem for execution support of this specific build. Skills and plugins deepen the effective spec for executing models — a skill that specifies "use this exact pattern for Svelte 5 runes" eliminates a class of decisions the executing model would otherwise make.
 
 Evaluate:
+
 - Which installed skills are directly relevant to this build (list by name with rationale)
 - Which installed plugins are directly relevant (list by name with rationale)
 - Which installed MCP servers are directly relevant
@@ -329,6 +349,7 @@ Output: skill/plugin inventory with per-item relevance assessment, gap analysis,
 Research where this project's visual language SHOULD live and what existing apps set the bar for it.
 
 Evaluate:
+
 - Is there an existing parent-org design system to inherit from? (brand kit, design tokens, component library)
 - If yes — version pinned + asset paths + departure-rules
 - If no — does this project become a design-system source-of-truth, or self-contained?
@@ -342,6 +363,7 @@ Output: design system source-of-truth determination + reference asset inventory 
 Given the Track 1 stack, research design-system-implementation tooling.
 
 Evaluate:
+
 - Component library options (ShadCN / Radix primitives / headless UI / custom build) on design-token support, accessibility defaults, theming, bundle size, customization cost
 - Styling approach (CSS-in-JS / Tailwind / CSS modules / vanilla) on design-token discipline, dark-mode support, theming, responsive primitives, type-safety
 - Animation library (framer-motion / motion-one / CSS-only) on bundle size, prefers-reduced-motion honoring, choreography support
@@ -354,6 +376,7 @@ Output: ranked recommendation per category with rejected alternatives. Feeds UXD
 Research accessibility tooling specifically for the 6-layer accessibility hardwiring chain documented later in this skill.
 
 Evaluate:
+
 - Layer 2 (TRD stack): lint plugins (jsx-a11y / vue-a11y / eslint-plugin-jsx-a11y), type-checked aria libraries, accessibility-aware framework integrations
 - Layer 3 (TQCD gates): accessibility test libraries (axe-core, @axe-core/playwright, jest-axe, vitest-axe, pa11y) integrating with the Track 1 stack and TQCD's test framework
 - Layer 5 (Stage QA): Lighthouse / pa11y / accessibility-monitoring tools
@@ -368,6 +391,7 @@ Output: per-layer tooling recommendations. Feeds TRD §3.5, TQCD §3.5, UXD §5.
 Research the threat model and security architecture for this app.
 
 Evaluate:
+
 - Threat model (STRIDE: spoofing / tampering / repudiation / information disclosure / denial of service / elevation of privilege per surface)
 - Attack-surface inventory (every input from outside the trust boundary)
 - OWASP Top 10 mapping for THIS app (which items apply, which mitigations)
@@ -385,6 +409,7 @@ Output: threat model document + tooling recommendations + secure-SDLC integratio
 Research the observability + operations approach for this app.
 
 Evaluate:
+
 - Logging architecture (structured / sampled / retention; pinned log levels per environment)
 - Metrics strategy (RED method for services / USE method for resources / business metrics for user-facing flows)
 - Tracing strategy (OpenTelemetry / Datadog / Honeycomb / etc.) integrated with the Track 1 stack
@@ -401,6 +426,7 @@ Output: observability architecture + tooling integrations + SLO definitions + ru
 Research the performance + scale characteristics required.
 
 Evaluate:
+
 - Load profile prediction per primary user journey (concurrent users, request rate, payload size, peak vs. baseline)
 - Performance budgets per surface (TTI / FCP / LCP / INP for web; latency p50/p95/p99 for backend)
 - Caching strategy (browser / CDN / app-level / data-level — what's cacheable, what's not)
@@ -415,6 +441,7 @@ Output: performance budgets + caching strategy + load profile + stress-test plan
 Research the deployment + infrastructure approach for production deployment.
 
 Evaluate:
+
 - Hosting target (serverless: Vercel / Netlify / Cloud Run; managed: Fly.io / Render / Heroku; container orchestration: ECS / GKE / k8s; bare metal — evaluated on app shape, scale, regulatory constraints, cost)
 - CI/CD architecture per stack (GitHub Actions / GitLab CI / Buildkite / CircleCI; build → test → security-scan → deploy stages)
 - Environment strategy (dev / staging / prod minimum; with optional preview / canary / DR-test environments)
@@ -430,6 +457,7 @@ Output: deployment architecture + CI/CD plan + environment strategy + DR/backup 
 Research the data architecture and lifecycle policies.
 
 Evaluate:
+
 - Schema migration discipline (forward-only migrations with rollback / both-ways / hybrid)
 - Migration tooling per stack (prisma migrate / drizzle / liquibase / flyway / native)
 - Retention policies per data class (legal minimums + business retention + user-controlled)
@@ -447,6 +475,7 @@ Output: data architecture + migration discipline + retention policy + encryption
 Research the reliability + resilience patterns required for production.
 
 Evaluate:
+
 - Fault tolerance patterns (graceful degradation / failover / read-replica / multi-region)
 - Retry / circuit-breaker / bulkhead / timeout strategy (which patterns where; library choices)
 - Rate limiting / quota (per user / per IP / per API key / global)
@@ -462,6 +491,7 @@ Output: reliability patterns + tooling + chaos engineering plan. Feeds TRD §3.x
 Research the authentication + authorization architecture.
 
 Evaluate:
+
 - Auth provider choice (Auth0 / Clerk / WorkOS / Supabase Auth / built-in / SAML SSO via vendor; evaluated on security posture, compliance certifications, integration cost, vendor lock-in)
 - SSO support (SAML / OIDC; required for enterprise customers)
 - MFA support (TOTP / WebAuthn / SMS — with recommendation hierarchy on security)
@@ -478,6 +508,7 @@ Output: auth provider choice + SSO + MFA strategy + permission model + session/t
 Research the release engineering + operational rollout approach.
 
 Evaluate:
+
 - Versioning strategy (semver / calver / build-number; for app + for any APIs it exposes)
 - Release notes process (auto-generated from PRs / manually curated / hybrid)
 - Feature flags / kill switches (LaunchDarkly / Unleash / Flagsmith / built-in / GrowthBook)
@@ -497,6 +528,7 @@ Each of these tracks is researched in every Stage 00. The output may be "NA-with
 **Applicability gate:** is this app expected to incur non-trivial infrastructure cost (cloud compute, AI API spend, data storage, third-party SaaS)? If unit economics matter (SaaS, AI-native at scale, multi-tenant), track is fully applicable. If single-user / hobby / negligible-cost, document NA with one-line justification.
 
 When applicable, evaluate:
+
 - Infra cost model (per service / per environment / per user)
 - Per-user / per-MAU / per-request unit economics
 - Scaling cost curve (cost at 10x / 100x / 1000x usage)
@@ -511,6 +543,7 @@ Output: cost model + per-unit economics + scaling cost projections + monitoring/
 **Applicability gate:** does the PRD §2 user segment include non-English speakers, multi-locale users, or RTL-language users? If yes, track is fully applicable. If single-locale (e.g., English-only US-targeted), document NA with one-line justification but note the cost of retrofitting if the segment expands.
 
 When applicable, evaluate:
+
 - i18n architecture (string extraction discipline / message-id-as-source vs. natural-language-as-source / pluralization / gender / date-time / currency)
 - Translation pipeline (in-house / vendor / TMS choice — Lokalise / Phrase / Crowdin / Smartling / Weblate)
 - RTL support strategy (CSS logical properties / explicit RTL stylesheets / framework-native)
@@ -525,6 +558,7 @@ Output: i18n architecture + translation pipeline + RTL plan + formatting strateg
 **Applicability gate:** does this app use AI as a load-bearing functional component (LLM in the user-facing critical path, not just internal tooling)? If yes — fully applicable. If AI is only used in development/build tooling but not in the runtime app, document NA with justification.
 
 When applicable, evaluate:
+
 - Model selection rationale (Opus vs. Sonnet vs. Haiku vs. third-party — per task; cost-quality-latency Pareto)
 - Prompt-injection defenses (per OWASP LLM Top 10 — input validation / output sanitization / privilege separation / sandboxing)
 - Output safety filtering (content moderation / PII redaction / hallucination detection where applicable)
@@ -540,6 +574,7 @@ Output: AI architecture + prompt-injection defense plan + audit trail design + m
 **Applicability gate:** does PRD §6.2 declare regulatory scope (SOC2 / ISO 27001 / HIPAA / FedRAMP / PCI-DSS / GDPR-as-controller / etc.)? If yes — fully applicable. If genuinely no regulatory scope (rare for production apps; document with justification), NA permitted.
 
 When applicable, evaluate:
+
 - Per-control mapping (SOC2 CC1-CC9 / ISO 27001 Annex A / HIPAA Security Rule / etc. — which controls THIS app's architecture satisfies and how)
 - Audit log requirements (what must be logged, retention, integrity protection, access controls)
 - Data residency requirements (per jurisdiction in PRD §2)
@@ -553,6 +588,7 @@ Output: per-control matrix + audit log design + residency map + vendor risk regi
 ### Stage 00 Exit
 
 Stage 00 research findings exit through the ASAE gate at threshold 2 (research rigor gate). The gate audits:
+
 - All 16 hardwired tracks complete
 - All 4 applicability-gated tracks evaluated for applicability with explicit applicability gate decision documented (full evaluation if applicable; NA-with-justification if not)
 - Claims in research findings traced to sources
@@ -574,6 +610,7 @@ Stage 01a produces the plan skeleton — the stage list with metadata required f
 **Step 1: Define Excellent End State**
 
 Describe, in concrete operational terms, what excellent looks like for the final output of this coding task. Include:
+
 - Functional capability at excellence (not at MVP)
 - Non-functional properties at excellence (performance, security, accessibility, reliability, maintainability)
 - Specific exit criteria tied to Stage 00 standards and benchmarks + the prerequisite TQCD
@@ -593,6 +630,7 @@ Output: QA specification that defines Stage QA's exit criteria in advance of any
 With the excellent end state defined and the QA criteria specified, backwards-plan the implementation stages required to produce the end state that passes the QA.
 
 For each stage, specify AT METADATA LEVEL ONLY:
+
 - Stage name and one-line purpose
 - Inputs (from which prior stages or from Stage 00 research)
 - Outputs (specific artifacts — file paths, deliverables)
@@ -618,6 +656,7 @@ Present the skeleton to the user in table form. Wait for explicit approval befor
 ### Stage 01a Exit
 
 Stage 01a skeleton exits through the ASAE gate at threshold 2 (rapid-iteration gate), then the user approval gate. The ASAE gate audits:
+
 - All stages traceable to Stage 00 research findings + prerequisite TRD
 - QA designed from Testing Taxonomy + prerequisite TQCD
 - Model + depth + ASAE threshold assigned per stage with justification
@@ -640,10 +679,12 @@ For each stage in the approved skeleton, write the full plan content at the stag
 Stage 01b content for every Deep stage must include:
 
 **File operations:**
+
 - Exact file path(s) to create or modify (absolute paths within the repo)
 - Exact file content structure (what goes at top vs bottom; section organization)
 
 **Code specification:**
+
 - Exact import statements with pinned library versions (e.g., `import { z } from 'zod@3.22.4'`)
 - Exact function signatures with parameter types and return types
 - Exact class / interface / type definitions
@@ -652,17 +693,20 @@ Stage 01b content for every Deep stage must include:
 - Exact constants and configuration values
 
 **Test specification:**
+
 - Exact test case list with: test name, inputs, expected outputs, assertion patterns
 - Exact test file paths
 - Exact test framework patterns (Vitest `describe`/`it`/`expect` syntax)
 - Exact property-based test invariants (for fast-check)
 
 **Step operations:**
+
 - Step-by-step enumeration of operations the executor performs
 - Exact commands to run (not "run tests" — `npm test -- --coverage`)
 - Exact sequence with ordering
 
 **Validation criteria per step:**
+
 - What output indicates the step succeeded
 - What output indicates failure and what failure mode it represents
 
@@ -706,6 +750,7 @@ Stage 01b produces the exact hook scripts that Stage 02 installs:
 Stage 01b specifies (Opus-decided) the CONTENT the README and LICENSE should communicate. Sonnet's Stage 02 work drafts the prose from these decisions.
 
 README content decisions include:
+
 - Title, tagline, one-paragraph overview
 - Key features (what to highlight)
 - Installation / setup instructions outline
@@ -719,6 +764,7 @@ LICENSE content decision: exact license selection with rationale (e.g., "MIT for
 ### Stage 01b Output
 
 The Stage 01b output is a single document (or structured set of documents) containing:
+
 - Excellent end state definition
 - QA specification (per Stage 01a Step 2)
 - Full stage-by-stage content at declared depth
@@ -731,6 +777,7 @@ Filename convention: `[ProjectPrefix]_D2R_Plan_[YYYY-MM-DD]_v01_I.md`, saved to 
 ### Stage 01b Exit
 
 Stage 01b output exits through the ASAE gate at threshold 3 (plan-content gate). The gate audits:
+
 - Every Deep stage has all Deep-depth requirements present
 - Every Medium stage has all Medium-depth requirements present
 - Every Shallow stage has explicit justification for Shallow depth
@@ -748,18 +795,21 @@ Stage 02 is always Project Scaffold. Executed by Sonnet. This stage creates the 
 ### Scope
 
 **Repo setup:**
+
 - Create repo on GitHub if it doesn't exist (visibility per Stage 01b decisions; description per Stage 01b)
 - Initialize local repo
 - Configure remote
 - Set up initial branch structure
 
 **Documentation artifacts (drafted by Sonnet per Stage 01b content decisions):**
+
 - README.md (Sonnet authors prose from Opus's content decisions)
 - LICENSE (Sonnet authors per Opus's license selection)
 - .gitignore (per applicable language/framework patterns; may be largely template-driven)
 - Initial CLAUDE.md pointing to the D2R plan and project documentation
 
 **Configuration artifacts (per Stage 01b specifications):**
+
 - package.json or equivalent (exact dependencies per Stage 01b)
 - tsconfig.json or equivalent (exact settings per Stage 01b)
 - eslint.config.js or equivalent (exact rules per Stage 01b)
@@ -768,20 +818,24 @@ Stage 02 is always Project Scaffold. Executed by Sonnet. This stage creates the 
 - Test framework configs (vitest.config.ts, playwright.config.ts, etc.)
 
 **Hook installation:**
+
 - `.claude/settings.json` with hook configurations from Stage 01b
 - `.githooks/pre-commit` script from Stage 01b
 - `.githooks/pre-push` script from Stage 01b
 - `prepare` script in package.json that installs the git hooks path
 
 **CI/CD setup:**
+
 - `.github/workflows/` with CI workflow from Stage 01b
 - Verify workflow on initial commit
 
 **Initial directory structure:**
+
 - Create folders per Stage 01b's scaffolding spec
 - Placeholder README.md in each empty folder explaining intended contents
 
 **Initial commit + push:**
+
 - Stage all scaffold files
 - Commit with descriptive message per Stage 01b's content decisions
 - Push to main (or default branch per Stage 01b)
@@ -790,6 +844,7 @@ Stage 02 is always Project Scaffold. Executed by Sonnet. This stage creates the 
 ### Stage 02 Exit
 
 Stage 02 exits through the ASAE gate at threshold 3 (scaffold completeness gate). The gate audits:
+
 - Repo created and remote configured
 - README, LICENSE, .gitignore, CLAUDE.md present and aligned with Stage 01b content decisions
 - All configuration files per Stage 01b specifications
@@ -911,6 +966,7 @@ This is the highest threshold in the plan because this is the final convergence 
 ### Stage QA Commit Gate
 
 On exit, commit with the final D2R summary as the commit message:
+
 - Total stages executed
 - Total ASAE gate iterations across all stages
 - Total issues found and remediated in Stage QA
@@ -981,14 +1037,14 @@ On exit, commit with the final D2R summary as the commit message:
 
 Accessibility is structurally enforced across six layers in the D2R cascade. Each layer is load-bearing — remove one and the chain breaks. WCAG 2.1 AA compliance is hardwired (not negotiable) at the first five layers; the UXD adds an accessibility-as-delight sixth layer on top.
 
-| # | Layer | What's hardwired | What enforces it |
-|---|---|---|---|
-| 1 | **PRD Section 6.4** | "WCAG 2.1 AA compliance is hardwired — not a constraint to negotiate" | Cross-doc audit in `/ideate-to-d2r-ready` Phase 3 verifies declaration |
-| 2 | **TRD Section 3.5** | Tech-stack choices that support accessibility (jsx-a11y eslint plugin, ARIA library, accessibility-aware framework) | Cross-doc audit checks TRD↔TQCD coverage |
-| 3 | **TQCD Section 3.5** | Per-Standard Exit Criteria — axe-core CRITICAL+SERIOUS = 0, Lighthouse Accessibility ≥ target, keyboard nav coverage in test suite | TQCD declares applicable; Stage QA enforces |
-| 4 | **`/asae` domain=code checklist** | "Accessibility compliance (WCAG 2.1 AA if UI code, per D2R hardwired requirement)" — fires at every Stage 03+ implementation gate at strict severity | The `/asae` skill itself; findings reset counter |
-| 5 | **Stage QA convergence loop** | Full Testing Taxonomy applicable sweep including accessibility tests at threshold 5 | D2R Stage QA gate; findings reset cycle |
-| 6 | **UXD Section 5 + `/asae` domain=design** | Accessibility-as-delight: ARIA labels are action verbs not nouns; keyboard nav focus order matches visual reading order; screen-reader experience is intentional (live regions, landmarks, decorative-image marking); motion/contrast/color-scheme preferences honored thoughtfully | Stage NN+1 Design Polish gate at `/asae domain=design` threshold 3 strict |
+| #   | Layer                                     | What's hardwired                                                                                                                                                                                                                                                                    | What enforces it                                                          |
+| --- | ----------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| 1   | **PRD Section 6.4**                       | "WCAG 2.1 AA compliance is hardwired — not a constraint to negotiate"                                                                                                                                                                                                               | Cross-doc audit in `/ideate-to-d2r-ready` Phase 3 verifies declaration    |
+| 2   | **TRD Section 3.5**                       | Tech-stack choices that support accessibility (jsx-a11y eslint plugin, ARIA library, accessibility-aware framework)                                                                                                                                                                 | Cross-doc audit checks TRD↔TQCD coverage                                  |
+| 3   | **TQCD Section 3.5**                      | Per-Standard Exit Criteria — axe-core CRITICAL+SERIOUS = 0, Lighthouse Accessibility ≥ target, keyboard nav coverage in test suite                                                                                                                                                  | TQCD declares applicable; Stage QA enforces                               |
+| 4   | **`/asae` domain=code checklist**         | "Accessibility compliance (WCAG 2.1 AA if UI code, per D2R hardwired requirement)" — fires at every Stage 03+ implementation gate at strict severity                                                                                                                                | The `/asae` skill itself; findings reset counter                          |
+| 5   | **Stage QA convergence loop**             | Full Testing Taxonomy applicable sweep including accessibility tests at threshold 5                                                                                                                                                                                                 | D2R Stage QA gate; findings reset cycle                                   |
+| 6   | **UXD Section 5 + `/asae` domain=design** | Accessibility-as-delight: ARIA labels are action verbs not nouns; keyboard nav focus order matches visual reading order; screen-reader experience is intentional (live regions, landmarks, decorative-image marking); motion/contrast/color-scheme preferences honored thoughtfully | Stage NN+1 Design Polish gate at `/asae domain=design` threshold 3 strict |
 
 The 6-layer model is the structural-enforcement answer to "is accessibility hardwired?" — yes, at six independent gates, in different layers (declaration / tech / quality criteria / implementation audit / QA convergence / design polish). A bug that bypasses one layer is caught by the next; a build that ships missing accessibility is empirical evidence that one of the layer-enforcers regressed and triggers F-class corpus addition.
 

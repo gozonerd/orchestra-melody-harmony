@@ -9,12 +9,14 @@ established_by_session: claude-code-cold-read-2026-04-25
 ## The Rule
 
 When Krystal sets a vision and asks for the buildable shape of it, do NOT:
+
 - Ration items against an arbitrary cap ("10 is a clean number; v03+ candidates")
 - Pose the question as "should we add X?" or "if you want a bigger swing"
 - Frame items as competing for slots ("could displace Bundle 1...")
 - Treat external competitors (IBM, OpenAI, etc.) as the ceiling that scopes Martinez Methods
 
 Instead:
+
 - Push the scope to where the empirical case actually supports it
 - Build the case per item with named anchors (real failures, real $$, real precedents)
 - Position Martinez Methods as a structurally distinct category, not a competitor in someone else's category

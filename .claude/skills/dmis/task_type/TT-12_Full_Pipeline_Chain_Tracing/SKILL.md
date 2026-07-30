@@ -1,9 +1,9 @@
 ---
-title: "Full Pipeline Chain Tracing"
-skill_id: "SK-12"
+title: 'Full Pipeline Chain Tracing'
+skill_id: 'SK-12'
 version: v02_I
 date: 2026-03-06
-task_type: "TT-12"
+task_type: 'TT-12'
 pipeline_assignments: [P4]
 owner: Martinez Methods
 ---
@@ -11,16 +11,20 @@ owner: Martinez Methods
 # Full Pipeline Chain Tracing
 
 ## Purpose
+
 Trace claims backward through multiple pipeline stages to primary evidence, documenting the complete provenance chain. This task type ensures every assertion in the DATS output is grounded in verifiable source material and can be tracked through all intermediate processing steps.
 
 ## Pipeline Context
+
 - **Pipelines:** P4 (Final Review & Integration)
 - **Raw Tasks Covered:** P4.2-L2, P4.2-L6, P4.2-PS-d
 - **Dependencies:** Outputs from P1, P2, P3 processing chains
 - **Purpose:** Quality assurance at the final integration stage to establish complete provenance for all claims
 
 ## Input Specification
+
 Inputs to TT-12 include:
+
 - Integrated claim set from P4.2-L2 synthesis layer
 - Complete audit trail documentation from P1, P2, P3 processing
 - Source material references and thread counts per pipeline
@@ -28,6 +32,7 @@ Inputs to TT-12 include:
 - Convergence scoring matrices (QA α, Methodology α)
 
 ## Output Specification
+
 - Output must conform to: `schemas/tt12_output.yaml`
 - Reference schema in: `references/output_schema.yaml`
 - Produce structured provenance trace for each primary claim:
@@ -38,6 +43,7 @@ Inputs to TT-12 include:
   - Primary evidence reference identifiers
 
 ## Methodology
+
 1. **Claim Identification:** Extract all primary claims from P4.2-L2 integrated output
 2. **Stage-Backward Mapping:** For each claim, identify where it appeared in P3 synthesis and trace its source in P2 analysis
 3. **Thread Verification:** Confirm thread counts from P1 raw processing match documented input specifications
@@ -47,6 +53,7 @@ Inputs to TT-12 include:
 7. **Provenance Report:** Generate structured output documenting complete provenance for each claim
 
 ## Quality Criteria
+
 - **Completeness:** Every primary claim must have complete backward trace to source material
 - **Consistency:** Trace documentation must match convergence scoring and thread counts from earlier stages
 - **Clarity:** Provenance chain must be human-readable and auditable
@@ -55,7 +62,9 @@ Inputs to TT-12 include:
 - **Convergence Compliance:** All traces must show convergence thresholds met at decision points
 
 ## Accuracy Rules
+
 All outputs must comply with the 9 Critical Accuracy Rules (ACC-001 through ACC-009) defined in `ACCURACY_RULES.md`:
+
 - ACC-001: CommCare current use vs. history (distinguish SMZ active deployment from Uganda pilot)
 - ACC-002: Dimagi pilot = StrongMinds-wide (both Uganda and Zambia)
 - ACC-003: Dimagi ≠ CommCare (platform vs. consulting firm)
@@ -67,6 +76,7 @@ All outputs must comply with the 9 Critical Accuracy Rules (ACC-001 through ACC-
 - ACC-009: CommCare DET is standalone (separate Python CLI)
 
 ## Anti-Patterns
+
 - **Trace Incompleteness:** Skipping intermediate stages or assuming direct P1→P4 causation
 - **Thread Count Mismatch:** Reporting convergence without verifying thread counts match original specifications
 - **Circular References:** Using trace documentation as evidence for itself rather than linking to primary sources
@@ -74,4 +84,5 @@ All outputs must comply with the 9 Critical Accuracy Rules (ACC-001 through ACC-
 - **Vague Attribution:** Using generic source labels instead of specific reference identifiers
 
 ## Examples
+
 See example outputs in `references/example_outputs/` for gold-standard provenance trace demonstrations showing complete backward mapping from final claim to primary evidence.

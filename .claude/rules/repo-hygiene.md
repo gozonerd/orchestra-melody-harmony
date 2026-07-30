@@ -1,7 +1,7 @@
 ---
 description: Rules for repository file organization, root folder cleanliness, and version deprecation. Applies to all repos.
 globs:
-  - "**/*"
+  - '**/*'
 ---
 
 # Repo hygiene

@@ -16,17 +16,17 @@ Verb form: **to FIX** (a failure mode).
 
 ## What FIXES Replaces
 
-| Generic term | Use FIXES instead |
-|--------------|---------------------|
-| solution | a FIX |
-| prevention | FIXES (or "preventive FIXES" if needing the prevention-axis distinction) |
-| remediation | FIXES (or "remediative FIXES" if needing the recovery-axis distinction) |
-| mitigation | FIXES |
-| intervention | FIXES |
-| corrective action | a FIX |
-| safeguard | a FIX |
-| control (as in "AI control") | a FIX |
-| countermeasure | a FIX |
+| Generic term                 | Use FIXES instead                                                        |
+| ---------------------------- | ------------------------------------------------------------------------ |
+| solution                     | a FIX                                                                    |
+| prevention                   | FIXES (or "preventive FIXES" if needing the prevention-axis distinction) |
+| remediation                  | FIXES (or "remediative FIXES" if needing the recovery-axis distinction)  |
+| mitigation                   | FIXES                                                                    |
+| intervention                 | FIXES                                                                    |
+| corrective action            | a FIX                                                                    |
+| safeguard                    | a FIX                                                                    |
+| control (as in "AI control") | a FIX                                                                    |
+| countermeasure               | a FIX                                                                    |
 
 The branded term unifies prevention-axis and recovery-axis outputs under one consumer-legible noun. Customers buy FIXES (plural). Bundles produce FIXES. Aspects govern FIXES. ASAE attests FIXES.
 
@@ -48,6 +48,7 @@ The branded term unifies prevention-axis and recovery-axis outputs under one con
 ## When TO Translate Generic → FIXES
 
 When authoring or re-authoring docs:
+
 1. Identify generic term in context
 2. Determine if context is product-copy / skill-spec / bundle / internal (use FIXES) OR regulatory / academic / historical (keep generic)
 3. Replace with FIXES if appropriate

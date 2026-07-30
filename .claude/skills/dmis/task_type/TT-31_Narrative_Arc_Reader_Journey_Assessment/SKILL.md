@@ -1,9 +1,9 @@
 ---
-title: "Narrative Arc Reader Journey Assessment"
-skill_id: "SK-31"
+title: 'Narrative Arc Reader Journey Assessment'
+skill_id: 'SK-31'
 version: v02_I
 date: 2026-03-06
-task_type: "TT-31"
+task_type: 'TT-31'
 pipeline_assignments: [P6]
 owner: Martinez Methods
 ---
@@ -11,15 +11,18 @@ owner: Martinez Methods
 # Narrative Arc Reader Journey Assessment
 
 ## Purpose
+
 Evaluate document-level logical flow, section transition quality, story coherence, and executive summary alignment. Assess reader journey from start to finish.
 
 ## Pipeline Context
+
 - **Pipelines**: P6
 - **Raw Tasks**: P6 L5, P6 L7
 - **Thread Assignments**: P6 (16 threads distributed across 6 validation passes)
 - **Category**: Quality Assurance
 
 ## Input Specification
+
 - Complete synthesized multi-section document
 - Executive summary (if present)
 - Target reader profile and reading expectations
@@ -28,7 +31,9 @@ Evaluate document-level logical flow, section transition quality, story coherenc
 - Known narrative flow issues from prior feedback (if available)
 
 ## Output Specification
+
 Narrative arc and reader journey assessment report in YAML format.
+
 - Output must conform to: `schemas/tt31_output.yaml`
 - Reference schema in: `references/output_schema.yaml`
 - Flow assessment: logical progression score and rationale
@@ -39,6 +44,7 @@ Narrative arc and reader journey assessment report in YAML format.
 - Recommendations: flow improvements by section
 
 ## Methodology
+
 1. **Purpose and Thesis Identification**: Clarify document's primary purpose and key messages
 2. **Logical Sequence Check**: Trace document outline; assess whether section order supports comprehension
 3. **Transition Analysis**: Examine bridges between sections; identify abrupt shifts or weak connections
@@ -49,6 +55,7 @@ Narrative arc and reader journey assessment report in YAML format.
 8. **Remediation Recommendations**: Suggest flow improvements, reordering, transitions, or clarifications by section
 
 ## Quality Criteria
+
 - Logical flow assessment grounded in actual document sequence and transitions
 - Reader journey simulation reflects target audience perspective (not generic reader)
 - Key message tracking accounts for nuance and contextual evolution (not just identical repetition)
@@ -58,7 +65,9 @@ Narrative arc and reader journey assessment report in YAML format.
 - Coherence score is calibrated and justified (not arbitrary)
 
 ## Accuracy Rules
+
 All outputs must comply with the 9 Critical Accuracy Rules (ACC-001 through ACC-009) defined in `ACCURACY_RULES.md`:
+
 - ACC-001: CommCare current use vs. history
 - ACC-002: Dimagi pilot = StrongMinds-wide
 - ACC-003: Dimagi ≠ CommCare
@@ -70,6 +79,7 @@ All outputs must comply with the 9 Critical Accuracy Rules (ACC-001 through ACC-
 - ACC-009: CommCare DET is standalone
 
 ## Anti-Patterns
+
 - **Generic Flow Assessment**: Applying standard narrative structure checklist without tailoring to this document's specific purpose and audience
 - **Missing Audience Context**: Evaluating flow from academic/journalistic perspective when client requires practical/action-oriented narrative
 - **Ignoring Intentional Structure**: Flagging non-linear structure as incoherent when it serves deliberate purpose
@@ -77,8 +87,10 @@ All outputs must comply with the 9 Critical Accuracy Rules (ACC-001 through ACC-
 - **Surface-Level Transition Review**: Checking topic consistency without assessing logical argument flow
 
 ## Examples
+
 See example outputs in `references/example_outputs/`
 
 ---
+
 **Last Updated**: 2026-03-06
 **Status**: Active

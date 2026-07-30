@@ -8,13 +8,14 @@ user: krystal
 
 ## The rule (verbatim from Krystal 2026-04-27 evening)
 
-> *"b, let's always lean toward codifying larger principals"*
+> _"b, let's always lean toward codifying larger principals"_
 
 (In context: META-7 walkthrough Q1, where Krystal chose Option B (LOC + complexity) over my Option A recommendation (LOC only). The "let's always lean toward larger principals" was the cross-cutting principle she was locking, not just the META-7 Q1 answer.)
 
 ## Plain statement
 
 When designing a methodology mod, multiple options often differ along a narrow-vs-broad axis:
+
 - **Narrow option:** scope matches only the empirical instance that surfaced the failure mode
 - **Broader option:** scope matches the principle's general form (the empirical instance + structurally-similar instances + future expansions)
 
@@ -50,10 +51,12 @@ When walking through a mod's options:
 ## Examples from 2026-04-27 walkthrough
 
 **Where I narrowed wrongly (corrected by Krystal):**
+
 - META-7 Q1: I recommended LOC-only; Krystal chose LOC+complexity (broader principle: measurement honesty across both metrics)
 - META-7 Q2: I recommended advisory-checklist-only; Krystal chose checklist+commit-msg-trailer (broader: removes memory dependency per consistent pattern)
 
 **Where structural separation IS the broader principle (not narrowing):**
+
 - META-3 scope: kept narrow (Tier A only) + shared `tag_vs_tree_check` library; the SHARED LIBRARY is the codification of the broader principle. Mod scoping matches failure-mode boundaries; library naming + pattern recurrence is the broader-principle expression.
 
 ## Companion rules
@@ -66,6 +69,7 @@ When walking through a mod's options:
 ## Cross-check during future walkthroughs
 
 When you (Clauda/Claudette) write "I recommend Option A (the narrower one)" — STOP and re-examine:
+
 - Is the narrowing argument specific evidence (per the list above) or a rationalization?
 - Would you make the same recommendation if the empirical instance were 10× larger?
 - If yes-still-recommend-narrow: the narrowing has principled basis, proceed.

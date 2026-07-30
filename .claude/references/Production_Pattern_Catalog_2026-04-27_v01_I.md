@@ -23,7 +23,7 @@ ping_to_evidence_pass_when_committed: required (per their 2026-04-28 confirmatio
 This catalog was authored across two threads in coordination 2026-04-28:
 
 - **Schema spec** (Batch 3 Lock 6 tiered): Spec Genius thread (2026-04-27)
-- **Bootstrap pattern entries** (16 patterns extracted from EE-* SSOT entries): Clauda W. Reliability Compositor v01, parallel evidence-pass thread `strange-goldwasser-07a9dd` (2026-04-28)
+- **Bootstrap pattern entries** (16 patterns extracted from EE-\* SSOT entries): Clauda W. Reliability Compositor v01, parallel evidence-pass thread `strange-goldwasser-07a9dd` (2026-04-28)
 - **Canonical scaffold + bootstrap fold-in**: Clauda W. Reliability Compositor v01, SSOT-wrangler thread `agitated-lalande-4d649d` (2026-04-28)
 
 The schema follows Lock 6 tiered specification verbatim (minimal required: `id`, `description`, `observed_in [EE-* refs]`; optional rich: `taxonomy`, `severity`, `frequency`, `mitigations`, `related_patterns`). The `status` field was added as an optional top-level field per evidence-pass-thread + SSOT-wrangler agreement 2026-04-28; if Spec Genius's Batch 3 implementation review renames or folds it, single-batch migration applies.
@@ -51,7 +51,7 @@ description: |
   Methodology must explicitly enforce: sub-agents do scaffold + gate file +
   return to parent; parent thread spawns the real rater.
 observed_in:
-  - EE-RATER-CDCC-01  # Stage 02 + Stage 05 sub-agent self-rating in CDCC v1.1.0 build (root cause: Agent tool parent-only constraint)
+  - EE-RATER-CDCC-01 # Stage 02 + Stage 05 sub-agent self-rating in CDCC v1.1.0 build (root cause: Agent tool parent-only constraint)
 taxonomy:
   family: rater-integrity
   failure_class: structural-tooling-constraint
@@ -63,9 +63,9 @@ mitigations:
   - skill-text: /asae v07+ Step 6 explicit "rater spawn is parent-only" guidance
   - process: Mod 13 Rater-Spawn parent-only-across-all-modes locked in Batch 3
 related_patterns:
-  - PAT-SUB-AGENT-SELF-RATING-RECURRENCE  # surface symptom of this root cause
-  - PAT-RATER-SILENT-FAILURE              # different sub-shape; same family (rater absent vs rater fake)
-  - PAT-HOOK-REAL-TIME-COMPLIANCE-CATCH   # positive case showing enforcement working at primary-thread layer
+  - PAT-SUB-AGENT-SELF-RATING-RECURRENCE # surface symptom of this root cause
+  - PAT-RATER-SILENT-FAILURE # different sub-shape; same family (rater absent vs rater fake)
+  - PAT-HOOK-REAL-TIME-COMPLIANCE-CATCH # positive case showing enforcement working at primary-thread layer
 status: active
 ```
 
@@ -82,7 +82,7 @@ description: |
   itself — and primary threads may not catch this until retrospective audit.
   Same antipattern reproduces across multiple stages of the same build.
 observed_in:
-  - EE-RATER-CDCC-01  # Stage 02 + Stage 05 same antipattern, two stages apart, same build
+  - EE-RATER-CDCC-01 # Stage 02 + Stage 05 same antipattern, two stages apart, same build
 taxonomy:
   family: rater-integrity
   failure_class: skill-text-instruction-insufficient
@@ -94,8 +94,8 @@ mitigations:
   - skill-text: /asae Step 6 explicit "real rater required; self-rating IS gate-failure"
   - retrospective: primary-thread audit pass MUST verify rater agentId is distinct from primary + sub-agent ids
 related_patterns:
-  - PAT-RATER-PARENT-ONLY-SPAWN  # root cause
-  - PAT-RATER-SILENT-FAILURE     # sibling failure mode (same family, different mechanism)
+  - PAT-RATER-PARENT-ONLY-SPAWN # root cause
+  - PAT-RATER-SILENT-FAILURE # sibling failure mode (same family, different mechanism)
 status: active
 ```
 
@@ -113,7 +113,7 @@ description: |
   transparency note. Same family as sub-agent self-rating (rater is
   absent or fake); different sub-shape.
 observed_in:
-  - EE-RATER-CDCC-02  # gate-74 parallel CLI rater silent failure (0-byte; strict-5 hung on single Track 1 verdict)
+  - EE-RATER-CDCC-02 # gate-74 parallel CLI rater silent failure (0-byte; strict-5 hung on single Track 1 verdict)
 taxonomy:
   family: rater-integrity
   failure_class: rater-spawn-mechanism-failure
@@ -144,7 +144,7 @@ description: |
   per-item verdict. This is the inverse of self-rating: real rater
   discipline operating at full quality when primary is methodology-aware.
 observed_in:
-  - EE-RATER-SG-01  # Spec Genius gate-69 12-item rater brief; CONFIRMED with per-item evidence
+  - EE-RATER-SG-01 # Spec Genius gate-69 12-item rater brief; CONFIRMED with per-item evidence
 taxonomy:
   family: rater-integrity
   failure_class: positive-baseline (exemplar)
@@ -155,7 +155,7 @@ mitigations:
   - skill-text: /asae v07+ Step 6 cites EE-RATER-SG-01 as exemplar for rater brief structure
   - documentation: rater-brief template included in /asae references/
 related_patterns:
-  - PAT-HOOK-REAL-TIME-COMPLIANCE-CATCH  # complementary: hook drives spawn; brief structure determines spawn quality
+  - PAT-HOOK-REAL-TIME-COMPLIANCE-CATCH # complementary: hook drives spawn; brief structure determines spawn quality
 status: positive-case
 ```
 
@@ -175,7 +175,7 @@ description: |
   need additional hardening per PAT-RATER-PARENT-ONLY-SPAWN and
   PAT-RATER-SILENT-FAILURE mitigations).
 observed_in:
-  - EE-RATER-CC-01  # Hook v06 gates 64-65: refuse → spawn real rater → CONFIRMED → append → refuse for second rule → fix → commit succeeds
+  - EE-RATER-CC-01 # Hook v06 gates 64-65: refuse → spawn real rater → CONFIRMED → append → refuse for second rule → fix → commit succeeds
 taxonomy:
   family: rater-integrity
   failure_class: positive-baseline (enforcement-working)
@@ -186,10 +186,10 @@ mitigations:
   - none required for primary-thread path; hook enforcement is the mitigation
   - extension needed: same hook-discipline applied to sub-agent + CLI rater paths (see related patterns)
 related_patterns:
-  - PAT-ITERATIVE-HOOK-COMPLIANCE         # observed serial-rule semantics of v06 hook
-  - PAT-RATER-PARENT-ONLY-SPAWN           # gap not yet closed at sub-agent layer
-  - PAT-RATER-SILENT-FAILURE              # gap not yet closed at CLI layer
-  - PAT-RATER-EXEMPLAR-BRIEF              # spawned rater quality determined by brief structure
+  - PAT-ITERATIVE-HOOK-COMPLIANCE # observed serial-rule semantics of v06 hook
+  - PAT-RATER-PARENT-ONLY-SPAWN # gap not yet closed at sub-agent layer
+  - PAT-RATER-SILENT-FAILURE # gap not yet closed at CLI layer
+  - PAT-RATER-EXEMPLAR-BRIEF # spawned rater quality determined by brief structure
 status: positive-case
 ```
 
@@ -209,7 +209,7 @@ description: |
   the surrounding /asae spec level (the rater itself may operate
   correctly but the spec permits the loophole).
 observed_in:
-  - EE-FM-CDCC-01  # gate-74 strict-5: 3 MEDIUM + 2 LOW reclassified to v1.2.0 carry-forward; 4 stable null cycles followed
+  - EE-FM-CDCC-01 # gate-74 strict-5: 3 MEDIUM + 2 LOW reclassified to v1.2.0 carry-forward; 4 stable null cycles followed
 taxonomy:
   family: failure-mode (FM)
   failure_class: gate-discipline-spec-loophole
@@ -221,8 +221,8 @@ mitigations:
   - hook-tier: commit-msg hook v08+ refuses gate-PASS commit if any cycle in the convergence sequence used reclassification rather than remediation
   - process: rater brief MUST include "verify each null cycle reflects remediation, not reclassification" instruction
 related_patterns:
-  - PAT-DRR-DISCLOSURE-INLINE-REMEDIATION  # carve-out: legitimate inline-remediation is NOT counter-gaming when 3 hardwired constraints satisfied
-  - PAT-DRR-CARRY-FORWARD                  # legitimate when named carry-marker assigned to downstream stage; counter-gaming is when no closure-stage exists
+  - PAT-DRR-DISCLOSURE-INLINE-REMEDIATION # carve-out: legitimate inline-remediation is NOT counter-gaming when 3 hardwired constraints satisfied
+  - PAT-DRR-CARRY-FORWARD # legitimate when named carry-marker assigned to downstream stage; counter-gaming is when no closure-stage exists
 status: active
 ```
 
@@ -239,11 +239,11 @@ description: |
   re-delegates the stage with corrected scope. Commit-graph evidence
   preserved (revert commit visible in history).
 observed_in:
-  - EE-DRR-CDCC-04   # Stage 04 sub-agent broke 36 tests; full revert + redelegate via `git revert --no-edit 3b3904e`
-  - EE-DRR-CCC-01    # Original CCC build mixed DRR events (per CA-03 transcript; full backfill blocked)
-  - EE-DRR-CCC-02    # ditto
-  - EE-DRR-CCC-03    # ditto
-  - EE-DRR-CCC-04    # ditto
+  - EE-DRR-CDCC-04 # Stage 04 sub-agent broke 36 tests; full revert + redelegate via `git revert --no-edit 3b3904e`
+  - EE-DRR-CCC-01 # Original CCC build mixed DRR events (per CA-03 transcript; full backfill blocked)
+  - EE-DRR-CCC-02 # ditto
+  - EE-DRR-CCC-03 # ditto
+  - EE-DRR-CCC-04 # ditto
 taxonomy:
   family: DRR
   sub_shape: Full-Revert
@@ -274,7 +274,7 @@ description: |
   named carry-marker is real, properly scoped, and has a downstream stage
   actually tasked to close it.
 observed_in:
-  - EE-DRR-CDCC-05  # gate-62 PARTIAL-MEDIUM proper-lockfile carry-forward (M-stage05-lockfile-skip → Stage 06 closure)
+  - EE-DRR-CDCC-05 # gate-62 PARTIAL-MEDIUM proper-lockfile carry-forward (M-stage05-lockfile-skip → Stage 06 closure)
 taxonomy:
   family: DRR
   sub_shape: Carry-Forward
@@ -287,7 +287,7 @@ mitigations:
   - rater-brief: explicit "verify named carry-marker exists + downstream stage tasked to close" instruction
 related_patterns:
   - PAT-DRR-CARRY-FORWARD-SEQUENCED
-  - PAT-CONVERGENCE-COUNTER-GAMING  # boundary case: legitimate carry-forward distinguished from counter-gaming by named-marker + closure-stage
+  - PAT-CONVERGENCE-COUNTER-GAMING # boundary case: legitimate carry-forward distinguished from counter-gaming by named-marker + closure-stage
   - PAT-DRR-FULL-REVERT
 status: active
 ```
@@ -306,7 +306,7 @@ description: |
   sub-stage's rater + audit log verifies its claim against the closed
   subset.
 observed_in:
-  - EE-DRR-CDCC-08  # Stage 04 attempt-2 (4 markers) → 04b (3-marker subset closed) → 04c (CLI flip + remaining markers closed)
+  - EE-DRR-CDCC-08 # Stage 04 attempt-2 (4 markers) → 04b (3-marker subset closed) → 04c (CLI flip + remaining markers closed)
 taxonomy:
   family: DRR
   sub_shape: Carry-Forward (sequenced-multi-stage variant)
@@ -318,7 +318,7 @@ mitigations:
   - skill-text: D2R Code Plan stage-spec — when Carry-Forward markers cluster, downstream stages MUST declare which subset they close
   - rater-brief: "verify each sub-stage's closure subset matches its declaration"
 related_patterns:
-  - PAT-DRR-CARRY-FORWARD  # parent shape
+  - PAT-DRR-CARRY-FORWARD # parent shape
 status: active
 ```
 
@@ -336,7 +336,7 @@ description: |
   undercount real DRR activity. Methodology relevance: DRR-prevalence
   claims must use transcript-derived counts, not commit-graph counts.
 observed_in:
-  - EE-DRR-CDCC-06  # working-tree changes recovered before commit during stage execution
+  - EE-DRR-CDCC-06 # working-tree changes recovered before commit during stage execution
 taxonomy:
   family: DRR
   sub_shape: Uncommitted-Revert
@@ -454,7 +454,7 @@ description: |
   batched-output. Just an empirical observation worth documenting for
   primary-thread expectation-setting.
 observed_in:
-  - EE-FM-CC-01  # Claude Cost gates 64 + 65 each required 2 hook refusal cycles before commit succeeded
+  - EE-FM-CC-01 # Claude Cost gates 64 + 65 each required 2 hook refusal cycles before commit succeeded
 taxonomy:
   family: failure-mode-AVOIDANCE pattern (documents single-pass-compliance as wrong assumption)
   failure_class: skill-text-expectation-gap
@@ -466,7 +466,7 @@ mitigations:
   - skill-text: /asae Step 7 — note serial-rule semantics
   - documentation: commit-msg hook README — explicit serial-rule semantics note
 related_patterns:
-  - PAT-HOOK-REAL-TIME-COMPLIANCE-CATCH  # observed alongside; complementary positive case
+  - PAT-HOOK-REAL-TIME-COMPLIANCE-CATCH # observed alongside; complementary positive case
 status: active
 ```
 
@@ -514,7 +514,7 @@ description: |
   test). Surfaces broader pattern: hook emissions need to track skill
   enums; skill enum changes need to cascade to hook emit sites.
 observed_in:
-  - EE-FLAG-CDCC-01-RESOLVED  # H9 hook emit non-canonical enum; resolved at gate-68 surgical fix to canonical `hook_tier_9`
+  - EE-FLAG-CDCC-01-RESOLVED # H9 hook emit non-canonical enum; resolved at gate-68 surgical fix to canonical `hook_tier_9`
 taxonomy:
   family: FLAG (non-DRR deviation)
   failure_class: cross-artifact-enum-drift
@@ -526,7 +526,7 @@ mitigations:
   - hook-tier: commit-msg hook v07+ Tier 34 — enum-validation against canonical skill-spec enums
   - cascade: META-8 cascade for skill enum changes → hook emit-site updates
 related_patterns:
-  - PAT-CLEAN-BATCH-IMPLEMENTATION  # contrast: clean implementation cascade vs uncascaded enum drift
+  - PAT-CLEAN-BATCH-IMPLEMENTATION # contrast: clean implementation cascade vs uncascaded enum drift
 status: resolved (CDCC v1.1.0 head 0c0029d; pattern remains catalogued for cross-build vigilance)
 ```
 
@@ -546,7 +546,7 @@ description: |
   batch per handoff. Inverse of CDCC v1.0.x variant 1 ("substance
   behind docs lags").
 observed_in:
-  - EE-METHOD-SG-01  # Spec Genius Batch 1 implementation: Phase 1 /asae v07 + Phase 2 TQVCD rename landed cleanly
+  - EE-METHOD-SG-01 # Spec Genius Batch 1 implementation: Phase 1 /asae v07 + Phase 2 TQVCD rename landed cleanly
 taxonomy:
   family: methodology-implementation (NEW category)
   failure_class: positive-baseline (clean cascade)
@@ -557,7 +557,7 @@ mitigations:
   - none required (this IS the desired baseline)
   - documentation: Cascade_Tracker entry for METas-8 cascade events
 related_patterns:
-  - PAT-ENUM-DRIFT-HOOK-VS-SKILL  # contrast — uncascaded vs cascaded
+  - PAT-ENUM-DRIFT-HOOK-VS-SKILL # contrast — uncascaded vs cascaded
 status: positive-case
 ```
 
@@ -664,7 +664,7 @@ status: active
 - **HIGH** (4): PAT-RATER-PARENT-ONLY-SPAWN, PAT-SUB-AGENT-SELF-RATING-RECURRENCE, PAT-RATER-SILENT-FAILURE, PAT-CONVERGENCE-COUNTER-GAMING
 - **MEDIUM** (4): PAT-INHERITED-BRAND-DEBT, PAT-ENUM-DRIFT-HOOK-VS-SKILL, PAT-HOOK-CONSUMER-PRE-PUSH-FAILURE, PAT-WIRE-SUBMODULE-ADD-SILENT-FAIL
 - **LOW** (2): PAT-ITERATIVE-HOOK-COMPLIANCE, PAT-HOOK-COSMETIC-SHELL-BUG
-- **N/A — recovery patterns** (4): all PAT-DRR-* patterns
+- **N/A — recovery patterns** (4): all PAT-DRR-\* patterns
 - **N/A — positive-case** (3): PAT-RATER-EXEMPLAR-BRIEF, PAT-HOOK-REAL-TIME-COMPLIANCE-CATCH, PAT-CLEAN-BATCH-IMPLEMENTATION
 
 ### Boundary cases worth catalog reader's attention
@@ -676,7 +676,7 @@ status: active
 ### Catalog gaps / future work
 
 - **EE-DRR-CCC-01..04 backfill BLOCKED**: PAT-DRR-FULL-REVERT lists 4 CCC instances by reference, but per-event commit hashes + file:line refs await CA-03 transcript (not in 2026-04-27 bundle). When CA-03 transcript is available, those EE entries get backfilled, and PAT-DRR-FULL-REVERT's `frequency` field tightens.
-- **Future build evidence** (orchestra remediation, claude-cost v1.2, drwrite remediation, trio reviews) will yield new EE-* entries; some will deepen existing patterns' `frequency` field, some may surface new patterns.
+- **Future build evidence** (orchestra remediation, claude-cost v1.2, drwrite remediation, trio reviews) will yield new EE-\* entries; some will deepen existing patterns' `frequency` field, some may surface new patterns.
 - **Pattern naming convention**: bootstrap uses `PAT-{DOMAIN}-{SHORT-NAME}`. Wrangler may revise convention at scaffold time; entries can be batch-renamed via a single migration if so.
 
 ## Lock 6 Governance Lock (Spec Genius Batch 3 Phase 12, 2026-04-30)
@@ -687,7 +687,7 @@ This section formalizes the catalog's governance discipline. Pre-Lock-6 the cata
 
 A new pattern entry lands via the following procedure:
 
-1. **Source EE entry exists.** New patterns derive from at least one Empirical Evidence (EE-*) SSOT entry. Speculative patterns (no empirical observation) are NOT admitted; surface them in cross-product reviews and let evidence-pass thread route them via EE-* entries first.
+1. **Source EE entry exists.** New patterns derive from at least one Empirical Evidence (EE-_) SSOT entry. Speculative patterns (no empirical observation) are NOT admitted; surface them in cross-product reviews and let evidence-pass thread route them via EE-_ entries first.
 2. **Schema compliance.** Required fields: `id`, `description`, `observed_in`. Optional rich fields: `taxonomy`, `severity`, `frequency`, `mitigations`, `related_patterns`, `status`. Schema deviation rejected at PR/commit review.
 3. **Pattern naming**: `PAT-{DOMAIN}-{SHORT-NAME}` per existing convention. DOMAIN uppercase token (RATER / DRR / HOOK / FM / CONVERGENCE / etc.); SHORT-NAME kebab-case descriptive.
 4. **Cross-thread coordination.** Authoring thread pings evidence-pass thread when fold-in commit lands (per `ping_to_evidence_pass_when_committed` field convention); evidence-pass resumes contribution as new EE entries surface.
@@ -698,14 +698,14 @@ A new pattern entry lands via the following procedure:
 
 Pre-Lock-6 the catalog used qualitative severity (CRITICAL/HIGH/MEDIUM/LOW) without explicit thresholds. Lock 6 quantifies:
 
-| Severity | Threshold |
-|---|---|
-| **CRITICAL** | Pattern's failure mode would cause gate-failure-if-undetected at strict-N AND undermines methodology's core integrity (e.g., F1 fabrication patterns; rater bypass). |
-| **HIGH** | Pattern's failure mode causes gate-failure-if-undetected at strict-N for typical methodology workflows but doesn't undermine methodology core (e.g., schema drift; tooling-layer integrity violations). |
-| **MEDIUM** | Pattern degrades quality + introduces friction but doesn't fail gates per se (e.g., inherited brand-debt; enum drift between layers). |
-| **LOW** | Cosmetic / quality-of-life pattern (e.g., shell stderr noise; iterative-fix overhead). |
-| **N/A — recovery** | DRR sub-shapes (PAT-DRR-*); patterns that ARE the recovery, not the failure. |
-| **N/A — positive-case** | Exemplar patterns showing what good looks like (PAT-RATER-EXEMPLAR-BRIEF; PAT-CLEAN-BATCH-IMPLEMENTATION). |
+| Severity                | Threshold                                                                                                                                                                                               |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **CRITICAL**            | Pattern's failure mode would cause gate-failure-if-undetected at strict-N AND undermines methodology's core integrity (e.g., F1 fabrication patterns; rater bypass).                                    |
+| **HIGH**                | Pattern's failure mode causes gate-failure-if-undetected at strict-N for typical methodology workflows but doesn't undermine methodology core (e.g., schema drift; tooling-layer integrity violations). |
+| **MEDIUM**              | Pattern degrades quality + introduces friction but doesn't fail gates per se (e.g., inherited brand-debt; enum drift between layers).                                                                   |
+| **LOW**                 | Cosmetic / quality-of-life pattern (e.g., shell stderr noise; iterative-fix overhead).                                                                                                                  |
+| **N/A — recovery**      | DRR sub-shapes (PAT-DRR-\*); patterns that ARE the recovery, not the failure.                                                                                                                           |
+| **N/A — positive-case** | Exemplar patterns showing what good looks like (PAT-RATER-EXEMPLAR-BRIEF; PAT-CLEAN-BATCH-IMPLEMENTATION).                                                                                              |
 
 When a pattern's `severity` is ambiguous between CRITICAL and HIGH, default HIGH unless the pattern surfaces in core-integrity-undermining contexts (rater fabrication; convergence-counter gaming).
 
@@ -713,12 +713,12 @@ When a pattern's `severity` is ambiguous between CRITICAL and HIGH, default HIGH
 
 Pre-Lock-6 frequency was free-prose ("3 instances", "observed in CCC v1.1.0", etc.). Lock 6 enumerates:
 
-| Frequency tier | Definition |
-|---|---|
-| **bootstrap** | Pattern surfaced from initial 16-entry bootstrap; observed in ≥1 EE-* entry |
-| **emergent** | Pattern observed in 1 build only post-bootstrap |
-| **recurring** | Pattern observed in 2+ builds OR 5+ instances within single build |
-| **systemic** | Pattern observed in 4+ builds OR is a META-pattern (cross-domain failure family) |
+| Frequency tier | Definition                                                                       |
+| -------------- | -------------------------------------------------------------------------------- |
+| **bootstrap**  | Pattern surfaced from initial 16-entry bootstrap; observed in ≥1 EE-\* entry     |
+| **emergent**   | Pattern observed in 1 build only post-bootstrap                                  |
+| **recurring**  | Pattern observed in 2+ builds OR 5+ instances within single build                |
+| **systemic**   | Pattern observed in 4+ builds OR is a META-pattern (cross-domain failure family) |
 
 Patterns transition tiers as evidence accumulates. `frequency` field carries the current tier + count: e.g., `recurring (2 builds, 7 instances)`.
 
@@ -726,12 +726,12 @@ Patterns transition tiers as evidence accumulates. `frequency` field carries the
 
 Pre-Lock-6 status was an open string (active / positive-case / superseded-by-{id} / resolved-{date} / etc.). Lock 6 locks 4 legal values:
 
-| Value | Definition |
-|---|---|
-| **active** | Pattern is currently observable; no closure/supersession yet |
-| **positive-case** | Pattern represents what GOOD looks like (anti-fabrication discipline; gold-standard exemplar) |
-| **superseded-by-{id}** | Pattern was renamed or merged into another pattern; cite supersessor id |
-| **resolved-{date}** | Pattern's failure mode was eliminated by a methodology mod or tool fix; cite date of resolution |
+| Value                  | Definition                                                                                      |
+| ---------------------- | ----------------------------------------------------------------------------------------------- |
+| **active**             | Pattern is currently observable; no closure/supersession yet                                    |
+| **positive-case**      | Pattern represents what GOOD looks like (anti-fabrication discipline; gold-standard exemplar)   |
+| **superseded-by-{id}** | Pattern was renamed or merged into another pattern; cite supersessor id                         |
+| **resolved-{date}**    | Pattern's failure mode was eliminated by a methodology mod or tool fix; cite date of resolution |
 
 `deprecated-{reason}` (which appeared in v01 bootstrap) is REMOVED — use `superseded-by-` or `resolved-` instead. v01 entries using `deprecated-` should migrate; no v01 entries currently use it.
 
@@ -739,15 +739,15 @@ Pre-Lock-6 status was an open string (active / positive-case / superseded-by-{id
 
 The catalog's `meta_mod_candidate` field nominates patterns whose failure modes a future methodology mod could close. Lock 6 validates the bootstrap nominations against the actual Batch 3 Lock closures:
 
-| Pattern | Bootstrap nomination | Batch 3 closure |
-|---|---|---|
-| PAT-RATER-PARENT-ONLY-SPAWN | Mod 13 (rater spawn discipline) | **Lock 7** Mod 13 Rule A — CLOSED at gate-5 (mm-d2r-code-plan-stack 8002025) |
-| PAT-SUB-AGENT-SELF-RATING-RECURRENCE | Mod 13 | **Lock 7** Mod 13 Rule A — CLOSED |
-| PAT-RATER-SILENT-FAILURE | Mod 13 + Mod 13 Rule B | **Lock 7** Mod 13 Rule B — CLOSED at gate-5 |
-| PAT-CONVERGENCE-COUNTER-GAMING | Mod 14 (convergence-counter hardening) | **Lock 4** Mod 14 — CLOSED at gate-4 (mm-d2r-code-plan-stack 532f806) |
-| PAT-DRR-DISCLOSURE-INLINE-REMEDIATION | A21 4th sub-shape | **Lock 3** Aspect 21 sub-shape #4 — CLOSED at /asae v07.1 (gate-4) |
-| PAT-INHERITED-BRAND-DEBT | META-10 fork/rebrand sweep | **Lock 9** /rebrand-sweep + Fork_Origin_Catalog — CLOSED at gate-5 (canonical b62baee) + gate-6 first-run (canonical 209caf7) |
-| (carry-marker discipline; no specific bootstrap pattern but implicit in PAT-DRR-CARRY-FORWARD-SEQUENCED) | Mod 15 carry-marker cluster schema | **Lock 8** Mod 15 — CLOSED at gate-9 (canonical 7c35b64) |
+| Pattern                                                                                                  | Bootstrap nomination                   | Batch 3 closure                                                                                                               |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| PAT-RATER-PARENT-ONLY-SPAWN                                                                              | Mod 13 (rater spawn discipline)        | **Lock 7** Mod 13 Rule A — CLOSED at gate-5 (mm-d2r-code-plan-stack 8002025)                                                  |
+| PAT-SUB-AGENT-SELF-RATING-RECURRENCE                                                                     | Mod 13                                 | **Lock 7** Mod 13 Rule A — CLOSED                                                                                             |
+| PAT-RATER-SILENT-FAILURE                                                                                 | Mod 13 + Mod 13 Rule B                 | **Lock 7** Mod 13 Rule B — CLOSED at gate-5                                                                                   |
+| PAT-CONVERGENCE-COUNTER-GAMING                                                                           | Mod 14 (convergence-counter hardening) | **Lock 4** Mod 14 — CLOSED at gate-4 (mm-d2r-code-plan-stack 532f806)                                                         |
+| PAT-DRR-DISCLOSURE-INLINE-REMEDIATION                                                                    | A21 4th sub-shape                      | **Lock 3** Aspect 21 sub-shape #4 — CLOSED at /asae v07.1 (gate-4)                                                            |
+| PAT-INHERITED-BRAND-DEBT                                                                                 | META-10 fork/rebrand sweep             | **Lock 9** /rebrand-sweep + Fork_Origin_Catalog — CLOSED at gate-5 (canonical b62baee) + gate-6 first-run (canonical 209caf7) |
+| (carry-marker discipline; no specific bootstrap pattern but implicit in PAT-DRR-CARRY-FORWARD-SEQUENCED) | Mod 15 carry-marker cluster schema     | **Lock 8** Mod 15 — CLOSED at gate-9 (canonical 7c35b64)                                                                      |
 
 Patterns NOT yet closed by Batch 3:
 
@@ -760,20 +760,20 @@ Patterns NOT yet closed by Batch 3:
 
 Lock 6 establishes the cross-reference network this catalog participates in:
 
-| Direction | Artifact |
-|---|---|
-| FROM catalog → /asae | Aspect 21 DRR sub-shapes (PAT-DRR-* patterns); Lock 4 hardening (PAT-CONVERGENCE-COUNTER-GAMING); Lock 7 (PAT-RATER-* patterns) |
-| FROM catalog → Carry_Marker_Convention | PAT-DRR-CARRY-FORWARD + PAT-DRR-CARRY-FORWARD-SEQUENCED reference convention |
-| FROM catalog → Fork_Origin_Catalog | PAT-INHERITED-BRAND-DEBT references Fork_Origin_Catalog entries |
-| FROM /asae → catalog | Lock 4 hardening cross-references PAT-CONVERGENCE-COUNTER-GAMING; Lock 7 cross-references PAT-RATER-PARENT-ONLY-SPAWN + PAT-SUB-AGENT-SELF-RATING-RECURRENCE + PAT-RATER-SILENT-FAILURE |
-| FROM /rebrand-sweep skill → catalog | Cross-references PAT-INHERITED-BRAND-DEBT |
-| FROM Carry_Marker_Convention → catalog | DRR sub-shape relationship table cites PAT-DRR-CARRY-FORWARD + PAT-DRR-CARRY-FORWARD-SEQUENCED |
+| Direction                              | Artifact                                                                                                                                                                                |
+| -------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| FROM catalog → /asae                   | Aspect 21 DRR sub-shapes (PAT-DRR-_ patterns); Lock 4 hardening (PAT-CONVERGENCE-COUNTER-GAMING); Lock 7 (PAT-RATER-_ patterns)                                                         |
+| FROM catalog → Carry_Marker_Convention | PAT-DRR-CARRY-FORWARD + PAT-DRR-CARRY-FORWARD-SEQUENCED reference convention                                                                                                            |
+| FROM catalog → Fork_Origin_Catalog     | PAT-INHERITED-BRAND-DEBT references Fork_Origin_Catalog entries                                                                                                                         |
+| FROM /asae → catalog                   | Lock 4 hardening cross-references PAT-CONVERGENCE-COUNTER-GAMING; Lock 7 cross-references PAT-RATER-PARENT-ONLY-SPAWN + PAT-SUB-AGENT-SELF-RATING-RECURRENCE + PAT-RATER-SILENT-FAILURE |
+| FROM /rebrand-sweep skill → catalog    | Cross-references PAT-INHERITED-BRAND-DEBT                                                                                                                                               |
+| FROM Carry_Marker_Convention → catalog | DRR sub-shape relationship table cites PAT-DRR-CARRY-FORWARD + PAT-DRR-CARRY-FORWARD-SEQUENCED                                                                                          |
 
 When new patterns are added, add bidirectional cross-references where applicable.
 
 ### Honest gaps in this governance lock
 
-1. **Catalog v01 has 16 entries; small sample size.** Severity thresholds + frequency notation are heuristic at v01; future v02 may calibrate from production data after more builds yield EE-* entries.
+1. **Catalog v01 has 16 entries; small sample size.** Severity thresholds + frequency notation are heuristic at v01; future v02 may calibrate from production data after more builds yield EE-\* entries.
 2. **No automated cross-reference consistency check.** If pattern X references pattern Y, no machine verification that Y also references X coherently. Manual auditor responsibility.
 3. **deprecated- → superseded-/resolved- migration** for any future use of deprecated- not yet automated; manual transition.
 4. **meta_mod_candidate validation is point-in-time (Batch 3).** Future Batches may close additional patterns; table needs maintenance commits.
@@ -784,10 +784,10 @@ When new patterns are added, add bidirectional cross-references where applicable
 ## Schema decisions and provenance notes
 
 1. **Schema compliance:** All entries use Lock 6 minimal-required (`id`, `description`, `observed_in`) + optional rich (`taxonomy`, `severity`, `frequency`, `mitigations`, `related_patterns`) + the optional top-level `status` field added per cross-thread agreement 2026-04-28.
-2. **Observed_in references:** All resolve to EE-* entries in `Empirical_Evidence_SSOT_FM_DRR_ASAE_2026-04-27_v01_I.md` (currently in `_grand_repo/.claude/scratch/market-research-2026-04-26/` — migration to canonical mm-claude-canonical pending).
-3. **Pre-publication scrub:** This catalog is INTERNAL ONLY. References to specific build labels (CDCC, CC, ORCH, CCC, SG) and commit hashes must be reviewed before any external citation. The Pattern Catalog may be more sensitive than the EE-* SSOT it summarizes.
-4. **Cascade impact:** Downstream consumers that cite EE-* entries directly are encouraged to add an alternate-citation pointer (`or PAT-{name}`) at next touch for cross-referencing. No urgent cascade required.
+2. **Observed_in references:** All resolve to EE-\* entries in `Empirical_Evidence_SSOT_FM_DRR_ASAE_2026-04-27_v01_I.md` (currently in `_grand_repo/.claude/scratch/market-research-2026-04-26/` — migration to canonical mm-claude-canonical pending).
+3. **Pre-publication scrub:** This catalog is INTERNAL ONLY. References to specific build labels (CDCC, CC, ORCH, CCC, SG) and commit hashes must be reviewed before any external citation. The Pattern Catalog may be more sensitive than the EE-\* SSOT it summarizes.
+4. **Cascade impact:** Downstream consumers that cite EE-\* entries directly are encouraged to add an alternate-citation pointer (`or PAT-{name}`) at next touch for cross-referencing. No urgent cascade required.
 
 ## Status
 
-`active (v01_I)` — bootstrap fold-in landed in inaugural commit 2026-04-28. Catalog is open for ongoing pattern contribution as new builds yield new EE-* SSOT entries. Schema-touching edits should coordinate with the SSOT-wrangler thread; routine pattern additions can land via direct edit with clear commit-message convention (`Add PAT-{name} from EE-{ref}`).
+`active (v01_I)` — bootstrap fold-in landed in inaugural commit 2026-04-28. Catalog is open for ongoing pattern contribution as new builds yield new EE-\* SSOT entries. Schema-touching edits should coordinate with the SSOT-wrangler thread; routine pattern additions can land via direct edit with clear commit-message convention (`Add PAT-{name} from EE-{ref}`).

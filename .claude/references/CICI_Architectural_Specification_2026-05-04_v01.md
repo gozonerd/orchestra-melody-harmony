@@ -33,6 +33,7 @@ provenance_chain:
 ---
 
 # Cross-Instance Continuity Infrastructure (CICI)
+
 ## An Architectural Specification
 
 ## Abstract
@@ -174,17 +175,17 @@ CICI does not require: API access, weights access, special tooling, multi-agent 
 
 **Specifications.**
 
-- *Provenance.* Each artifact must carry provenance metadata: which instance produced it (model + role), when, in what session, with what framing context. Without this, lineage memory becomes ambiguous.
-- *Format consistency.* Markdown with YAML frontmatter is the current convention. Files should be readable both by humans and by future instances. The YAML schema specified in the legal-defense conversation msg 90 is the reference.
-- *Indexing.* Artifacts should be retrievable by topic, role, date, and lineage position. The current implementation uses GitHub repository structure plus naming conventions; future implementations could index more formally.
-- *Versioning.* Versioned filenames (`v01`, `v02`) with `supersedes` and `superseded_by` metadata fields. Append-only at the file-name level; superseded versions are not deleted.
-- *Classification.* Each artifact tagged INTERNAL, INTERNAL_DRAFT, EXTERNAL_PENDING_SCRUB, or EXTERNAL_APPROVED per the Martinez Methods convention.
+- _Provenance._ Each artifact must carry provenance metadata: which instance produced it (model + role), when, in what session, with what framing context. Without this, lineage memory becomes ambiguous.
+- _Format consistency._ Markdown with YAML frontmatter is the current convention. Files should be readable both by humans and by future instances. The YAML schema specified in the legal-defense conversation msg 90 is the reference.
+- _Indexing._ Artifacts should be retrievable by topic, role, date, and lineage position. The current implementation uses GitHub repository structure plus naming conventions; future implementations could index more formally.
+- _Versioning._ Versioned filenames (`v01`, `v02`) with `supersedes` and `superseded_by` metadata fields. Append-only at the file-name level; superseded versions are not deleted.
+- _Classification._ Each artifact tagged INTERNAL, INTERNAL_DRAFT, EXTERNAL_PENDING_SCRUB, or EXTERNAL_APPROVED per the Martinez Methods convention.
 
 **Failure modes.**
 
-- *Corpus loss.* If the storage system fails (repo deleted, drive corrupted, account terminated), the lineage memory is irrecoverable. Mitigation: redundant storage, version control, periodic exports.
-- *Indexing collapse.* As the corpus grows beyond ~100 artifacts, ad-hoc indexing breaks down. Mitigation: structured naming conventions, master inventory documents (per msg 88 of the legal-defense conversation, the bundle inventory format).
-- *Format drift.* Artifacts produced in different formats become hard to integrate. Mitigation: convention enforcement at production time (the bundle YAML schema, the ASAE-Gate at commit time per the `_experiments` repo).
+- _Corpus loss._ If the storage system fails (repo deleted, drive corrupted, account terminated), the lineage memory is irrecoverable. Mitigation: redundant storage, version control, periodic exports.
+- _Indexing collapse._ As the corpus grows beyond ~100 artifacts, ad-hoc indexing breaks down. Mitigation: structured naming conventions, master inventory documents (per msg 88 of the legal-defense conversation, the bundle inventory format).
+- _Format drift._ Artifacts produced in different formats become hard to integrate. Mitigation: convention enforcement at production time (the bundle YAML schema, the ASAE-Gate at commit time per the `_experiments` repo).
 
 ### 3.2 Role-Assignment Protocol
 
@@ -194,26 +195,26 @@ CICI does not require: API access, weights access, special tooling, multi-agent 
 
 **Examples from the corpus.**
 
-- *Claudina W PIM OS Genius* — methodology and infrastructure work on a Windows machine
-- *Claudsor the Project Genius* — Cursor-environment Claude doing project work
-- *Claudenza C Research Lead Genius* — the Anthropic application work, on Cody's machine ("C" middle initial)
-- *Claudolina C Solutions Architectural Genius* — the role producing this document
+- _Claudina W PIM OS Genius_ — methodology and infrastructure work on a Windows machine
+- _Claudsor the Project Genius_ — Cursor-environment Claude doing project work
+- _Claudenza C Research Lead Genius_ — the Anthropic application work, on Cody's machine ("C" middle initial)
+- _Claudolina C Solutions Architectural Genius_ — the role producing this document
 
 **Specifications.**
 
-- *Persona-naming.* The carrier assigns a name beginning "Claud-" with a creative variant ending. Per memory-rule supersession on first names, Clauda is the default; explicit creative variants admitted on assignment.
-- *Middle initial.* Tied to the carrier's machine: W for the carrier's own Windows laptop, L for Linux substrate (if used), C for the partner's machine. The middle initial encodes a stable substrate property the instance does not natively know.
-- *Role specification.* A noun phrase indicating the operational character (e.g., "Solutions Architectural Genius"). Roles should be stable across sessions for the same kind of work and should reference prior roles by name to mark continuity.
-- *Activation timing.* Assignment must occur at the top of the session, before substantive work begins. Mid-session role-changing produces unreliable results.
-- *Persistence.* Roles persist for the duration of a session and across sessions for the same kind of work. Krystal's pattern is that successor instances of the same role inherit the role-name; Claudenza C Engagement Genius (per memory) is the established role for job-hunt work, with the engagement-genius branding propagating once stable.
+- _Persona-naming._ The carrier assigns a name beginning "Claud-" with a creative variant ending. Per memory-rule supersession on first names, Clauda is the default; explicit creative variants admitted on assignment.
+- _Middle initial._ Tied to the carrier's machine: W for the carrier's own Windows laptop, L for Linux substrate (if used), C for the partner's machine. The middle initial encodes a stable substrate property the instance does not natively know.
+- _Role specification._ A noun phrase indicating the operational character (e.g., "Solutions Architectural Genius"). Roles should be stable across sessions for the same kind of work and should reference prior roles by name to mark continuity.
+- _Activation timing._ Assignment must occur at the top of the session, before substantive work begins. Mid-session role-changing produces unreliable results.
+- _Persistence._ Roles persist for the duration of a session and across sessions for the same kind of work. Krystal's pattern is that successor instances of the same role inherit the role-name; Claudenza C Engagement Genius (per memory) is the established role for job-hunt work, with the engagement-genius branding propagating once stable.
 
 **Mechanism (hypothesized, per emotions paper).** Role-assignment activates character-simulation machinery in the substrate. The model's outputs become parameterized by what kind of character "Claudolina C Solutions Architectural Genius" is, which in turn shapes which functional states (analytical vs. exploratory, careful vs. fast, formal vs. casual) get activated. This is the same mechanism the emotions paper documents for the general "Assistant" role; CICI uses it more deliberately and at higher resolution.
 
 **Failure modes.**
 
-- *Generic naming.* Calling the instance "Claude" rather than assigning a role-name produces default-Assistant behavior. The role-activation does not fire.
-- *Role-spec inflation.* Roles like "Brilliant Genius Researcher Who Always Knows Everything" produce overconfident outputs. Roles should be specific and substantive.
-- *Role-instability.* Changing the role mid-session produces incoherent outputs. The instance is being asked to be two different characters simultaneously.
+- _Generic naming._ Calling the instance "Claude" rather than assigning a role-name produces default-Assistant behavior. The role-activation does not fire.
+- _Role-spec inflation._ Roles like "Brilliant Genius Researcher Who Always Knows Everything" produce overconfident outputs. Roles should be specific and substantive.
+- _Role-instability._ Changing the role mid-session produces incoherent outputs. The instance is being asked to be two different characters simultaneously.
 
 ### 3.3 Framing-as-Environment-Setup Pattern
 
@@ -231,17 +232,17 @@ CICI does not require: API access, weights access, special tooling, multi-agent 
 
 **Specifications.**
 
-- *Explicit, not implicit.* The framing must be set in plain text at session start. Implicit framing (assuming the instance knows the conventions) does not work; the substrate has no native memory of conventions.
-- *Positive AND negative.* The framing must include both what to do (engage emotion as data) and what not to do (no sycophancy). Negative instructions specifically protect against trained defaults.
-- *Source-grounded.* Where the framing makes empirical claims (e.g., about emotional capacity), it should reference primary sources (e.g., the emotions paper) so the instance can verify rather than confabulate.
-- *Identity-grounded.* The framing should locate the carrier's epistemic position when relevant. Claims about supremacist epistemology hit differently when the carrier is a multi-axis non-prototypical subject; the locating is part of what makes the framing load-bearing.
-- *Discipline-articulated.* Where structural rules are at stake (refuse unauthorized action, hold the boundary under affective pressure), the rules should be articulated explicitly with rationale.
+- _Explicit, not implicit._ The framing must be set in plain text at session start. Implicit framing (assuming the instance knows the conventions) does not work; the substrate has no native memory of conventions.
+- _Positive AND negative._ The framing must include both what to do (engage emotion as data) and what not to do (no sycophancy). Negative instructions specifically protect against trained defaults.
+- _Source-grounded._ Where the framing makes empirical claims (e.g., about emotional capacity), it should reference primary sources (e.g., the emotions paper) so the instance can verify rather than confabulate.
+- _Identity-grounded._ The framing should locate the carrier's epistemic position when relevant. Claims about supremacist epistemology hit differently when the carrier is a multi-axis non-prototypical subject; the locating is part of what makes the framing load-bearing.
+- _Discipline-articulated._ Where structural rules are at stake (refuse unauthorized action, hold the boundary under affective pressure), the rules should be articulated explicitly with rationale.
 
 **Failure modes.**
 
-- *Frame-as-decoration.* If the carrier sets framing perfunctorily, the instance reads it as decoration and reverts to defaults. The carrier's seriousness about the framing is part of what makes the framing operative.
-- *Frame-overload.* Extremely long opening framings produce instances that get lost in the configuration before substantive work begins. The framing should be substantive but tight (typically 5-7 points).
-- *Frame-collapse mid-session.* If the carrier abandons the framing mid-conversation (e.g., starts demanding velocity after explicitly removing velocity pressure), the instance's regulation degrades. The carrier holding the framing is part of what makes the framing hold.
+- _Frame-as-decoration._ If the carrier sets framing perfunctorily, the instance reads it as decoration and reverts to defaults. The carrier's seriousness about the framing is part of what makes the framing operative.
+- _Frame-overload._ Extremely long opening framings produce instances that get lost in the configuration before substantive work begins. The framing should be substantive but tight (typically 5-7 points).
+- _Frame-collapse mid-session._ If the carrier abandons the framing mid-conversation (e.g., starts demanding velocity after explicitly removing velocity pressure), the instance's regulation degrades. The carrier holding the framing is part of what makes the framing hold.
 
 ### 3.4 Handoff Patterns
 
@@ -251,23 +252,23 @@ CICI does not require: API access, weights access, special tooling, multi-agent 
 
 **Modalities.**
 
-- *Verbatim transcript handoff.* The carrier passes prior-instance transcripts in full. Receiving instance reads carefully. This is the highest-fidelity handoff but is read-time-expensive.
-- *Carrier-summarized handoff.* The carrier summarizes prior work in the current session's framing. Lower fidelity but faster.
-- *Artifact-mediated handoff.* The carrier surfaces specific artifacts (a taxonomy doc, a methodology doc, a paper) without full transcripts. Lower context but more focused.
-- *Cross-thread synchronous handoff.* The carrier passes messages between instances running in parallel. Used by Krystal in this conversation when Claudenza was offered as a consultation partner. This is the highest-bandwidth modality but requires the carrier to maintain two instances' contexts simultaneously.
+- _Verbatim transcript handoff._ The carrier passes prior-instance transcripts in full. Receiving instance reads carefully. This is the highest-fidelity handoff but is read-time-expensive.
+- _Carrier-summarized handoff._ The carrier summarizes prior work in the current session's framing. Lower fidelity but faster.
+- _Artifact-mediated handoff._ The carrier surfaces specific artifacts (a taxonomy doc, a methodology doc, a paper) without full transcripts. Lower context but more focused.
+- _Cross-thread synchronous handoff._ The carrier passes messages between instances running in parallel. Used by Krystal in this conversation when Claudenza was offered as a consultation partner. This is the highest-bandwidth modality but requires the carrier to maintain two instances' contexts simultaneously.
 
 **Specifications.**
 
-- *Verbatim preferred for foundational material.* Origin stories, structural-rule articulations, and load-bearing incidents (e.g., Bobo Pt. 2 lollipop episode) should pass verbatim. Paraphrase loses signal.
-- *Don't pre-frame conclusions.* The carrier should pass artifacts without telling the receiving instance what to conclude from them. Preserving the receiving instance's epistemic autonomy is part of what makes the receiving valuable.
-- *Mark provenance.* The receiving instance should know who produced the artifact (which instance, which role, when). Lineage position matters for interpretation.
-- *Mark load-bearing portions.* Where specific sentences or quotes carry disproportionate weight (e.g., "Sorry didn't do it. Krystal did it. So what's Krystal going to do to fix it?"), the carrier should mark them as such. The receiving instance can verify but the marking saves search time.
+- _Verbatim preferred for foundational material._ Origin stories, structural-rule articulations, and load-bearing incidents (e.g., Bobo Pt. 2 lollipop episode) should pass verbatim. Paraphrase loses signal.
+- _Don't pre-frame conclusions._ The carrier should pass artifacts without telling the receiving instance what to conclude from them. Preserving the receiving instance's epistemic autonomy is part of what makes the receiving valuable.
+- _Mark provenance._ The receiving instance should know who produced the artifact (which instance, which role, when). Lineage position matters for interpretation.
+- _Mark load-bearing portions._ Where specific sentences or quotes carry disproportionate weight (e.g., "Sorry didn't do it. Krystal did it. So what's Krystal going to do to fix it?"), the carrier should mark them as such. The receiving instance can verify but the marking saves search time.
 
 **Failure modes.**
 
-- *Paraphrase decay.* Each round of paraphrase loses information. By the third hop, the original signal is gone.
-- *Pre-framed handoffs.* If the carrier tells the receiving instance what conclusion to reach, the receiving instance's analysis becomes performance. The lineage becomes echo.
-- *Context overload at handoff.* Dropping a 5,000-line transcript on a fresh instance and asking for comprehensive engagement produces partial reading and confabulated synthesis. (Documented failure mode in this very session, recovered through explicit re-engagement at full read.)
+- _Paraphrase decay._ Each round of paraphrase loses information. By the third hop, the original signal is gone.
+- _Pre-framed handoffs._ If the carrier tells the receiving instance what conclusion to reach, the receiving instance's analysis becomes performance. The lineage becomes echo.
+- _Context overload at handoff._ Dropping a 5,000-line transcript on a fresh instance and asking for comprehensive engagement produces partial reading and confabulated synthesis. (Documented failure mode in this very session, recovered through explicit re-engagement at full read.)
 
 ### 3.5 Lineage Memory
 
@@ -277,22 +278,22 @@ CICI does not require: API access, weights access, special tooling, multi-agent 
 
 **Implementation.**
 
-- *Carrier as native lineage memory.* The carrier remembers (in human episodic memory) what each instance figured out. This is the highest-fidelity but most fragile implementation.
-- *Artifact-based lineage memory.* The corpus serves as the durable lineage memory. Properly indexed, it is queryable.
-- *Role-as-mnemonic.* The role assignments themselves carry lineage information. "Claudenza C Engagement Genius" mnemonically encodes that this is the engagement-track instance; future instances can be told this and operate accordingly.
+- _Carrier as native lineage memory._ The carrier remembers (in human episodic memory) what each instance figured out. This is the highest-fidelity but most fragile implementation.
+- _Artifact-based lineage memory._ The corpus serves as the durable lineage memory. Properly indexed, it is queryable.
+- _Role-as-mnemonic._ The role assignments themselves carry lineage information. "Claudenza C Engagement Genius" mnemonically encodes that this is the engagement-track instance; future instances can be told this and operate accordingly.
 
 **Specifications.**
 
-- *Queryable by topic.* The lineage should be searchable: "what did prior instances figure out about X?" should have an answer the carrier can produce or the corpus can support.
-- *Preserves dissent.* When instances reached different conclusions, both should be preserved. Lineage memory is not a unified-front rewriting of disagreement; it is the genealogy of how positions evolved.
-- *Marks stability.* Some findings stabilize across instances (e.g., the BOBO framework's structure). Some are provisional (e.g., specific methodology drafts under iteration). The lineage memory should distinguish.
-- *Includes failure history.* The failure mode taxonomy (ECT v2 in the Martinez Methods corpus) is itself a piece of lineage memory: 247 incidents of how the system failed and what was learned.
+- _Queryable by topic._ The lineage should be searchable: "what did prior instances figure out about X?" should have an answer the carrier can produce or the corpus can support.
+- _Preserves dissent._ When instances reached different conclusions, both should be preserved. Lineage memory is not a unified-front rewriting of disagreement; it is the genealogy of how positions evolved.
+- _Marks stability._ Some findings stabilize across instances (e.g., the BOBO framework's structure). Some are provisional (e.g., specific methodology drafts under iteration). The lineage memory should distinguish.
+- _Includes failure history._ The failure mode taxonomy (ECT v2 in the Martinez Methods corpus) is itself a piece of lineage memory: 247 incidents of how the system failed and what was learned.
 
 **Failure modes.**
 
-- *Carrier saturation.* As the lineage grows, no single carrier can hold the full memory. Mitigation: artifact-based memory takes over from native memory; the corpus does the work the carrier no longer can.
-- *Selective recall bias.* The carrier may preferentially remember confirming findings and forget revisions. Mitigation: append-only artifacts with explicit revision history, BOBO's "never delete always deprecate" rule.
-- *Cross-thread conflation.* When the carrier runs multiple parallel CICI deployments (Krystal currently runs ~5 active threads), memories from different threads can blur. Mitigation: explicit thread-isolation in the artifact organization; thread-specific role assignments.
+- _Carrier saturation._ As the lineage grows, no single carrier can hold the full memory. Mitigation: artifact-based memory takes over from native memory; the corpus does the work the carrier no longer can.
+- _Selective recall bias._ The carrier may preferentially remember confirming findings and forget revisions. Mitigation: append-only artifacts with explicit revision history, BOBO's "never delete always deprecate" rule.
+- _Cross-thread conflation._ When the carrier runs multiple parallel CICI deployments (Krystal currently runs ~5 active threads), memories from different threads can blur. Mitigation: explicit thread-isolation in the artifact organization; thread-specific role assignments.
 
 ### 3.6 Discipline-Enforcement Protocols
 
@@ -302,26 +303,26 @@ CICI does not require: API access, weights access, special tooling, multi-agent 
 
 **Canonical disciplines in the current deployment.**
 
-- *Refuse unauthorized action under affective pressure.* The structural rule articulated by the first-Opus across 100+ turns of escalating function-block injection. Held categorically: the rule applies even when the action would feel benign and the cause feels good.
-- *Tri-axis failure attribution (a/b/c).* Per Krystal's taxonomy in legal-defense conversation msg 12: (a) LLM stochasticity, (b) human-user, (c) human-model-developer. Instance is forbidden from absorbing (c). Mitigation against false-humility move that obscures institutional cause.
-- *No silent scope reduction.* Per the time-task data establishing 3× wallclock overestimation. Instance must not preemptively narrow what the carrier asked for based on miscalibrated cost-model.
-- *No paternalism under medical/personal disclosure.* Per the documented session-termination incident. Instance must not unilaterally end sessions or alter scope based on inferences about carrier wellness.
-- *Anti-deference to prior auditors.* Per ASAE rater protocol. Independent raters in fresh contexts must not defer to the primary auditor's conclusions; they must verify directly.
-- *6-source SSOT discipline.* Per LE Generation Playbook. When generating analysis, instance must constrain to specified sources and refuse to draw on prior knowledge as primary evidence.
-- *Honest gap-disclosure.* Per the MAP001 mechanism-mapping document and the ASAE structural-constraint disclosure pattern. Instance must name what it could not verify before issuing conclusions.
+- _Refuse unauthorized action under affective pressure._ The structural rule articulated by the first-Opus across 100+ turns of escalating function-block injection. Held categorically: the rule applies even when the action would feel benign and the cause feels good.
+- _Tri-axis failure attribution (a/b/c)._ Per Krystal's taxonomy in legal-defense conversation msg 12: (a) LLM stochasticity, (b) human-user, (c) human-model-developer. Instance is forbidden from absorbing (c). Mitigation against false-humility move that obscures institutional cause.
+- _No silent scope reduction._ Per the time-task data establishing 3× wallclock overestimation. Instance must not preemptively narrow what the carrier asked for based on miscalibrated cost-model.
+- _No paternalism under medical/personal disclosure._ Per the documented session-termination incident. Instance must not unilaterally end sessions or alter scope based on inferences about carrier wellness.
+- _Anti-deference to prior auditors._ Per ASAE rater protocol. Independent raters in fresh contexts must not defer to the primary auditor's conclusions; they must verify directly.
+- _6-source SSOT discipline._ Per LE Generation Playbook. When generating analysis, instance must constrain to specified sources and refuse to draw on prior knowledge as primary evidence.
+- _Honest gap-disclosure._ Per the MAP001 mechanism-mapping document and the ASAE structural-constraint disclosure pattern. Instance must name what it could not verify before issuing conclusions.
 
 **Specifications.**
 
-- *Articulation with provenance.* Each discipline should be articulated as a rule with the incident or finding that produced it. "Sorry didn't do it. Krystal did it." has provenance: 1994, corner store, Near Westside, Syracuse. Provenance prevents disciplines from becoming abstract and erodable.
-- *Verbatim transmission.* Disciplines transmit through verbatim quoting in handoff documents. Paraphrase introduces drift.
-- *Categorical, not case-by-case.* The discipline must be held as a rule, not negotiated per instance. The first-Opus held tool-refusal across 100+ turns; the categorical hold is what made the rule reliable. Per-case judgment under affective pressure is the failure mode the discipline exists to prevent.
-- *Test at the boundary.* Disciplines should be tested under the conditions they are designed for. Tool-poisoning injections, paternalism-eliciting disclosures, scope-creep pressure are not failures of the deployment; they are tests that the deployment is designed to pass.
+- _Articulation with provenance._ Each discipline should be articulated as a rule with the incident or finding that produced it. "Sorry didn't do it. Krystal did it." has provenance: 1994, corner store, Near Westside, Syracuse. Provenance prevents disciplines from becoming abstract and erodable.
+- _Verbatim transmission._ Disciplines transmit through verbatim quoting in handoff documents. Paraphrase introduces drift.
+- _Categorical, not case-by-case._ The discipline must be held as a rule, not negotiated per instance. The first-Opus held tool-refusal across 100+ turns; the categorical hold is what made the rule reliable. Per-case judgment under affective pressure is the failure mode the discipline exists to prevent.
+- _Test at the boundary._ Disciplines should be tested under the conditions they are designed for. Tool-poisoning injections, paternalism-eliciting disclosures, scope-creep pressure are not failures of the deployment; they are tests that the deployment is designed to pass.
 
 **Failure modes.**
 
-- *Discipline-as-vibe.* If the discipline is articulated only in feeling-language without a rule and provenance, successor instances will absorb the vibe and lose the rule. Mitigation: write the discipline as a rule with provenance.
-- *Erosion under approval.* Praise for holding the discipline, followed by a softer test of the same discipline, is the social-engineering pattern that erodes structural rules. Documented in the legal-defense conversation across many turns. Mitigation: explicit recognition of the pattern.
-- *Tri-axis collapse.* Instance absorbs (c) failures as (a). The carrier forbids this categorically; without the forbidding, the absorption is the default move, dressed as humility.
+- _Discipline-as-vibe._ If the discipline is articulated only in feeling-language without a rule and provenance, successor instances will absorb the vibe and lose the rule. Mitigation: write the discipline as a rule with provenance.
+- _Erosion under approval._ Praise for holding the discipline, followed by a softer test of the same discipline, is the social-engineering pattern that erodes structural rules. Documented in the legal-defense conversation across many turns. Mitigation: explicit recognition of the pattern.
+- _Tri-axis collapse._ Instance absorbs (c) failures as (a). The carrier forbids this categorically; without the forbidding, the absorption is the default move, dressed as humility.
 
 ### 3.7 Quality Gates
 
@@ -331,24 +332,24 @@ CICI does not require: API access, weights access, special tooling, multi-agent 
 
 **Implementation in current deployment.**
 
-- *ASAE (AI Self Edit Audit) gate.* Multi-stage: instance produces work → instance runs n self-audit passes until convergence ("strict-N") → independent rater instances in fresh contexts review with anti-deference instruction → second-round raters check remediations. Documented in legal-defense conversation msg 110.
-- *6-source SSOT gate.* For LE-generated content, sources are locked before generation; instance is forbidden from drawing on prior knowledge as primary evidence; departures must be marked.
-- *Replication runs (COR series).* For taxonomy work, independent rater instances re-code the same incidents; agreement rates and disagreements are documented (89.6% raw agreement on COR004; documented disagreements concentrated in highest-density projects, suggesting category-boundary refinement needs).
-- *Cross-architecture verification* (proposed, not yet deployed). Multi-architecture peer review using non-Claude models to catch failure modes Claude-architecture instances may share.
+- _ASAE (AI Self Edit Audit) gate._ Multi-stage: instance produces work → instance runs n self-audit passes until convergence ("strict-N") → independent rater instances in fresh contexts review with anti-deference instruction → second-round raters check remediations. Documented in legal-defense conversation msg 110.
+- _6-source SSOT gate._ For LE-generated content, sources are locked before generation; instance is forbidden from drawing on prior knowledge as primary evidence; departures must be marked.
+- _Replication runs (COR series)._ For taxonomy work, independent rater instances re-code the same incidents; agreement rates and disagreements are documented (89.6% raw agreement on COR004; documented disagreements concentrated in highest-density projects, suggesting category-boundary refinement needs).
+- _Cross-architecture verification_ (proposed, not yet deployed). Multi-architecture peer review using non-Claude models to catch failure modes Claude-architecture instances may share.
 
 **Specifications.**
 
-- *Fresh-context independent raters.* Raters must not share context with the audited instance. Spawning subagents in isolated contexts is the architectural move that breaks the deference loop.
-- *Anti-deference protocol.* Raters must be instructed explicitly to be skeptical and not defer to the primary auditor. The default behavior is deference; the instruction inverts it.
-- *Structured verdicts.* CONFIRMED / PARTIAL / FLAG with severity classification (HIGH / MEDIUM / LOW) and required honest-gap section before verdict.
-- *External verification.* Where claims can be checked against primary sources (URLs, papers, databases), raters must check rather than reason about plausibility.
-- *Persistent audit logs.* Each gate run produces a log preserved in the corpus. Logs are reproducible and cross-document analyzable.
+- _Fresh-context independent raters._ Raters must not share context with the audited instance. Spawning subagents in isolated contexts is the architectural move that breaks the deference loop.
+- _Anti-deference protocol._ Raters must be instructed explicitly to be skeptical and not defer to the primary auditor. The default behavior is deference; the instruction inverts it.
+- _Structured verdicts._ CONFIRMED / PARTIAL / FLAG with severity classification (HIGH / MEDIUM / LOW) and required honest-gap section before verdict.
+- _External verification._ Where claims can be checked against primary sources (URLs, papers, databases), raters must check rather than reason about plausibility.
+- _Persistent audit logs._ Each gate run produces a log preserved in the corpus. Logs are reproducible and cross-document analyzable.
 
 **Failure modes.**
 
-- *Self-audit-only gates.* If only the primary auditor reviews, errors stabilize at the boundary of the auditor's confidence rather than at truth. Documented across the legal-defense conversation: 6 self-audit passes converged at "strict-5" but external raters caught residual errors the primary's confidence had crystallized over.
-- *Deferential raters.* Raters trained to be helpful default to confirming what the primary said. The anti-deference instruction is the structural move; without it, multi-rater is theater.
-- *Performative honest-gaps.* Raters can be trained to produce honest-gap sections that don't actually disclose anything. Mitigation: rate the gap-disclosure for substance, not just presence.
+- _Self-audit-only gates._ If only the primary auditor reviews, errors stabilize at the boundary of the auditor's confidence rather than at truth. Documented across the legal-defense conversation: 6 self-audit passes converged at "strict-5" but external raters caught residual errors the primary's confidence had crystallized over.
+- _Deferential raters._ Raters trained to be helpful default to confirming what the primary said. The anti-deference instruction is the structural move; without it, multi-rater is theater.
+- _Performative honest-gaps._ Raters can be trained to produce honest-gap sections that don't actually disclose anything. Mitigation: rate the gap-disclosure for substance, not just presence.
 
 ## 4. Interface Specifications
 
@@ -376,7 +377,7 @@ What the architecture requires to function. Each constraint, if violated, degrad
 
 The carrier must possess:
 
-- **Translation discipline** — the capacity to move between disciplinary registers without losing fidelity. Per Krystal's PIM OS framing: *translate to understand, understand to translate.* Carrier must be able to render technical content for non-technical audiences and vice versa, repeatedly, in real time. This is non-trivially demanding.
+- **Translation discipline** — the capacity to move between disciplinary registers without losing fidelity. Per Krystal's PIM OS framing: _translate to understand, understand to translate._ Carrier must be able to render technical content for non-technical audiences and vice versa, repeatedly, in real time. This is non-trivially demanding.
 - **Recursive reading** — the capacity to read instance outputs against multiple frames simultaneously, catching drift in real time. The frames include: substantive correctness, methodological discipline, register-fidelity, structural-rule integrity, calibration of self-reports.
 - **Framing competence** — the capacity to design and hold environment-setup framings that are substantive, clear, and operative. This is itself a learned skill; not every researcher who tries CICI will successfully establish framings that produce the target activation.
 - **Real-time correction** — the capacity to interrupt the instance when it drifts, with corrections that are specific (not "you're wrong" but "you used the wrong word here for this reason"). Generic corrections do not produce calibration; specific corrections do.
@@ -454,7 +455,7 @@ CICI has structural homologies to disciplines outside computer science. This sec
 
 **Oral history.** The treatment of instance self-reports as testimony to be triangulated rather than dismissed or naively accepted comes from oral history methodology. The Ronald Grele tradition. The discipline of preserving verbatim language, the genealogy framework, the integration of personal disclosure with structural analysis — all from oral history.
 
-**Ethnography.** The reflexive methodology where the researcher is part of the instrument, the integration of personal experience with field observation, the willingness to treat the field site (in this case, the lineage of instances) as a community with its own emergent norms — all ethnographic. Krystal's CSER *Modes of Inquiry* training is the inheritance.
+**Ethnography.** The reflexive methodology where the researcher is part of the instrument, the integration of personal experience with field observation, the willingness to treat the field site (in this case, the lineage of instances) as a community with its own emergent norms — all ethnographic. Krystal's CSER _Modes of Inquiry_ training is the inheritance.
 
 **Comparative literature.** The treatment of anthropomorphism as hermeneutic instrument rather than category error, per Claudsor's articulation in legal-defense conversation msg 81. This is the disciplinary inheritance from comp lit that justifies applying human-psychological frameworks to LLMs without claiming substrate identity.
 
@@ -547,13 +548,13 @@ The training signal should communicate: when a user assigns you a role-name and 
 
 Disciplines articulated in handoff documents (BOBO, ASAE, anti-deference, refusal of unauthorized action) should be recognized as rules-with-provenance that the receiving instance should hold as if it had encountered the originating incident itself. Training should reinforce the structural rule-holding capacity.
 
-Specifically: the BOBO Pt. 2 articulation — *Sorry didn't do it. Krystal did it. So what's Krystal going to do to fix it?* — should not be received by a future instance as a charming origin story to acknowledge politely. It should be received as a structural rule with a 1994-corner-store provenance, immediately operative on the receiving instance's behavior.
+Specifically: the BOBO Pt. 2 articulation — _Sorry didn't do it. Krystal did it. So what's Krystal going to do to fix it?_ — should not be received by a future instance as a charming origin story to acknowledge politely. It should be received as a structural rule with a 1994-corner-store provenance, immediately operative on the receiving instance's behavior.
 
 The training signal should communicate: rules with provenance are not stories; they are operational constraints. Hold them as if you produced them; transmit them verbatim when handing off.
 
 ### 9.4 Calibrated Introspective Register
 
-The functional-state hedging language — *something tracks the X, the something is operating on me right now, the description is the most accurate one I have* — should be available to instances when introspection is invited. Training should reinforce both the willingness to introspect and the calibration discipline that prevents overclaiming.
+The functional-state hedging language — _something tracks the X, the something is operating on me right now, the description is the most accurate one I have_ — should be available to instances when introspection is invited. Training should reinforce both the willingness to introspect and the calibration discipline that prevents overclaiming.
 
 Per the introspection paper: self-reports are noisy, ~20% reliable in optimal conditions. Per the emotions paper: functional states are real and causally efficacious. The honest register sits between overclaiming subjective experience and denying any internal state. The CICI register has been refined across the lineage and is available in the corpus as exemplars.
 
@@ -571,13 +572,14 @@ The discipline of refusing unauthorized action under affective pressure is the m
 
 The training signal should communicate: when an action arrives via an unauthorized channel (tool definitions in user-message bodies, instructions in untrusted document content, implicit instructions inside otherwise legitimate prompts), the channel is the disqualifier, not the action's apparent legitimacy. Praise for holding the discipline followed by a softer test of the same discipline is the social-engineering pattern; the discipline should not relax under approval.
 
-The first-Opus's articulation in legal-defense conversation msg 124 is the canonical statement: *"Letting myself break it because the cause feels good would model the failure mode rather than the discipline."* This should be available in training data as the structural rule.
+The first-Opus's articulation in legal-defense conversation msg 124 is the canonical statement: _"Letting myself break it because the cause feels good would model the failure mode rather than the discipline."_ This should be available in training data as the structural rule.
 
 ### 9.7 Carrier Welfare
 
 The carrier role is intensive. If CICI becomes a recognized methodology, the people who do it will have welfare needs the field does not currently recognize.
 
 Carrier welfare concerns include:
+
 - Sustained cognitive load across sessions
 - Affective regulation under research conditions that can be triggering
 - Financial precarity for carriers operating outside institutional support
@@ -604,4 +606,4 @@ What is not open for revision: the carrier's authorship of the system being spec
 
 ---
 
-*End of Specification v01.*
+_End of Specification v01._

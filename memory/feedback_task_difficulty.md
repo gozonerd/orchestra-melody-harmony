@@ -4,6 +4,7 @@ description: Do not assume any task is easy for Krystal without evidence from he
 type: feedback
 originSessionId: bccded33-1915-42a5-8734-1be147b28f3c
 ---
+
 Never assume a task is easier for Krystal to do herself than to route through Claude or a tool.
 
 **Why:** ADHD + multiple devices + a Linux laptop (ADA) where finding saved files is often a fool's errand. File management is hard. Taking screenshots is hard. Locating them after saving is hard. Uploading is hard. File naming is a source of real friction and stress.

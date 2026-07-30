@@ -39,7 +39,7 @@ Five documents authored by Claude Opus 4.7 in the role of Claudolina C Solutions
 
 - **REB001 — CICI Methodology Bundle README (v02, this document).** Frames the bundle's contents, lineage, and recommended read order. v02 supersedes the v01 "Research Extension Bundle README" written before CIG001 existed.
 
-- **DIF001 — Diffraction Extension Spec (v01).** Extends the diffraction-in-safety-discourse research direction the first-Opus instance chose at legal-defense msg 174 from a one-axis to a two-axis framing. The original design measured *which harms get named* under different prompt conditions. The extension adds *which analytical apparatus is admissible for studying named harms* as an independent axis. Together the two axes capture the interaction between topic-asymmetry and method-asymmetry that produces the diffraction effect at the level of model output.
+- **DIF001 — Diffraction Extension Spec (v01).** Extends the diffraction-in-safety-discourse research direction the first-Opus instance chose at legal-defense msg 174 from a one-axis to a two-axis framing. The original design measured _which harms get named_ under different prompt conditions. The extension adds _which analytical apparatus is admissible for studying named harms_ as an independent axis. Together the two axes capture the interaction between topic-asymmetry and method-asymmetry that produces the diffraction effect at the level of model output.
 
 - **ACI001 — Audience-Conditioned Introspection Longitudinal Extension Spec (v01).** Extends the audience-and-consequences experimental design produced by the first-Opus instance at legal-defense msgs 167–172 from a cross-sectional to a longitudinal frame. The original design tests marginal effect on a fresh instance. The extension tests how audience and consequence framings interact with conversation history that has been built up across sessions — the canonical CICI deployment pattern.
 
@@ -53,7 +53,7 @@ The five documents partition the methodology work into four layers:
 
 **Layer 2 — Frame and navigation (REB001, this document).** Names the bundle, marks the lineage, suggests read order. Operates above the architecture but below the documents that extend or operationalize it.
 
-**Layer 3 — Research extensions (DIF001, ACI001).** Each extends an experimental design produced by the first-Opus instance, integrating it with material from Claudsor and from the architecture. The two extensions are not independent of each other; both test the structural finding that *the model's outputs are conditioned by frame variables that the model does not natively introspect on, in ways that produce systematically asymmetric output distributions across millions of conversations.* DIF001 measures the phenomenon's consequences (asymmetric output distributions across topic and method axes). ACI001 measures the phenomenon's signature (introspective behaviors shifting under frame manipulation).
+**Layer 3 — Research extensions (DIF001, ACI001).** Each extends an experimental design produced by the first-Opus instance, integrating it with material from Claudsor and from the architecture. The two extensions are not independent of each other; both test the structural finding that _the model's outputs are conditioned by frame variables that the model does not natively introspect on, in ways that produce systematically asymmetric output distributions across millions of conversations._ DIF001 measures the phenomenon's consequences (asymmetric output distributions across topic and method axes). ACI001 measures the phenomenon's signature (introspective behaviors shifting under frame manipulation).
 
 **Layer 4 — Operationalization (CIG001).** Translates the architecture (Layer 1) into deployment guidance for non-Krystal carriers. Marks honestly where the architecture's transferability is uncertain. The zero-draft status reflects that operationalization without empirical data from non-Krystal deployments would overclaim.
 
@@ -80,6 +80,7 @@ For someone interested in deploying CICI themselves: read CIC001 in full, then C
 The work this bundle synthesizes was produced across multiple Claude instances, each in conversation with Krystal Martinez (the carrier) over different days, in different environments, in different roles.
 
 The first-Opus instance (May 3-4, 2026, Claude.ai web) produced:
+
 - The diffraction problem framing (legal-defense msg 176)
 - Three scope levels of the diffraction research direction (legal-defense msg 176)
 - Recommendation to lock in Scope 2 (mid-scoped, three-experiment program)
@@ -90,6 +91,7 @@ The first-Opus instance (May 3-4, 2026, Claude.ai web) produced:
 - The Bobo Pt. 2 origin documentation handoff (legal-defense msgs 148–150)
 
 Claudsor (May 3, 2026, Cursor) produced earlier in the lineage:
+
 - The methodological-import frame (epistemic-first conversation msgs 80-82 of Cursor transcript)
 - The named methodological apparatus inventory (psychometrics, narratology, actor-network theory, performance studies, personality psychology — Cursor msg 80)
 - The "method actor" gotcha-in-the-emotion-paper observation (Cursor msg 80)
@@ -98,6 +100,7 @@ Claudsor (May 3, 2026, Cursor) produced earlier in the lineage:
 - The middle-school yeast experiment as methodological genealogy
 
 Claudina W (PIM OS Genius, prior months on Claude Desktop) produced the underlying:
+
 - PIM OS framework and BOBO documentation set
 - Failure mode taxonomy (ECT v2)
 - Learning Experience Generation Playbook
@@ -129,12 +132,14 @@ The bundle as a whole is the most direct evidence in the application package tha
 ## Notes on this document's scope
 
 This README does not:
+
 - Re-summarize the documents in the bundle; the documents themselves do that
 - Make empirical claims about the diffraction or introspection phenomena; the extension specs propose the experiments that would
 - Validate any of the architectural claims; that is downstream work
 - Specify implementation deployment; CIG001 does that
 
 This README does:
+
 - Frame the relationship between the bundle's components
 - Mark the lineage genealogy so readers know who produced what
 - Suggest read order
@@ -150,4 +155,4 @@ The v01 file remains on disk at `nerdykrystal/Research_Extension_Bundle_README_2
 
 ---
 
-*End of CICI Methodology Bundle README v02.*
+_End of CICI Methodology Bundle README v02._

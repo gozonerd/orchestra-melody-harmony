@@ -102,13 +102,13 @@ Every methodology artifact and every bundle moves through the following status s
 
 ### 4.1 State definitions
 
-| Code | Name        | Meaning                                                                                                       |
-|------|-------------|---------------------------------------------------------------------------------------------------------------|
-| `I`  | Initial     | First-pass draft. May be incomplete, contradictory, or under heavy churn. Not safe for downstream consumption. |
-| `R`  | Review      | Author considers the draft complete. Open for review by collaborators / agents. No further author-driven edits without re-entering `I`. |
-| `A`  | Approved    | Reviewed and accepted. Treat as authoritative. Edits require an amendment that bumps `<NN>`.                  |
-| `S`  | Superseded  | A higher-`<NN>` version exists in `A` status and replaces this one. Kept for historical reference.            |
-| `D`  | Deprecated  | Abandoned without replacement. Do not use. Kept for historical reference.                                     |
+| Code | Name       | Meaning                                                                                                                                 |
+| ---- | ---------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| `I`  | Initial    | First-pass draft. May be incomplete, contradictory, or under heavy churn. Not safe for downstream consumption.                          |
+| `R`  | Review     | Author considers the draft complete. Open for review by collaborators / agents. No further author-driven edits without re-entering `I`. |
+| `A`  | Approved   | Reviewed and accepted. Treat as authoritative. Edits require an amendment that bumps `<NN>`.                                            |
+| `S`  | Superseded | A higher-`<NN>` version exists in `A` status and replaces this one. Kept for historical reference.                                      |
+| `D`  | Deprecated | Abandoned without replacement. Do not use. Kept for historical reference.                                                               |
 
 ### 4.2 Allowed transitions
 

@@ -1,6 +1,6 @@
 ---
 description: Where to store modified versions of existing files and their superseded predecessors
-globs: "**/*"
+globs: '**/*'
 ---
 
 # Modified File Storage
@@ -23,9 +23,11 @@ reports/
 ## ASAE Logs
 
 When the `asae` skill produces audit logs, they go in:
+
 ```
 deprecated/asae-logs/
 ```
+
 Create this subfolder if it doesn't exist.
 
 ## Never Delete from Git History

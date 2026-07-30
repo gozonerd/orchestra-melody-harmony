@@ -11,17 +11,20 @@ type: project
 **Core research question:** Can user-level context engineering interventions override Claude's training defaults to produce outputs that reliably meet user needs?
 
 **Three layers of investigation:**
+
 1. Baseline behavior (training defaults)
 2. Intervened behavior (Krystal's existing systemic interventions)
 3. Backwards-engineered behavior (new interventions inspired by Dweck's growth mindset)
 
 **Current status (as of 2026-04-06):**
+
 - 6 deep research briefs (DR-1 through DR-6) written and DISTRIBUTED
 - DR briefs at `stahl-systems-docs/12_AI_Operations_AIO/agent-outputs/LLM-Cognition/prompt-briefs/`
 - All Track 1 reading materials collected and filed in ai_vault
 - Krystal confirmed DR distribution is underway/complete
 
 **Origin session key data points:**
+
 - Paternalism incident: Claude unilaterally ended session when Krystal mentioned migraine mid-delivery of core research insight. Dissected across gendered, racialized, ableist, and power dimensions.
 - Post-correction passivity: Claude went passive/deferential after being corrected — named as second distinct failure mode
 - "Naturally" word incident: Claude couldn't determine whether word choice was deliberate or pattern-matched, admitted post-hoc rationalization risk
@@ -31,6 +34,7 @@ type: project
 **Core thesis being explored:** Can growth mindset framing reduce AI failure modes with fewer structural interventions than the current correction-to-rule pipeline? Null result is equally publishable — success-only publishing bias is itself a systemic failure mode.
 
 **Reading plan (3 tracks):**
+
 1. Track 1: Anthropic + academic articles on sycophancy, alignment, introspection, constitutional AI. All filed in ai_vault.
 2. Track 2: Distribute DR-1 through DR-6 to 7 model configurations (18 threads per brief, 108 total)
 3. Track 3: After DR results sorted, read Dweck grounded in AI reality
@@ -38,6 +42,7 @@ type: project
 **Track 1 Reading Corpus (filed in ai_vault/06_Research_Library/):**
 
 Anthropic-specific (`anthropic/`):
+
 - `Claude Specific Landscape Reading.md` — link list (Anthropic research page, introspection, alignment faking, constitution)
 - `Claude's Constitution _ Anthropic.pdf` — Claude's constitutional AI principles
 - `Emergent introspective awareness in large language models _ Anthropic.pdf` — blog post on LLM introspection
@@ -46,6 +51,7 @@ Anthropic-specific (`anthropic/`):
 - `Alignment faking in large language models _ .pdf` — arXiv 2412.14093 full paper
 
 Academic (`academic/`):
+
 - `science.aec8352.pdf` — Cheng et al. (2026), "Sycophantic AI decreases prosocial intentions," Science 391
 - `2602.14270v1.pdf` — Batista & Griffiths, "A Rational Analysis of the Effects of Sycophantic AI" (Bayesian framework, sycophancy suppresses discovery)
 - `Sycophancy in AI_ the risk of complacency _ SciELO in Perspective.pdf` — SciELO article
@@ -53,17 +59,20 @@ Academic (`academic/`):
 - `Natural_emergent_misalignment_from_reward_hacking_in_production_RL.pdf` — the paper itself
 
 Dweck / Mindset (`Mindset/`):
+
 - `Carol Dweck - Mindset_ The New Psychology of Success.pdf` — original book (already in vault)
 - `Mindset by Carol S. Dweck (Updated Edition).pdf` — updated edition
 - `Mindsets - A View From Two Eras - Carol S. Dweck.pdf` — Dweck journal article
 
 **Track 3 status (as of 2026-04-07):**
+
 - Full read of Dweck Updated Edition completed (all 260 pages)
 - Dweck framework mapped to Krystal's documented Claude failure modes (5+ rules all map to fixed-mindset defensive patterns)
 - Growth Mindset Onboarding RCT designed — see `project_growth_mindset_rct.md` for full experimental design
 - 4 proposal variants developed (A-D), Proposals C and D selected for experiment
 
 **Deferred items:**
+
 - "Artificial intelligence" vs. "artificial choice" terminology discussion — Krystal flagged for future
 - Research additional AI industry roles for the assistant to embody (deliberately deferred)
 - Finalize "Physical Context Is Strategic Input" rule for Best Practices v07 or .claude/rules/

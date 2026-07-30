@@ -9,10 +9,10 @@ structure:
     properties:
       applicable_jurisdictions:
         type: array
-        description: "Jurisdictions in scope for compliance"
+        description: 'Jurisdictions in scope for compliance'
       frameworks:
         type: array
-        description: "Regulatory frameworks checked"
+        description: 'Regulatory frameworks checked'
       scope_justification:
         type: string
 
@@ -43,10 +43,10 @@ structure:
         enum: [fully_addressed, partially_addressed, not_addressed]
       sections_addressing:
         type: array
-        description: "Section IDs that address this requirement"
+        description: 'Section IDs that address this requirement'
       evidence:
         type: string
-        description: "Direct quote or reference from content"
+        description: 'Direct quote or reference from content'
       adequacy_assessment:
         type: string
         enum: [adequate, insufficient, missing]
@@ -56,7 +56,7 @@ structure:
     properties:
       critical_gaps:
         type: array
-        description: "Gaps in mandatory requirements; must address for compliance"
+        description: 'Gaps in mandatory requirements; must address for compliance'
         items:
           requirement_id:
             type: string
@@ -70,7 +70,7 @@ structure:
 
       minor_gaps:
         type: array
-        description: "Gaps in recommended/best-practice; enhancement"
+        description: 'Gaps in recommended/best-practice; enhancement'
         items:
           requirement_id:
             type: string

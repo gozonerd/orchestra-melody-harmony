@@ -67,6 +67,7 @@ Read `.claude/skills/dare-to-rise-code-plan/references/TQVCD_Template_2026-05-05
 Walk through each required section. Testing Taxonomy applicability is the largest section and requires per-category evaluation. **§5.0 Verification Coverage Headline Metric is the load-bearing new section per Mod 6.5; do not skip its walkthrough.**
 
 Required sections:
+
 1. Document Identity (PRD/TRD/AVD references, revisions)
 2. **Testing Taxonomy Applicability** — per-category YES/NO with exit criteria or skip reason. Cover all 20 test categories (Part 1) and apply AI-driven selection to all 39 stress categories (Part 2). **v06 note:** TQVCD-TC-14 (Accessibility Tests) exit criteria now require LIVED-floor coverage per §6.5/§6.6/§6.7, not just WCAG 2.1 AA legal floor.
 3. Standards Operationalized As Exit Criteria (from TRD-applicable standards, converted to measurable criteria with verification methods)
@@ -118,7 +119,7 @@ Required sections:
    - **Canonical catalog id** from `_grand_repo/docs/Production_Pattern_Catalog_2026-04-27_v01_I.md` (preferred): e.g., `PAT-CONCURRENCY-LOCKFILE-SKIP`, `PAT-LATENCY-INJECTION-UPSTREAM-TIMEOUT`, etc.
    - **Inline `production_pattern_inline` block** (when no catalog pattern fits AND project hasn't yet promoted): includes description / input_load_sequence / detection_signature / candidate_for_catalog_promotion fields
    - **`PAT-GENERIC-NO-PRODUCTION-SHAPE` marker** with rationale (only when behavior genuinely has no production shape — build-config integrity, type-system tests, lint checks)
-   This field is the structural linkage TQVCD ↔ PSCAD (the 6th D2R doc, per Mod 8). PSCAD §4 coverage matrix references TQVCD-VC entries by `entry_id`; the `production_pattern` field tells PSCAD which production patterns each TQVCD-VC's test exercises. /write-pscad Step 3a-3b consumes this field directly. Skipping this step returns to the pre-Mod-8 failure mode where pattern-space coverage was invisible (CDCC plugin Stage 05 lockfile skip — passed under tested load, would deviate under production concurrency; tests didn't fail because production-shaped concurrency wasn't applied).
+     This field is the structural linkage TQVCD ↔ PSCAD (the 6th D2R doc, per Mod 8). PSCAD §4 coverage matrix references TQVCD-VC entries by `entry_id`; the `production_pattern` field tells PSCAD which production patterns each TQVCD-VC's test exercises. /write-pscad Step 3a-3b consumes this field directly. Skipping this step returns to the pre-Mod-8 failure mode where pattern-space coverage was invisible (CDCC plugin Stage 05 lockfile skip — passed under tested load, would deviate under production concurrency; tests didn't fail because production-shaped concurrency wasn't applied).
 
 The §5.0 walkthrough is mandatory for every TQVCD authorship; skipping it returns to the pre-Mod-6.5 failure mode (CDCC plugin shipped "100/100/100/100" with mutation scope carved to exclude every load-bearing module; claude-cost shipped "Stryker mutation testing" with Stryker not installed). The Verification-Coverage Principle gives the discipline teeth; §5.0 is where the teeth bite. Step 7 (production_pattern) gives PSCAD the structural linkage to audit pattern-space coverage as a separate axis.
 
@@ -174,6 +175,7 @@ The §6 walkthrough is mandatory for every TQVCD authorship; skipping it produce
 For each of the 39 stress test categories, apply the selection rule from the Testing Taxonomy Part 3:
 
 For each category:
+
 - Does this system have the component this test targets?
 - Is failure in this component high-severity for this use case?
 - Is this failure mode plausible given actual usage patterns?
@@ -208,6 +210,7 @@ Stating the counts explicitly makes the orchestrator's Phase 3 coverage-alignmen
 ### Step 6: Run ASAE Gate On Draft
 
 Invoke `/asae` with:
+
 - target: TQVCD draft
 - sources: template + Taxonomy + PRD + TRD + AVD (if exists) + user inputs
 - prompt: "Author a TQVCD for [project name] per the template"
@@ -216,6 +219,7 @@ Invoke `/asae` with:
 - severity_policy: standard
 
 Domain-specific checks for TQVCD:
+
 - Testing Taxonomy applicability declared for all 20 test categories
 - All 39 stress categories evaluated via AI-driven selection (included or skipped with reason)
 - Every YES category has specific exit criteria (not "follow best practices")
@@ -245,7 +249,7 @@ Present for approval. On `✓`: mark approved.
 
 ## Portable Prompt Mode
 
-Same pattern as other write-* skills. Note: the portable prompt for TQVCD must include the Testing Taxonomy INLINE (the full Part 1 + Part 2 + Part 3 content) so a receiving LLM has the reference material.
+Same pattern as other write-\* skills. Note: the portable prompt for TQVCD must include the Testing Taxonomy INLINE (the full Part 1 + Part 2 + Part 3 content) so a receiving LLM has the reference material.
 
 ## Anti-Patterns
 

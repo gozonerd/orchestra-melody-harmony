@@ -17,6 +17,7 @@ user: krystal
 Krystal's actual work in her AI methodology stack is at the **architecture / methodology-design / orchestration** layer. Claude (and other LLM execution agents) writes the code per her specifications, governed by her methodology gates (ASAE, DRR, Bobo, /ideate-to-d2r-ready, /dare-to-rise-code-plan, etc.).
 
 This is **substrate-vs-overlay applied to her own work**:
+
 - **Krystal's substrate** = methodology design + orchestration + spec authorship + governance-gate design
 - **Claude (overlay/executor)** = code writing per her specifications, gated by her methodology
 

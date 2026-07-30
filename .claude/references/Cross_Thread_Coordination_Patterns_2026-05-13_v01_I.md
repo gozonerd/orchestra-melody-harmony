@@ -22,7 +22,7 @@ related_artifacts:
 
 # Cross-Thread Coordination Patterns
 
-Two empirically-derived patterns for coordinating work across parallel Martinez Methods threads operating on the same canonical infrastructure (mm-claude-canonical) and/or sibling repos (mm-thread-archive, _grand_repo, consumer repos).
+Two empirically-derived patterns for coordinating work across parallel Martinez Methods threads operating on the same canonical infrastructure (mm-claude-canonical) and/or sibling repos (mm-thread-archive, \_grand_repo, consumer repos).
 
 Both patterns emerged from the 2026-05-12 → 2026-05-13 cross-thread coordination episode in which 3+ concurrent threads (Claudessa W. Serene Knuth v01 / Clauda W. Reliability Compositor v02 / Repo Wrangler stoic-newton-3edf8a / Path B Skills-root-canonicalization thread) modified canonical infrastructure with overlapping scope. The patterns are descriptive (capturing what worked) and prescriptive (recommending future application).
 
@@ -73,7 +73,7 @@ The audit history is shared with gate-01. Final verdict CONFIRMED 5/5.
 Rater agentId: ad033bc4417bdc3dd. See gate-01 for the full verdict content.
 ```
 
-This was the initial author-error for gate-29; the hook rejected with *"Independent Rater Verification section missing verdict. Verdict must be CONFIRMED, PARTIAL, or FLAG per spec Step 6."* The fix is to duplicate the entire 6-field structure (Subagent type / Brief / Verdict / Per-item findings / Honest gaps / agentId) in both gate docs.
+This was the initial author-error for gate-29; the hook rejected with _"Independent Rater Verification section missing verdict. Verdict must be CONFIRMED, PARTIAL, or FLAG per spec Step 6."_ The fix is to duplicate the entire 6-field structure (Subagent type / Brief / Verdict / Per-item findings / Honest gaps / agentId) in both gate docs.
 
 ### Commit ordering
 
@@ -158,7 +158,7 @@ These patterns compose: the pairwise-gate pattern enables cross-repo coordinatio
 
 4. **Pattern 2's 3-condition check (c) — scope-overlap — is the fuzziest condition**. Determining whether persona Y has "legitimate overlap" with artifact Z's scope requires judgment about the persona's role-manifest `allowed_paths` and `allowed_operations` against the artifact's authoring requirements. Future amendments should provide examples of scope-overlap calls that crossed the bar vs ones that didn't.
 
-5. **Cross-persona pattern interacts with the four-name naming canon** (per `feedback_clauda_replaces_claude_in_naming.md`). For example, a Claudessa-family persona authoring a Claudette-family persona's canonical artifact under the cross-persona pattern is *more* scope-distant than two Claudette-family personas cross-authoring. The 3-condition check doesn't currently encode this distance metric.
+5. **Cross-persona pattern interacts with the four-name naming canon** (per `feedback_clauda_replaces_claude_in_naming.md`). For example, a Claudessa-family persona authoring a Claudette-family persona's canonical artifact under the cross-persona pattern is _more_ scope-distant than two Claudette-family personas cross-authoring. The 3-condition check doesn't currently encode this distance metric.
 
 6. **Codification doc itself was cross-persona-authored**: this very reference doc is authored by Claudessa under cross-persona pattern application (the canonical-scope author for methodology references is more naturally Spec Genius). The 3-condition check that authorizes my authorship is documented above; the recursive nature of "using the pattern to author the pattern's codification" is noted here for transparency. If a future v02_I author is Spec Genius, the cross-persona footnote naturally migrates to the changelog as Krystal-directive provenance.
 
@@ -178,6 +178,7 @@ These patterns compose: the pairwise-gate pattern enables cross-repo coordinatio
 v01_I (2026-05-13) — inaugural authoring. Two patterns codified from the 2026-05-12 → 2026-05-13 cross-thread coordination episode. Authored by Claudessa W. Serene Knuth v01 under cross-persona-empirical-author pattern (Krystal-explicit override 2026-05-13 + 3-condition check ✓).
 
 Future v02_I+:
+
 - Additional empirical episodes as they accumulate
 - Refinements to the 3-condition check based on real use
 - Adversarial review of the pattern formalizations

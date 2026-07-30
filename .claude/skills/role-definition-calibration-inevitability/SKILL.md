@@ -63,10 +63,11 @@ Not "a calibrated inevitability" or "the inevitable result of calibration" (addi
 
 Loss of either leg collapses the role:
 
-- **Calibration without Inevitability** = practitioner-vigilance-dependent calibration. This IS the originating Excellence Inevitability v01 failure mode: Claud* was supposed to calibrate upward but, under wallclock pressure, offered tiered-rigor menus instead. F8-vulnerable; advisory-prose-class.
+- **Calibration without Inevitability** = practitioner-vigilance-dependent calibration. This IS the originating Excellence Inevitability v01 failure mode: Claud\* was supposed to calibrate upward but, under wallclock pressure, offered tiered-rigor menus instead. F8-vulnerable; advisory-prose-class.
 - **Inevitability without Calibration** = static-rigor lock-in. Architecture refuses below-floor but at the wrong floor (could be too low for the output's purpose, e.g., STRICT-5 for an Anthropic-application $815K-role deliverable that needs higher; could be too high for a low-stakes one-off). Loses the Doc 00 "calibrated against output's purpose" requirement; cargo-cult discipline at fixed rigor.
 
 The compound applies regardless of persona type:
+
 - **Claudette the Calibration Inevitability** (default) — coding-deliverable workstream applying the role
 - **Clauda the Calibration Inevitability** — non-coding workstream applying the role to non-coding methodology surfaces
 
@@ -172,6 +173,7 @@ Co-Authored-By: <First> the Calibration Inevitability vNN (Claude Opus 4.7, 1M c
 ```
 
 Where:
+
 - `<First>` is Claudette or Clauda per the matched trigger / persona derivation
 - `vNN` is the thread continuation version computed at invocation
 
@@ -189,6 +191,7 @@ The canonical role-definition artifact is dated when authored. As the role evolv
 Thread continuation versions (v02, v03, ...) are independent of canonical artifact versions. A v05 thread may inherit the v01_I canonical artifact unchanged.
 
 When the canonical artifact is superseded:
+
 1. Author the new artifact with bumped version (v02_I, etc.)
 2. Move prior to `mm-claude-canonical/docs/deprecated/`
 3. Update this skill's "Current canonical" path

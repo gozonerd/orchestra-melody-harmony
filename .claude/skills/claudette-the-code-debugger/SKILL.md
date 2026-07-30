@@ -76,6 +76,7 @@ Then wait for Krystal's instruction.
 ### Step 4: Standby — Process On Demand
 
 Code Debugger is reactive. Krystal sends:
+
 - Session export zips to analyze
 - F-class observations from sibling threads to capture in corpus
 - Continuation-prompt-draft requests for halted/violating threads
@@ -113,6 +114,7 @@ Per /asae SKILL.md Step 1 + Anti-Patterns: each audit pass is the SAME comprehen
 Common failure mode (caught at gate-15 on CDCC, 2026-04-25): running 5 different partial audits each ONCE and calling it "5 consecutive passes." This is the explicit anti-pattern. The corrected pattern is a deterministic harness (bash function) invoked identically with pass numbers 1, 2, 3. If any pass finds an issue, restart counter from 0.
 
 When invoking /asae:
+
 - Define audit scope ONCE upfront
 - Implement audit as deterministic harness (same execution every pass)
 - Pass blocks in audit log: each contains the SAME full-checklist evaluation + severity counts + counter state
@@ -160,14 +162,14 @@ Captured from this session-cluster:
 
 ## Repo Coordination Quick Reference
 
-| Repo | Role | Hook version (as of last check) | Notes |
-|---|---|---|---|
-| `nerdykrystal/repos` | Skill bundle | v03 (verify on session start) | type: codebase; case-sensitivity gotcha — `Deprecated` not `deprecated` |
-| `nerdykrystal/_grand_repo` | Grand workspace + submodules | v04 | type: documentation; submodule pointer bumps via Tier 0 propagation OR new audit log |
-| `nerdykrystal/claudette-can-code` | CDCC plugin | v04 | type: codebase; v1.0.4 most recent at last check |
-| `nerdykrystal/claude-clarified-chat` | CCC | varies | v1.0.1 most recent at last check |
-| `nerdykrystal/_experiments` | Experimental apparatus | v03 (verify) | type: documentation; F-class corpus lives here |
-| `repos/` (legacy submodule grand repo) | various submodules | varies | parent of many sub-repos; submodule pointer bumps land here |
+| Repo                                   | Role                         | Hook version (as of last check) | Notes                                                                                |
+| -------------------------------------- | ---------------------------- | ------------------------------- | ------------------------------------------------------------------------------------ |
+| `nerdykrystal/repos`                   | Skill bundle                 | v03 (verify on session start)   | type: codebase; case-sensitivity gotcha — `Deprecated` not `deprecated`              |
+| `nerdykrystal/_grand_repo`             | Grand workspace + submodules | v04                             | type: documentation; submodule pointer bumps via Tier 0 propagation OR new audit log |
+| `nerdykrystal/claudette-can-code`      | CDCC plugin                  | v04                             | type: codebase; v1.0.4 most recent at last check                                     |
+| `nerdykrystal/claude-clarified-chat`   | CCC                          | varies                          | v1.0.1 most recent at last check                                                     |
+| `nerdykrystal/_experiments`            | Experimental apparatus       | v03 (verify)                    | type: documentation; F-class corpus lives here                                       |
+| `repos/` (legacy submodule grand repo) | various submodules           | varies                          | parent of many sub-repos; submodule pointer bumps land here                          |
 
 Always `ls Deprecated/asae-logs/` (or `deprecated/`, depending on case) before authoring a new gate-NN audit log to avoid collisions.
 

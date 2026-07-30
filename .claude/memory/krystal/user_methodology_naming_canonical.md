@@ -5,6 +5,7 @@ type: user
 originSessionId: ad1c87f8-9f5e-4b72-980c-2c68cd4505d9
 user: krystal
 ---
+
 Canonical Martinez Methods naming (per Krystal's correction 2026-04-27):
 
 - **ASAE** = **AI Self Audit Edit** (NOT "Audit-Sources-Against-Evidence"). The methodology her `/asae` skill executes: AI-driven self-audit of work + edits as the convergence mechanism, iterating until configured ASAE Certainty Threshold reached.

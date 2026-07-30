@@ -15,7 +15,7 @@ Markdown spec allows any number of tildes (minimum 3) as a fence delimiter. The 
 
 ### Layer 1 (outermost): 16 tildes
 
-~~~~~~~~~~~~~~~~
+````
 [Layer 1 content]
 
 ~~~~~~~~~~~~
@@ -27,7 +27,7 @@ Markdown spec allows any number of tildes (minimum 3) as a fence delimiter. The 
 
 ~~~~~~~~~~~~
 
-~~~~~~~~~~~~~~~~
+````
 
 ### Rules
 

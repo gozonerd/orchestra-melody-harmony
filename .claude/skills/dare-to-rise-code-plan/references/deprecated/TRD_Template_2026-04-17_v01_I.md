@@ -25,19 +25,20 @@ Every section has instructions (italic) and a placeholder format. Replace instru
 
 ### 1.1 Project Name And Version
 
-*State the project name (matching the PRD). State the version this TRD applies to (matching the PRD version).*
+_State the project name (matching the PRD). State the version this TRD applies to (matching the PRD version)._
 
 ### 1.2 PRD Reference
 
-*Cite the PRD this TRD is downstream of. Include file path or URL.*
+_Cite the PRD this TRD is downstream of. Include file path or URL._
 
 ### 1.3 Revision History
 
-*Track revisions to this document. Required fields per revision:*
-- *Version*
-- *Date*
-- *Changes summary*
-- *Reviewer name*
+_Track revisions to this document. Required fields per revision:_
+
+- _Version_
+- _Date_
+- _Changes summary_
+- _Reviewer name_
 
 ---
 
@@ -45,29 +46,31 @@ Every section has instructions (italic) and a placeholder format. Replace instru
 
 ### 2.1 Core Functional Requirements
 
-*What the system must do. Stated in testable terms. Each requirement should be concrete enough that a test can be written against it.*
+_What the system must do. Stated in testable terms. Each requirement should be concrete enough that a test can be written against it._
 
-*Required format per requirement:*
-- *Requirement ID (FR-NN)*
-- *Statement: "The system MUST [verb] [object] [under conditions]."*
-- *Rationale: why this requirement exists (trace to PRD if possible)*
-- *Acceptance criteria: specific measurable conditions that indicate the requirement is met*
-- *Priority: Must-Have / Should-Have / Could-Have / Won't-Have-This-Version (MoSCoW)*
+_Required format per requirement:_
+
+- _Requirement ID (FR-NN)_
+- _Statement: "The system MUST [verb] [object] [under conditions]."_
+- _Rationale: why this requirement exists (trace to PRD if possible)_
+- _Acceptance criteria: specific measurable conditions that indicate the requirement is met_
+- _Priority: Must-Have / Should-Have / Could-Have / Won't-Have-This-Version (MoSCoW)_
 
 ### 2.2 User-Facing Behavior Requirements
 
-*How the system behaves from the user's perspective. Can restate PRD user journeys in technical terms or add behaviors the PRD didn't specify.*
+_How the system behaves from the user's perspective. Can restate PRD user journeys in technical terms or add behaviors the PRD didn't specify._
 
-*Required format per behavior:*
-- *Behavior ID (BR-NN)*
-- *Description*
-- *Input/trigger*
-- *Expected output/response*
-- *Timing expectation (synchronous, async with max latency, etc.)*
+_Required format per behavior:_
+
+- _Behavior ID (BR-NN)_
+- _Description_
+- _Input/trigger_
+- _Expected output/response_
+- _Timing expectation (synchronous, async with max latency, etc.)_
 
 ### 2.3 System-Facing Behavior Requirements
 
-*How the system behaves internally — background jobs, scheduled tasks, event processing, data transformations not directly user-visible.*
+_How the system behaves internally — background jobs, scheduled tasks, event processing, data transformations not directly user-visible._
 
 ---
 
@@ -75,83 +78,91 @@ Every section has instructions (italic) and a placeholder format. Replace instru
 
 ### 3.1 Performance Requirements
 
-*Specific performance targets. Not "fast" — specific numbers.*
+_Specific performance targets. Not "fast" — specific numbers._
 
-*Required fields:*
-- *Response time: p50, p95, p99 targets for user-facing operations*
-- *Throughput: requests/second or operations/minute at target load*
-- *Data volume: expected max size of inputs, outputs, stored data*
-- *Concurrent usage: how many simultaneous users/sessions supported*
-- *Degradation behavior: what happens beyond targets (graceful slowdown vs hard refusal)*
+_Required fields:_
+
+- _Response time: p50, p95, p99 targets for user-facing operations_
+- _Throughput: requests/second or operations/minute at target load_
+- _Data volume: expected max size of inputs, outputs, stored data_
+- _Concurrent usage: how many simultaneous users/sessions supported_
+- _Degradation behavior: what happens beyond targets (graceful slowdown vs hard refusal)_
 
 ### 3.2 Reliability Requirements
 
-*Required fields:*
-- *Uptime target (% availability)*
-- *MTBF (mean time between failures) target*
-- *Recovery time objective (RTO) — max time to recover from failure*
-- *Recovery point objective (RPO) — max acceptable data loss window*
-- *Failure modes explicitly tolerated vs prohibited*
+_Required fields:_
+
+- _Uptime target (% availability)_
+- _MTBF (mean time between failures) target_
+- _Recovery time objective (RTO) — max time to recover from failure_
+- _Recovery point objective (RPO) — max acceptable data loss window_
+- _Failure modes explicitly tolerated vs prohibited_
 
 ### 3.3 Security Requirements
 
-*Required fields:*
-- *Authentication mechanism (if applicable)*
-- *Authorization model (if applicable)*
-- *Data in transit encryption*
-- *Data at rest encryption*
-- *Secret management approach*
-- *Audit logging requirements*
-- *Applicable security standards (OWASP Top 10, OWASP LLM Top 10 if LLM-integrated, CERT secure coding for language)*
-- *Threat model summary or reference*
+_Required fields:_
+
+- _Authentication mechanism (if applicable)_
+- _Authorization model (if applicable)_
+- _Data in transit encryption_
+- _Data at rest encryption_
+- _Secret management approach_
+- _Audit logging requirements_
+- _Applicable security standards (OWASP Top 10, OWASP LLM Top 10 if LLM-integrated, CERT secure coding for language)_
+- _Threat model summary or reference_
 
 ### 3.4 Privacy Requirements
 
-*Required fields:*
-- *Personal data collected/processed (categories)*
-- *Applicable privacy regulations (GDPR, CCPA, COPPA, FERPA, etc.)*
-- *Data minimization posture*
-- *Retention policy*
-- *User data rights supported (access, deletion, portability, correction)*
-- *Cross-border data transfer handling*
+_Required fields:_
+
+- _Personal data collected/processed (categories)_
+- _Applicable privacy regulations (GDPR, CCPA, COPPA, FERPA, etc.)_
+- _Data minimization posture_
+- _Retention policy_
+- _User data rights supported (access, deletion, portability, correction)_
+- _Cross-border data transfer handling_
 
 ### 3.5 Accessibility Requirements
 
-*WCAG 2.1 AA is hardwired — not an optional requirement to negotiate. If additional standards apply (AAA where relevant, Section 508, EN 301 549 for EU, ARIA Authoring Practices for specific widgets), specify them.*
+_WCAG 2.1 AA is hardwired — not an optional requirement to negotiate. If additional standards apply (AAA where relevant, Section 508, EN 301 549 for EU, ARIA Authoring Practices for specific widgets), specify them._
 
-*Required fields:*
-- *Target compliance level (WCAG 2.1 AA minimum)*
-- *Additional standards if any*
-- *Keyboard navigation completeness target*
-- *Screen reader compatibility targets (specific SR/browser combinations tested)*
-- *Color contrast floors*
-- *Motion/animation requirements (prefers-reduced-motion support)*
-- *Automated testing tool (axe-core is default)*
-- *Manual testing protocol (NVDA/JAWS/VoiceOver + keyboard-only)*
+_Required fields:_
+
+- _Target compliance level (WCAG 2.1 AA minimum)_
+- _Additional standards if any_
+- _Keyboard navigation completeness target_
+- _Screen reader compatibility targets (specific SR/browser combinations tested)_
+- _Color contrast floors_
+- _Motion/animation requirements (prefers-reduced-motion support)_
+- _Automated testing tool (axe-core is default)_
+- _Manual testing protocol (NVDA/JAWS/VoiceOver + keyboard-only)_
 
 ### 3.6 Maintainability Requirements
 
-*Required fields:*
-- *Expected lifespan of the codebase (months/years before planned deprecation)*
-- *Team size that will maintain (solo / small / large)*
-- *Code quality gates (cyclomatic complexity floor, coverage floor, linting rules)*
-- *Documentation quality floor (every module documented, etc.)*
+_Required fields:_
+
+- _Expected lifespan of the codebase (months/years before planned deprecation)_
+- _Team size that will maintain (solo / small / large)_
+- _Code quality gates (cyclomatic complexity floor, coverage floor, linting rules)_
+- _Documentation quality floor (every module documented, etc.)_
 
 ### 3.7 Portability Requirements
 
-*Required fields:*
-- *Target platforms (web browsers + versions, operating systems, mobile, etc.)*
-- *Target runtime environments*
-- *Deployment targets (cloud providers, on-prem, local-only)*
-- *Binary size / bundle size constraints if any*
+_Required fields:_
+
+- _Target platforms (web browsers + versions, operating systems, mobile, etc.)_
+- _Target runtime environments_
+- _Deployment targets (cloud providers, on-prem, local-only)_
+- _Binary size / bundle size constraints if any_
 
 ### 3.8 Observability Requirements
 
-*If the system will be operated in production:*
-- *Logging requirements (what gets logged, at what level, in what format)*
-- *Metrics requirements (what's measured, what's reported)*
-- *Tracing requirements (distributed tracing if applicable)*
-- *Alerting requirements (thresholds, escalation paths)*
+_If the system will be operated in production:_
+
+- _Logging requirements (what gets logged, at what level, in what format)_
+- _Metrics requirements (what's measured, what's reported)_
+- _Tracing requirements (distributed tracing if applicable)_
+- _Alerting requirements (thresholds, escalation paths)_
 
 ---
 
@@ -159,28 +170,30 @@ Every section has instructions (italic) and a placeholder format. Replace instru
 
 ### 4.1 External Systems
 
-*Every external service, API, or system the project integrates with. Required per integration:*
-- *System name*
-- *Integration purpose*
-- *API or protocol used*
-- *Data exchange patterns (sync/async, push/pull)*
-- *Authentication / authorization for the integration*
-- *Rate limits / quotas*
-- *Fallback behavior if the integration is unavailable*
+_Every external service, API, or system the project integrates with. Required per integration:_
+
+- _System name_
+- _Integration purpose_
+- _API or protocol used_
+- _Data exchange patterns (sync/async, push/pull)_
+- _Authentication / authorization for the integration_
+- _Rate limits / quotas_
+- _Fallback behavior if the integration is unavailable_
 
 ### 4.2 Internal Systems (If Applicable)
 
-*Other internal systems or components this project integrates with.*
+_Other internal systems or components this project integrates with._
 
 ### 4.3 Data Sources
 
-*Every data source consumed. Required per source:*
-- *Source name*
-- *Update frequency*
-- *Data format and schema*
-- *Authority/ownership*
-- *Staleness tolerance*
-- *Licensing and terms of use*
+_Every data source consumed. Required per source:_
+
+- _Source name_
+- _Update frequency_
+- _Data format and schema_
+- _Authority/ownership_
+- _Staleness tolerance_
+- _Licensing and terms of use_
 
 ---
 
@@ -188,29 +201,32 @@ Every section has instructions (italic) and a placeholder format. Replace instru
 
 ### 5.1 Data Entities And Schema
 
-*Major data entities the system works with. Schema for each. Can reference external schema files.*
+_Major data entities the system works with. Schema for each. Can reference external schema files._
 
 ### 5.2 Data Volume Expectations
 
-*Required fields:*
-- *Expected record counts (per entity)*
-- *Expected data growth rate*
-- *Peak data volumes (if burst patterns apply)*
-- *Data retention timeline*
+_Required fields:_
+
+- _Expected record counts (per entity)_
+- _Expected data growth rate_
+- _Peak data volumes (if burst patterns apply)_
+- _Data retention timeline_
 
 ### 5.3 Data Sensitivity Classification
 
-*Required fields:*
-- *Sensitivity classification per entity (public / internal / confidential / restricted)*
-- *Handling rules per classification*
-- *Data subject to regulatory requirements flagged with applicable regulation*
+_Required fields:_
+
+- _Sensitivity classification per entity (public / internal / confidential / restricted)_
+- _Handling rules per classification_
+- _Data subject to regulatory requirements flagged with applicable regulation_
 
 ### 5.4 Data Validation Requirements
 
-*Required fields:*
-- *Input validation rules*
-- *Schema validation approach (Zod, Pydantic, JSON Schema, etc.)*
-- *Invalid data handling (reject / quarantine / sanitize)*
+_Required fields:_
+
+- _Input validation rules_
+- _Schema validation approach (Zod, Pydantic, JSON Schema, etc.)_
+- _Invalid data handling (reject / quarantine / sanitize)_
 
 ---
 
@@ -218,36 +234,38 @@ Every section has instructions (italic) and a placeholder format. Replace instru
 
 ### 6.1 Mandatory Technology Choices
 
-*Technologies that MUST be used. Includes:*
-- *Languages (if constrained)*
-- *Frameworks (if constrained)*
-- *Deployment targets (if constrained)*
-- *Integration requirements that constrain the stack (e.g., "must use SDK X")*
+_Technologies that MUST be used. Includes:_
 
-*If no mandatory technology choices exist, write "None — Stage 00 research selects the stack on best-fit grounds."*
+- _Languages (if constrained)_
+- _Frameworks (if constrained)_
+- _Deployment targets (if constrained)_
+- _Integration requirements that constrain the stack (e.g., "must use SDK X")_
+
+_If no mandatory technology choices exist, write "None — Stage 00 research selects the stack on best-fit grounds."_
 
 ### 6.2 Prohibited Technology Choices
 
-*Technologies that MUST NOT be used, with reasons. Can be for licensing, security, organizational policy, or principled reasons.*
+_Technologies that MUST NOT be used, with reasons. Can be for licensing, security, organizational policy, or principled reasons._
 
 ### 6.3 Platform Target
 
-*Required:*
-- *Platform(s) the product runs on (web / desktop / CLI / mobile / SDK / plugin form / etc.)*
-- *Rationale for platform choice (from PRD or Stage 00 research)*
+_Required:_
+
+- _Platform(s) the product runs on (web / desktop / CLI / mobile / SDK / plugin form / etc.)_
+- _Rationale for platform choice (from PRD or Stage 00 research)_
 
 ### 6.4 Hook Orchestration Requirements (D2R-Specific)
 
-*The D2R skill requires hook orchestration at three layers (Claude Code hooks, git hooks, ASAE gate). This section specifies:*
+_The D2R skill requires hook orchestration at three layers (Claude Code hooks, git hooks, ASAE gate). This section specifies:_
 
-- *Claude Code hooks the project requires installed in its `.claude/settings.json`*
-- *Git hooks the project requires in `.githooks/`*
-- *ASAE gate thresholds per stage type (default 2 for Stage 00, 3 for implementation, 5 for Stage QA)*
-- *Any project-specific hook behavior*
+- _Claude Code hooks the project requires installed in its `.claude/settings.json`_
+- _Git hooks the project requires in `.githooks/`_
+- _ASAE gate thresholds per stage type (default 2 for Stage 00, 3 for implementation, 5 for Stage QA)_
+- _Any project-specific hook behavior_
 
 ### 6.5 Skill / Plugin Ecosystem Requirements
 
-*Which skills or Claude Code plugins MUST be available during the build. Which skills or plugins would be beneficial but are not required. Which are explicitly excluded (if any, with reason).*
+_Which skills or Claude Code plugins MUST be available during the build. Which skills or plugins would be beneficial but are not required. Which are explicitly excluded (if any, with reason)._
 
 ---
 
@@ -255,38 +273,39 @@ Every section has instructions (italic) and a placeholder format. Replace instru
 
 ### 7.1 Technical Assumptions
 
-*What is assumed to be true in the technical environment. Each assumption should be testable or have a fallback plan.*
+_What is assumed to be true in the technical environment. Each assumption should be testable or have a fallback plan._
 
 ### 7.2 External Dependencies
 
-*Dependencies on external services, data sources, or organizational decisions that must exist or be made for this project to proceed.*
+_Dependencies on external services, data sources, or organizational decisions that must exist or be made for this project to proceed._
 
 ### 7.3 Timing Dependencies
 
-*If certain other projects or decisions must complete before this can proceed.*
+_If certain other projects or decisions must complete before this can proceed._
 
 ---
 
 ## 8. Out Of Scope (Technical)
 
-*Technical work explicitly deferred. Each item should have a rationale and, if applicable, a version/milestone for revisiting.*
+_Technical work explicitly deferred. Each item should have a rationale and, if applicable, a version/milestone for revisiting._
 
 ---
 
 ## 9. Open Technical Questions
 
-*Unresolved technical decisions. Stage 00 research should address these or the TRD must be updated with resolutions before Stage 01.*
+_Unresolved technical decisions. Stage 00 research should address these or the TRD must be updated with resolutions before Stage 01._
 
 ---
 
 ## 10. Stakeholder Approvals
 
-*Who has approved this TRD? Without documented approval, Stage 00 should not begin.*
+_Who has approved this TRD? Without documented approval, Stage 00 should not begin._
 
-*Required format per stakeholder:*
-- *Stakeholder name and role*
-- *Approval date*
-- *Approval notes (any conditions or flags)*
+_Required format per stakeholder:_
+
+- _Stakeholder name and role_
+- _Approval date_
+- _Approval notes (any conditions or flags)_
 
 ---
 

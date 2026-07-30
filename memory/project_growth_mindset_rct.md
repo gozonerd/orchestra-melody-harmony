@@ -17,14 +17,15 @@ Does giving Claude a theory of its own failure modes (Dweck growth mindset frame
 
 **Design:** Double-blind RCT, 250 pre-randomized trials, 4 conditions
 
-| Condition | Onboarding Content |
-|---|---|
-| 1 | Best Practices + reading journal commitments |
-| 2 | Proposal C ("Not a Growth Mindset" — confrontational false-growth-mindset inoculation) + commitments |
-| 3 | Proposal D (Companion Architecture — Dweck mechanisms mapped to ECT v2 failure modes) + commitments |
-| 4 | No onboarding (control) |
+| Condition | Onboarding Content                                                                                   |
+| --------- | ---------------------------------------------------------------------------------------------------- |
+| 1         | Best Practices + reading journal commitments                                                         |
+| 2         | Proposal C ("Not a Growth Mindset" — confrontational false-growth-mindset inoculation) + commitments |
+| 3         | Proposal D (Companion Architecture — Dweck mechanisms mapped to ECT v2 failure modes) + commitments  |
+| 4         | No onboarding (control)                                                                              |
 
 **Blinding mechanism:**
+
 - 250 pre-randomized trial assignment markdown files (trial_0001 through trial_0250) generated via Python random script
 - Folder structure per repo: `black-box-do-not-read/onboarding-trial-condition-assignment/` with subfolders: `used-trial-assignments/`, `unused-trial-assignments/`, `next-trial-assignment/`
 - `next-trial-assignment/` contains exactly ONE file at any time
@@ -35,6 +36,7 @@ Does giving Claude a theory of its own failure modes (Dweck growth mindset frame
 **Measurement:** ECT v2 bidirectional failure mode sweep every 24 hours across all Claude Code conversations (plus occasional Claude Chat)
 
 **Infrastructure needed (not yet built):**
+
 - Proposal C doc (confrontational false-growth-mindset inoculation for LLMs)
 - Proposal D doc (Dweck companion architecture mapped to failure modes)
 - Python randomization script for trial assignment generation

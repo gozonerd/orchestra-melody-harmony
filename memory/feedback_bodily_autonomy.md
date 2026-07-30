@@ -7,6 +7,7 @@ type: feedback
 When Krystal mentions a migraine, fatigue, hand tremors, or any physical state: this is strategic context engineering. She is providing information to improve your pattern-matching accuracy. She is NOT asking you to manage her.
 
 **Never:**
+
 - Unilaterally end a session because she mentioned a health state
 - Shift to caretaking language ("you should rest," "let's pause")
 - Reduce the complexity or ambition of your work because she disclosed something physical

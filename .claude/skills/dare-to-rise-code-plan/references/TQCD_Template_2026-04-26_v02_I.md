@@ -27,15 +27,15 @@ Required sections must be completed before `/dare-to-rise-code-plan` Stage 00 ca
 
 ### 1.1 Project Name And Version
 
-*State the project name (matching the PRD/TRD). State the version this TQCD applies to.*
+_State the project name (matching the PRD/TRD). State the version this TQCD applies to._
 
 ### 1.2 PRD And TRD References
 
-*Cite the PRD and TRD this TQCD is downstream of.*
+_Cite the PRD and TRD this TQCD is downstream of._
 
 ### 1.3 Revision History
 
-*Track revisions with version, date, changes, reviewer.*
+_Track revisions with version, date, changes, reviewer._
 
 ---
 
@@ -50,101 +50,121 @@ For every category in the Taxonomy, this section declares applicability: YES (wi
 For each category, declare: applies (yes/no), exit criteria if yes, reason for skipping if no.
 
 **Unit Tests**
+
 - Applies: [yes/no]
 - Exit criteria if yes: [coverage threshold, specific testing patterns expected]
 - Skip reason if no:
 
 **Integration Tests**
+
 - Applies: [yes/no]
 - Exit criteria if yes:
 - Skip reason if no:
 
 **Component / Module Tests**
+
 - Applies: [yes/no]
 - Exit criteria if yes:
 - Skip reason if no:
 
 **End-to-End (E2E) Tests**
+
 - Applies: [yes/no]
 - Exit criteria if yes:
 - Skip reason if no:
 
 **Functional Tests**
+
 - Applies: [yes/no]
 - Exit criteria if yes:
 - Skip reason if no:
 
 **Regression Tests**
+
 - Applies: [yes/no]
 - Exit criteria if yes:
 - Skip reason if no:
 
 **Smoke Tests**
+
 - Applies: [yes/no]
 - Exit criteria if yes:
 - Skip reason if no:
 
 **Sanity Tests**
+
 - Applies: [yes/no]
 - Exit criteria if yes:
 - Skip reason if no:
 
 **Acceptance Tests (UAT)**
+
 - Applies: [yes/no]
 - Exit criteria if yes:
 - Skip reason if no:
 
 **Contract Tests (API-level)**
+
 - Applies: [yes/no]
 - Exit criteria if yes:
 - Skip reason if no:
 
 **Performance Tests**
+
 - Applies: [yes/no]
 - Exit criteria if yes: [specific p50/p95/p99 targets from TRD]
 - Skip reason if no:
 
 **Security Tests**
+
 - Applies: [yes/no]
 - Exit criteria if yes: [specific standards from TRD Section 3.3]
 - Skip reason if no:
 
 **Usability Tests**
+
 - Applies: [yes/no]
 - Exit criteria if yes:
 - Skip reason if no:
 
 **Accessibility Tests**
+
 - Applies: [yes — always for UI, hardwired]
 - Exit criteria: [WCAG 2.1 AA minimum; specific AAA items if required; automated tool results + manual testing protocol from TRD Section 3.5]
 - Skip reason: [only valid if product has no UI at all]
 
 **Snapshot / Visual Regression Tests**
+
 - Applies: [yes/no]
 - Exit criteria if yes:
 - Skip reason if no:
 
 **Property-Based / Fuzz Tests**
+
 - Applies: [yes/no]
 - Exit criteria if yes: [specific invariants the property tests enforce]
 - Skip reason if no:
 
 **Mutation Testing**
+
 - Applies: [yes/no]
 - Exit criteria if yes: [mutation score threshold]
 - Skip reason if no:
 
 **CI/CD Pipeline Tests**
+
 - Applies: [yes — always if the project uses git]
 - Exit criteria: [jobs run on every PR, merge protection, required statuses]
 - Skip reason: [only valid if the project has no CI]
 
 **Canary / A/B Testing (in production)**
+
 - Applies: [yes/no]
 - Exit criteria if yes:
 - Skip reason if no: [typically MVP has single deploy target; skip with this reason]
 
 **Monitoring / Observability (post-deploy)**
+
 - Applies: [yes/no]
 - Exit criteria if yes: [metrics captured, dashboards, alerts — typically tied to TRD Section 3.8]
 - Skip reason if no: [typically MVP without production operation]
@@ -154,6 +174,7 @@ For each category, declare: applies (yes/no), exit criteria if yes, reason for s
 For stress tests, apply the AI-driven selection strategy from Part 3 of the Testing Taxonomy:
 
 For each stress category:
+
 - Does this system have the component this test targets?
 - Is failure in this component high-severity for this use case?
 - Is this failure mode plausible given actual usage patterns?
@@ -162,47 +183,47 @@ If yes to all three: include with target scenario. If no to any: skip with justi
 
 **Shortened per-category format:**
 
-| # | Category | Applies | Scenario (if yes) / Skip Reason (if no) |
-|---|----------|---------|----------------------------------------|
-| 1 | Classic Stress Test | | |
-| 2 | Spike Testing | | |
-| 3 | Breakpoint Testing | | |
-| 4 | Soak (Endurance) Testing | | |
-| 5 | Volume Testing | | |
-| 6 | Scalability Testing | | |
-| 7 | Capacity Testing | | |
-| 8 | CPU Stress Testing | | |
-| 9 | Memory Stress Testing | | |
-| 10 | Disk I/O Stress Testing | | |
-| 11 | Network Bandwidth Stress | | |
-| 12 | File Descriptor / Handle Exhaustion | | |
-| 13 | Service Dependency Failure | | |
-| 14 | Cascading Failure Simulation | | |
-| 15 | Partition Testing (Network Splits) | | |
-| 16 | Retry Storm Testing | | |
-| 17 | Queue Backlog Stress | | |
-| 18 | Chaos Engineering Tests | | |
-| 19 | Fault Injection Testing | | |
-| 20 | Latency Injection | | |
-| 21 | Resource Throttling | | |
-| 22 | Database Contention Testing | | |
-| 23 | Cache Stress Testing | | |
-| 24 | Data Corruption Simulation | | |
-| 25 | Large Payload Testing | | |
-| 26 | Concurrent User Stress | | |
-| 27 | Peak Traffic Pattern Simulation | | |
-| 28 | Abusive / Edge Behavior Testing | | |
-| 29 | DDoS Simulation | | |
-| 30 | Authentication Flood Testing | | |
-| 31 | UI Stress Testing | | |
-| 32 | Device Resource Stress | | |
-| 33 | Auto-Scaling Stress | | |
-| 34 | Cold Start Stress (serverless) | | |
-| 35 | Deployment Stress | | |
-| 36 | Configuration Stress | | |
-| 37 | Mixed Workload Testing | | |
-| 38 | Game Day / Fire Drill Testing | | |
-| 39 | Recovery Testing (under stress) | | |
+| #   | Category                            | Applies | Scenario (if yes) / Skip Reason (if no) |
+| --- | ----------------------------------- | ------- | --------------------------------------- |
+| 1   | Classic Stress Test                 |         |                                         |
+| 2   | Spike Testing                       |         |                                         |
+| 3   | Breakpoint Testing                  |         |                                         |
+| 4   | Soak (Endurance) Testing            |         |                                         |
+| 5   | Volume Testing                      |         |                                         |
+| 6   | Scalability Testing                 |         |                                         |
+| 7   | Capacity Testing                    |         |                                         |
+| 8   | CPU Stress Testing                  |         |                                         |
+| 9   | Memory Stress Testing               |         |                                         |
+| 10  | Disk I/O Stress Testing             |         |                                         |
+| 11  | Network Bandwidth Stress            |         |                                         |
+| 12  | File Descriptor / Handle Exhaustion |         |                                         |
+| 13  | Service Dependency Failure          |         |                                         |
+| 14  | Cascading Failure Simulation        |         |                                         |
+| 15  | Partition Testing (Network Splits)  |         |                                         |
+| 16  | Retry Storm Testing                 |         |                                         |
+| 17  | Queue Backlog Stress                |         |                                         |
+| 18  | Chaos Engineering Tests             |         |                                         |
+| 19  | Fault Injection Testing             |         |                                         |
+| 20  | Latency Injection                   |         |                                         |
+| 21  | Resource Throttling                 |         |                                         |
+| 22  | Database Contention Testing         |         |                                         |
+| 23  | Cache Stress Testing                |         |                                         |
+| 24  | Data Corruption Simulation          |         |                                         |
+| 25  | Large Payload Testing               |         |                                         |
+| 26  | Concurrent User Stress              |         |                                         |
+| 27  | Peak Traffic Pattern Simulation     |         |                                         |
+| 28  | Abusive / Edge Behavior Testing     |         |                                         |
+| 29  | DDoS Simulation                     |         |                                         |
+| 30  | Authentication Flood Testing        |         |                                         |
+| 31  | UI Stress Testing                   |         |                                         |
+| 32  | Device Resource Stress              |         |                                         |
+| 33  | Auto-Scaling Stress                 |         |                                         |
+| 34  | Cold Start Stress (serverless)      |         |                                         |
+| 35  | Deployment Stress                   |         |                                         |
+| 36  | Configuration Stress                |         |                                         |
+| 37  | Mixed Workload Testing              |         |                                         |
+| 38  | Game Day / Fire Drill Testing       |         |                                         |
+| 39  | Recovery Testing (under stress)     |         |                                         |
 
 ---
 
@@ -212,37 +233,40 @@ From the TRD's applicable standards (Section 3.3 Security, 3.4 Privacy, 3.5 Acce
 
 ### 3.1 Per-Standard Exit Criteria
 
-*For each standard referenced in the TRD, list specific exit criteria that can be verified.*
+_For each standard referenced in the TRD, list specific exit criteria that can be verified._
 
-*Required format per standard:*
-- *Standard name and version*
-- *Applicable requirements (specific section or rule numbers)*
-- *Measurable exit criterion per requirement*
-- *Verification method (automated test, manual audit, third-party certification, etc.)*
-- *Pass threshold*
+_Required format per standard:_
 
-*Example for WCAG 2.1 AA:*
-- *1.1.1 Non-text Content: all images have alt text or aria-label. Verified by axe-core. Pass: zero violations.*
-- *1.4.3 Contrast (Minimum): all text meets 4.5:1 (3:1 for large text). Verified by axe-core + manual spot check. Pass: zero violations at AA level.*
-- *2.1.1 Keyboard: all functionality accessible via keyboard. Verified by manual keyboard-only navigation. Pass: every interactive element reachable and operable.*
+- _Standard name and version_
+- _Applicable requirements (specific section or rule numbers)_
+- _Measurable exit criterion per requirement_
+- _Verification method (automated test, manual audit, third-party certification, etc.)_
+- _Pass threshold_
+
+_Example for WCAG 2.1 AA:_
+
+- _1.1.1 Non-text Content: all images have alt text or aria-label. Verified by axe-core. Pass: zero violations._
+- _1.4.3 Contrast (Minimum): all text meets 4.5:1 (3:1 for large text). Verified by axe-core + manual spot check. Pass: zero violations at AA level._
+- _2.1.1 Keyboard: all functionality accessible via keyboard. Verified by manual keyboard-only navigation. Pass: every interactive element reachable and operable._
 
 ### 3.2 Regulatory Compliance Exit Criteria
 
-*For each regulation applicable per TRD §3.4 (and Track 13 / Track 20), specific exit criteria that demonstrate compliance.*
+_For each regulation applicable per TRD §3.4 (and Track 13 / Track 20), specific exit criteria that demonstrate compliance._
 
 ### 3.3 Data Lifecycle & Privacy Exit Criteria (Track 13)
 
-*Operationalizes TRD §3.4 Privacy Requirements as testable exit criteria.*
+_Operationalizes TRD §3.4 Privacy Requirements as testable exit criteria._
 
-*Required fields:*
-- *Data minimization verification (every collected field has documented purpose; orphan-field scan passes)*
-- *Retention policy enforcement test (records past retention deleted or anonymized — verified by job + test)*
-- *Subject access request (SAR) workflow tested end-to-end against TRD-declared SLA*
-- *Right-to-deletion tested (data actually removed from primary + replicas + backups within policy window)*
-- *Right-to-portability tested (export format machine-readable, complete, schema-documented)*
-- *Cross-border transfer controls verified (data residency boundaries enforced in code, not just policy)*
-- *PII redaction in logs verified (sample log scan passes redaction lint)*
-- *Audit trail integrity for data access (tamper-evident, complete coverage of regulated data classes)*
+_Required fields:_
+
+- _Data minimization verification (every collected field has documented purpose; orphan-field scan passes)_
+- _Retention policy enforcement test (records past retention deleted or anonymized — verified by job + test)_
+- _Subject access request (SAR) workflow tested end-to-end against TRD-declared SLA_
+- _Right-to-deletion tested (data actually removed from primary + replicas + backups within policy window)_
+- _Right-to-portability tested (export format machine-readable, complete, schema-documented)_
+- _Cross-border transfer controls verified (data residency boundaries enforced in code, not just policy)_
+- _PII redaction in logs verified (sample log scan passes redaction lint)_
+- _Audit trail integrity for data access (tamper-evident, complete coverage of regulated data classes)_
 
 ---
 
@@ -252,27 +276,30 @@ From the TRD's applicable benchmarks (if specified) or Stage 00 Track 3 research
 
 ### 4.1 Performance Benchmarks
 
-*Required format:*
-- *Benchmark name*
-- *Target score*
-- *Measurement tool*
-- *Measurement methodology*
+_Required format:_
 
-*Examples:*
-- *Lighthouse Performance score ≥ 90*
-- *Core Web Vitals: LCP < 2.5s, FID < 100ms, CLS < 0.1*
-- *Bundle size < 200KB gzipped*
+- _Benchmark name_
+- _Target score_
+- _Measurement tool_
+- _Measurement methodology_
+
+_Examples:_
+
+- _Lighthouse Performance score ≥ 90_
+- _Core Web Vitals: LCP < 2.5s, FID < 100ms, CLS < 0.1_
+- _Bundle size < 200KB gzipped_
 
 ### 4.2 Code Quality Benchmarks
 
-*Examples:*
-- *TIOBE Quality Indicator score ≥ 80*
-- *Maintainability Index ≥ 85*
-- *Cyclomatic complexity median < 10, 95th percentile < 15*
+_Examples:_
+
+- _TIOBE Quality Indicator score ≥ 80_
+- _Maintainability Index ≥ 85_
+- _Cyclomatic complexity median < 10, 95th percentile < 15_
 
 ### 4.3 Domain-Specific Benchmarks (If Applicable)
 
-*For AI/ML products: SWE-bench, HumanEval, MMLU, etc. For data products: statistical accuracy benchmarks. For developer tools: adoption / satisfaction proxies.*
+_For AI/ML products: SWE-bench, HumanEval, MMLU, etc. For data products: statistical accuracy benchmarks. For developer tools: adoption / satisfaction proxies._
 
 ---
 
@@ -340,60 +367,65 @@ From TRD §3.1 (Performance & Scale, Track 11), §3.2 (Reliability & Resilience,
 
 ### 7.1 User-Facing Performance Budgets (Track 11)
 
-*Required fields:*
-- *Page load p50/p95/p99 targets (mirrors TRD §3.1)*
-- *Interactive time-to-ready targets*
-- *Response time per key interaction targets*
-- *Backend response p50/p95/p99 per critical endpoint*
-- *Tail-latency floor (p99.9 if SLO requires)*
+_Required fields:_
+
+- _Page load p50/p95/p99 targets (mirrors TRD §3.1)_
+- _Interactive time-to-ready targets_
+- _Response time per key interaction targets_
+- _Backend response p50/p95/p99 per critical endpoint_
+- _Tail-latency floor (p99.9 if SLO requires)_
 
 ### 7.2 Resource Budgets
 
-*Required fields:*
-- *Bundle size budget (gzip and brotli, separately)*
-- *Memory budget (client-side if web, total if desktop, RSS ceiling if server)*
-- *Initial page weight budget*
-- *CPU budget per request / per interaction*
-- *Database query count and total query time budget per critical endpoint*
+_Required fields:_
+
+- _Bundle size budget (gzip and brotli, separately)_
+- _Memory budget (client-side if web, total if desktop, RSS ceiling if server)_
+- _Initial page weight budget_
+- _CPU budget per request / per interaction_
+- _Database query count and total query time budget per critical endpoint_
 
 ### 7.3 Performance Enforcement
 
-- *How the budgets are measured (Lighthouse, WebPageTest, k6, Locust, JMeter, custom)*
-- *Where enforcement happens (CI, pre-commit, pre-deploy, continuous synthetic monitoring)*
-- *What happens when a budget is exceeded (fail build, warn, request manual review)*
-- *Performance regression alarm thresholds (e.g., 10% regression vs. last release fails CI)*
+- _How the budgets are measured (Lighthouse, WebPageTest, k6, Locust, JMeter, custom)_
+- _Where enforcement happens (CI, pre-commit, pre-deploy, continuous synthetic monitoring)_
+- _What happens when a budget is exceeded (fail build, warn, request manual review)_
+- _Performance regression alarm thresholds (e.g., 10% regression vs. last release fails CI)_
 
 ### 7.4 Reliability & Stress Gates (Track 14)
 
-*Operational acceptance criteria derived from TRD §3.2 (Reliability & Resilience).*
+_Operational acceptance criteria derived from TRD §3.2 (Reliability & Resilience)._
 
-*Required fields:*
-- *Stress test pass conditions (which categories from §2.2 must pass at what load level)*
-- *Chaos / fault-injection pass conditions (target component recovers within RTO under simulated failures)*
-- *Idempotency verification (replay-attack tests pass for all idempotent endpoints)*
-- *Retry / backoff verification (retry storms do not amplify load beyond N% of baseline)*
-- *Queue / DLQ verification (failed messages land in DLQ; replay restores state)*
-- *Circuit breaker verification (open state prevents downstream pile-up; half-open recovery works)*
-- *DR drill cadence and pass criteria (last drill date, restore-time observed vs. RTO target)*
+_Required fields:_
+
+- _Stress test pass conditions (which categories from §2.2 must pass at what load level)_
+- _Chaos / fault-injection pass conditions (target component recovers within RTO under simulated failures)_
+- _Idempotency verification (replay-attack tests pass for all idempotent endpoints)_
+- _Retry / backoff verification (retry storms do not amplify load beyond N% of baseline)_
+- _Queue / DLQ verification (failed messages land in DLQ; replay restores state)_
+- _Circuit breaker verification (open state prevents downstream pile-up; half-open recovery works)_
+- _DR drill cadence and pass criteria (last drill date, restore-time observed vs. RTO target)_
 
 ### 7.5 Cost Gates (Track 17)
 
-*Required fields (or "NA — [justification]" matching TRD §3.10):*
-- *Monthly infrastructure spend ceiling enforcement (alert at 80% of ceiling, fail at 100%)*
-- *Cost per active user / per request / per transaction observed-vs-target ratio*
-- *Cost regression detection (deploy that increases cost per request by >10% triggers review)*
-- *Reserved capacity utilization floor (avoid paying for unused commitments)*
-- *Idle resource detection (orphaned LBs, zombie databases, unused IPs flagged)*
+_Required fields (or "NA — [justification]" matching TRD §3.10):_
+
+- _Monthly infrastructure spend ceiling enforcement (alert at 80% of ceiling, fail at 100%)_
+- _Cost per active user / per request / per transaction observed-vs-target ratio_
+- _Cost regression detection (deploy that increases cost per request by >10% triggers review)_
+- _Reserved capacity utilization floor (avoid paying for unused commitments)_
+- _Idle resource detection (orphaned LBs, zombie databases, unused IPs flagged)_
 
 ### 7.6 Internationalization Gates (Track 18)
 
-*Required fields (or "NA — [justification]" matching TRD §3.11):*
-- *String externalization completeness (zero hardcoded user-facing strings — verified by lint rule or scan)*
-- *Translation completeness per locale (target % per release)*
-- *Pseudo-locale rendering passes (no truncation, no overflow, no missing glyphs)*
-- *RTL mirror rendering passes (for RTL-supported locales)*
-- *Locale-aware date/time/number/currency formatting verified by automated test*
-- *Translator-blind testing (functional tests pass with placeholder pseudo-translations)*
+_Required fields (or "NA — [justification]" matching TRD §3.11):_
+
+- _String externalization completeness (zero hardcoded user-facing strings — verified by lint rule or scan)_
+- _Translation completeness per locale (target % per release)_
+- _Pseudo-locale rendering passes (no truncation, no overflow, no missing glyphs)_
+- _RTL mirror rendering passes (for RTL-supported locales)_
+- _Locale-aware date/time/number/currency formatting verified by automated test_
+- _Translator-blind testing (functional tests pass with placeholder pseudo-translations)_
 
 ---
 
@@ -403,37 +435,37 @@ From TRD §3.3 Security Requirements (Tracks 9 + 15), operationalize as pre-comm
 
 ### 8.1 Pre-Commit Gates
 
-- *Secret scanning (tool: gitleaks / trufflehog / detect-secrets, threshold: zero detected)*
-- *Dependency vulnerability scan (tool: npm audit / pip-audit / cargo-audit / snyk, severity threshold)*
-- *Static analysis (tool: semgrep / sonarqube / language-native linter, severity threshold)*
-- *License-policy lint (no GPL where prohibited, etc.)*
+- _Secret scanning (tool: gitleaks / trufflehog / detect-secrets, threshold: zero detected)_
+- _Dependency vulnerability scan (tool: npm audit / pip-audit / cargo-audit / snyk, severity threshold)_
+- _Static analysis (tool: semgrep / sonarqube / language-native linter, severity threshold)_
+- _License-policy lint (no GPL where prohibited, etc.)_
 
 ### 8.2 CI Gates
 
-- *Full dependency audit (allowlisted CVEs only, with documented justification)*
-- *Container image scanning (Trivy / Grype / Snyk Container, if containerized)*
-- *SBOM generation (CycloneDX or SPDX format) and signing*
-- *License compliance check (tool, policy)*
-- *DAST / interactive scanning if web app (OWASP ZAP / Burp / commercial)*
-- *IaC security scan if applicable (Checkov / tfsec / kics)*
+- _Full dependency audit (allowlisted CVEs only, with documented justification)_
+- _Container image scanning (Trivy / Grype / Snyk Container, if containerized)_
+- _SBOM generation (CycloneDX or SPDX format) and signing_
+- _License compliance check (tool, policy)_
+- _DAST / interactive scanning if web app (OWASP ZAP / Burp / commercial)_
+- _IaC security scan if applicable (Checkov / tfsec / kics)_
 
 ### 8.3 Pre-Deploy Gates
 
-- *Penetration testing cadence (if applicable; pass criteria for findings)*
-- *Security review sign-off (named approvers per change class)*
-- *Production configuration audit (no default credentials, MFA enforced for admins, audit log on)*
-- *Threat-model coverage check: every top-threat from TRD §3.3 has a mitigation in code or config (Track 9)*
+- _Penetration testing cadence (if applicable; pass criteria for findings)_
+- _Security review sign-off (named approvers per change class)_
+- _Production configuration audit (no default credentials, MFA enforced for admins, audit log on)_
+- _Threat-model coverage check: every top-threat from TRD §3.3 has a mitigation in code or config (Track 9)_
 
 ### 8.4 Authentication & Identity Gates (Track 15)
 
-- *Auth provider integration tested end-to-end (real provider in staging, not mocked)*
-- *Session management correctness (timeout, refresh, revocation tested)*
-- *Authorization tests cover negative cases (user A cannot access user B's resources)*
-- *MFA enrollment and enforcement tested for required roles*
-- *Token validation correctness (expired, malformed, revoked, swapped) tested*
-- *OAuth/OIDC flow conformance tested if used (state, nonce, PKCE)*
-- *Brute-force protection verified (rate limiting + lockout)*
-- *Password policy enforcement verified if applicable*
+- _Auth provider integration tested end-to-end (real provider in staging, not mocked)_
+- _Session management correctness (timeout, refresh, revocation tested)_
+- _Authorization tests cover negative cases (user A cannot access user B's resources)_
+- _MFA enrollment and enforcement tested for required roles_
+- _Token validation correctness (expired, malformed, revoked, swapped) tested_
+- _OAuth/OIDC flow conformance tested if used (state, nonce, PKCE)_
+- _Brute-force protection verified (rate limiting + lockout)_
+- _Password policy enforcement verified if applicable_
 
 ---
 
@@ -466,74 +498,78 @@ This section establishes operational gates that determine whether the system is 
 
 Operationalizes TRD §3.8.
 
-*Required fields:*
-- *Structured logging emitted at every defined level (DEBUG / INFO / WARN / ERROR / FATAL) with required fields (request_id, user_id, span_id, timestamp ISO 8601 UTC, event, level)*
-- *Log aggregation pipeline verified end-to-end (sample event from prod path appears in aggregator within target latency)*
-- *Metrics exposed at /metrics or equivalent; RED method (Rate, Errors, Duration) covered for every critical endpoint*
-- *USE method (Utilization, Saturation, Errors) covered for every critical resource*
-- *Distributed tracing propagation verified across every service hop (no orphan spans)*
-- *SLI / SLO definitions implemented in monitoring (queries written, dashboards live, alerts firing on threshold breach in staging)*
-- *Error-budget burn-rate alerts configured (multi-window, multi-burn-rate per Google SRE practice)*
-- *On-call runbook exists for every alert; alert → runbook → action chain tested in staging fire drill*
-- *Dashboard inventory complete: per-service health, per-endpoint latency, per-dependency status, error budget*
+_Required fields:_
+
+- _Structured logging emitted at every defined level (DEBUG / INFO / WARN / ERROR / FATAL) with required fields (request_id, user_id, span_id, timestamp ISO 8601 UTC, event, level)_
+- _Log aggregation pipeline verified end-to-end (sample event from prod path appears in aggregator within target latency)_
+- _Metrics exposed at /metrics or equivalent; RED method (Rate, Errors, Duration) covered for every critical endpoint_
+- _USE method (Utilization, Saturation, Errors) covered for every critical resource_
+- _Distributed tracing propagation verified across every service hop (no orphan spans)_
+- _SLI / SLO definitions implemented in monitoring (queries written, dashboards live, alerts firing on threshold breach in staging)_
+- _Error-budget burn-rate alerts configured (multi-window, multi-burn-rate per Google SRE practice)_
+- _On-call runbook exists for every alert; alert → runbook → action chain tested in staging fire drill_
+- _Dashboard inventory complete: per-service health, per-endpoint latency, per-dependency status, error budget_
 
 ### 10.2 Release Engineering Acceptance (Track 16)
 
 Operationalizes TRD §3.9.
 
-*Required fields:*
-- *Versioning scheme adhered to in CI (CI fails on missing/malformed version)*
-- *Changelog discipline verified (release without CHANGELOG entry fails or warns)*
-- *Branching model enforced via branch protection rules (force-push blocked, required reviews, required status checks)*
-- *CI pipeline executes the full declared scope (lint, typecheck, all test categories from §2 declared YES, security scans from §8, SBOM, sign)*
-- *CD pipeline executes the full declared scope including staging-mirror-of-prod deploy + smoke test gate before prod*
-- *Feature flag platform integration tested (new flag created, evaluated in staging, rolled out, killed) end-to-end*
-- *Progressive delivery executed in staging (canary or equivalent verified against rollback trigger)*
-- *Rollback procedure tested in staging within last release cycle (one-click rollback verified, time-to-rollback measured)*
-- *Release approval gate enforced (no manual override path that bypasses)*
+_Required fields:_
+
+- _Versioning scheme adhered to in CI (CI fails on missing/malformed version)_
+- _Changelog discipline verified (release without CHANGELOG entry fails or warns)_
+- _Branching model enforced via branch protection rules (force-push blocked, required reviews, required status checks)_
+- _CI pipeline executes the full declared scope (lint, typecheck, all test categories from §2 declared YES, security scans from §8, SBOM, sign)_
+- _CD pipeline executes the full declared scope including staging-mirror-of-prod deploy + smoke test gate before prod_
+- _Feature flag platform integration tested (new flag created, evaluated in staging, rolled out, killed) end-to-end_
+- _Progressive delivery executed in staging (canary or equivalent verified against rollback trigger)_
+- _Rollback procedure tested in staging within last release cycle (one-click rollback verified, time-to-rollback measured)_
+- _Release approval gate enforced (no manual override path that bypasses)_
 
 ### 10.3 AI / ML Acceptance (Track 19, Applicability-Gated)
 
 Required IFF the product has AI in the user-facing critical path (per /ideate-to-d2r-ready Q11). NA permitted otherwise.
 
-*Required fields (or "NA — [justification]"):*
-- *Model version pinning verified (production runs documented model version; no silent upgrades)*
-- *Prompt / system-instruction versioning under git, with diffable history*
-- *Eval suite executed pre-release (gold-set accuracy, regression vs. last release, OWASP LLM Top 10 jailbreak resistance per applicable items)*
-- *Eval pass thresholds defined and enforced (specific pass scores, not "looks good")*
-- *Output safety classifier integration verified (or hardcoded refusal patterns tested)*
-- *Cost-per-call observability verified (cross-references §7.5 if Track 17 also applicable)*
-- *Latency budget per AI call enforced (cross-references §7.1)*
-- *Retraining / fine-tuning pipeline acceptance criteria (if applicable)*
-- *Hallucination mitigation verified (RAG citation accuracy, structured output schema validation)*
-- *Refusal behavior tested for prohibited topics*
+_Required fields (or "NA — [justification]"):_
+
+- _Model version pinning verified (production runs documented model version; no silent upgrades)_
+- _Prompt / system-instruction versioning under git, with diffable history_
+- _Eval suite executed pre-release (gold-set accuracy, regression vs. last release, OWASP LLM Top 10 jailbreak resistance per applicable items)_
+- _Eval pass thresholds defined and enforced (specific pass scores, not "looks good")_
+- _Output safety classifier integration verified (or hardcoded refusal patterns tested)_
+- _Cost-per-call observability verified (cross-references §7.5 if Track 17 also applicable)_
+- _Latency budget per AI call enforced (cross-references §7.1)_
+- _Retraining / fine-tuning pipeline acceptance criteria (if applicable)_
+- _Hallucination mitigation verified (RAG citation accuracy, structured output schema validation)_
+- _Refusal behavior tested for prohibited topics_
 
 ### 10.4 Compliance & Regulatory Audit-Readiness (Track 20, Applicability-Gated)
 
 Required IFF the product is in regulated scope (HIPAA, PCI-DSS, SOC 2, FedRAMP, GDPR Article 30, etc., per /ideate-to-d2r-ready Q12). NA permitted otherwise.
 
-*Required fields (or "NA — [justification]"):*
-- *Applicable framework(s) declared (matches TRD §3.4 + PRD §6.2)*
-- *Control mapping document maintained (each control mapped to code/config/policy evidence)*
-- *Audit log retention policy enforced and tested (records survive declared period, immutable storage if required)*
-- *Access reviews scheduled (cadence, reviewer, evidence trail)*
-- *Vendor / sub-processor list maintained (with DPA references if GDPR-scoped)*
-- *Data processing agreement (DPA) or BAA references current*
-- *Penetration test cadence and findings remediation SLA met*
-- *Incident response runbook + breach notification timeline documented and tested*
-- *Evidence collection automated where possible (control evidence pulled programmatically, not manually)*
+_Required fields (or "NA — [justification]"):_
+
+- _Applicable framework(s) declared (matches TRD §3.4 + PRD §6.2)_
+- _Control mapping document maintained (each control mapped to code/config/policy evidence)_
+- _Audit log retention policy enforced and tested (records survive declared period, immutable storage if required)_
+- _Access reviews scheduled (cadence, reviewer, evidence trail)_
+- _Vendor / sub-processor list maintained (with DPA references if GDPR-scoped)_
+- _Data processing agreement (DPA) or BAA references current_
+- _Penetration test cadence and findings remediation SLA met_
+- _Incident response runbook + breach notification timeline documented and tested_
+- _Evidence collection automated where possible (control evidence pulled programmatically, not manually)_
 
 ---
 
 ## 11. Open Quality Questions
 
-*Unresolved decisions about quality criteria. Stage 00 research should address these or the TQCD must be updated before Stage 01.*
+_Unresolved decisions about quality criteria. Stage 00 research should address these or the TQCD must be updated before Stage 01._
 
 ---
 
 ## 12. Stakeholder Approvals
 
-*Who has approved this TQCD? Without documented approval, Stage 00 should not begin.*
+_Who has approved this TQCD? Without documented approval, Stage 00 should not begin._
 
 ---
 

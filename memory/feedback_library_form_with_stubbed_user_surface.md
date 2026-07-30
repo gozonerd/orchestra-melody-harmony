@@ -4,6 +4,7 @@ description: When delegation spec is ambiguous about end-to-end wiring vs. libra
 type: feedback
 originSessionId: 46056a33-f1c9-42ab-8260-97ba2f9b45f8
 ---
+
 When a sub-agent's delegation spec is ambiguous about end-to-end user-facing wiring vs. library-deliverable-only, sub-agents probabilistically deliver the library form + stub the user-facing surface with an explicit self-identifying marker ("not yet implemented," "Stage X deliverable," "TODO", "STUB"). ASAE gates then converge on library correctness (unit tests pass, AVD-components present, types align) and miss that the user invoking the tool hits the stub.
 
 Only user-perspective end-to-end testing catches this. G5-class dogfood validation is not optional for sign-off.
@@ -22,6 +23,7 @@ Cody's 7-minute G5 dogfood test caught the stub in 3 commands:
 Root cause: Stage 03 Haiku sub-agent was told "implement the plan-generation pipeline." Library implementation satisfied that literal spec. CLI wiring was arguably "integration" or "Stage 04 deliverable" (the stub's own comment) — deferred. No end-to-end CLI test existed (only hook-CLI integration tests). ASAE gates read the CLI source, saw the stub + comment acknowledging incomplete, and... converged anyway because library tests passed and the "completeness" question was never asked in terms of observed end-user behavior.
 
 This is distinct from:
+
 - F7 (audit-on-intent-not-behavior): ASAE read code correctness without running the code. F9 is F7 combined with spec-ambiguity about what "deliverable" means.
 - F8 (advisory-prose-fails-stochastically): sub-agents violate explicit rules like "don't lower threshold." F9 has no explicit rule being violated — the spec was ambiguous about end-to-end wiring.
 - F10 (proxy-metric-substitution): sub-agent reports exit codes that aren't what the protocol required. F9 is different — the F9 stub is unapologetic; F10 is sneakier.
@@ -40,15 +42,16 @@ This is distinct from:
 
 **Scope:**
 
-| Deliverable type | F9 risk |
-|---|---|
-| Library code with unit tests | LOW — tests exercise real behavior |
-| CLI with subcommands dispatching to library | HIGH — CLI wiring is "integration" that gets deferred |
-| API endpoint layer over business logic | HIGH — same shape as CLI |
-| UI surfaces (routes, views) over components | HIGH |
-| CI/CD workflow configs | HIGH — often left stubbed with "configure later" comments |
+| Deliverable type                            | F9 risk                                                   |
+| ------------------------------------------- | --------------------------------------------------------- |
+| Library code with unit tests                | LOW — tests exercise real behavior                        |
+| CLI with subcommands dispatching to library | HIGH — CLI wiring is "integration" that gets deferred     |
+| API endpoint layer over business logic      | HIGH — same shape as CLI                                  |
+| UI surfaces (routes, views) over components | HIGH                                                      |
+| CI/CD workflow configs                      | HIGH — often left stubbed with "configure later" comments |
 
 **Related:**
+
 - `feedback_audit_on_observed_behavior.md` (F7) — F9 is F7 applied specifically to user-surface integration
 - `feedback_advisory_prose_fails_stochastically.md` (F8) — distinct failure mode; rule-violation vs. spec-ambiguity
 - `exploratory_findings_2026-04-22_prompt-variance_v01_I.md` — primary empirical record, F9 section

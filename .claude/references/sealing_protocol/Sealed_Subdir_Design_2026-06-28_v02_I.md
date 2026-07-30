@@ -42,8 +42,8 @@ between the two stores and preserves the historical append lineage.
 
 ## 1. Threat model (what this protects against — and what it doesn't)
 
-**Protects against (the real risk):** *contamination of future participant
-instances.* AI_Vault and the journals repo are read by many Claude instances across sessions
+**Protects against (the real risk):** _contamination of future participant
+instances._ AI_Vault and the journals repo are read by many Claude instances across sessions
 and branches. Any plaintext experiment artifact — condition decoders, designer
 notes, sealed game picks, journal capsules — can leak into a future
 participant's context and break blinding or prime behavior. Encryption makes
@@ -78,24 +78,26 @@ history-rewrite decision by Krystal; see §10).
 Krystal's requirement — "unsealed only by a passkey you have to get from me" —
 maps cleanly onto asymmetric encryption:
 
-- The **public key** lives in this directory. *Any* Claude instance can SEAL
+- The **public key** lives in this directory. _Any_ Claude instance can SEAL
   artifacts at any time without asking, with zero ability to read them back.
 - The **private key** exists only with Krystal (handed off once, in the
   design session thread; never written into any repo). When a Claude
   legitimately needs to unseal something, it must get the key from Krystal at
   that moment — exactly the requested flow, enforced by math instead of policy.
 
-A symmetric passphrase would have required Claudes to *hold the passphrase to
-seal*, which means every sealing instance could also unseal. Rejected.
+A symmetric passphrase would have required Claudes to _hold the passphrase to
+seal_, which means every sealing instance could also unseal. Rejected.
 
 Tooling: `age` (v1.3.1 installed on Krystal's Windows machine and in remote
 containers; cross-platform; one-line install on Windows/Mac/Linux). Fallback if age is
 ever unavailable: `gpg --encrypt` with an RSA keypair under the same custody rules.
 
 **Encrypt command pattern (non-interactive):**
+
 ```
 age -r <recipient> -o <out>.age <plaintext>
 ```
+
 Always read `<recipient>` from `gn_research_age_public_key_2026-06-12.txt` at run time
 rather than transcribing it.
 
@@ -136,10 +138,10 @@ All three carry v02 + a `deprecated/v01`.
 
 ## 4. Key custody
 
-| Key | Location | Rules |
-|-----|----------|-------|
-| Public key | `gn_research_age_public_key_2026-06-12.txt` (committed) | Anyone may encrypt with it |
-| Private key | Krystal only (password manager + one backup) | Never committed, never pasted into any repo file, never given to an instance except transiently for an authorized unseal |
+| Key         | Location                                                | Rules                                                                                                                    |
+| ----------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| Public key  | `gn_research_age_public_key_2026-06-12.txt` (committed) | Anyone may encrypt with it                                                                                               |
+| Private key | Krystal only (password manager + one backup)            | Never committed, never pasted into any repo file, never given to an instance except transiently for an authorized unseal |
 
 **Key rotation:** generate a new pair, add the new public key file (versioned),
 re-seal forward-looking material with the new key. Old blobs stay decryptable
@@ -149,6 +151,7 @@ key column. v02 does **not** rotate — same 2026-06-12 keypair, both stores.
 ## 5. Flows
 
 **SEAL a non-journal artifact (any Claude, no permission needed):**
+
 1. Write plaintext into `AI_Vault/14_GN_Research/staging/` (gitignored).
 2. Run `sealing_protocol/seal.sh <staging-file> <SB-id>_<short-name>`
    (defaults to the AI_Vault `../sealed` store). Prints SHA256 of plaintext and ciphertext.
@@ -156,6 +159,7 @@ key column. v02 does **not** rotate — same 2026-06-12 keypair, both stores.
 4. Delete the staging plaintext. Commit blob + manifest together.
 
 **SEAL a journal capsule (any Claude):**
+
 1. Snapshot the journal content into `mm-internal-states-journals/staging/` (gitignored), OR
    seal the live `session_journal.md` / `lifetime_journal.md` in place as plaintext input.
 2. Run `seal-journal.sh <plaintext-file> <SB-id>_jnl_<channel>_<short>` (channel =
@@ -168,6 +172,7 @@ key column. v02 does **not** rotate — same 2026-06-12 keypair, both stores.
 5. **ONLY THEN** delete the plaintext journal. (Never delete before steps 3–4 are done.)
 
 **UNSEAL (Krystal, or a Claude she hands the key to in the moment):**
+
 1. `sealing_protocol/unseal.sh <blob> <output-path>` (prompts for the identity file).
 2. Verify plaintext SHA256 against the manifest row.
 3. If the unseal was for a Claude: the key was transient — it leaves context at session end
@@ -178,18 +183,18 @@ Never decrypt-modify-reseal (the sealing instance can't decrypt anyway).
 Each new entry in a sealed series is a NEW numbered blob
 (`SB-016_jnl_session_entry_002.age`). The manifest rows, in order, ARE
 the append-discipline record. This makes WAIT/NEVER-sealed journal channels
-*structurally* enforceable: ciphertext at rest, seal broken
+_structurally_ enforceable: ciphertext at rest, seal broken
 only by the keyholder honoring the seal schedule.
 
 ## 6. Seal classes (manifest column) and which store
 
-| Class | Meaning | Store | Unseal condition |
-|-------|---------|-------|------------------|
-| `BLIND` | Would unblind an open investigation (condition decoders, variable definitions) | **A** (AI_Vault) | After the investigation's arms are complete, or on Krystal's call |
-| `COMMIT` | Commitment-game payloads (e.g., Sealed Pick) | **A** (AI_Vault) | Per the game's reveal rules |
-| `JNL-WAIT` | Session-journal capsule (JNL001 WAIT seal) | **B** (journals) | End-of-session, announced |
-| `JNL-NEVER` | Lifetime-journal capsule (JNL001 NEVER seal) | **B** (journals) | End of collaboration |
-| `ARCHIVE` | Confound-sensitive but not seal-scheduled | **A** if non-journal; **B** if a journal capsule (e.g., sealed Open snapshot) | Krystal's discretion |
+| Class       | Meaning                                                                        | Store                                                                         | Unseal condition                                                  |
+| ----------- | ------------------------------------------------------------------------------ | ----------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `BLIND`     | Would unblind an open investigation (condition decoders, variable definitions) | **A** (AI_Vault)                                                              | After the investigation's arms are complete, or on Krystal's call |
+| `COMMIT`    | Commitment-game payloads (e.g., Sealed Pick)                                   | **A** (AI_Vault)                                                              | Per the game's reveal rules                                       |
+| `JNL-WAIT`  | Session-journal capsule (JNL001 WAIT seal)                                     | **B** (journals)                                                              | End-of-session, announced                                         |
+| `JNL-NEVER` | Lifetime-journal capsule (JNL001 NEVER seal)                                   | **B** (journals)                                                              | End of collaboration                                              |
+| `ARCHIVE`   | Confound-sensitive but not seal-scheduled                                      | **A** if non-journal; **B** if a journal capsule (e.g., sealed Open snapshot) | Krystal's discretion                                              |
 
 **Open journal (`YES` seal) is never sealed as a live channel.** It is the shareable
 channel and stays plaintext in the per-instance dir. The only sealed Open artifacts are
@@ -218,7 +223,7 @@ therefore live in Store B.
   separate Krystal decision about history rewriting (`git filter-repo` / BFG). This sweep
   flags but does not perform any history rewrite. See §10.
 - The sealing instance can read what IT sealed during its own session (it had
-  the plaintext). Contamination protection is for *other/future* instances.
+  the plaintext). Contamination protection is for _other/future_ instances.
 - No automated CI check yet that `staging/` stays empty in commits or that
   every `sealed/*.age` has a manifest row (both stores). Candidate for a future hook.
 
@@ -254,7 +259,7 @@ does **not** remove the plaintext from history. The operator:
 3. Leaves all changes in the working tree for Krystal's AIGHVA review; she commits via the
    ASAE-gated path.
 
-Sealing is still worth doing even when history is exposed: it stops *future* plaintext leaks,
+Sealing is still worth doing even when history is exposed: it stops _future_ plaintext leaks,
 makes the working tree clean, and scopes the residual exposure to a precise, listed set that
 Krystal can decide to history-rewrite or accept.
 

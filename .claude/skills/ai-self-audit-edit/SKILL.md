@@ -21,6 +21,7 @@ Systematically audit AI-generated work against original sources and the original
 ### Step 1: Audit
 
 Audit the generated work against:
+
 - The **original sources** (documents, data, evidence) that informed the output
 - The **original prompt(s)** that produced vCurrent
 

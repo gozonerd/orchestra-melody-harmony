@@ -55,23 +55,23 @@ This catalog enumerates the fork events that produced the residue the BLOCKER an
 
 Each entry has the following fields. Required fields are mandatory; optional fields populated when known.
 
-| Field | Required | Description |
-|---|---|---|
-| `fork_id` | yes | Unique stable identifier. Format: `FORK-<short-name>-<YYYY-MM-DD>`. |
-| `event_kind` | yes | One of: `rebrand` (legal/branding rename of single repo), `ssot-extraction` (canonical content extracted from a workspace repo into dedicated SSOT repo), `submodule-split` (single repo split into multiple), `forked-from-external` (Martinez Methods adopts external project as starting point), `migration` (content moves between Martinez Methods repos without rebrand). |
-| `source_repo` | yes | The pre-fork repo / context. Repo URL when applicable; otherwise descriptive label. |
-| `source_brand` | yes | The brand-context of the source. Examples: `Stahl Systems`, `Martinez Methods (workspace)`, `external: <upstream-project>`. |
-| `destination_repo` | yes | The post-fork repo. Repo URL when applicable. |
-| `destination_brand` | yes | The brand-context of the destination. |
-| `fork_date` | yes | ISO 8601 date. If exact unknown, mark approximate (`~2026-04-16`) and explain in `notes`. |
-| `fork_commit` | optional | The destination repo's first-after-fork commit SHA, if a single commit captures the fork moment. |
-| `reason` | yes | Free-prose. Why this fork happened. |
-| `residue_at_fork` | yes | Findings count from `/rebrand-sweep --fork-event` against the destination, partitioned by category (mechanical-rename / contextual-phrase / structural / binary / manifest). |
-| `residue_remediated` | yes | Findings count remediated to date. Updated as remediation lands. |
-| `remediation_owner` | yes | Thread / persona / human responsible. Examples: `Spec Genius (Batch 3 Phase 2)`, `SSOT-wrangler (Phase E)`, `Krystal-direct`. |
-| `remediation_status` | yes | One of: `not-started`, `in-progress`, `complete`, `partial-deferred-to-batch-N`, `accepted-as-historical`. |
-| `cross_references` | optional | Related artifacts, gates, threads. |
-| `notes` | optional | Free-prose. Approximations, caveats, parallel-fork-context. |
+| Field                | Required | Description                                                                                                                                                                                                                                                                                                                                                                     |
+| -------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `fork_id`            | yes      | Unique stable identifier. Format: `FORK-<short-name>-<YYYY-MM-DD>`.                                                                                                                                                                                                                                                                                                             |
+| `event_kind`         | yes      | One of: `rebrand` (legal/branding rename of single repo), `ssot-extraction` (canonical content extracted from a workspace repo into dedicated SSOT repo), `submodule-split` (single repo split into multiple), `forked-from-external` (Martinez Methods adopts external project as starting point), `migration` (content moves between Martinez Methods repos without rebrand). |
+| `source_repo`        | yes      | The pre-fork repo / context. Repo URL when applicable; otherwise descriptive label.                                                                                                                                                                                                                                                                                             |
+| `source_brand`       | yes      | The brand-context of the source. Examples: `Stahl Systems`, `Martinez Methods (workspace)`, `external: <upstream-project>`.                                                                                                                                                                                                                                                     |
+| `destination_repo`   | yes      | The post-fork repo. Repo URL when applicable.                                                                                                                                                                                                                                                                                                                                   |
+| `destination_brand`  | yes      | The brand-context of the destination.                                                                                                                                                                                                                                                                                                                                           |
+| `fork_date`          | yes      | ISO 8601 date. If exact unknown, mark approximate (`~2026-04-16`) and explain in `notes`.                                                                                                                                                                                                                                                                                       |
+| `fork_commit`        | optional | The destination repo's first-after-fork commit SHA, if a single commit captures the fork moment.                                                                                                                                                                                                                                                                                |
+| `reason`             | yes      | Free-prose. Why this fork happened.                                                                                                                                                                                                                                                                                                                                             |
+| `residue_at_fork`    | yes      | Findings count from `/rebrand-sweep --fork-event` against the destination, partitioned by category (mechanical-rename / contextual-phrase / structural / binary / manifest).                                                                                                                                                                                                    |
+| `residue_remediated` | yes      | Findings count remediated to date. Updated as remediation lands.                                                                                                                                                                                                                                                                                                                |
+| `remediation_owner`  | yes      | Thread / persona / human responsible. Examples: `Spec Genius (Batch 3 Phase 2)`, `SSOT-wrangler (Phase E)`, `Krystal-direct`.                                                                                                                                                                                                                                                   |
+| `remediation_status` | yes      | One of: `not-started`, `in-progress`, `complete`, `partial-deferred-to-batch-N`, `accepted-as-historical`.                                                                                                                                                                                                                                                                      |
+| `cross_references`   | optional | Related artifacts, gates, threads.                                                                                                                                                                                                                                                                                                                                              |
+| `notes`              | optional | Free-prose. Approximations, caveats, parallel-fork-context.                                                                                                                                                                                                                                                                                                                     |
 
 ## Inaugural entries
 
@@ -186,7 +186,7 @@ notes: |
   Phase E (canonical-consumer pilot wiring of _grand_repo) is BLOCKED on /rebrand-sweep
   remediation. Phase 1 (this catalog + skill authorship) unblocks Phase 2 (sweep + 
   remediate), which unblocks Phase E.
-  
+
   Stahl Systems references in this catalog (and in mm-claude-canonical/CHANGELOG.md and
   the docs/Migration_Source_Locks + Phase9 + SSOT_System_Design files) are catalogued as
   intentional historical-provenance references — describing WHY the fork happened. Per
@@ -217,6 +217,7 @@ When `/rebrand-sweep --fork-event` produces a candidate entry:
 ## Relationship to Production Pattern Catalog
 
 `Production_Pattern_Catalog_2026-04-27_v01_I.md` entry `PAT-INHERITED-BRAND-DEBT` describes the failure mode that this catalog's entries enumerate concretely. When new fork events surface, both catalogs may need touch:
+
 - This catalog: new fork-event entry
 - Production_Pattern_Catalog: increment frequency / observed_in count for `PAT-INHERITED-BRAND-DEBT`
 
@@ -227,6 +228,7 @@ Cross-reference is informational; no automated linkage today (per honest gap §6
 v01_I (2026-04-30) — inaugural Spec Genius authoring per Batch 3 Lock 9 (META-10). 2 inaugural entries (Stahl→Martinez rebrand + canonical extraction).
 
 Future v02+ bumps:
+
 - New fork events (additive entries)
 - Schema changes (required→optional or new fields) trigger META-8 cascade attestation since /rebrand-sweep skill consumes this catalog's schema
 - Residue-count updates as remediation lands (in-place edits, not version bumps unless schema changes)

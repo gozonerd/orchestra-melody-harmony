@@ -52,6 +52,7 @@ Run the `asae` loop pattern against the claims list, with one modification: **th
 ### Each Audit Pass
 
 Re-read the original source material. Compare every claim in the claims list against what the source actually says. Check for:
+
 - Factual errors (claim says X, source says Y)
 - Misattributions (claim attributed to wrong source)
 - Omitted claims (source contains a finding not in the claims list)
@@ -67,6 +68,7 @@ If errors are found: apply edits, log them, loop back. If zero errors are found:
 ### On Exit
 
 Report to Krystal:
+
 - Total audit loops run
 - Total edits applied across all loops
 - The loop at which the first null-edit pass occurred

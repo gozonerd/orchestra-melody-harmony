@@ -7,8 +7,8 @@ type: skill
 classification: authorship-class
 provenance: Extracted from mm-fm-taxonomy Batch 2 database schema design session (gate-02, commit 49ce3ca). Schema pattern proven on 11-table + 3-view PostgreSQL design for the failure mode taxonomy audit trail.
 changelog:
-  - "1.0.0 (2026-05-12): Initial release. 9-step protocol, engine selection guide, 10 anti-patterns."
-  - "1.1.0 (2026-05-12): Added singular-noun table naming convention as Step 4 sub-rule and as anti-pattern. Aligns with DBA-traditional convention (Joe Celko, Microsoft). Partner DB backgrounds typically expect singular. Includes worked example (a table of octopi: octopuses vs octopi vs octopodes) + table of 12 other irregular-noun cases (mouse, child, person, datum, criterion, phenomenon, index, etc.) where singular avoids the debate."
+  - '1.0.0 (2026-05-12): Initial release. 9-step protocol, engine selection guide, 10 anti-patterns.'
+  - '1.1.0 (2026-05-12): Added singular-noun table naming convention as Step 4 sub-rule and as anti-pattern. Aligns with DBA-traditional convention (Joe Celko, Microsoft). Partner DB backgrounds typically expect singular. Includes worked example (a table of octopi: octopuses vs octopi vs octopodes) + table of 12 other irregular-noun cases (mouse, child, person, datum, criterion, phenomenon, index, etc.) where singular avoids the debate.'
 ---
 
 # /create-database
@@ -38,14 +38,14 @@ The skill encodes the structural pattern that produced the mm-fm-taxonomy schema
 
 ## Inputs
 
-| Input | Required | Description |
-|-------|----------|-------------|
-| Domain description | Yes | What the database models (one sentence minimum) |
-| Source materials | Yes | Paths to files that define the domain's entities, relationships, and vocabulary. These are the source-of-truth for table/column/ENUM design. |
-| Deployment context | Yes | Where the database runs (VPS, cloud, local dev), who deploys, budget constraints |
-| Target repo | Yes | Where `db/schema.sql` and `docs/architecture.md` will be written |
-| Query patterns | Recommended | What questions the database needs to answer (drives view and index design) |
-| Existing schema | No | If migrating from a prior version, path to the old DDL |
+| Input              | Required    | Description                                                                                                                                  |
+| ------------------ | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| Domain description | Yes         | What the database models (one sentence minimum)                                                                                              |
+| Source materials   | Yes         | Paths to files that define the domain's entities, relationships, and vocabulary. These are the source-of-truth for table/column/ENUM design. |
+| Deployment context | Yes         | Where the database runs (VPS, cloud, local dev), who deploys, budget constraints                                                             |
+| Target repo        | Yes         | Where `db/schema.sql` and `docs/architecture.md` will be written                                                                             |
+| Query patterns     | Recommended | What questions the database needs to answer (drives view and index design)                                                                   |
+| Existing schema    | No          | If migrating from a prior version, path to the old DDL                                                                                       |
 
 ## Execution Protocol
 
@@ -71,12 +71,14 @@ parent_table ─────< child_table ────< junction_table >──�
 ```
 
 Use these symbols:
+
 - `─────<` = one-to-many (FK in child)
 - `>────` = many-to-one (FK in this table)
 - `>──── ... ────<` through a junction = many-to-many
 - `(standalone)` = no FK relationships
 
 For each relationship, state:
+
 - **Cardinality** — 1:N or M:N with expected row counts
 - **Delete policy** — RESTRICT (prevent orphans), CASCADE (delete children), SET NULL (unlink)
 - **Rationale** — why this policy (one sentence)
@@ -96,6 +98,7 @@ CREATE TYPE status_name AS ENUM (
 ```
 
 **ENUM design rules:**
+
 - Values come from source materials, not invention. Every value must trace to a source document.
 - Use UPPER-CASE or lowercase consistently within one ENUM (match the domain's convention)
 - Hyphenated values are allowed in PostgreSQL ENUMs (e.g., `'OUT-OF-SCOPE'`)
@@ -122,12 +125,12 @@ You're modeling an aquarium's inventory. You have an entity that needs its own t
 
 **Anti-pattern — the plural trap:**
 
-| Candidate | Problem |
-|-----------|---------|
-| `octopuses` | Standard English plural. Reads awkwardly: "FROM octopuses". |
-| `octopi` | The common pick, but technically wrong. "Octopus" comes from Greek (*oktōpous*), not Latin — the Latinized `-i` plural doesn't apply. Linguists will side-eye it. |
-| `octopodes` | Etymologically correct Greek plural. Almost nobody uses it. Looks bizarre in code. |
-| `octopus_records` / `octopus_list` | Dodges the plural debate with a meaningless suffix. Adds noise. Doesn't scale (do you then have `tank_records`? `species_records`?). |
+| Candidate                          | Problem                                                                                                                                                           |
+| ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `octopuses`                        | Standard English plural. Reads awkwardly: "FROM octopuses".                                                                                                       |
+| `octopi`                           | The common pick, but technically wrong. "Octopus" comes from Greek (_oktōpous_), not Latin — the Latinized `-i` plural doesn't apply. Linguists will side-eye it. |
+| `octopodes`                        | Etymologically correct Greek plural. Almost nobody uses it. Looks bizarre in code.                                                                                |
+| `octopus_records` / `octopus_list` | Dodges the plural debate with a meaningless suffix. Adds noise. Doesn't scale (do you then have `tank_records`? `species_records`?).                              |
 
 What happens with plural-as-policy: the team spends 20 minutes debating it in code review. Inconsistency creeps in — some PRs use `octopuses`, others use `octopi`. Every JOIN becomes a memory test: did we land on `JOIN octopuses` or `JOIN octopi`? Migrations become risky because a rename from `octopi` to `octopuses` (or vice versa) breaks application code in ways you only catch at runtime.
 
@@ -160,24 +163,25 @@ The JOIN reads as "from octopus o, join tank t" — natural English, no plural-f
 
 **Other irregular nouns where the singular rule pays off the same way:**
 
-| Domain entity | Plural choices that would fight | Singular table name |
-|---------------|--------------------------------|---------------------|
-| `octopus` | octopuses / octopi / octopodes | `octopus` |
-| `cactus` | cactuses / cacti | `cactus` |
-| `mouse` (animal or input device) | mice / mouses | `mouse` |
-| `child` | children / childs | `child` |
-| `person` | people / persons | `person` |
-| `datum` | data / datums | `datum` (or `measurement` if you mean the broader concept) |
-| `criterion` | criteria / criterions | `criterion` |
-| `analysis` | analyses / analysises | `analysis` |
-| `phenomenon` | phenomena / phenomenons | `phenomenon` |
-| `index` | indices / indexes | `index` |
-| `appendix` | appendices / appendixes | `appendix` |
-| `goose` | geese / gooses | `goose` |
+| Domain entity                    | Plural choices that would fight | Singular table name                                        |
+| -------------------------------- | ------------------------------- | ---------------------------------------------------------- |
+| `octopus`                        | octopuses / octopi / octopodes  | `octopus`                                                  |
+| `cactus`                         | cactuses / cacti                | `cactus`                                                   |
+| `mouse` (animal or input device) | mice / mouses                   | `mouse`                                                    |
+| `child`                          | children / childs               | `child`                                                    |
+| `person`                         | people / persons                | `person`                                                   |
+| `datum`                          | data / datums                   | `datum` (or `measurement` if you mean the broader concept) |
+| `criterion`                      | criteria / criterions           | `criterion`                                                |
+| `analysis`                       | analyses / analysises           | `analysis`                                                 |
+| `phenomenon`                     | phenomena / phenomenons         | `phenomenon`                                               |
+| `index`                          | indices / indexes               | `index`                                                    |
+| `appendix`                       | appendices / appendixes         | `appendix`                                                 |
+| `goose`                          | geese / gooses                  | `goose`                                                    |
 
 Every row of that right-hand column is a debate you don't have to have. Singular is the rule that prevents the debate from existing in the first place.
 
 **Column design rules:**
+
 - `id SERIAL PRIMARY KEY` for surrogate keys (unless the domain has strong natural keys)
 - `code VARCHAR(N) UNIQUE NOT NULL` for human-readable identifiers (e.g., `'F11'`, `'EC-42'`, `'A7'`)
 - `TEXT` for unbounded strings (descriptions, narratives, rationale)
@@ -189,21 +193,25 @@ Every row of that right-hand column is a debate you don't have to have. Singular
 - `INT` for counts; `DATE` for dates; `SERIAL` for auto-increment
 
 **Foreign key rules:**
+
 - Every FK gets an explicit `ON DELETE` policy (RESTRICT, CASCADE, or SET NULL)
 - Junction tables (M:N) use CASCADE on the "child" side, RESTRICT on the "parent" side
 - Evidence/audit mappings use SET NULL for optional linkages (so unlinking doesn't destroy the evidence record)
 
 **Constraint rules:**
+
 - Add `UNIQUE` constraints for natural keys and compound uniqueness (e.g., `UNIQUE(taxonomy_id, source_id)`)
 - Add `CHECK` constraints for cross-column business rules
 - Name CHECK constraints descriptively (e.g., `chk_sub_shape_category`)
 
 **Comment rules:**
+
 - `COMMENT ON TABLE` for every table (one sentence: what it holds + why it exists)
 - `COMMENT ON COLUMN` for non-obvious columns (especially codes, ENUMs, patterns, FKs)
 - Comments are the schema's inline documentation; a DBA reading only `\dt+` and `\d+ tablename` should understand the design
 
 **Index rules:**
+
 - Index every FK column (PostgreSQL does NOT auto-index FKs)
 - Index columns used in WHERE clauses of expected queries (from Step 1 query patterns)
 - Index `created_at` on audit/log tables (for time-range queries)
@@ -214,6 +222,7 @@ Every row of that right-hand column is a debate you don't have to have. Singular
 Views answer the query patterns from Step 1 without requiring the user to write JOINs.
 
 **View design rules:**
+
 - Each view has a clear use case stated in its `COMMENT ON VIEW`
 - Use `LEFT JOIN` for optional relationships (so rows aren't silently dropped)
 - Use `COALESCE` for fallback logic (e.g., family from direct mapping OR from EC's family)
@@ -267,6 +276,7 @@ COMMIT;
 ```
 
 **Structural rules:**
+
 - Wrap everything in `BEGIN` / `COMMIT` (single transaction — all or nothing)
 - Separator bars between sections (`-- ====...====`)
 - Tables numbered sequentially with one-line descriptions
@@ -279,39 +289,47 @@ COMMIT;
 Write the architecture document with these 7 sections:
 
 #### Section 1: Design Rationale
+
 - Why a relational database (what properties of the data make it relational)
 - Why PostgreSQL specifically (enumerate concrete reasons, not generic "it's popular")
 - Why NOT the alternatives considered (SQLite, MongoDB, flat files — state what was rejected and why)
 
 #### Section 2: Entity-Relationship Overview
+
 - Text-based ER diagram (same as Step 2 output)
 - Cardinality table: Relationship | Type | Expected rows
 
 #### Section 3: Table Descriptions
+
 - Group tables by domain layer (e.g., "Source Layer", "Remediation Layer", "Evidence Layer", "Audit Layer")
 - Each table gets a paragraph: what it holds, what its key columns mean, how it relates to neighbors
 - Use `**backtick_table_name**` formatting for table names
 
 #### Section 4: Views
+
 - Each view gets a paragraph: what query it answers, when to use it
 
 #### Section 5: Deployment Notes
+
 - VPS/cloud setup commands (createdb, createuser, grant, run schema, run seeds)
 - Connection string template (with `<password>` placeholder — never real credentials)
 - Backup command
 
 #### Section 6: Migration Strategy
+
 - Where migrations live (`db/migrations/`)
 - Naming convention (`001_description.sql`, `002_description.sql`)
 - Transaction wrapping + idempotency expectation
 
 #### Section 7: Data Integrity Constraints
+
 - Table summarizing all CHECK, UNIQUE, FK, and ENUM constraints
 - Columns: Constraint | Type | Purpose
 
 ### Step 8: ASAE Gate (if applicable)
 
 If the repo has an `.asae-policy`, run `/asae` with:
+
 - **target:** `db/schema.sql` + `docs/architecture.md`
 - **sources:** all source materials from Step 1
 - **domain:** `document` (the schema DDL is a specification document)
@@ -319,6 +337,7 @@ If the repo has an `.asae-policy`, run `/asae` with:
 - **severity_policy:** `strict`
 
 **Audit checklist (10 items):**
+
 1. Schema completeness — all planned tables present with correct names
 2. ENUM types — all match domain vocabulary from source artifacts
 3. Table columns — correct types, constraints, comments
@@ -341,12 +360,12 @@ Place on Desktop or user-specified location. Both files include a "Press Ctrl+P 
 
 ## Output Artifacts
 
-| Artifact | Path | Content |
-|----------|------|---------|
-| Schema DDL | `{repo}/db/schema.sql` | Full PostgreSQL DDL (transaction-wrapped) |
-| Architecture doc | `{repo}/docs/architecture.md` | 7-section design document |
-| Gate doc (if ASAE) | `{repo}/deprecated/asae-logs/gate-NN-*.md` | Audit log with pass blocks + rater verdicts |
-| Print HTML (optional) | Desktop or specified | Two HTML files for paper review |
+| Artifact              | Path                                       | Content                                     |
+| --------------------- | ------------------------------------------ | ------------------------------------------- |
+| Schema DDL            | `{repo}/db/schema.sql`                     | Full PostgreSQL DDL (transaction-wrapped)   |
+| Architecture doc      | `{repo}/docs/architecture.md`              | 7-section design document                   |
+| Gate doc (if ASAE)    | `{repo}/deprecated/asae-logs/gate-NN-*.md` | Audit log with pass blocks + rater verdicts |
+| Print HTML (optional) | Desktop or specified                       | Two HTML files for paper review             |
 
 ## Anti-Patterns
 
@@ -366,16 +385,16 @@ Place on Desktop or user-specified location. Both files include a "Press Ctrl+P 
 
 This skill defaults to PostgreSQL but the rationale must be honest. Use this decision tree:
 
-| If... | Then... | Because... |
-|-------|---------|------------|
-| Multi-user access needed | PostgreSQL | SQLite is single-writer |
-| Controlled vocabularies (ENUMs) are central | PostgreSQL | Native ENUM types; SQLite requires TEXT + CHECK |
-| Complex JOINs across 4+ tables | PostgreSQL | Query planner handles this well; SQLite's planner is simpler |
-| Data volume < 100K rows AND single user AND no server | SQLite | Simpler deployment, no daemon |
-| Zero budget + existing VPS | PostgreSQL | Free, runs on what you have |
-| Cloud-managed preferred | PostgreSQL (RDS/Supabase/Neon) | Managed PostgreSQL is widely available |
-| Partner/team has DB background | PostgreSQL | They already know it |
-| Document-shaped data, no JOINs needed | Consider MongoDB/flat files | Relational is overhead without relationships |
+| If...                                                 | Then...                        | Because...                                                   |
+| ----------------------------------------------------- | ------------------------------ | ------------------------------------------------------------ |
+| Multi-user access needed                              | PostgreSQL                     | SQLite is single-writer                                      |
+| Controlled vocabularies (ENUMs) are central           | PostgreSQL                     | Native ENUM types; SQLite requires TEXT + CHECK              |
+| Complex JOINs across 4+ tables                        | PostgreSQL                     | Query planner handles this well; SQLite's planner is simpler |
+| Data volume < 100K rows AND single user AND no server | SQLite                         | Simpler deployment, no daemon                                |
+| Zero budget + existing VPS                            | PostgreSQL                     | Free, runs on what you have                                  |
+| Cloud-managed preferred                               | PostgreSQL (RDS/Supabase/Neon) | Managed PostgreSQL is widely available                       |
+| Partner/team has DB background                        | PostgreSQL                     | They already know it                                         |
+| Document-shaped data, no JOINs needed                 | Consider MongoDB/flat files    | Relational is overhead without relationships                 |
 
 If the decision tree points away from PostgreSQL, say so. Don't force relational on a non-relational problem.
 
@@ -392,6 +411,7 @@ db/seed/
 ```
 
 Each seed file:
+
 - Wrapped in `BEGIN` / `COMMIT`
 - Uses explicit column lists in INSERT statements (not positional)
 - Ordered by FK dependency (parents before children)

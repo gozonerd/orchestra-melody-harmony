@@ -7,7 +7,7 @@ type: skill
 classification: utility-class
 provenance: Fork of /print-from-html (v1.1.1), created 2026-05-20 at Krystal's direction. Same skill, two baked-in differences for the editing use case — (1) double-spacing is MANDATORY (not optional), (2) margins are WIDER than print-from-html (0.9in×1.0in vs 0.6in×0.5in) to leave room for handwritten margin notes. Surfaced when Krystal printed double-spaced methodology docs from /print-from-html and found the margins too narrow for marginalia, while the standard explainer-doc margins were fine. This skill is the "give me a copy I can edit on paper" sibling; /print-from-html remains the "give me a clean final copy" tool.
 changelog:
-  - "1.0.0 (2026-05-20): Initial release. Forked from print-from-html v1.1.1. Differences: double-spacing mandatory (prose line-height ~2.0-2.2, code line-height ~1.8); wider print margins (only the @page margin changes — 0.6in 0.5in → 0.9in 1.0in; print body margin 0.5in preserved, so effective margins are wider on every edge) for handwritten margin notes; output filename suffix `-print-edit.html`; two new anti-patterns (single-spaced body, margins too narrow for marginalia). All other behavior — 16 formats, syntax-highlighting palette, Mermaid handling, CSV tables, batch mode, self-containment, page numbers — identical to print-from-html."
+  - '1.0.0 (2026-05-20): Initial release. Forked from print-from-html v1.1.1. Differences: double-spacing mandatory (prose line-height ~2.0-2.2, code line-height ~1.8); wider print margins (only the @page margin changes — 0.6in 0.5in → 0.9in 1.0in; print body margin 0.5in preserved, so effective margins are wider on every edge) for handwritten margin notes; output filename suffix `-print-edit.html`; two new anti-patterns (single-spaced body, margins too narrow for marginalia). All other behavior — 16 formats, syntax-highlighting palette, Mermaid handling, CSV tables, batch mode, self-containment, page numbers — identical to print-from-html.'
 ---
 
 # /print-to-html-to-edit
@@ -16,9 +16,9 @@ changelog:
 
 Turn any file into a print-ready HTML page **built for hand-editing**. Open in browser, Ctrl+P, then mark it up with a pen. Same as `/print-from-html`, but with two differences baked in: the body is **double-spaced** (room to write between lines) and the **margins are wider** (room for marginalia).
 
-Krystal works with a partner who reviews on paper, and Krystal herself edits drafts on paper. This skill eliminates the friction of getting a clean *editable* printout from source files that don't print well natively (code files, markdown, YAML, raw SQL) — without having to ask for double-spacing and wider margins every time.
+Krystal works with a partner who reviews on paper, and Krystal herself edits drafts on paper. This skill eliminates the friction of getting a clean _editable_ printout from source files that don't print well natively (code files, markdown, YAML, raw SQL) — without having to ask for double-spacing and wider margins every time.
 
-Use `/print-from-html` instead when the goal is a clean *final* copy, not an editing draft.
+Use `/print-from-html` instead when the goal is a clean _final_ copy, not an editing draft.
 
 ## When to Use
 
@@ -30,18 +30,18 @@ Use `/print-from-html` instead when the goal is a clean *final* copy, not an edi
 
 ## When NOT to Use
 
-- The goal is a clean *final* printout, not an editing draft → use `/print-from-html` (single-spaced, standard margins)
+- The goal is a clean _final_ printout, not an editing draft → use `/print-from-html` (single-spaced, standard margins)
 - The file is already HTML with print CSS (just print it directly)
 - The user wants a PDF (this skill produces HTML; browser print-to-PDF covers that via Ctrl+P > Save as PDF)
 
 ## Inputs
 
-| Input | Required | Description |
-|-------|----------|-------------|
-| Source file path(s) | Yes | One or more files to make into editable printouts |
-| Output location | No | Where to write the HTML. Default: `C:\Users\NerdyKrystal\Desktop\claude files to print\` (Krystal's curated print-queue folder). Folder is created via `mkdir -p` if missing — no silent fallback to Desktop root. |
-| Paper size | No | Default: letter. Also supports A4. |
-| Custom title | No | Override the document title (default: filename) |
+| Input               | Required | Description                                                                                                                                                                                                        |
+| ------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Source file path(s) | Yes      | One or more files to make into editable printouts                                                                                                                                                                  |
+| Output location     | No       | Where to write the HTML. Default: `C:\Users\NerdyKrystal\Desktop\claude files to print\` (Krystal's curated print-queue folder). Folder is created via `mkdir -p` if missing — no silent fallback to Desktop root. |
+| Paper size          | No       | Default: letter. Also supports A4.                                                                                                                                                                                 |
+| Custom title        | No       | Override the document title (default: filename)                                                                                                                                                                    |
 
 ## Execution Protocol
 
@@ -49,25 +49,25 @@ Use `/print-from-html` instead when the goal is a clean *final* copy, not an edi
 
 Read the full file. Determine format from extension:
 
-| Extension | Format | Rendering strategy |
-|-----------|--------|-------------------|
-| `.sql` | SQL | Monospace + SQL syntax highlighting |
-| `.py` | Python | Monospace + Python syntax highlighting |
-| `.js`, `.ts`, `.tsx`, `.jsx` | JavaScript/TypeScript | Monospace + JS syntax highlighting |
-| `.yaml`, `.yml` | YAML | Monospace + YAML syntax highlighting |
-| `.json` | JSON | Monospace + JSON syntax highlighting |
-| `.md` | Markdown | Rendered prose (headings, tables, code blocks, lists) |
-| `.sh`, `.bash` | Shell | Monospace + shell syntax highlighting |
-| `.csv` | CSV | Rendered as HTML table |
-| `.toml` | TOML | Monospace + TOML syntax highlighting |
-| `.html`, `.htm` | HTML | Source view with monospace + HTML syntax highlighting |
-| `.rs` | Rust | Monospace + Rust syntax highlighting |
-| `.go` | Go | Monospace + Go syntax highlighting |
-| `.rb` | Ruby | Monospace + Ruby syntax highlighting |
-| `.java` | Java | Monospace + Java syntax highlighting |
-| `.css`, `.scss` | CSS | Monospace + CSS syntax highlighting |
-| `.xml` | XML | Monospace + XML syntax highlighting |
-| `.txt`, other | Plain text | Monospace, no highlighting |
+| Extension                    | Format                | Rendering strategy                                    |
+| ---------------------------- | --------------------- | ----------------------------------------------------- |
+| `.sql`                       | SQL                   | Monospace + SQL syntax highlighting                   |
+| `.py`                        | Python                | Monospace + Python syntax highlighting                |
+| `.js`, `.ts`, `.tsx`, `.jsx` | JavaScript/TypeScript | Monospace + JS syntax highlighting                    |
+| `.yaml`, `.yml`              | YAML                  | Monospace + YAML syntax highlighting                  |
+| `.json`                      | JSON                  | Monospace + JSON syntax highlighting                  |
+| `.md`                        | Markdown              | Rendered prose (headings, tables, code blocks, lists) |
+| `.sh`, `.bash`               | Shell                 | Monospace + shell syntax highlighting                 |
+| `.csv`                       | CSV                   | Rendered as HTML table                                |
+| `.toml`                      | TOML                  | Monospace + TOML syntax highlighting                  |
+| `.html`, `.htm`              | HTML                  | Source view with monospace + HTML syntax highlighting |
+| `.rs`                        | Rust                  | Monospace + Rust syntax highlighting                  |
+| `.go`                        | Go                    | Monospace + Go syntax highlighting                    |
+| `.rb`                        | Ruby                  | Monospace + Ruby syntax highlighting                  |
+| `.java`                      | Java                  | Monospace + Java syntax highlighting                  |
+| `.css`, `.scss`              | CSS                   | Monospace + CSS syntax highlighting                   |
+| `.xml`                       | XML                   | Monospace + XML syntax highlighting                   |
+| `.txt`, other                | Plain text            | Monospace, no highlighting                            |
 
 If the file has no extension or an unrecognized one, treat as plain text.
 
@@ -82,18 +82,17 @@ Every output file is a single self-contained HTML page (no external CSS/JS depen
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>{document title}</title>
-  <style>
-    {all CSS inline — print + screen; double-spaced + wide-margin defaults}
-  </style>
-</head>
-<body>
-  {screen-only print instructions banner — note "double-spaced for editing"}
-  {document header: title + metadata}
-  {rendered content}
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<title>{document title}</title>
+		<style>
+			{all CSS inline — print + screen; double-spaced + wide-margin defaults}
+		</style>
+	</head>
+	<body>
+		{screen-only print instructions banner — note "double-spaced for editing"} {document header:
+		title + metadata} {rendered content}
+	</body>
 </html>
 ```
 
@@ -103,15 +102,15 @@ Every output file is a single self-contained HTML page (no external CSS/JS depen
 
 Use `<pre>` with `<span>` tags for syntax highlighting. Highlighting is print-friendly — no bright neon colors. Palette:
 
-| Token type | Style | Print-safe rationale |
-|------------|-------|---------------------|
-| Keywords | `font-weight: bold; color: #1a1a8a;` | Bold blue — visible in B&W as bold |
-| Types / built-ins | `font-weight: bold; color: #5a1a5a;` | Bold purple — distinguishable from keywords |
-| Strings / values | `color: #2a6a2a;` | Dark green — readable in B&W as lighter gray |
-| Comments | `color: #666; font-style: italic;` | Gray italic — clearly secondary |
-| Numbers | `color: #8a4a1a;` | Dark orange/brown — distinct from strings |
-| Operators / punctuation | `color: #333;` | Near-black — blends with structure |
-| Section headers / decorators | `background: #e8e8e8; border-left: 3px solid #333; font-weight: bold;` | Gray bar — visual section breaks |
+| Token type                   | Style                                                                  | Print-safe rationale                         |
+| ---------------------------- | ---------------------------------------------------------------------- | -------------------------------------------- |
+| Keywords                     | `font-weight: bold; color: #1a1a8a;`                                   | Bold blue — visible in B&W as bold           |
+| Types / built-ins            | `font-weight: bold; color: #5a1a5a;`                                   | Bold purple — distinguishable from keywords  |
+| Strings / values             | `color: #2a6a2a;`                                                      | Dark green — readable in B&W as lighter gray |
+| Comments                     | `color: #666; font-style: italic;`                                     | Gray italic — clearly secondary              |
+| Numbers                      | `color: #8a4a1a;`                                                      | Dark orange/brown — distinct from strings    |
+| Operators / punctuation      | `color: #333;`                                                         | Near-black — blends with structure           |
+| Section headers / decorators | `background: #e8e8e8; border-left: 3px solid #333; font-weight: bold;` | Gray bar — visual section breaks             |
 
 **EDITING DIFFERENCE — code line-height:** code blocks use `line-height: 1.8` (looser than a standard single-spaced code block) so there's room to annotate between lines of code on the printout. (print-from-html does not specify a code-block line-height; this skill sets one explicitly for editing room.)
 
@@ -174,14 +173,14 @@ If `mmdc` is NOT available AND the user is online at print time:
 
 ```html
 <script type="module">
-  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-  mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    flowchart: { useMaxWidth: true, htmlLabels: true },
-    er: { useMaxWidth: true },
-    gantt: { useMaxWidth: true }
-  });
+	import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+	mermaid.initialize({
+		startOnLoad: true,
+		theme: 'default',
+		flowchart: { useMaxWidth: true, htmlLabels: true },
+		er: { useMaxWidth: true },
+		gantt: { useMaxWidth: true }
+	});
 </script>
 ```
 
@@ -190,12 +189,12 @@ If `mmdc` is NOT available AND the user is online at print time:
 
 **Decision rule:**
 
-| Situation | Strategy |
-|-----------|----------|
-| `mmdc` on PATH | Use primary (SVG pre-render) — always |
-| `mmdc` NOT on PATH, user offline / wants offline-capable file | Offer to install `mmdc` first, then SVG pre-render |
-| `mmdc` NOT on PATH, user confirms online at print time | Use fallback (CDN), document the network requirement in the on-screen banner |
-| `mmdc` NOT on PATH, user preference unclear | Ask before falling back — don't silently use CDN |
+| Situation                                                     | Strategy                                                                     |
+| ------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `mmdc` on PATH                                                | Use primary (SVG pre-render) — always                                        |
+| `mmdc` NOT on PATH, user offline / wants offline-capable file | Offer to install `mmdc` first, then SVG pre-render                           |
+| `mmdc` NOT on PATH, user confirms online at print time        | Use fallback (CDN), document the network requirement in the on-screen banner |
+| `mmdc` NOT on PATH, user preference unclear                   | Ask before falling back — don't silently use CDN                             |
 
 **Always check `mmdc` availability before bypassing the self-contained rule.** The CDN fallback is a documented exception, not a free pass.
 
@@ -216,31 +215,43 @@ Every HTML file includes both screen and print stylesheets. **The two editing di
 
 ```css
 @media print {
-  body { margin: 0.5in; }   /* unchanged from print-from-html; the @page widening below is the only margin change */
-  .no-print { display: none; }
-  pre, table { page-break-inside: avoid; }
-  h2, h3 { page-break-after: avoid; }
-  @page {
-    margin: 0.9in 1.0in;   /* WIDER than print-from-html's 0.6in 0.5in — room for margin notes */
-    @top-right {
-      content: "{document title}";
-      font-size: 8pt;
-      color: #666;
-    }
-    @bottom-center {
-      content: "Page " counter(page) " of " counter(pages);
-      font-size: 8pt;
-      color: #666;
-    }
-  }
+	body {
+		margin: 0.5in;
+	} /* unchanged from print-from-html; the @page widening below is the only margin change */
+	.no-print {
+		display: none;
+	}
+	pre,
+	table {
+		page-break-inside: avoid;
+	}
+	h2,
+	h3 {
+		page-break-after: avoid;
+	}
+	@page {
+		margin: 0.9in 1in; /* WIDER than print-from-html's 0.6in 0.5in — room for margin notes */
+		@top-right {
+			content: '{document title}';
+			font-size: 8pt;
+			color: #666;
+		}
+		@bottom-center {
+			content: 'Page ' counter(page) ' of ' counter(pages);
+			font-size: 8pt;
+			color: #666;
+		}
+	}
 }
 ```
 
 **Editing-specific rules (the heart of this skill):**
+
 - **Double-spacing (MANDATORY):** body `line-height: 2.0`; `p`, `li` `line-height: 2.2` with `margin-bottom` ≥ 1em. Code blocks `line-height: 1.8`. Headings `1.25`, table cells `~1.5`.
-- **Wider margins (MANDATORY):** the ONLY margin change from print-from-html is the print `@page` margin, widened from `0.6in 0.5in` to `0.9in 1.0in`. The source's print `body { margin: 0.5in }` is preserved unchanged, so effective print margins (`@page` + body) are genuinely wider than the source's on every edge — the writable gutter for marginalia. Do NOT zero out the body margin to "let @page own it": that interaction can make the effective top margin *narrower* than the source's, defeating the purpose. Widen `@page`, keep the body margin.
+- **Wider margins (MANDATORY):** the ONLY margin change from print-from-html is the print `@page` margin, widened from `0.6in 0.5in` to `0.9in 1.0in`. The source's print `body { margin: 0.5in }` is preserved unchanged, so effective print margins (`@page` + body) are genuinely wider than the source's on every edge — the writable gutter for marginalia. Do NOT zero out the body margin to "let @page own it": that interaction can make the effective top margin _narrower_ than the source's, defeating the purpose. Widen `@page`, keep the body margin.
 
 **Other print rules (same as print-from-html):**
+
 - Code files: 9-9.5pt monospace, `pre { white-space: pre-wrap; word-wrap: break-word; }`
 - Prose files: 10.5pt serif body (same as print-from-html; the editing room comes from line-height + margins, not larger type)
 - Tables: `page-break-inside: avoid`
@@ -251,9 +262,9 @@ Every HTML file includes both screen and print stylesheets. **The two editing di
 
 ```html
 <div class="no-print">
-  Press <strong>Ctrl+P</strong> to print this page.
-  <strong>Double-spaced with wide margins for hand-editing.</strong>
-  Optimized for letter/A4 paper.
+	Press <strong>Ctrl+P</strong> to print this page.
+	<strong>Double-spaced with wide margins for hand-editing.</strong>
+	Optimized for letter/A4 paper.
 </div>
 ```
 
@@ -264,6 +275,7 @@ Styled with light green background, centered, sans-serif.
 **Filename convention:** `{source-filename-without-ext}-print-edit.html` (the `-edit` distinguishes editing copies from `/print-from-html`'s `-print.html`).
 
 Examples:
+
 - `schema.sql` → `schema-sql-print-edit.html`
 - `architecture.md` → `architecture-md-print-edit.html`
 - `methodology-spec.md` → `methodology-spec-md-print-edit.html`
@@ -275,6 +287,7 @@ Krystal's curated print-queue folder. If it doesn't exist, create it (`mkdir -p`
 ### Step 6: Confirm
 
 Tell the user:
+
 - Filename and location
 - Source format detected
 - That it is **double-spaced with wide margins for editing**
@@ -287,6 +300,7 @@ If multiple files were processed, list all output files.
 When the user provides multiple files, process each independently. One HTML file per source file. Report all output paths at the end.
 
 Example:
+
 ```
 User: "print these for me to edit: db/schema.sql, docs/architecture.md"
 

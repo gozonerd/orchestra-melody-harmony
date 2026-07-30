@@ -9,7 +9,7 @@ This is the orchestration document the parent Claude follows when app-update-rec
 
 ## Constraint
 
-Per Krystal's [Background-agent concurrency caps memory](C:\Users\NerdyKrystal\.claude\projects\C--Users-NerdyKrystal--grand-repo\memory\feedback_extra_high_effort_concurrency_caps.md): all parent threads cap background spawns at 2 Opus / 4 Sonnet / 6 Haiku at once. This phase spawns 2 Sonnet + 1 Haiku — within the cap.
+Per Krystal's [Background-agent concurrency caps memory](C:\Users\NerdyKrystal.claude\projects\C--Users-NerdyKrystal--grand-repo\memory\feedback_extra_high_effort_concurrency_caps.md): all parent threads cap background spawns at 2 Opus / 4 Sonnet / 6 Haiku at once. This phase spawns 2 Sonnet + 1 Haiku — within the cap.
 
 ## Orchestration
 
@@ -37,17 +37,17 @@ Spawn three Agent calls in a **single message with three parallel tool uses** so
 
 Apply in order; first match wins:
 
-| Trigger | Verdict |
-|---|---|
-| Agent B reports `status_page_active_incident=Y` OR `rollback_notice=Y` | 🔴 RED |
-| Agent A reports `count_critical >= 1` (any data-loss / cannot-launch / unrecoverable issue) | 🔴 RED |
-| Agent B reports `hotfix_posted_within_24h=Y` (suggests bad release) | 🔴 RED |
-| Agent A reports `count_total >= 5` recent issues even if non-critical | 🟡 YELLOW |
-| Agent C reports `sentiment_skew=negative` AND `thread_count >= 3` | 🟡 YELLOW |
-| Agent B reports `version_in_release_notes=Y` AND no other negative signal | 🟢 GREEN |
-| Version too new for any agent to find signal in either direction | 🟡 YELLOW |
-| All three agents inconclusive AND network failures | ⚪ ABSTAIN |
-| Default | 🟢 GREEN |
+| Trigger                                                                                     | Verdict    |
+| ------------------------------------------------------------------------------------------- | ---------- |
+| Agent B reports `status_page_active_incident=Y` OR `rollback_notice=Y`                      | 🔴 RED     |
+| Agent A reports `count_critical >= 1` (any data-loss / cannot-launch / unrecoverable issue) | 🔴 RED     |
+| Agent B reports `hotfix_posted_within_24h=Y` (suggests bad release)                         | 🔴 RED     |
+| Agent A reports `count_total >= 5` recent issues even if non-critical                       | 🟡 YELLOW  |
+| Agent C reports `sentiment_skew=negative` AND `thread_count >= 3`                           | 🟡 YELLOW  |
+| Agent B reports `version_in_release_notes=Y` AND no other negative signal                   | 🟢 GREEN   |
+| Version too new for any agent to find signal in either direction                            | 🟡 YELLOW  |
+| All three agents inconclusive AND network failures                                          | ⚪ ABSTAIN |
+| Default                                                                                     | 🟢 GREEN   |
 
 ## Evidence ledger format
 

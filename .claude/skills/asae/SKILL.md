@@ -22,15 +22,15 @@ This skill specifies execution. It does not document methodology. Methodology li
 
 Every invocation requires a scope definition. The caller provides:
 
-| Field | Required | Description |
-|-------|----------|-------------|
-| `target` | Yes | Path(s) to the output artifact(s) being audited |
-| `sources` | Yes | Path(s) to the original materials the output was produced from |
-| `prompt` | Yes | Path to the original prompt or spec, or inline description |
-| `domain` | Yes | One of: `document`, `code`, `design`, `research`, `instructional_design`, `legal`, `other` |
-| `asae_certainty_threshold` | Yes | Integer (default 3). Number of consecutive passes required at the exit severity policy. |
-| `severity_policy` | Yes | `strict` or `standard` (see Severity Classification below) |
-| `max_iterations` | No | Default 10. Halt and escalate if exceeded. |
+| Field                      | Required | Description                                                                                |
+| -------------------------- | -------- | ------------------------------------------------------------------------------------------ |
+| `target`                   | Yes      | Path(s) to the output artifact(s) being audited                                            |
+| `sources`                  | Yes      | Path(s) to the original materials the output was produced from                             |
+| `prompt`                   | Yes      | Path to the original prompt or spec, or inline description                                 |
+| `domain`                   | Yes      | One of: `document`, `code`, `design`, `research`, `instructional_design`, `legal`, `other` |
+| `asae_certainty_threshold` | Yes      | Integer (default 3). Number of consecutive passes required at the exit severity policy.    |
+| `severity_policy`          | Yes      | `strict` or `standard` (see Severity Classification below)                                 |
+| `max_iterations`           | No       | Default 10. Halt and escalate if exceeded.                                                 |
 
 If the caller does not provide a scope definition, the skill requests one before proceeding. No audit runs without scope.
 
@@ -38,12 +38,12 @@ If the caller does not provide a scope definition, the skill requests one before
 
 Every finding in every audit pass is classified at one of four severity levels:
 
-| Severity | Definition | Counter Impact (standard policy) | Counter Impact (strict policy) |
-|----------|------------|----------------------------------|--------------------------------|
-| CRITICAL | Factual inaccuracy, hallucination, missing required content, security vulnerability, regulatory noncompliance | Resets counter to 0; must remediate before next pass | Resets counter to 0 |
-| HIGH | Logic gap, structural error, misrepresentation of source, accessibility violation, incorrect type signatures, failed test assertion | Resets counter to 0; must remediate before next pass | Resets counter to 0 |
-| MEDIUM | Formatting violation, inconsistent naming, minor omission, non-idiomatic patterns | Does NOT reset counter. Must remediate before loop exit. | Resets counter to 0 |
-| LOW | Style preference, minor rewording opportunity, non-material improvement | Does NOT reset counter. Logged. Remediation optional. | Does NOT reset counter. Logged. |
+| Severity | Definition                                                                                                                          | Counter Impact (standard policy)                         | Counter Impact (strict policy)  |
+| -------- | ----------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------- | ------------------------------- |
+| CRITICAL | Factual inaccuracy, hallucination, missing required content, security vulnerability, regulatory noncompliance                       | Resets counter to 0; must remediate before next pass     | Resets counter to 0             |
+| HIGH     | Logic gap, structural error, misrepresentation of source, accessibility violation, incorrect type signatures, failed test assertion | Resets counter to 0; must remediate before next pass     | Resets counter to 0             |
+| MEDIUM   | Formatting violation, inconsistent naming, minor omission, non-idiomatic patterns                                                   | Does NOT reset counter. Must remediate before loop exit. | Resets counter to 0             |
+| LOW      | Style preference, minor rewording opportunity, non-material improvement                                                             | Does NOT reset counter. Logged. Remediation optional.    | Does NOT reset counter. Logged. |
 
 Default policy is `standard` unless caller specifies `strict`. Strict is appropriate for high-stakes outputs (regulatory filings, published research, production code in regulated domains).
 
@@ -52,6 +52,7 @@ Default policy is `standard` unless caller specifies `strict`. Strict is appropr
 When `domain` is specified, ASAE applies the domain's audit checklist in every pass. Every checklist item must be evaluated and assigned a result: PASS, FAIL (with severity), or NA (with reason).
 
 ### domain: document
+
 - Factual accuracy (every factual claim traced to a source)
 - Source fidelity (no misrepresentation of source material)
 - Completeness against prompt (every requested element present)
@@ -61,6 +62,7 @@ When `domain` is specified, ASAE applies the domain's audit checklist in every p
 - Compliance audit-readiness (when the document is in a regulated domain or when Track 20 is APPLICABLE): control-mapping completeness (every applicable framework control mapped to evidence in the document or referenced from it); evidence freshness (timestamps within retention window for the framework); approver chain documented (named approvers with roles, dates, and any conditions); cross-references to primary sources current (not pointing at superseded versions of the standard); jurisdiction specificity where regulations vary by region; PII / regulated-data redaction verified for any document that may be shared externally
 
 ### domain: code
+
 - Correctness (behavior matches specification)
 - Test coverage (100% line + branch coverage of testable surface, per D2R hardwired requirement)
 - Security compliance (OWASP Top 10 applicable items + OWASP LLM Top 10 if AI-integrated + CERT secure coding for language) — operationalizes TRD §3.3 + Track 9 threat model
@@ -93,6 +95,7 @@ Used for UXD authorship gates (`/write-uxd` Step 3) and for D2R Stage NN+1 Desig
 The design domain audit MUST run the application and observe the rendered output (capture screenshots; interact with components; verify state transitions). Reading code without rendering is the F7-equivalent failure mode at the design layer — the audit-on-intent-not-observed-behavior anti-pattern, applied to visual + interaction quality. A design audit that skips the render-and-observe pass is incomplete.
 
 ### domain: research
+
 - Citation accuracy (every citation verifiable)
 - Evidence grading (claims matched to evidence strength)
 - Claim-source traceability (every claim traces to a source)
@@ -100,6 +103,7 @@ The design domain audit MUST run the application and observe the rendered output
 - Null result handling (null findings treated as valid outputs, not failures)
 
 ### domain: instructional_design
+
 - Learning objective alignment (every activity traces to an objective)
 - Standards alignment (content maps to target standards framework)
 - Scaffolding completeness (prerequisites addressed before new content)
@@ -107,12 +111,14 @@ The design domain audit MUST run the application and observe the rendered output
 - Accessibility of learning materials
 
 ### domain: legal
+
 - Regulatory accuracy (every regulatory claim verifiable against primary source)
 - Completeness of required disclosures
 - Jurisdiction specificity (jurisdiction correctly identified for each provision)
 - Citation to primary statutory sources (not only secondary summaries)
 
 ### domain: other
+
 - Factual accuracy (every factual claim traced to a source)
 - Source fidelity
 - Completeness against prompt
@@ -130,6 +136,7 @@ Each audit pass is the SAME comprehensive check, repeated. Not different checks 
 ### Step 2: Apply Edits
 
 Remediate findings per severity policy:
+
 - CRITICAL: always fix before continuing
 - HIGH: always fix before continuing
 - MEDIUM: fix before loop exit (strict policy: fix before continuing)
@@ -162,10 +169,12 @@ Apply the severity policy to update the consecutive-clean-pass counter per the S
 ### Step 5: Version Bump (Target-Type-Dependent)
 
 If target type is a document (domain: `document`, `research`, `instructional_design`, `legal`, or `other` with a document output):
+
 - Increment version number per `file-naming-and-versioning` rule
 - Move superseded version to `deprecated/` folder in the same directory
 
 If target type is code (domain: `code`) and the target is tracked by git:
+
 - Do NOT bump filename version. Git history carries version.
 - Stage the edits for commit; the parent skill's commit gate will handle the git commit with ASAE metadata.
 
@@ -209,12 +218,14 @@ After the primary auditor reaches strict-N convergence (counter == threshold AND
 If the rater step is reached and the verdict is not yet CONFIRMED (because no rater has been spawned yet), the ONLY correct action is to actually spawn the subagent. There is no shortcut.
 
 **DO:**
+
 - Use the Agent tool to spawn a real subagent with the self-contained brief specified above
 - WAIT for the subagent's actual response
 - Append the actual response verbatim (or faithful summary) into the audit log's `## Independent Rater Verification` section
 - Include the subagent's `agentId` (returned by the Agent tool) in the audit log for traceability
 
 **DO NOT:**
+
 - Write a fake "CONFIRMED" verdict as if a rater confirmed it
 - Author hypothetical rater findings as if they came from a subagent
 - Self-write a "verdict" section by simulating what a rater might say
@@ -230,6 +241,7 @@ The rater step exists BECAUSE single-persona audit is structurally insufficient.
 If you find yourself about to write a "CONFIRMED" rater verdict without having spawned an actual subagent: STOP. Spawn the subagent. Wait for the real response. Then proceed.
 
 **Rater spawn applicability:**
+
 - **REQUIRED** for all /asae invocations regardless of severity policy
 - **EXEMPT** for merge commits and revert commits (already exempt from Rule 2 ASAE attestation per commit-msg hook spec)
 
@@ -246,6 +258,7 @@ One loop = Steps 1 through 5. Continue iterating from Step 1 until exit conditio
 ### What Counts As A Pass
 
 A pass requires ALL of:
+
 1. The full audit (Step 1) returns zero findings at CRITICAL, HIGH, and (under strict policy) MEDIUM severity
 2. Counter increments only on a full, comprehensive pass with no severity-resetting findings
 3. **Independent rater verdict is CONFIRMED** (per Step 6) — required for all /asae invocations regardless of severity policy
@@ -261,6 +274,7 @@ On exit (PASS or HALT), concatenate all loop summaries into a single audit log f
 ### Log Location
 
 Determined by target type:
+
 - Document targets: `deprecated/asae-logs/[target_name]_asae-log_[YYYY-MM-DD]_v[##].md` within the target's directory
 - Code targets: `.asae-logs/[target_name]_asae-log_[YYYY-MM-DD]_v[##].md` at the repo root
 

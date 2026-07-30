@@ -1,7 +1,7 @@
 ---
-example_id: "TT-19_EX-02"
-description: "Structural coherence verification - identified issues"
-task_type: "TT-19"
+example_id: 'TT-19_EX-02'
+description: 'Structural coherence verification - identified issues'
+task_type: 'TT-19'
 version: v02_I
 
 heading_hierarchy:
@@ -16,31 +16,31 @@ heading_hierarchy:
 
   - heading_level: 4
     instances: 5
-    hierarchy_issue: "Inconsistent nesting - some level 4 headings not properly nested under level 3"
+    hierarchy_issue: 'Inconsistent nesting - some level 4 headings not properly nested under level 3'
 
 logical_flow:
-  - section: "1. Introduction"
+  - section: '1. Introduction'
     prerequisites_satisfied: true
 
-  - section: "3. Findings"
+  - section: '3. Findings'
     position: 2
-    issue: "Findings section appears before Methodology - readers cannot understand results without methodology context"
-    severity: "High"
+    issue: 'Findings section appears before Methodology - readers cannot understand results without methodology context'
+    severity: 'High'
 
-  - section: "2. Methodology"
+  - section: '2. Methodology'
     position: 3
-    issue: "Methodology section should precede findings"
+    issue: 'Methodology section should precede findings'
 
 orphaned_elements:
-  - element: "Appendix B: Data Collection Forms"
-    location: "Page 47"
-    issue: "Not referenced in main text navigation or table of contents"
-    severity: "Medium"
+  - element: 'Appendix B: Data Collection Forms'
+    location: 'Page 47'
+    issue: 'Not referenced in main text navigation or table of contents'
+    severity: 'Medium'
 
-  - element: "Section 6.5: Technical Implementation Notes"
-    location: "Page 31"
-    issue: "Appears between main findings and conclusions without clear integration"
-    severity: "Medium"
+  - element: 'Section 6.5: Technical Implementation Notes'
+    location: 'Page 31'
+    issue: 'Appears between main findings and conclusions without clear integration'
+    severity: 'Medium'
 
 cross_references:
   total_links: 19
@@ -51,16 +51,16 @@ cross_references:
   accuracy_score: 0.89
 
 remediation:
-  - issue: "Reorder sections: Introduction → Methodology → Findings → Discussion → Conclusion"
-    priority: "High"
+  - issue: 'Reorder sections: Introduction → Methodology → Findings → Discussion → Conclusion'
+    priority: 'High'
 
-  - issue: "Integrate Appendix B into methodology section or add explicit reference"
-    priority: "Medium"
+  - issue: 'Integrate Appendix B into methodology section or add explicit reference'
+    priority: 'Medium'
 
-  - issue: "Fix broken cross-references: s/Figure 4.2/Figure 4.3/ and remove reference to Appendix C"
-    priority: "High"
+  - issue: 'Fix broken cross-references: s/Figure 4.2/Figure 4.3/ and remove reference to Appendix C'
+    priority: 'High'
 
 metadata:
-  generated_date: "2026-03-06"
-  reviewer: "SK-19"
-  overall_assessment: "Significant structural issues require reorganization before distribution"
+  generated_date: '2026-03-06'
+  reviewer: 'SK-19'
+  overall_assessment: 'Significant structural issues require reorganization before distribution'

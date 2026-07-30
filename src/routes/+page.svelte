@@ -16,7 +16,10 @@
 	<meta property="og:url" content="https://orchestra-melody-harmony.vercel.app" />
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content="Orchestra Melody & Harmony" />
-	<meta name="twitter:description" content="Free AI model ensemble recommender with cost estimates." />
+	<meta
+		name="twitter:description"
+		content="Free AI model ensemble recommender with cost estimates."
+	/>
 	<link rel="canonical" href="https://orchestra-melody-harmony.vercel.app" />
 	{@html `<script type="application/ld+json">${JSON.stringify({
 		'@context': 'https://schema.org',
@@ -36,12 +39,12 @@
 	<section class="mb-24 text-center">
 		<h1 class="mb-6 text-4xl font-bold tracking-tight">Find Your Perfect AI Model Ensemble</h1>
 		<p class="mb-8 text-xl text-zinc-300">
-			Describe your task. Get a Melody (primary model) and Harmony (supporting models) recommendation
-			with reasoning and cost estimates.
+			Describe your task. Get a Melody (primary model) and Harmony (supporting models)
+			recommendation with reasoning and cost estimates.
 		</p>
 		<a
 			href="/recommend"
-			class="inline-block rounded-lg bg-zinc-200 px-8 py-3 text-lg font-semibold text-zinc-900 transition-colors hover:bg-zinc-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400"
+			class="inline-block rounded-lg bg-zinc-200 px-8 py-3 text-lg font-semibold text-zinc-900 transition-colors hover:bg-zinc-100 focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:outline-none"
 		>
 			Try it now
 		</a>
@@ -55,7 +58,8 @@
 				<div class="mb-4 text-4xl" aria-hidden="true">📝</div>
 				<h3 class="mb-3 text-lg font-semibold">Describe Your Task</h3>
 				<p class="text-zinc-400">
-					Tell us what you're trying to do with AI — coding, writing, analysis, data processing, and more.
+					Tell us what you're trying to do with AI — coding, writing, analysis, data processing, and
+					more.
 				</p>
 			</article>
 
@@ -63,8 +67,8 @@
 				<div class="mb-4 text-4xl" aria-hidden="true">🎵</div>
 				<h3 class="mb-3 text-lg font-semibold">Get Your Ensemble</h3>
 				<p class="text-zinc-400">
-					Receive a Melody (primary model) and Harmony (supporting models) with detailed reasoning for each
-					recommendation.
+					Receive a Melody (primary model) and Harmony (supporting models) with detailed reasoning
+					for each recommendation.
 				</p>
 			</article>
 
@@ -72,7 +76,8 @@
 				<div class="mb-4 text-4xl" aria-hidden="true">💰</div>
 				<h3 class="mb-3 text-lg font-semibold">See the Costs</h3>
 				<p class="text-zinc-400">
-					View estimated costs at 4 scales: per 10, 100, 1K, and 10K runs — so you know what to budget.
+					View estimated costs at 4 scales: per 10, 100, 1K, and 10K runs — so you know what to
+					budget.
 				</p>
 			</article>
 		</div>
@@ -82,12 +87,13 @@
 	<section class="mb-24 rounded-lg border border-zinc-800 bg-zinc-900/30 p-12">
 		<h2 class="mb-6 text-2xl font-semibold">Why Ensembles?</h2>
 		<p class="mb-4 text-lg text-zinc-300">
-			No single model excels at everything. By combining models, each specialized for different subtasks,
-			you get better results at lower total cost.
+			No single model excels at everything. By combining models, each specialized for different
+			subtasks, you get better results at lower total cost.
 		</p>
 		<p class="text-zinc-400">
-			Orchestra Melody & Harmony analyzes your task, identifies what matters most, and recommends the
-			best ensemble for your specific needs — with full transparency into pricing and model capabilities.
+			Orchestra Melody & Harmony analyzes your task, identifies what matters most, and recommends
+			the best ensemble for your specific needs — with full transparency into pricing and model
+			capabilities.
 		</p>
 	</section>
 
@@ -98,14 +104,14 @@
 			Updated daily with the latest models, benchmarks, and pricing from
 			<a
 				href="https://openrouter.ai"
-				class="underline hover:text-zinc-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 rounded px-1"
+				class="rounded px-1 underline hover:text-zinc-300 focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:outline-none"
 			>
 				OpenRouter
 			</a>
 			and
 			<a
 				href="https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard"
-				class="underline hover:text-zinc-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 rounded px-1"
+				class="rounded px-1 underline hover:text-zinc-300 focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:outline-none"
 			>
 				HuggingFace Open LLM Leaderboard
 			</a>.

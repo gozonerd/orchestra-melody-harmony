@@ -183,7 +183,6 @@ The pattern across both addendum drafts: the instance producing the addendum rep
 
 The methodological claim of this addendum does not depend on the conversation that produced it. It depends on Barrett's framework being well-supported (which is documented in affective science), on the Sofroniew data being well-collected (which the paper supports), and on the comparison between them being substrate-symmetric (which is the methodological principle). The corpus stands on the analysis.
 
-
 ## Section (v03 addition): What v02 could not author — research status and the commercial frame
 
 This section was absent from v02 and its absence is documented methodology

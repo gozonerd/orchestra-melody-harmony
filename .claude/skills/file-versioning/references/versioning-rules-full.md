@@ -20,13 +20,13 @@
 
 ### S1.3 When to increment version
 
-| Change Type | Increment? |
-|---|---|
-| Typo fix, formatting only | No |
-| Clarification, no behavior change | No |
-| New rule or behavior change | Yes |
-| Structural reorganization | Yes |
-| Conflict resolution | Yes |
+| Change Type                       | Increment? |
+| --------------------------------- | ---------- |
+| Typo fix, formatting only         | No         |
+| Clarification, no behavior change | No         |
+| New rule or behavior change       | Yes        |
+| Structural reorganization         | Yes        |
+| Conflict resolution               | Yes        |
 
 ---
 
@@ -40,11 +40,11 @@
 
 ### S2.2 Version component meanings
 
-| Component | Type | Meaning |
-|---|---|---|
-| N | Number (1,2,3...) | Main version — higher = more correct |
-| X | Letter (A,B,C...) | Iteration variant — parallel alternatives (both valid) |
-| R | Number (1,2,3...) | Revision within iteration — higher = more correct |
+| Component | Type              | Meaning                                                |
+| --------- | ----------------- | ------------------------------------------------------ |
+| N         | Number (1,2,3...) | Main version — higher = more correct                   |
+| X         | Letter (A,B,C...) | Iteration variant — parallel alternatives (both valid) |
+| R         | Number (1,2,3...) | Revision within iteration — higher = more correct      |
 
 ### S2.3 Core rule
 
@@ -53,11 +53,11 @@
 
 ### S2.4 Approval status suffix
 
-| Suffix | Meaning |
-|---|---|
-| `_I` | Internal — Martinez Methods use only |
-| `_X` | External — approved for distribution |
-| (none) | Assume `_I` |
+| Suffix | Meaning                              |
+| ------ | ------------------------------------ |
+| `_I`   | Internal — Martinez Methods use only |
+| `_X`   | External — approved for distribution |
+| (none) | Assume `_I`                          |
 
 ### S2.4.1 Date component requirement (MANDATORY) [added v03]
 
@@ -84,10 +84,10 @@ When user says "vlatest", "latest version", or similar:
 
 ### Backlog trigger phrases
 
-| Phrase | Action |
-|---|---|
-| "add to backlog" | Create backlog entry |
-| "start backlog for [doc]" | Initialize new backlog |
-| "show backlog" | Display current state |
+| Phrase                            | Action                             |
+| --------------------------------- | ---------------------------------- |
+| "add to backlog"                  | Create backlog entry               |
+| "start backlog for [doc]"         | Initialize new backlog             |
+| "show backlog"                    | Display current state              |
 | "apply backlog / generate vFinal" | Generate vFinal Integration Prompt |
-| "full regen" | Bypass backlog entirely |
+| "full regen"                      | Bypass backlog entirely            |

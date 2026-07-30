@@ -19,14 +19,14 @@ Every output file MUST follow this pattern:
 
 ### Component definitions
 
-| Component | Rule | Example |
-|---|---|---|
-| PREFIX | Project prefix if applicable. Omit if none exists. | `CLI-SM-DATS_` |
-| Description | Underscored, no spaces, descriptive | `Full_Context_Assessment` |
-| YYYY-MM-DD | Date version was CREATED (not last modified). MANDATORY. Must immediately precede the version shortcode. | `2026-03-23` |
-| vXX | Version number | `v01`, `v02`, `vFinal` |
-| suffix | `_I` (internal) or `_X` (external). Default `_I` if omitted. | `_I` |
-| ext | File extension | `.md`, `.docx` |
+| Component   | Rule                                                                                                     | Example                   |
+| ----------- | -------------------------------------------------------------------------------------------------------- | ------------------------- |
+| PREFIX      | Project prefix if applicable. Omit if none exists.                                                       | `CLI-SM-DATS_`            |
+| Description | Underscored, no spaces, descriptive                                                                      | `Full_Context_Assessment` |
+| YYYY-MM-DD  | Date version was CREATED (not last modified). MANDATORY. Must immediately precede the version shortcode. | `2026-03-23`              |
+| vXX         | Version number                                                                                           | `v01`, `v02`, `vFinal`    |
+| suffix      | `_I` (internal) or `_X` (external). Default `_I` if omitted.                                             | `_I`                      |
+| ext         | File extension                                                                                           | `.md`, `.docx`            |
 
 **Full example:** `CLI-SM-DATS_Pipeline_Playbook_2026-03-22_v03_I.md`
 
@@ -40,18 +40,19 @@ Every output file MUST follow this pattern:
 
 ## When to Increment
 
-| Change Type | Increment? |
-|---|---|
-| Typo fix, formatting only | No |
-| Clarification, no behavior change | No |
-| New rule or behavior change | Yes — bump number |
-| Structural reorganization | Yes — bump number |
-| Conflict resolution | Yes — bump number |
-| Parallel alternative created | Yes — bump letter |
+| Change Type                       | Increment?        |
+| --------------------------------- | ----------------- |
+| Typo fix, formatting only         | No                |
+| Clarification, no behavior change | No                |
+| New rule or behavior change       | Yes — bump number |
+| Structural reorganization         | Yes — bump number |
+| Conflict resolution               | Yes — bump number |
+| Parallel alternative created      | Yes — bump letter |
 
 ## When User Says "Bump"
 
 Determine the correct increment type from context:
+
 - If the change fixes, corrects, or supersedes: **bump the number** (v01 -> v02)
 - If the change creates a parallel alternative: **bump the letter** (vA -> vB)
 - If unclear, ask the user: "Is this a fix (number bump) or a parallel alternative (letter bump)?"

@@ -64,7 +64,7 @@
 	<!-- Benchmarks Grid -->
 	{#if activeBenchmarks.length > 0}
 		<div class="mb-6">
-			<h4 class="mb-3 text-xs font-semibold uppercase tracking-wider text-zinc-400">
+			<h4 class="mb-3 text-xs font-semibold tracking-wider text-zinc-400 uppercase">
 				Key Benchmarks
 			</h4>
 			<div class="grid grid-cols-2 gap-3 md:grid-cols-3">
@@ -80,7 +80,7 @@
 
 	<!-- Pricing -->
 	<div class="mb-4 border-t border-zinc-700 pt-4">
-		<h4 class="mb-2 text-xs font-semibold uppercase tracking-wider text-zinc-400">Pricing</h4>
+		<h4 class="mb-2 text-xs font-semibold tracking-wider text-zinc-400 uppercase">Pricing</h4>
 		<div class="flex gap-4">
 			<div>
 				<div class="text-xs text-zinc-500">Input</div>

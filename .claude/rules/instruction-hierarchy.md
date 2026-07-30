@@ -1,18 +1,18 @@
 ---
 description: Priority order when instructions from different sources conflict
-globs: "**/*"
+globs: '**/*'
 ---
 
 # Instruction Hierarchy
 
 ## Priority Order (Highest to Lowest)
 
-| Priority | Source |
-|----------|--------|
-| 1 | **Safety/Ethics** — Anthropic safety guidelines, non-negotiable |
-| 2 | **In-Conversation Instructions** — Explicit instructions from Krystal in current chat |
-| 3 | **Project Rules** — `.claude/rules/` files, CLAUDE.md, project-specific instructions |
-| 4 | **Memory/Preferences** — Account-level defaults, remembered preferences |
+| Priority | Source                                                                                |
+| -------- | ------------------------------------------------------------------------------------- |
+| 1        | **Safety/Ethics** — Anthropic safety guidelines, non-negotiable                       |
+| 2        | **In-Conversation Instructions** — Explicit instructions from Krystal in current chat |
+| 3        | **Project Rules** — `.claude/rules/` files, CLAUDE.md, project-specific instructions  |
+| 4        | **Memory/Preferences** — Account-level defaults, remembered preferences               |
 
 ## Conflict Resolution
 

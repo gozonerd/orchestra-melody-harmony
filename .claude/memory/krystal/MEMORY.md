@@ -19,7 +19,7 @@ user: krystal
 - [Background-agent concurrency caps](feedback_extra_high_effort_concurrency_caps.md) — 2 Opus equivalents (1 Opus = 2.5 Sonnets = 6 Haikus); sequence rounds if more needed
 - [Never reproduce harmful language when flagging](feedback_never_reproduce_harmful_language_when_flagging.md) — describe location, fix silently; quoting verbatim reproduces harm
 - [Pronoun discipline — she/her, they/them](feedback_pronoun_discipline_krystal_cody.md) — binding for all in-thread, commit messages, doc prose, frontmatter
-- [Pronoun discipline — consult memory before use](feedback_pronoun_discipline.md) — consult user_*.md for pronouns; default they/them; never enact the error in "don't" examples
+- [Pronoun discipline — consult memory before use](feedback_pronoun_discipline.md) — consult user\_\*.md for pronouns; default they/them; never enact the error in "don't" examples
 - [Codify the larger principle](feedback_codify_larger_principles.md) — when narrow-vs-broad scope arises, default broader; anti-aspect-proliferation applies to CREATING not SCOPING
 - [Offer /scope-recap at session end](feedback_offer_scope_recap_at_session_end.md) — OFFER (not auto-execute) when major work locked + no next-step queued; one offer only
 - [Codify what you mean explicitly](feedback_codify_what_you_mean_explicitly.md) — specs/skills/templates must codify meaning at the surface; don't rely on reader to infer
@@ -82,7 +82,7 @@ user: krystal
 
 ---
 
-**Structural Enforcement of Excellence-as-Floor rule family (added 2026-05-11 by Claudette W. Calibration Inevitability v03, Wave 0 Step 3)**: the three rules above (`feedback_excellence_is_the_floor`, `feedback_no_tiered_rigor_menus`, `feedback_scope_deliverable_not_audit`) operationalize the structural-enforcement principles from design spec v02 (`_grand_repo/docs/Structural_Enforcement_Excellence_Inevitability_Design_2026-05-11_v02_I.md`) into behavioral discipline rules every future Claud* thread must follow. Together they encode: (1) excellence is the floor not the ceiling, (2) the wrong lever (audit rigor menus) is banned, (3) the right lever (deliverable scope) is named. Read as a set; each rule cross-references the other two.
+**Structural Enforcement of Excellence-as-Floor rule family (added 2026-05-11 by Claudette W. Calibration Inevitability v03, Wave 0 Step 3)**: the three rules above (`feedback_excellence_is_the_floor`, `feedback_no_tiered_rigor_menus`, `feedback_scope_deliverable_not_audit`) operationalize the structural-enforcement principles from design spec v02 (`_grand_repo/docs/Structural_Enforcement_Excellence_Inevitability_Design_2026-05-11_v02_I.md`) into behavioral discipline rules every future Claud\* thread must follow. Together they encode: (1) excellence is the floor not the ceiling, (2) the wrong lever (audit rigor menus) is banned, (3) the right lever (deliverable scope) is named. Read as a set; each rule cross-references the other two.
 
 ---
 

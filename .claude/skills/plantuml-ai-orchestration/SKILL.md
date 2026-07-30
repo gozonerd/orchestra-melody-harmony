@@ -13,6 +13,7 @@ Generate professional PlantUML diagrams for AI pipeline orchestration. This skil
 ## Rendering
 
 PlantUML text is rendered in:
+
 - **plantuml.com** (free, browser-based) — paste text, get diagram
 - **VS Code PlantUML extension** (jebbs.plantuml) — live preview
 - **PlantUML server** (self-hosted or plantuml.com/plantuml)
@@ -23,33 +24,33 @@ Claude generates PlantUML text as a code block or saves it as a `.puml` file.
 
 ## When to Use PlantUML (vs. Other Diagram Types)
 
-| Use Case | PlantUML? | Why / Why Not |
-|---|---|---|
-| Swimlane activity diagrams | **Yes — primary use** | Best text-based swimlane support |
-| Sequence diagrams (model call chains) | **Yes** | Rich sequence notation with participants, notes, groups |
-| Activity diagrams with branching | **Yes** | Full if/else, fork/join, repeat support |
-| Deployment architecture | **Yes** | Component, deployment, and package diagrams |
-| Simple pipeline DAG | **No** | Use Mermaid — faster, renders in GitHub natively |
-| Formal enterprise process model | **No** | Use BPMN — ISO standard with richer semantics |
-| Interactive exploration | **No** | Use HTML+JS for zoom/click |
-| Dense dependency graph (20+ nodes) | **No** | Use Graphviz — better auto-layout for complex graphs *(threshold reconciled 2026-06-10 from a stale "50+" to match the corpus-wide ~15–20 handoff / graphviz 20+ primary range)* |
+| Use Case                              | PlantUML?             | Why / Why Not                                                                                                                                                                    |
+| ------------------------------------- | --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Swimlane activity diagrams            | **Yes — primary use** | Best text-based swimlane support                                                                                                                                                 |
+| Sequence diagrams (model call chains) | **Yes**               | Rich sequence notation with participants, notes, groups                                                                                                                          |
+| Activity diagrams with branching      | **Yes**               | Full if/else, fork/join, repeat support                                                                                                                                          |
+| Deployment architecture               | **Yes**               | Component, deployment, and package diagrams                                                                                                                                      |
+| Simple pipeline DAG                   | **No**                | Use Mermaid — faster, renders in GitHub natively                                                                                                                                 |
+| Formal enterprise process model       | **No**                | Use BPMN — ISO standard with richer semantics                                                                                                                                    |
+| Interactive exploration               | **No**                | Use HTML+JS for zoom/click                                                                                                                                                       |
+| Dense dependency graph (20+ nodes)    | **No**                | Use Graphviz — better auto-layout for complex graphs _(threshold reconciled 2026-06-10 from a stale "50+" to match the corpus-wide ~15–20 handoff / graphviz 20+ primary range)_ |
 
 ## Domain: AI Pipeline Orchestration Patterns
 
 ### PlantUML Elements Mapped to AI Orchestration
 
-| AI Concept | PlantUML Element | Notation |
-|---|---|---|
-| Pipeline step | Activity | `:Step name;` |
-| Decision / gate | If-else | `if (condition?) then (yes) ... else (no) ... endif` |
-| Parallel execution | Fork/join | `fork ... fork again ... end fork` |
-| Human review | Activity with stereotype | `:Review output; <<human>>` |
-| AI model execution | Activity with stereotype | `:Generate content; <<ai>>` |
-| Swimlane / actor | Partition | `|Actor Name|` |
-| Data input | Note | `note right: Input: source.pdf` |
-| Error / exception | Kill | `kill` or detach |
-| Loop / iteration | Repeat | `repeat ... repeat while (condition?)` |
-| Pipeline boundary | Group | `group Pipeline N ... end group` |
+| AI Concept         | PlantUML Element         | Notation                                             |
+| ------------------ | ------------------------ | ---------------------------------------------------- | ---------- | --- |
+| Pipeline step      | Activity                 | `:Step name;`                                        |
+| Decision / gate    | If-else                  | `if (condition?) then (yes) ... else (no) ... endif` |
+| Parallel execution | Fork/join                | `fork ... fork again ... end fork`                   |
+| Human review       | Activity with stereotype | `:Review output; <<human>>`                          |
+| AI model execution | Activity with stereotype | `:Generate content; <<ai>>`                          |
+| Swimlane / actor   | Partition                | `                                                    | Actor Name | `   |
+| Data input         | Note                     | `note right: Input: source.pdf`                      |
+| Error / exception  | Kill                     | `kill` or detach                                     |
+| Loop / iteration   | Repeat                   | `repeat ... repeat while (condition?)`               |
+| Pipeline boundary  | Group                    | `group Pipeline N ... end group`                     |
 
 ### Swimlane Architecture
 
@@ -203,14 +204,14 @@ skinparam ActivityBackgroundColor<<data>> #E0E0E0
 
 ### Recommended Color Palette
 
-| Element | Background | Border | Use |
-|---|---|---|---|
-| AI task | `#F3E5F5` (light purple) | `#9B59B6` | Model execution steps |
-| Human task | `#E8F5E9` (light green) | `#7ED321` | Review, approval |
-| Gate / decision | `#FFF3E0` (light amber) | `#F5A623` | QA gates, routing |
-| Orchestrator | `#E3F2FD` (light blue) | `#4A90D9` | Coordination logic |
-| Data store | `#E0E0E0` (light gray) | `#999` | Knowledge bases, inputs |
-| Error | `#FFEBEE` (light red) | `#E74C3C` | Exception paths |
+| Element         | Background               | Border    | Use                     |
+| --------------- | ------------------------ | --------- | ----------------------- |
+| AI task         | `#F3E5F5` (light purple) | `#9B59B6` | Model execution steps   |
+| Human task      | `#E8F5E9` (light green)  | `#7ED321` | Review, approval        |
+| Gate / decision | `#FFF3E0` (light amber)  | `#F5A623` | QA gates, routing       |
+| Orchestrator    | `#E3F2FD` (light blue)   | `#4A90D9` | Coordination logic      |
+| Data store      | `#E0E0E0` (light gray)   | `#999`    | Knowledge bases, inputs |
+| Error           | `#FFEBEE` (light red)    | `#E74C3C` | Exception paths         |
 
 ## Workflow
 
@@ -242,6 +243,7 @@ If saving to file, use `.puml` extension with standard naming:
 After generating the PlantUML text, include:
 
 > **To view this diagram:**
+>
 > 1. Go to [plantuml.com](http://www.plantuml.com/plantuml/uml) (free, no account needed)
 > 2. Paste the code (including `@startuml` and `@enduml`)
 > 3. Click "Submit" to render

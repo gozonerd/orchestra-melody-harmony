@@ -127,4 +127,4 @@ This makes it obvious whose branch is whose.
 
 ---
 
-*Stahl Systems Document — Git_Branching_Refresher_2026-04-05_v01_I.md*
+_Stahl Systems Document — Git_Branching_Refresher_2026-04-05_v01_I.md_

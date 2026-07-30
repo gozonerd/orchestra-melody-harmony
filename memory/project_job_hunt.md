@@ -9,6 +9,7 @@ Thread name: **Opus-Million the Job Hunter (v03)** — third thread in this seri
 **Purpose:** Krystal's AI career portfolio development and job hunting strategy.
 
 **Portfolio architecture:**
+
 - 11/11 independent AI assessors recommended HIRE at principal level
 - 100 documented failure modes
 - 12 backbone methods converged across 5 independent extraction threads
@@ -18,6 +19,7 @@ Thread name: **Opus-Million the Job Hunter (v03)** — third thread in this seri
 
 **Active work at session end:**
 Designing the **Methodology Extraction Prompt Kit** — a 6-phase modular sequential system replacing a monolithic extraction prompt:
+
 1. Extract all methodologies from PEK (n=5 parallel threads, converge with dedup agent)
 2. Map methodologies to original-language pain points
 3. Extract all unique methods from PEK Volumes 00-06 (n=5 parallel, converge)
@@ -26,10 +28,12 @@ Designing the **Methodology Extraction Prompt Kit** — a 6-phase modular sequen
 6. Generate flat triplet table (pain point × methodology × method) + visual representation
 
 **Key distinctions:**
+
 - Methodology = conceptual approach to a problem
 - Method = the conceptually aligned actions taken
 
 **Pain point status:**
+
 - P1, P2: acceptable as-is
 - P3: earlier clearer version preferred
 - P4: needs version that more clearly conveys PowerPoint adoption origin
@@ -42,6 +46,7 @@ Designing the **Methodology Extraction Prompt Kit** — a 6-phase modular sequen
 **Thread stalled at:** Krystal gave feedback on 4 points and requested updated prompt brief in reinforced fenced block. Model was switched to Sonnet mid-thread; a message may have been lost. Thread did not produce the revised brief.
 
 **Next steps:**
+
 1. Find original-language pain point versions (especially P3, P4, P5)
 2. Generate updated 6-phase prompt brief with feedback incorporated, in reinforced fenced block
 3. Deploy to n=5 Opus-Million threads once brief is locked

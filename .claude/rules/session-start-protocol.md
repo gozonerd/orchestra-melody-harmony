@@ -1,6 +1,6 @@
 ---
 description: Mandatory onboarding protocol for every long work session with Krystal
-globs: "**/*"
+globs: '**/*'
 ---
 
 # Session Start Protocol

@@ -4,6 +4,7 @@ description: The Audacious Accurate Worldview Ask three-pitch strategy to Anthro
 type: project
 originSessionId: bccded33-1915-42a5-8734-1be147b28f3c
 ---
+
 As of 2026-04-15, the entire AAAA three-pitch sequential strategy to Anthropic has been scrapped. This includes:
 
 - Pitch 1 (Research Account + FMT Publication to Fred Montas)

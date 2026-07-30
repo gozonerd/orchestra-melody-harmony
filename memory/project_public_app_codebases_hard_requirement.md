@@ -4,6 +4,7 @@ description: Martinez Methods apps (Claude Cost, Claudette Code Check, Claudette
 type: project
 originSessionId: 46056a33-f1c9-42ab-8260-97ba2f9b45f8
 ---
+
 Krystal is actively applying to jobs and needs the app codebases she's building with D2R to be public as portfolio work. This is a hard requirement, not a nice-to-have, and it shapes every authorship decision on the build pipeline.
 
 **Why:** Stated explicitly on 2026-04-22: "i just may be concerned about the ability to have the codebases of these apps be public on thie r own, something i need as i'm applying to jobs." The repos went private on 2026-04-16 for IP protection while underlying methodology gets scrubbed; the selective re-publicization for portfolio use requires that each repo pass the `Pre_Publication_IP_Scrub_Checklist` before going public.
@@ -18,6 +19,7 @@ Krystal is actively applying to jobs and needs the app codebases she's building 
 6. Licensing: portfolio apps going public typically use BUSL-1.1 or PolyForm Noncommercial to retain IP rights while being visible. Never blanket-permissive (Apache/MIT) without deliberate rationale in the scrub report.
 
 **Related:**
+
 - `feedback_ip_discipline_filesystem.md` — IP discipline at every operational layer
 - `feedback_ip_language.md` — branded terminology rule (original)
 - `Pre_Publication_IP_Scrub_Checklist` at `_grand_repo/docs/Pre_Publication_IP_Scrub_Checklist_2026-04-22_v02_I.md`

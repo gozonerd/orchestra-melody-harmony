@@ -1,19 +1,19 @@
 ---
-schema_name: "TT-17 Specification Actionability Assessment Output"
+schema_name: 'TT-17 Specification Actionability Assessment Output'
 version: v02_I
 date: 2026-03-06
 
 output_structure:
   specifications_evaluated:
-    description: "All specification elements with actionability assessment"
+    description: 'All specification elements with actionability assessment'
     type: array
 
   actionability_scoring:
-    description: "Score each specification on sufficiency for downstream execution"
-    values: ["Fully Specified", "Partially Specified", "Underspecified"]
+    description: 'Score each specification on sufficiency for downstream execution'
+    values: ['Fully Specified', 'Partially Specified', 'Underspecified']
 
   gap_analysis:
-    description: "Missing details for each underspecified element"
+    description: 'Missing details for each underspecified element'
     items:
       specification_id: string
       gap_category: string
@@ -22,7 +22,7 @@ output_structure:
       remediation: string
 
   use_case_validation:
-    description: "Can downstream consumer act on this specification?"
+    description: 'Can downstream consumer act on this specification?'
     type: array
     items:
       specification_id: string
@@ -31,8 +31,8 @@ output_structure:
       blockers: array
 
 accuracy_rules_applied:
-  - "All 9 Accuracy Rules (ACC-001 through ACC-009)"
+  - 'All 9 Accuracy Rules (ACC-001 through ACC-009)'
 
 quality_expectations:
-  actionability_grounded: "Assessment based on actual downstream consumer capabilities"
-  gap_prioritization: "Clear distinction between critical gaps and enhancement opportunities"
+  actionability_grounded: 'Assessment based on actual downstream consumer capabilities'
+  gap_prioritization: 'Clear distinction between critical gaps and enhancement opportunities'
